@@ -77,10 +77,42 @@ public class OreSpawner implements IWorldGenerator {
 			}
 			return;
 		}
-		double radius = Math.pow(quantity, 1.0/3.0) * (3.0 / 4.0 / Math.PI);
-		for(int rz = 0; rz < radius; rz)
-		// TODO finish implementation
-		
+		double radius = Math.pow(quantity, 1.0/3.0) * (3.0 / 4.0 / Math.PI) + 1;
+		int rSqr = (int)(radius * radius);
+		fill:{
+			if(prng.nextBoolean()){ // switch-up the direction of fill to reduce predictability
+				// fill from north-east
+				for(int dy = (int)(-1 * radius); dy < radius; dy++){
+					for(int dz = (int)(-1 * radius); dz < radius; dz++){
+						for(int dx = (int)(-1 * radius); dx < radius; dx++){
+							if((dx*dx + dy*dy + dz*dz) <= rSqr){
+								spawn(oreBlock,world,blockPos.add(dx,dy,dz));
+								count--;
+							}
+							if(count <= 0) {
+								break fill;
+							}
+						}
+					}
+				}
+			} else {
+				// fill from south-west
+				for(int dy = (int)(-1 * radius); dy < radius; dy++){
+					for(int dx = (int)(radius); dx >= (int)(-1 * radius); dx--){
+						for(int dz = (int)(radius); dz >= (int)(-1 * radius); dz--){
+							if((dx*dx + dy*dy + dz*dz) <= rSqr){
+								spawn(oreBlock,world,blockPos.add(dx,dy,dz));
+								count--;
+							}
+							if(count <= 0) {
+								break fill;
+							}
+						}
+					}
+				}
+			}
+		}
+		return;
 	}
 	
 	private static void scramble(int[] target, Random prng) {

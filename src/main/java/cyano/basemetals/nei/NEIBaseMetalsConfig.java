@@ -1,7 +1,7 @@
 package cyano.basemetals.nei;
 
 import codechicken.nei.api.IConfigureNEI;
-import cyano.poweradvantage.PowerAdvantage;
+import cyano.basemetals.BaseMetals;
 
 public class NEIBaseMetalsConfig implements IConfigureNEI{
 
@@ -15,7 +15,7 @@ public class NEIBaseMetalsConfig implements IConfigureNEI{
 
 	@Override
 	public String getVersion() {
-		return PowerAdvantage.VERSION;
+		return BaseMetals.VERSION;
 	}
 
 	@Override
