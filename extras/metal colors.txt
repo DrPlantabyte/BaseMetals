@@ -1,0 +1,4 @@
+iron:
+1. Brightness & Contrast: brightness -20, contrast -10
+2. Set brush color to #a54422, opacity to 25%, size to 3.00, and then brush on rust stains
+3. threshold alpha to clean-up the image

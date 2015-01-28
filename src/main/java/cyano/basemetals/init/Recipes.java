@@ -15,12 +15,12 @@ public abstract class Recipes {
 	public static void initVanillaCrusherRecipes(FMLInitializationEvent event){
 		// see OreDictionary.initVanillaEntries() for vanilla oreDict names
 		CrusherRecipeRegistry.addNewCrusherRecipe("stone", new ItemStack(Blocks.cobblestone,1));
-		CrusherRecipeRegistry.addNewCrusherRecipe("cobblestone", new ItemStack(Blocks.sand,1));
-		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.gravel, new ItemStack(Items.flint,1));
+		CrusherRecipeRegistry.addNewCrusherRecipe("cobblestone", new ItemStack(Blocks.gravel,1));
+		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.gravel, new ItemStack(Blocks.sand,1));
 		CrusherRecipeRegistry.addNewCrusherRecipe("sandstone", new ItemStack(Blocks.sand,4));
 		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.glowstone, new ItemStack(Items.glowstone_dust,4));
 		CrusherRecipeRegistry.addNewCrusherRecipe("oreLapis", new ItemStack(Items.dye,8,4));
-		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.redstone_ore, new ItemStack(Items.redstone,8));
+		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.redstone_ore, new ItemStack(Items.redstone,6));
 		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.redstone_block, new ItemStack(Items.redstone,9));
 		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.reeds, new ItemStack(Items.sugar,2));
 		CrusherRecipeRegistry.addNewCrusherRecipe(Items.bone, new ItemStack(Items.dye,6,15));
