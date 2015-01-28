@@ -9,7 +9,6 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import cyano.basemetals.events.CrushedBlockHarvestEventHandler;
 
 @Mod(modid = BaseMetals.MODID, name=BaseMetals.NAME, version = BaseMetals.VERSION)
 public class BaseMetals
@@ -50,8 +49,6 @@ public class BaseMetals
 	@EventHandler
 	public void init(FMLInitializationEvent event)
 	{
-		
-		MinecraftForge.EVENT_BUS.register(new CrushedBlockHarvestEventHandler());
 		
 		cyano.basemetals.init.Recipes.initVanillaCrusherRecipes(event);
 

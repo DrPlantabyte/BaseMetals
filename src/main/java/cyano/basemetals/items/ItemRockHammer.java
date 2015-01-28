@@ -30,7 +30,6 @@ public class ItemRockHammer extends net.minecraft.item.ItemTool{
 	@Override
     public float getStrVsBlock(final ItemStack tool, final Block target) {
 		return isCrushableBlock(target) ? 0.5f * this.toolMaterial.getEfficiencyOnProperMaterial() : 1.0f;
-	//	return isCrushableBlock(target) ?  this.toolMaterial.getEfficiencyOnProperMaterial() : 1.0f;
     }
 	
 	@Override
@@ -38,7 +37,6 @@ public class ItemRockHammer extends net.minecraft.item.ItemTool{
     		final Block target, final BlockPos coord, final EntityLivingBase player) {
 		if(!world.isRemote){
 			IBlockState bs = world.getBlockState(coord);
-			System.out.println("ItemRockHammer: crushing block "+bs.getBlock().getClass().getName()+" (world.isRemote="+world.isRemote+")");
 			ICrusherRecipe recipe = getCrusherRecipe(bs);
 			if(recipe != null){
 				ItemStack output = recipe.getOutput();
