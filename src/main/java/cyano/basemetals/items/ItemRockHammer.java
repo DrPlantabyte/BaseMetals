@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
@@ -35,9 +36,22 @@ public class ItemRockHammer extends net.minecraft.item.ItemTool{
 	@Override
     public boolean onBlockDestroyed(final ItemStack tool, final World world, 
     		final Block target, final BlockPos coord, final EntityLivingBase player) {
-		IBlockState bs = world.getBlockState(coord);
-		System.out.println("ItemRockHammer: crushing block "+bs.getBlock().getClass().getName());
-		ICrusherRecipe recipe = getCrusherRecipe(bs);
+		if(!world.isRemote){
+			IBlockState bs = world.getBlockState(coord);
+			System.out.println("ItemRockHammer: crushing block "+bs.getBlock().getClass().getName()+" (world.isRemote="+world.isRemote+")");
+			ICrusherRecipe recipe = getCrusherRecipe(bs);
+			if(recipe != null){
+				ItemStack output = recipe.getOutput();
+				world.setBlockToAir(coord);
+				if(output != null){
+					int num = output.stackSize;
+					output.stackSize = 1;
+					for(int i = 0; i < num; i++){
+						world.spawnEntityInWorld(new EntityItem(world, coord.getX()+0.5, coord.getY()+0.5, coord.getZ()+0.5, output.copy()));
+					}
+				}
+			}
+		}
 		return super.onBlockDestroyed(tool, world, target, coord, player);
 		
 	}
