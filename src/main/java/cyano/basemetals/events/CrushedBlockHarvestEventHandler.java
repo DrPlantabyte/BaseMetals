@@ -15,6 +15,8 @@ public class CrushedBlockHarvestEventHandler {
 
 	@SubscribeEvent(priority=EventPriority.HIGH)
 	public void harvestDropsEvent(HarvestDropsEvent event){
+		if(event.harvester == null) return;
+		System.out.println("CrushedBlockHarvestEventHandler: event occurred");
 		ItemStack tool = event.harvester.getCurrentEquippedItem();
 		if(tool != null && tool.getItem().getClass() == ItemRockHammer.class && event.isSilkTouching == false){
 			ItemStack block = new ItemStack(event.state.getBlock(),1,event.state.getBlock().getMetaFromState(event.state));

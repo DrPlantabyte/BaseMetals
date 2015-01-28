@@ -136,7 +136,7 @@ public class CrusherRecipeRegistry {
 		
 		public ItemLookupReference(ItemStack inputItem){
 			item = inputItem.getItem();
-			metaData = inputItem.getItemDamage();
+			metaData = inputItem.getMetadata();
 			hashCache = item.getUnlocalizedName().hashCode() + (57 * metaData);
 		}
 		
