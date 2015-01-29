@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "basemetals:blocks/mithril_door_lower",
+        "top": "basemetals:blocks/mithril_door_upper"
+    }
+}

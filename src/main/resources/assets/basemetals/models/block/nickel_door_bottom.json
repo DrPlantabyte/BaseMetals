@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "basemetals:blocks/nickel_door_lower",
+        "top": "basemetals:blocks/nickel_door_upper"
+    }
+}

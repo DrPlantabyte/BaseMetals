@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/bars_ne",
+    "textures": {
+        "particle": "basemetals:blocks/invar_bars",
+        "bars": "basemetals:blocks/invar_bars",
+        "edge": "basemetals:blocks/invar_bars"
+    }
+}

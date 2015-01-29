@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/bars_nsew",
+    "textures": {
+        "particle": "basemetals:blocks/adamantine_bars",
+        "bars": "basemetals:blocks/adamantine_bars",
+        "edge": "basemetals:blocks/adamantine_bars"
+    }
+}

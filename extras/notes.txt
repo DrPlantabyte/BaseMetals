@@ -22,6 +22,7 @@ zinc and mercury cannot be made into tools or blocks
 zinc can be crafted with steel tools to make galvinized steel tools (even longer durability)
 lead tools suck and have next to zero durability, but deal a ton of attack damage
 wearing lead armor causes the slowness effect, severity equal to number of lead items worn
+adamantine deals an extra 4 damage when it hits a creature that is immune to file
 
 Potions
 Silver: makes combination switftness & jumping potion 
