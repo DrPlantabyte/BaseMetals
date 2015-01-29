@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "basemetals",
+  "name": "Base Metals",
+  "description": "This mod adds historically common metals to Minecraft",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://github.com/cyanobacterium/BaseMetals",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Cyanobacterium (aka DrCyano)"],
+  "credits": "The Forge and FML guys, for making the Forge modding API (you guys are awesome), geologists everywhere, and the mod author Cyanobacterium (aka Synechocystis)",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

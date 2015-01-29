@@ -14,17 +14,17 @@ import net.minecraft.world.World;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
 import cyano.basemetals.registry.recipe.ICrusherRecipe;
 
-public class ItemRockHammer extends net.minecraft.item.ItemTool{
+public class ItemCrackHammer extends net.minecraft.item.ItemTool{
 
-	protected ItemRockHammer(float attackDamage,ToolMaterial material,Set<Block> blockSet) {
+	protected ItemCrackHammer(float attackDamage,ToolMaterial material,Set<Block> blockSet) {
 		super(attackDamage, material, blockSet);
         this.setCreativeTab(CreativeTabs.tabTools);
 	}
 
-	public static ItemRockHammer createTool(ToolMaterial material){
+	public static ItemCrackHammer createTool(ToolMaterial material){
 		float attackDamage = 1+material.getHarvestLevel();
 		Set<Block> blockSet = new HashSet();
-		return new ItemRockHammer(attackDamage, material, blockSet);
+		return new ItemCrackHammer(attackDamage, material, blockSet);
 	}
 	
 	@Override

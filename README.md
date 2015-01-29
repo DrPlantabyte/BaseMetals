@@ -1,6 +1,6 @@
 # Base Metals
 ## DrCyano's Base Metals Mod
-This mod adds historically commonly used metals to Minecraft, specifically silver, copper, tin, lead, zinc, mercury, and nickel. You will also find a number of metal alloys in this mod and a new tool: the Rock Hammer.
+This mod adds historically commonly used metals to Minecraft, specifically silver, copper, tin, lead, zinc, mercury, and nickel. You will also find a number of metal alloys in this mod and a new tool: the Crack Hammer.
 
 Fantasy metals have been added to the Nether and the End: Mithril, Cold Iron, Adamantine, and Star Steel
 
@@ -26,6 +26,9 @@ Cold Iron (found in the Nether): Strong as iron. Tools made from Cold Iron are e
 Adamantine (found in the Nether): Strong as diamond. Armor made from Adamantine grants resistance to damage and tools made from adamantine are extra effective against ghasts and blazes.
 Mithril (alloy of cold iron and silver): Strong as steel. Mithral weapons are extra effective against undead.
 Star Steel (found in the End): Armor made from Star Steel grants the wearer the ability to jump higher and fall slower. Star Steel tools slowly repair themselves while held.
+
+## Crack Hammer
+Also known as a sledge hammer, this tool is designed for pulverizing rocks. Using this tool on ores will cause them to drop powdered metal instead of the standard ore block. Use can then use the powdered metals to make metal alloy mixes or just smelt the powder into ingots.
 
 ## Requirements
 This mod requires that you install Minecraft Forge version 1.8-11.14.0.1281 or later (ealier versions of Forge for Minecraft 1.8 may work, but no guarentees).

@@ -15,13 +15,13 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 import cyano.basemetals.BaseMetals;
-import cyano.basemetals.items.ItemRockHammer;
+import cyano.basemetals.items.ItemCrackHammer;
 
 public abstract class Items {
 
 	private static Map<Item,String> allItems = new HashMap<>();
 	
-	public static Item ironRockHammer;
+	public static Item ironCrackHammer;
 	
 	
 
@@ -29,7 +29,7 @@ public abstract class Items {
 	public static void initItems(FMLPreInitializationEvent event){
 		if(alreadyInitialized) return;
 		
-		ironRockHammer = init(ItemRockHammer.createTool(ToolMaterial.IRON),"iron_rockhammer",CreativeTabs.tabTools);
+		ironCrackHammer = init(ItemCrackHammer.createTool(ToolMaterial.IRON),"iron_crackhammer",CreativeTabs.tabTools);
 		
 		alreadyInitialized = true;
 	}

@@ -1,0 +1,19 @@
+for each metal
+nugget
+ore (non-alloys only)
+powder
+alloy mix (alloys only)
+ingot
+block
+crackhammer (crafted with block on end of 2 sticks)
+pickaxe
+axe
+shovel
+hoe
+armor layers
+bucket (crafting recipe only)
+door
+trapdoor
+bars
+
+
