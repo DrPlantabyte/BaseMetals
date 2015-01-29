@@ -15,8 +15,8 @@ Mercury: This toxic liquid metal has many alchemical uses
 Nickel: This metal is as soft as copper, but it has alchemical properties and forms alloys with iron
 
 *Metal Alloys*
-Bronze: This alloy of tin and copper is as hard as iron, but not quite as durable
-Brass: This alloy of copper and zonc is soft, but has a beautiful golden color.
+Bronze: This alloy of copper and tin is as hard as iron, but not quite as durable
+Brass: This alloy of copper and zinc is soft, but has a beautiful golden color.
 Steel: This alloy of iron and carbon is as hard as iron and as durable as diamond
 Invar: This alloy of iron and nickel is as hard as iron
 Electrum: This alloy of silver and gold can be enchanted like gold, but is slightly more durable
