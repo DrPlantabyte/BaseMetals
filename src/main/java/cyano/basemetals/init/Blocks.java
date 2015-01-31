@@ -13,6 +13,7 @@ import cyano.basemetals.blocks.BlockMetalDoor;
 import cyano.basemetals.blocks.BlockMetalOre;
 import cyano.basemetals.blocks.BlockMetalTrapDoor;
 import cyano.basemetals.material.MetalMaterial;
+import cyano.basemetals.registry.IOreDictionaryEntry;
 
 public class Blocks {
 	private static final Map<String,Block> allBlocks = new HashMap<>();
@@ -93,6 +94,11 @@ public class Blocks {
 		cyano.basemetals.init.Materials.init();
 		
 		// TODO
+		
+		for(Block b : allBlocks.values()){
+			if(b instanceof IOreDictionaryEntry){OreDictionary.registerOre(((IOreDictionaryEntry)b).getOreDictionaryName(), b);}
+		}
+		
 		initDone = true;
 	}
 	
@@ -104,13 +110,11 @@ public class Blocks {
 	private static Block createBlock(MetalMaterial metal){
 		Block block = new BlockMetalBlock(metal);
 		GameRegistry.registerBlock(block, metal.getName()+"_block");
-		OreDictionary.registerOre("block"+metal.getCapitalizedName(), block);
 		return block;
 	}
 	private static Block createOre(MetalMaterial metal){
 		Block block = new BlockMetalOre(metal);
 		GameRegistry.registerBlock(block, metal.getName()+"_ore");
-		OreDictionary.registerOre("ore"+metal.getCapitalizedName(), block);
 		return block;
 	}
 	private static Block createDoor(MetalMaterial metal){

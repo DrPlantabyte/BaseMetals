@@ -1,6 +1,7 @@
 package cyano.basemetals.blocks;
 
 import cyano.basemetals.material.MetalMaterial;
+import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -10,7 +11,7 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockMetalBlock extends Block{
+public class BlockMetalBlock extends Block implements IOreDictionaryEntry{
 
 	final MetalMaterial metal;
 	
@@ -66,4 +67,9 @@ public class BlockMetalBlock extends Block{
 	public boolean isNormalCube(final IBlockAccess bs, final BlockPos coord) {
         return this.isNormalCube();
     }
+
+	@Override
+	public String getOreDictionaryName() {
+		return "block"+metal.getCapitalizedName();
+	}
 }

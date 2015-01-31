@@ -2,9 +2,6 @@ package cyano.basemetals.material;
 
 import java.util.Locale;
 
-import net.minecraft.block.material.MapColor;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
-
 public class MetalMaterial {
 
 	/** hardness on a scale from 0 to 10 (or more), where 0 is non-solid and 

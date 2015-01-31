@@ -1,6 +1,7 @@
 package cyano.basemetals.blocks;
 
 import cyano.basemetals.material.MetalMaterial;
+import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 

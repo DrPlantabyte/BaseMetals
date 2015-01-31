@@ -13,7 +13,7 @@ public class BlockMetalDoor extends net.minecraft.block.BlockDoor{
 
 	final MetalMaterial metal;
 	public BlockMetalDoor(MetalMaterial metal) {
-		super(Material.iron);
+		super((metal.getToolHarvestLevel() > 0) ? Material.iron : Material.rock);
 		this.stepSound = Block.soundTypeMetal;
 		this.metal = metal;
 		this.blockHardness = metal.getMetalBlockHardness();

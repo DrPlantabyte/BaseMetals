@@ -18,6 +18,7 @@ import net.minecraftforge.oredict.OreDictionary;
 import cyano.basemetals.BaseMetals;
 import cyano.basemetals.blocks.BlockMetalDoor;
 import cyano.basemetals.items.ItemCrackHammer;
+import cyano.basemetals.registry.IOreDictionaryEntry;
 
 public abstract class Items {
 
@@ -38,7 +39,12 @@ public abstract class Items {
 		
 		cyano.basemetals.init.Blocks.init();
 		
-		ironCrackHammer = init(ItemCrackHammer.createTool(ToolMaterial.IRON),"iron_crackhammer",CreativeTabs.tabTools);
+		ironCrackHammer = init(ItemCrackHammer(),"iron_crackhammer",CreativeTabs.tabTools);
+		// TODO
+		
+		for(Item i : allItems.keySet()){
+			if(i instanceof IOreDictionaryEntry){OreDictionary.registerOre(((IOreDictionaryEntry)i).getOreDictionaryName(), i);}
+		}
 		
 		initDone = true;
 	}
@@ -49,11 +55,6 @@ public abstract class Items {
 		item.setCreativeTab(tab);
 		GameRegistry.registerItem(item,name);
 		allItems.put(item,name);
-		return item;
-	}
-	private static Item init(Item item, String name, CreativeTabs tab, String oreDict){
-		item = init(item,name,tab);
-		OreDictionary.registerOre(oreDict, item);
 		return item;
 	}
 	

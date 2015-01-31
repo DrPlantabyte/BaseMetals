@@ -3,6 +3,7 @@ package cyano.basemetals.blocks;
 import java.util.Random;
 
 import cyano.basemetals.material.MetalMaterial;
+import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.material.MapColor;
@@ -16,7 +17,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockMetalOre extends BlockOre{
+public class BlockMetalOre extends BlockOre implements IOreDictionaryEntry{
 
 	final MetalMaterial metal;
 	
@@ -32,4 +33,9 @@ public class BlockMetalOre extends BlockOre{
     public int getExpDrop(final IBlockAccess bs, final BlockPos coord, final int i) {
         return 0; // xp comes from smelting
     }
+
+	@Override
+	public String getOreDictionaryName() {
+		return "ore"+metal.getCapitalizedName();
+	}
 }

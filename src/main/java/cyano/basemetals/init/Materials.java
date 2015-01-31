@@ -1,14 +1,21 @@
 package cyano.basemetals.init;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
-import net.minecraft.item.Item.ToolMaterial;
-import cyano.basemetals.material.*;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraftforge.common.util.EnumHelper;
+import cyano.basemetals.BaseMetals;
+import cyano.basemetals.material.AdamantineMaterial;
+import cyano.basemetals.material.LeadMaterial;
+import cyano.basemetals.material.MetalMaterial;
+import cyano.basemetals.material.StarSteelMaterial;
 
 public class Materials {
 
 	private static Map<String,MetalMaterial> allMaterials = new HashMap<>();
+	private static Map<MetalMaterial,ArmorMaterial> armorMaterialMap= new HashMap<>();
 	
 	public static MetalMaterial copper;
 	public static MetalMaterial silver;
@@ -61,6 +68,18 @@ public class Materials {
 	private static MetalMaterial addMaterial(String name, double hardness, double strength, double magic){
 		MetalMaterial m = new MetalMaterial(name,(float)hardness,(float)strength,(float)magic);
 		allMaterials.put(name, m);
+		
+		String enumName = BaseMetals.MODID+"_"+m.getName().toUpperCase(Locale.ENGLISH);
+		String texName = m.getName();
+		int[] protection = m.getDamageReductionArray();
+		int durability = m.getArmorMaxDamageFactor();
+		ArmorMaterial am = EnumHelper.addArmorMaterial(enumName, texName, durability, protection, m.getEnchantibility());
+		armorMaterialMap.put(m, am);
+		
 		return m;
+	}
+	
+	public static ArmorMaterial getArmorMaterialFor(MetalMaterial m){
+		return armorMaterialMap.get(m);
 	}
 }
