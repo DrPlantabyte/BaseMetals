@@ -12,7 +12,7 @@ import cyano.basemetals.material.LeadMaterial;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.material.StarSteelMaterial;
 
-public class Materials {
+public abstract class Materials {
 
 	private static Map<String,MetalMaterial> allMaterials = new HashMap<>();
 	private static Map<MetalMaterial,ArmorMaterial> armorMaterialMap= new HashMap<>();
@@ -31,6 +31,7 @@ public class Materials {
 	public static MetalMaterial mithril;
 	public static MetalMaterial adamantine;
 	public static MetalMaterial starsteel;
+	public static MetalMaterial zinc;
 	// vanilla imports
 	public static MetalMaterial iron;
 	public static MetalMaterial gold;
@@ -50,6 +51,7 @@ public class Materials {
 		lead = new LeadMaterial("lead", 1, 1, 1);
 		allMaterials.put(lead.getName(), lead);
 		nickel = addMaterial("nickel", 4, 4, 7);
+		zinc = addMaterial("nickel", 1, 1, 1);
 		bronze = addMaterial("bronze", 8, 4, 4.5);
 		brass = addMaterial("brass", 3.5, 3, 5);
 		steel = addMaterial("steel", 8, 15, 2);
