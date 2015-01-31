@@ -1,5 +1,6 @@
 package cyano.basemetals.registry.recipe;
 
+import java.util.Collection;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
@@ -31,4 +32,11 @@ public class OreDictionaryCrusherRecipe implements ICrusherRecipe{
 		return false;
 	}
 
+	@Override
+	public Collection<ItemStack> getValidInputs() {
+		return OreDictionary.getOres(oreDictSource);
+	}
+
+	
+	
 }

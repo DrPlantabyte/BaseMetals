@@ -61,6 +61,11 @@ public class CrusherRecipeRegistry {
 			public boolean isValidInput(ItemStack in) {
 				return input.equals(in.getItem());
 			}
+
+			@Override
+			public Collection<ItemStack> getValidInputs() {
+				return Arrays.asList(new ItemStack(input));
+			}
 			
 		});
 	}
@@ -76,6 +81,11 @@ public class CrusherRecipeRegistry {
 			@Override
 			public boolean isValidInput(ItemStack in) {
 				return input.equals(Block.getBlockFromItem(in.getItem()));
+			}
+
+			@Override
+			public Collection<ItemStack> getValidInputs() {
+				return Arrays.asList(new ItemStack(input));
 			}
 			
 		});
@@ -157,5 +167,9 @@ public class CrusherRecipeRegistry {
 		public int hashCode(){
 			return hashCache;
 		}
+	}
+
+	public Collection<ICrusherRecipe> getAllRecipes() {
+		return Collections.unmodifiableList(recipes);
 	}
 }
