@@ -68,6 +68,7 @@ public class BaseMetals
 	private void clientInit(FMLInitializationEvent event){
 		// client-only code
 		cyano.basemetals.init.Items.registerItemRenders(event);
+		cyano.basemetals.init.Blocks.registerItemRenders(event);
 	}
 	@SideOnly(Side.SERVER)
 	private void serverInit(FMLInitializationEvent event){

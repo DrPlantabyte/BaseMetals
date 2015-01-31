@@ -42,8 +42,8 @@ public class CrusherRecipeHandler extends TemplateRecipeHandler{
 
 	@Override
 	public void loadCraftingRecipes(ItemStack result) {
-		List<ICrusherRecipe> recipes = new ArrayList<>();
-		recipes.addAll(CrusherRecipeRegistry.getInstance().getRecipesForOutputItem(result));
+		List<ICrusherRecipe> recipes = CrusherRecipeRegistry.getInstance().getRecipesForOutputItem(result);
+		if(recipes == null) return; // no crusher recipes
 		for(ICrusherRecipe r : recipes){
 			for(ItemStack input : r.getValidInputs()){
 				arecipes.add(new CrusherPair(input.copy(),result.copy()));

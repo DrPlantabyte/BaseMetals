@@ -373,11 +373,11 @@ public abstract class Items {
 		lead_shovel = create_shovel(Materials.lead);
 		lead_sword = create_sword(Materials.lead);
 		
-		mercury_ingot = new Item().setUnlocalizedName(BaseMetals.MODID+"."+"ingotMercury").setCreativeTab(CreativeTabs.tabMaterials);
+		mercury_ingot = new Item().setUnlocalizedName(BaseMetals.MODID+"."+"mercury_ingot").setCreativeTab(CreativeTabs.tabMaterials);
 		GameRegistry.registerItem(mercury_ingot,"mercury_ingot");
 		allItems.put(mercury_ingot, "mercury_ingot");
 		OreDictionary.registerOre("ingotMercury", mercury_ingot);
-		mercury_powder = new Item().setUnlocalizedName(BaseMetals.MODID+"."+"powderMercury").setCreativeTab(CreativeTabs.tabMaterials);
+		mercury_powder = new Item().setUnlocalizedName(BaseMetals.MODID+"."+"mercury_powder").setCreativeTab(CreativeTabs.tabMaterials);
 		GameRegistry.registerItem(mercury_powder,"mercury_powder");
 		allItems.put(mercury_powder, "mercury_powder");
 		OreDictionary.registerOre("dustMercury", mercury_powder);
@@ -494,7 +494,7 @@ public abstract class Items {
 	private static Item create_ingot(MetalMaterial m){
 		String n = "ingot";
 		Item i = new ItemMetalIngot(m);
-		i.setUnlocalizedName(BaseMetals.MODID+"."+n+m.getCapitalizedName());
+		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		allItems.put(i, regName);
@@ -504,7 +504,7 @@ public abstract class Items {
 	private static Item create_nugget(MetalMaterial m){
 		String n = "nugget";
 		Item i = new ItemMetalNugget(m);
-		i.setUnlocalizedName(BaseMetals.MODID+"."+n+m.getCapitalizedName());
+		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		allItems.put(i, regName);
@@ -514,7 +514,7 @@ public abstract class Items {
 	private static Item create_powder(MetalMaterial m){
 		String n = "powder";
 		Item i = new ItemMetalPowder(m);
-		i.setUnlocalizedName(BaseMetals.MODID+"."+n+m.getCapitalizedName());
+		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		allItems.put(i, regName);
@@ -524,7 +524,7 @@ public abstract class Items {
 	private static Item create_blend(MetalMaterial m){
 		String n = "blend";
 		Item i = new ItemMetalBlend(m);
-		i.setUnlocalizedName(BaseMetals.MODID+"."+n+m.getCapitalizedName());
+		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		allItems.put(i, regName);
@@ -534,7 +534,7 @@ public abstract class Items {
 	private static Item create_axe(MetalMaterial m){
 		String n = "axe";
 		Item i = new ItemMetalAxe(m);
-		i.setUnlocalizedName(BaseMetals.MODID+"."+n+m.getCapitalizedName());
+		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		allItems.put(i, regName);
@@ -544,7 +544,7 @@ public abstract class Items {
 	private static Item create_crackhammer(MetalMaterial m){
 		String n = "crackhammer";
 		Item i = new ItemCrackHammer(m);
-		i.setUnlocalizedName(BaseMetals.MODID+"."+n+m.getCapitalizedName());
+		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		allItems.put(i, regName);
@@ -554,7 +554,7 @@ public abstract class Items {
 	private static Item create_hoe(MetalMaterial m){
 		String n = "hoe";
 		Item i = new ItemMetalHoe(m);
-		i.setUnlocalizedName(BaseMetals.MODID+"."+n+m.getCapitalizedName());
+		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		allItems.put(i, regName);
@@ -564,7 +564,7 @@ public abstract class Items {
 	private static Item create_pickaxe(MetalMaterial m){
 		String n = "pickaxe";
 		Item i = new ItemMetalPickAxe(m);
-		i.setUnlocalizedName(BaseMetals.MODID+"."+n+m.getCapitalizedName());
+		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		allItems.put(i, regName);
@@ -574,7 +574,7 @@ public abstract class Items {
 	private static Item create_shovel(MetalMaterial m){
 		String n = "shovel";
 		Item i = new ItemMetalShovel(m);
-		i.setUnlocalizedName(BaseMetals.MODID+"."+n+m.getCapitalizedName());
+		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		allItems.put(i, regName);
@@ -584,7 +584,7 @@ public abstract class Items {
 	private static Item create_sword(MetalMaterial m){
 		String n = "sword";
 		Item i = new ItemMetalSword(m);
-		i.setUnlocalizedName(BaseMetals.MODID+"."+n+m.getCapitalizedName());
+		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		allItems.put(i, regName);
@@ -594,7 +594,7 @@ public abstract class Items {
 	private static Item create_helmet(MetalMaterial m){
 		String n = "helmet";
 		Item i = ItemMetalArmor.createHelmet(m);
-		i.setUnlocalizedName(BaseMetals.MODID+"."+n+m.getCapitalizedName());
+		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		allItems.put(i, regName);
@@ -603,7 +603,7 @@ public abstract class Items {
 	private static Item create_chestplate(MetalMaterial m){
 		String n = "chestplate";
 		Item i = ItemMetalArmor.createChestplate(m);
-		i.setUnlocalizedName(BaseMetals.MODID+"."+n+m.getCapitalizedName());
+		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		allItems.put(i, regName);
@@ -612,7 +612,7 @@ public abstract class Items {
 	private static Item create_leggings(MetalMaterial m){
 		String n = "leggings";
 		Item i = ItemMetalArmor.createLeggings(m);
-		i.setUnlocalizedName(BaseMetals.MODID+"."+n+m.getCapitalizedName());
+		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		allItems.put(i, regName);
@@ -621,7 +621,7 @@ public abstract class Items {
 	private static Item create_boots(MetalMaterial m){
 		String n = "boots";
 		Item i = ItemMetalArmor.createBoots(m);
-		i.setUnlocalizedName(BaseMetals.MODID+"."+n+m.getCapitalizedName());
+		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		allItems.put(i, regName);
@@ -630,7 +630,7 @@ public abstract class Items {
 	private static Item create_door(MetalMaterial m,BlockDoor door){
 		String n = "door";
 		Item i = new ItemMetalDoor(door);
-		i.setUnlocalizedName(BaseMetals.MODID+"."+n+m.getCapitalizedName());
+		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n+"_item";
 		GameRegistry.registerItem(i, regName);
 		allItems.put(i, regName);
