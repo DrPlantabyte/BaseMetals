@@ -1,5 +1,6 @@
 package cyano.basemetals;
 
+import cyano.basemetals.registry.CrusherRecipeRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
@@ -26,8 +27,10 @@ public class BaseMetals
 		config.load();
 		
 		config.save();
+		cyano.basemetals.init.Materials.init();
+		cyano.basemetals.init.Blocks.init();
+		cyano.basemetals.init.Items.init();
 		
-		cyano.basemetals.init.Items.initItems(event);
 
 		if(event.getSide() == Side.CLIENT){
 			clientPreInit(event);
@@ -50,7 +53,7 @@ public class BaseMetals
 	public void init(FMLInitializationEvent event)
 	{
 		
-		cyano.basemetals.init.Recipes.initVanillaCrusherRecipes(event);
+		cyano.basemetals.init.Recipes.init();
 
 		if(event.getSide() == Side.CLIENT){
 			clientInit(event);
@@ -81,6 +84,8 @@ public class BaseMetals
 		if(event.getSide() == Side.SERVER){
 			serverPostInit(event);
 		}
+		
+		CrusherRecipeRegistry.getInstance().clearCache();
 	}
 	
 

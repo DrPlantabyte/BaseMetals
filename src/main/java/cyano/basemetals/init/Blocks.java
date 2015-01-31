@@ -23,7 +23,7 @@ import cyano.basemetals.blocks.BlockMetalTrapDoor;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
 
-public class Blocks {
+public abstract class Blocks {
 	private static final Map<String,Block> allBlocks = new HashMap<>();
 	
 	public static Block adamantine_bars;

@@ -6,6 +6,7 @@ import java.util.Map;
 
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.common.FMLLog;
 import cyano.basemetals.BaseMetals;
 import cyano.basemetals.material.AdamantineMaterial;
 import cyano.basemetals.material.LeadMaterial;
@@ -51,7 +52,7 @@ public abstract class Materials {
 		lead = new LeadMaterial("lead", 1, 1, 1);
 		allMaterials.put(lead.getName(), lead);
 		nickel = addMaterial("nickel", 4, 4, 7);
-		zinc = addMaterial("nickel", 1, 1, 1);
+		zinc = addMaterial("zinc", 1, 1, 1);
 		bronze = addMaterial("bronze", 8, 4, 4.5);
 		brass = addMaterial("brass", 3.5, 3, 5);
 		steel = addMaterial("steel", 8, 15, 2);
@@ -71,12 +72,17 @@ public abstract class Materials {
 		MetalMaterial m = new MetalMaterial(name,(float)hardness,(float)strength,(float)magic);
 		allMaterials.put(name, m);
 		
-		String enumName = BaseMetals.MODID+"_"+m.getName().toUpperCase(Locale.ENGLISH);
+		String enumName = m.getEnumName();
 		String texName = m.getName();
 		int[] protection = m.getDamageReductionArray();
 		int durability = m.getArmorMaxDamageFactor();
 		ArmorMaterial am = EnumHelper.addArmorMaterial(enumName, texName, durability, protection, m.getEnchantibility());
+		if(am == null){
+			// uh-oh
+			FMLLog.severe("Failed to create armor material enum for "+m);
+		}
 		armorMaterialMap.put(m, am);
+		FMLLog.info("Created armor material enum "+am);
 		
 		return m;
 	}

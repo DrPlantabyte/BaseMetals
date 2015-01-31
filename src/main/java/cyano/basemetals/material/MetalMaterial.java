@@ -2,6 +2,8 @@ package cyano.basemetals.material;
 
 import java.util.Locale;
 
+import cyano.basemetals.BaseMetals;
+
 public class MetalMaterial {
 
 	/** hardness on a scale from 0 to 10 (or more), where 0 is non-solid and 
@@ -23,6 +25,8 @@ public class MetalMaterial {
 	final String identifier;
 	
 	final String titleName;
+	
+	private final String enumName;
 	/**
 	 * @param name String used to identify items and blocks using this material
 	 * @param hardness hardness on a scale from 0 to 10 (or more), where 0 is non-solid and 
@@ -43,6 +47,7 @@ public class MetalMaterial {
 		String firstLetter = name.substring(0,1);
 		String rest = name.substring(1);
 		titleName = firstLetter.toUpperCase(Locale.ENGLISH)+rest;
+		enumName = (BaseMetals.MODID+"_"+name).toUpperCase(Locale.ENGLISH);
 	}
 	
 	public String getName(){
@@ -160,6 +165,10 @@ public class MetalMaterial {
 	 */
 	public int getEnchantibility(){
 		return (int)(2.5f * magicAffinity);
+	}
+
+	public String getEnumName() {
+		return enumName;
 	}
 	
 }

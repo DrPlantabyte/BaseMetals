@@ -6,6 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -27,23 +28,39 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 	}
 	
 	public static ItemMetalArmor createHelmet(MetalMaterial metal){
-		ArmorMaterial material = cyano.basemetals.init.Materials.getArmorMaterialFor(metal);
+		ArmorMaterial material = ArmorMaterial.valueOf(metal.getEnumName());
+		if(material == null){
+			// uh-oh
+			FMLLog.severe("Failed to load armor material enum for "+metal);
+		}
 		return new ItemMetalArmor(metal,material,material.ordinal(),0);
 	}
 	
 	public static ItemMetalArmor createChestplate(MetalMaterial metal){
-		ArmorMaterial material = cyano.basemetals.init.Materials.getArmorMaterialFor(metal);
+		ArmorMaterial material = ArmorMaterial.valueOf(metal.getEnumName());
+		if(material == null){
+			// uh-oh
+			FMLLog.severe("Failed to load armor material enum for "+metal);
+		}
 		return new ItemMetalArmor(metal,material,material.ordinal(),1);
 	}
 	
 	public static ItemMetalArmor createLeggings(MetalMaterial metal){
-		ArmorMaterial material = cyano.basemetals.init.Materials.getArmorMaterialFor(metal);
+		ArmorMaterial material = ArmorMaterial.valueOf(metal.getEnumName());
+		if(material == null){
+			// uh-oh
+			FMLLog.severe("Failed to load armor material enum for "+metal);
+		}
 		return new ItemMetalArmor(metal,material,material.ordinal(),2);
 	}
 
 	
 	public static ItemMetalArmor createBoots(MetalMaterial metal){
-		ArmorMaterial material = cyano.basemetals.init.Materials.getArmorMaterialFor(metal);
+		ArmorMaterial material = ArmorMaterial.valueOf(metal.getEnumName());
+		if(material == null){
+			// uh-oh
+			FMLLog.severe("Failed to load armor material enum for "+metal);
+		}
 		return new ItemMetalArmor(metal,material,material.ordinal(),3);
 	}
 	
