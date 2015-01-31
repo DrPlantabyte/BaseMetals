@@ -28,7 +28,7 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 	}
 	
 	public static ItemMetalArmor createHelmet(MetalMaterial metal){
-		ArmorMaterial material = ArmorMaterial.valueOf(metal.getEnumName());
+		ArmorMaterial material = cyano.basemetals.init.Materials.getArmorMaterialFor(metal);
 		if(material == null){
 			// uh-oh
 			FMLLog.severe("Failed to load armor material enum for "+metal);
@@ -37,7 +37,7 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 	}
 	
 	public static ItemMetalArmor createChestplate(MetalMaterial metal){
-		ArmorMaterial material = ArmorMaterial.valueOf(metal.getEnumName());
+		ArmorMaterial material = cyano.basemetals.init.Materials.getArmorMaterialFor(metal);
 		if(material == null){
 			// uh-oh
 			FMLLog.severe("Failed to load armor material enum for "+metal);
@@ -46,7 +46,7 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 	}
 	
 	public static ItemMetalArmor createLeggings(MetalMaterial metal){
-		ArmorMaterial material = ArmorMaterial.valueOf(metal.getEnumName());
+		ArmorMaterial material = cyano.basemetals.init.Materials.getArmorMaterialFor(metal);
 		if(material == null){
 			// uh-oh
 			FMLLog.severe("Failed to load armor material enum for "+metal);
@@ -56,7 +56,7 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 
 	
 	public static ItemMetalArmor createBoots(MetalMaterial metal){
-		ArmorMaterial material = ArmorMaterial.valueOf(metal.getEnumName());
+		ArmorMaterial material = cyano.basemetals.init.Materials.getArmorMaterialFor(metal);
 		if(material == null){
 			// uh-oh
 			FMLLog.severe("Failed to load armor material enum for "+metal);

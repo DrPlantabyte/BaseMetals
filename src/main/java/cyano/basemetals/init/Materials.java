@@ -50,7 +50,7 @@ public abstract class Materials {
 		silver = addMaterial("silver", 4, 4, 6);
 		tin = addMaterial("tin", 3, 1, 2);
 		lead = new LeadMaterial("lead", 1, 1, 1);
-		allMaterials.put(lead.getName(), lead);
+		registerMaterial(lead.getName(), lead);
 		nickel = addMaterial("nickel", 4, 4, 7);
 		zinc = addMaterial("zinc", 1, 1, 1);
 		bronze = addMaterial("bronze", 8, 4, 4.5);
@@ -61,15 +61,22 @@ public abstract class Materials {
 		coldiron = addMaterial("coldiron", 7, 7, 7);
 		mithril = addMaterial("mithril", 9, 9, 9);
 		adamantine = new AdamantineMaterial("adamantine", 10, 100, 0);
-		allMaterials.put(adamantine.getName(), adamantine);
+		registerMaterial(adamantine.getName(), adamantine);
 		starsteel = new StarSteelMaterial("starsteel", 10, 25, 12);
-		allMaterials.put(starsteel.getName(), starsteel);
+		registerMaterial(starsteel.getName(), starsteel);
+		
 		
 		initDone = true;
 	}
 	
 	private static MetalMaterial addMaterial(String name, double hardness, double strength, double magic){
 		MetalMaterial m = new MetalMaterial(name,(float)hardness,(float)strength,(float)magic);
+		registerMaterial(name, m);
+		return m;
+	}
+	
+	protected static void registerMaterial(String name, MetalMaterial m){
+
 		allMaterials.put(name, m);
 		
 		String enumName = m.getEnumName();
@@ -83,8 +90,6 @@ public abstract class Materials {
 		}
 		armorMaterialMap.put(m, am);
 		FMLLog.info("Created armor material enum "+am);
-		
-		return m;
 	}
 	
 	public static ArmorMaterial getArmorMaterialFor(MetalMaterial m){

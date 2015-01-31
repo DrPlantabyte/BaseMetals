@@ -378,9 +378,9 @@ public abstract class Items {
 		allItems.put(mercury_ingot, "mercury_ingot");
 		OreDictionary.registerOre("ingotMercury", mercury_ingot);
 		mercury_powder = new Item().setUnlocalizedName(BaseMetals.MODID+"."+"powderMercury").setCreativeTab(CreativeTabs.tabMaterials);
-		GameRegistry.registerItem(mercury_ingot,"mercury_powder");
-		allItems.put(mercury_ingot, "mercury_powder");
-		OreDictionary.registerOre("dustMercury", mercury_ingot);
+		GameRegistry.registerItem(mercury_powder,"mercury_powder");
+		allItems.put(mercury_powder, "mercury_powder");
+		OreDictionary.registerOre("dustMercury", mercury_powder);
 		
 		mithril_axe = create_axe(Materials.mithril);
 		mithril_blend = create_blend(Materials.mithril);
@@ -631,7 +631,7 @@ public abstract class Items {
 		String n = "door";
 		Item i = new ItemMetalDoor(door);
 		i.setUnlocalizedName(BaseMetals.MODID+"."+n+m.getCapitalizedName());
-		String regName = m.getName()+"_"+n;
+		String regName = m.getName()+"_"+n+"_item";
 		GameRegistry.registerItem(i, regName);
 		allItems.put(i, regName);
 		doorMap.put(door, i);
