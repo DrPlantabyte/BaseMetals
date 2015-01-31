@@ -14,8 +14,9 @@ import net.minecraft.world.World;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
 import cyano.basemetals.registry.recipe.ICrusherRecipe;
 
-public class ItemCrackHammer extends net.minecraft.item.ItemTool{
+public class ItemCrackHammer extends ItemMetalTool{
 
+	private final MetalMaterial metal;
 	protected ItemCrackHammer(float attackDamage,ToolMaterial material,Set<Block> blockSet) {
 		super(attackDamage, material, blockSet);
         this.setCreativeTab(CreativeTabs.tabTools);
