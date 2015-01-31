@@ -8,11 +8,18 @@ import cyano.basemetals.registry.CrusherRecipeRegistry;
 
 public abstract class Recipes {
 	
-	public static void initRecipes(FMLInitializationEvent event){
+	private static boolean initDone = false;
+	public static void init(){
+		if(initDone)return;
+		
+		cyano.basemetals.init.Items.init();
+		
 		// TODO
+		initDone = true;
 	}
 	
-	public static void initVanillaCrusherRecipes(FMLInitializationEvent event){
+	
+	private static void initVanillaCrusherRecipes(FMLInitializationEvent event){
 		// see OreDictionary.initVanillaEntries() for vanilla oreDict names
 		CrusherRecipeRegistry.addNewCrusherRecipe("stone", new ItemStack(Blocks.cobblestone,1));
 		CrusherRecipeRegistry.addNewCrusherRecipe("cobblestone", new ItemStack(Blocks.gravel,1));

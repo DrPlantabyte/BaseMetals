@@ -44,9 +44,9 @@ Electrum: This alloy of silver and gold can be enchanted like gold, but is sligh
 
 *Fantasy Metals*
 
-Cold Iron (found in the Nether): Strong as iron. Tools made from Cold Iron are extra effective against arthropods.
+Cold Iron (found in the Nether): Strong as iron. Tools made from Cold Iron are extra effective against fiends (denizens of the Nether).
 
-Adamantine (found in the Nether): Strong as diamond. Armor made from Adamantine grants resistance to damage and tools made from adamantine are extra effective against monsters native to the Nether such as ghasts and blazes.
+Adamantine (found in the Nether): Strong as diamond. Armor made from Adamantine grants resistance to damage and tools made from adamantine are extra effective against monsters that have more than 10 hearts of health.
 
 Mithril (alloy of cold iron and silver): Strong as steel. Mithral weapons are extra effective against undead.
 

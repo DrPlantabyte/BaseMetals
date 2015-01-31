@@ -69,27 +69,24 @@ public class MetalMaterial {
 		if(o == this) return true;
 		if(o.hashCode() == this.hashCode() && o instanceof MetalMaterial){
 			MetalMaterial other = (MetalMaterial)o;
-			return this.identifier == other.identifier 
-					&& this.hardness == other.hardness 
-					&& this.strength == other.strength 
-					&& this.magicAffinity == other.magicAffinity; 
+			return this.identifier.equals(other.identifier); 
 		}
 		return false;
 	}
 	/**
 	 * Gets the tool harvest level
-	 * @return an integer from 0 (equivalent to no tool) to 4 (diamond tool equivalent)
+	 * @return an integer from -1 (equivalent to no tool) to 3 (diamond tool equivalent)
 	 */
 	public int getToolHarvestLevel(){
-		return (int)(hardness / 2.5f); 
+		return (int)(hardness / 2.5f) - 1; 
 	}
 	/**
 	 * Gets the tool harvest level needed from a tool trying to mine this 
 	 * metal's ore and other blocks
-	 * @return an integer from 0 (equivalent to no tool) to 4 (diamond tool equivalent)
+	 * @return an integer from -1 (equivalent to no tool) to 3 (diamond tool equivalent)
 	 */
 	public int getRequiredHarvestLevel(){
-		return (int)(0.9f*hardness / 2.5f); 
+		return (int)(0.9f*hardness / 2.5f) - 1; 
 	}
 	/**
 	 * Gets the resistance of blocks made from this metal to explosions

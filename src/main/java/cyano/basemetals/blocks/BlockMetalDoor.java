@@ -11,21 +11,19 @@ import cyano.basemetals.material.MetalMaterial;
 
 public class BlockMetalDoor extends net.minecraft.block.BlockDoor{
 
-	final Item dropItem;
 	final MetalMaterial metal;
-	public BlockMetalDoor(MetalMaterial metal, Item doorItem) {
+	public BlockMetalDoor(MetalMaterial metal) {
 		super(Material.iron);
 		this.stepSound = Block.soundTypeMetal;
 		this.metal = metal;
 		this.blockHardness = metal.getMetalBlockHardness();
 		this.blockResistance = metal.getBlastResistance();
-		this.dropItem = doorItem;
 	}
 	
 	@SideOnly(Side.CLIENT)
     @Override
     public Item getItem(final World w, final BlockPos c) {
-        return this.dropItem;
+        return cyano.basemetals.init.Items.getDoorItemForBlock(this);
     }
 
 }

@@ -11,26 +11,23 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
+import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
 import cyano.basemetals.registry.recipe.ICrusherRecipe;
 
 public class ItemCrackHammer extends ItemMetalTool{
 
-	private final MetalMaterial metal;
-	protected ItemCrackHammer(float attackDamage,ToolMaterial material,Set<Block> blockSet) {
-		super(attackDamage, material, blockSet);
-        this.setCreativeTab(CreativeTabs.tabTools);
+	public ItemCrackHammer(MetalMaterial metal) {
+		super("crackhammer",metal,2f);
 	}
 
-	public static ItemCrackHammer createTool(ToolMaterial material){
-		float attackDamage = 1+material.getHarvestLevel();
-		Set<Block> blockSet = new HashSet();
-		return new ItemCrackHammer(attackDamage, material, blockSet);
-	}
 	
 	@Override
     public float getStrVsBlock(final ItemStack tool, final Block target) {
-		return isCrushableBlock(target) ? 0.5f * this.toolMaterial.getEfficiencyOnProperMaterial() : 1.0f;
+		if(isCrushableBlock(target) ){
+			return Math.max(1.0f, 0.5f * this.metal.getToolEfficiency());
+		}
+		return 1.0f;
     }
 	
 	@Override

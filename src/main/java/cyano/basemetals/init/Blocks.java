@@ -86,10 +86,14 @@ public class Blocks {
 	public static Block zinc_ore;
 	
 	
-	
-	public static void initModBlocks(){
+	private static boolean initDone = false;
+	public static void init(){
+		if(initDone)return;
+		
+		cyano.basemetals.init.Materials.init();
 		
 		// TODO
+		initDone = true;
 	}
 	
 	private static Block createBars(MetalMaterial metal){
@@ -109,8 +113,8 @@ public class Blocks {
 		OreDictionary.registerOre("ore"+metal.getCapitalizedName(), block);
 		return block;
 	}
-	private static Block createDoor(MetalMaterial metal, Item doorItem){
-		Block block = new BlockMetalDoor(metal,doorItem);
+	private static Block createDoor(MetalMaterial metal){
+		Block block = new BlockMetalDoor(metal);
 		GameRegistry.registerBlock(block, metal.getName()+"_door");
 		return block;
 	}

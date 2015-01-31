@@ -3,6 +3,7 @@ package cyano.basemetals.init;
 import java.util.HashMap;
 import java.util.Map;
 
+import net.minecraft.item.Item.ToolMaterial;
 import cyano.basemetals.material.*;
 
 public class Materials {
@@ -23,11 +24,19 @@ public class Materials {
 	public static MetalMaterial mithril;
 	public static MetalMaterial adamantine;
 	public static MetalMaterial starsteel;
+	// vanilla imports
+	public static MetalMaterial iron;
+	public static MetalMaterial gold;
 	
 	private static boolean initDone = false;
 	public static void init(){
 		if(initDone)return;
 		
+		// vanilla metals
+		iron = addMaterial("iron",8,8,4.5);
+		gold = addMaterial("gold",1,1,10);
+		
+		// mod metals
 		copper = addMaterial("copper",4,4,5);
 		silver = addMaterial("silver", 4, 4, 6);
 		tin = addMaterial("tin", 3, 1, 2);
