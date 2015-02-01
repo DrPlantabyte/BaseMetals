@@ -14,12 +14,14 @@ public abstract class Recipes {
 		
 		cyano.basemetals.init.Items.init();
 		
+		initVanillaCrusherRecipes();
+		
 		// TODO
 		initDone = true;
 	}
 	
 	
-	private static void initVanillaCrusherRecipes(FMLInitializationEvent event){
+	private static void initVanillaCrusherRecipes(){
 		// see OreDictionary.initVanillaEntries() for vanilla oreDict names
 		CrusherRecipeRegistry.addNewCrusherRecipe("stone", new ItemStack(Blocks.cobblestone,1));
 		CrusherRecipeRegistry.addNewCrusherRecipe("cobblestone", new ItemStack(Blocks.gravel,1));

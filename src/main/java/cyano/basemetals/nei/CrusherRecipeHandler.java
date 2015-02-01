@@ -1,21 +1,19 @@
 package cyano.basemetals.nei;
 
 import java.awt.Rectangle;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
-
-import org.lwjgl.opengl.GL11;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.common.registry.LanguageRegistry;
-import codechicken.nei.NEIClientUtils;
+import net.minecraft.util.StatCollector;
+
+import org.lwjgl.opengl.GL11;
+
 import codechicken.nei.PositionedStack;
 import codechicken.nei.recipe.TemplateRecipeHandler;
 import cyano.basemetals.BaseMetals;
@@ -84,7 +82,12 @@ public class CrusherRecipeHandler extends TemplateRecipeHandler{
 	
 	@Override
 	public String getRecipeName() {
-		return LanguageRegistry.instance().getStringLocalization("nei."+BaseMetals.MODID+".recipehandler.crusher.name");
+		String key = "nei."+BaseMetals.MODID+".recipehandler.crusher.name";
+		if(StatCollector.canTranslate(key)){
+			return StatCollector.translateToLocal(key); 
+		} else {
+			return "Crusher";
+		}
 	}
 
 	@Override
@@ -130,8 +133,8 @@ public class CrusherRecipeHandler extends TemplateRecipeHandler{
 	{
 		public CrusherPair(ItemStack ingred, ItemStack result) {
 			ingred.stackSize = 1;
-			this.ingred = new PositionedStack(ingred, 51, 6);
-			this.result = new PositionedStack(result, 111, 24);
+			this.ingred = new PositionedStack(ingred, 65, 23);
+			this.result = new PositionedStack(result, 123, 23);
 		}
 		public List<PositionedStack> getIngredients() {
 			return getCycledIngredients(cycleticks / 48, Arrays.asList(ingred));
