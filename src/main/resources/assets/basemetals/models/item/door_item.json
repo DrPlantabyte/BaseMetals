@@ -21,5 +21,22 @@
                 "east":  { "uv": [ 16, 0,  0, 16 ], "texture": "#top" }
             }
         }
-    ]
+    ],
+    "display": {
+        "thirdperson": {
+            "rotation": [ -90, 0, 0 ],
+            "translation": [ 2, 1, -2 ],
+            "scale": [ 0.55, 0.55, 0.55 ]
+        },
+        "firstperson": {
+            "rotation": [ -25, -45, 0 ],
+            "translation": [ 0, 4, 6 ],
+            "scale": [ 1.7, 1.7, 1.7 ]
+        },
+        "gui": {
+            "rotation": [ 0, 45, 0 ],
+            "translation": [ -2, -5, 2 ],
+            "scale": [ 1.5, 1.5, 1.5 ]
+        }
+    }
 }
