@@ -39,4 +39,4 @@ brass=2copper:1zinc
 steel=8iron:1carbon
 invar=2iron:1nickel
 electrum:1gold:1silver
-mithril:2silver:1coldiron
+mithril:1mercury:2silver:1coldiron

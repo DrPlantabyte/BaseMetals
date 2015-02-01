@@ -1,5 +1,6 @@
 package cyano.basemetals.init;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -94,5 +95,9 @@ public abstract class Materials {
 	
 	public static ArmorMaterial getArmorMaterialFor(MetalMaterial m){
 		return armorMaterialMap.get(m);
+	}
+
+	public static Collection<MetalMaterial> getAllMetals() {
+		return allMaterials.values();
 	}
 }

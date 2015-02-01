@@ -26,6 +26,11 @@ import cyano.basemetals.registry.IOreDictionaryEntry;
 public abstract class Blocks {
 	private static final Map<String,Block> allBlocks = new HashMap<>();
 	
+
+	public static Block getBlockByName(String string) {
+		return allBlocks.get(string);
+	}
+	
 	public static Block adamantine_bars;
 	public static Block adamantine_block;
 	public static BlockDoor adamantine_door;
@@ -258,4 +263,5 @@ public abstract class Blocks {
 				new ModelResourceLocation(BaseMetals.MODID+":"+name, "inventory"));
 		}
 	}
+
 }
