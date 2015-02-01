@@ -9,6 +9,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
@@ -117,6 +118,13 @@ public abstract class ItemMetalTool extends net.minecraft.item.ItemTool{
     		if(target.getMaxHealth() > 20f){
     			DamageSource extraDamage = DamageSource.generic; 
     			target.attackEntityFrom(extraDamage, 2f);
+    		}
+    	} else if(metal.equals(Materials.mithril)){
+    		if(target.getCreatureAttribute() == EnumCreatureAttribute.UNDEAD){
+    			final PotionEffect poison = new PotionEffect(20,60,3);
+    			final PotionEffect blind = new PotionEffect(15,60,1);
+    			target.addPotionEffect(poison);
+    			target.addPotionEffect(blind);
     		}
     	}
     }

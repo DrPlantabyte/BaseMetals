@@ -11,3 +11,5 @@
 /eclipse/.metadata/*.index
 *.index
 *~
+/temp/*
+temp/*
