@@ -69,6 +69,7 @@ public abstract class Items {
 	public static Item bronze_powder;
 	public static Item bronze_shovel;
 	public static Item bronze_sword;
+	public static Item carbon_powder;
 	public static Item coldiron_axe;
 	public static Item coldiron_boots;
 	public static Item coldiron_chestplate;
@@ -296,6 +297,13 @@ public abstract class Items {
 		bronze_powder = create_powder(Materials.bronze);
 		bronze_shovel = create_shovel(Materials.bronze);
 		bronze_sword = create_sword(Materials.bronze);
+		
+		carbon_powder = new Item().setUnlocalizedName(BaseMetals.MODID+"."+"carbon_powder").setCreativeTab(CreativeTabs.tabMaterials);
+		GameRegistry.registerItem(carbon_powder,"carbon_powder");
+		allItems.put(carbon_powder, "carbon_powder");
+		OreDictionary.registerOre("dustCoal", carbon_powder);
+		OreDictionary.registerOre("dustCarbon", carbon_powder);
+		
 		coldiron_axe = create_axe(Materials.coldiron);
 		coldiron_boots = create_boots(Materials.coldiron);
 		coldiron_chestplate = create_chestplate(Materials.coldiron);
@@ -339,7 +347,7 @@ public abstract class Items {
 		electrum_powder = create_powder(Materials.electrum);
 		electrum_shovel = create_shovel(Materials.electrum);
 		electrum_sword = create_sword(Materials.electrum);
-		gold_powder = create_powder(Materials.gold);
+		gold_powder = create_powder(Materials.vanilla_gold);
 		invar_axe = create_axe(Materials.invar);
 		invar_blend = create_blend(Materials.invar);
 		invar_boots = create_boots(Materials.invar);
@@ -355,9 +363,9 @@ public abstract class Items {
 		invar_powder = create_powder(Materials.invar);
 		invar_shovel = create_shovel(Materials.invar);
 		invar_sword = create_sword(Materials.invar);
-		iron_crackhammer = create_crackhammer(Materials.iron);
-		iron_nugget = create_nugget(Materials.iron);
-		iron_powder = create_powder(Materials.iron);
+		iron_crackhammer = create_crackhammer(Materials.vanilla_iron);
+		iron_nugget = create_nugget(Materials.vanilla_iron);
+		iron_powder = create_powder(Materials.vanilla_iron);
 		lead_axe = create_axe(Materials.lead);
 		lead_boots = create_boots(Materials.lead);
 		lead_chestplate = create_chestplate(Materials.lead);

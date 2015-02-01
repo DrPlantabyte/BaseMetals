@@ -1,15 +1,20 @@
 package cyano.basemetals.items;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
@@ -51,6 +56,48 @@ public class ItemCrackHammer extends ItemMetalTool{
 		return super.onBlockDestroyed(tool, world, target, coord, player);
 		
 	}
+	
+	@Override
+	//public boolean onLeftClickEntity(final ItemStack item, final EntityPlayer player, final Entity target) {
+	public boolean onItemUse(final ItemStack item, final EntityPlayer player, final World w, 
+			final BlockPos coord, final EnumFacing facing, 
+			final float partialX, final float partialY, final float partialZ) {		
+		if(facing != EnumFacing.UP) return false;
+		if(w.isRemote) return true;
+		List<Entity> entities = w.getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(
+				coord.getX(),coord.getY()+1,coord.getZ(),
+				coord.getX()+1,coord.getY()+2,coord.getZ()+1));
+		boolean success = false;
+		for(Entity target : entities){
+			if(target instanceof net.minecraft.entity.item.EntityItem){
+				ItemStack targetItem = ((net.minecraft.entity.item.EntityItem)target).getEntityItem();
+				if(targetItem != null ){
+					ICrusherRecipe recipe = CrusherRecipeRegistry.getInstance().getRecipeForInputItem(targetItem);
+					if(recipe != null){
+						// crush the item
+						ItemStack output = recipe.getOutput().copy();
+						int count = output.stackSize;
+						output.stackSize = targetItem.stackSize;
+				//		World w = target.getEntityWorld();
+						double x = target.posX;
+						double y = target.posY;
+						double z = target.posZ;
+						
+						w.removeEntity(target);
+						for(int i = 0; i < count; i++){
+							w.spawnEntityInWorld(new EntityItem(w,x,y,z,output.copy()));
+						}
+						item.damageItem(1, player);
+						success = true;
+						if(item.stackSize <= 0) break;
+						
+					}
+				}
+			}
+		}
+        return success;
+    }
+	
 	protected boolean isCrushableBlock(IBlockState block){
 		return getCrusherRecipe(block) != null;
 	}
