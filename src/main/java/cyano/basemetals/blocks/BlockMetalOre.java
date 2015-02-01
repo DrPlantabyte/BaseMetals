@@ -16,6 +16,7 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLLog;
 
 public class BlockMetalOre extends BlockOre implements IOreDictionaryEntry{
 
@@ -28,6 +29,7 @@ public class BlockMetalOre extends BlockOre implements IOreDictionaryEntry{
 		this.blockHardness = Math.max(5f,metal.getOreBlockHardness());
 		this.blockResistance = Math.max(1.5f,metal.getBlastResistance()*0.75f);
 		this.setHarvestLevel("pickaxe", metal.getRequiredHarvestLevel());
+	//	FMLLog.info(metal.getName()+" ore harvest level set to "+metal.getRequiredHarvestLevel());
 	}
 
 	@Override

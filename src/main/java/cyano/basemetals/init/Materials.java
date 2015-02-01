@@ -47,7 +47,7 @@ public abstract class Materials {
 		
 		// mod metals
 		copper = addMaterial("copper",4,4,5);
-		silver = addMaterial("silver", 4, 4, 6);
+		silver = addMaterial("silver", 5, 4, 6);
 		tin = addMaterial("tin", 3, 1, 2);
 		lead = new LeadMaterial("lead", 1, 1, 1);
 		registerMaterial(lead.getName(), lead);
@@ -57,10 +57,10 @@ public abstract class Materials {
 		brass = addMaterial("brass", 3.5, 3, 5);
 		steel = addMaterial("steel", 8, 15, 2);
 		invar = addMaterial("invar", 9, 10, 3);
-		electrum = addMaterial("electrum", 4, 4, 10);
+		electrum = addMaterial("electrum", 5, 4, 10);
 		coldiron = addMaterial("coldiron", 7, 7, 7);
 		mithril = addMaterial("mithril", 9, 9, 9);
-		adamantine = new AdamantineMaterial("adamantine", 10, 100, 0);
+		adamantine = new AdamantineMaterial("adamantine", 12, 100, 0);
 		registerMaterial(adamantine.getName(), adamantine);
 		starsteel = new StarSteelMaterial("starsteel", 10, 25, 12);
 		registerMaterial(starsteel.getName(), starsteel);

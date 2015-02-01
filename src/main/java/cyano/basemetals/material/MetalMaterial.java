@@ -80,7 +80,7 @@ public class MetalMaterial {
 	 * @return an integer from -1 (equivalent to no tool) to 3 (diamond tool equivalent)
 	 */
 	public int getToolHarvestLevel(){
-		return (int)(hardness / 2.5f) - 1; 
+		return (int)(hardness / 3f); 
 	}
 	/**
 	 * Gets the tool harvest level needed from a tool trying to mine this 
@@ -88,7 +88,23 @@ public class MetalMaterial {
 	 * @return an integer from -1 (equivalent to no tool) to 3 (diamond tool equivalent)
 	 */
 	public int getRequiredHarvestLevel(){
-		return (int)(0.9f*hardness / 2.5f) - 1; 
+		return (int)clamp((0.9f*hardness / 3f),-1,3); 
+	}
+	
+	static int clamp(int x, int min, int max){
+		if(x < min)return min;
+		if(x > max) return max;
+		return x;
+	}
+	static float clamp(float x, float min, float max){
+		if(x < min)return min;
+		if(x > max) return max;
+		return x;
+	}
+	static double clamp(double x, double min, double max){
+		if(x < min)return min;
+		if(x > max) return max;
+		return x;
 	}
 	/**
 	 * Gets the resistance of blocks made from this metal to explosions

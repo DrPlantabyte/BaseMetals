@@ -7,9 +7,6 @@ public class StarSteelMaterial extends MetalMaterial {
 		super(name, hardness, strength, magic);
 	}
 
-	public int getRequiredHarvestLevel(){
-		return 4; 
-	}
 	
 	public float getBlastResistance(){
 		return 2000;
