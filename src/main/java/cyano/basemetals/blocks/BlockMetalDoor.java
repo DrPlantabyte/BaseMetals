@@ -23,6 +23,7 @@ public class BlockMetalDoor extends net.minecraft.block.BlockDoor{
 		this.metal = metal;
 		this.blockHardness = metal.getMetalBlockHardness();
 		this.blockResistance = metal.getBlastResistance();
+		this.setHarvestLevel("pickaxe", metal.getRequiredHarvestLevel());
 		this.disableStats();
 	}
 	

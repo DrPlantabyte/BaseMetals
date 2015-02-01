@@ -19,6 +19,7 @@ public class BlockMetalTrapDoor extends net.minecraft.block.BlockTrapDoor{
 		this.blockHardness = metal.getMetalBlockHardness();
 		this.blockResistance = metal.getBlastResistance();
 		this.stepSound = Block.soundTypeMetal;
+		this.setHarvestLevel("pickaxe", metal.getRequiredHarvestLevel());
 		this.disableStats();
 	}
 

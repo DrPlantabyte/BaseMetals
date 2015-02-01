@@ -27,6 +27,7 @@ public class BlockMetalOre extends BlockOre implements IOreDictionaryEntry{
 		this.metal = metal;
 		this.blockHardness = Math.max(5f,metal.getOreBlockHardness());
 		this.blockResistance = Math.max(1.5f,metal.getBlastResistance()*0.75f);
+		this.setHarvestLevel("pickaxe", metal.getRequiredHarvestLevel());
 	}
 
 	@Override

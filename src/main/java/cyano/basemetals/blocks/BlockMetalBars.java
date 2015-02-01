@@ -14,6 +14,7 @@ public class BlockMetalBars extends net.minecraft.block.BlockPane {
 		this.metal = metal;
 		this.blockHardness = metal.getMetalBlockHardness();
 		this.blockResistance = metal.getBlastResistance();
+		this.setHarvestLevel("pickaxe", metal.getRequiredHarvestLevel());
 	}
 	
 }

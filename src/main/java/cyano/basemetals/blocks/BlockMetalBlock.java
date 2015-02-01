@@ -24,6 +24,7 @@ public class BlockMetalBlock extends Block implements IOreDictionaryEntry{
 		this.metal = metal;
 		this.blockHardness = metal.getMetalBlockHardness();
 		this.blockResistance = metal.getBlastResistance();
+		this.setHarvestLevel("pickaxe", metal.getRequiredHarvestLevel());
 		this.setCreativeTab(CreativeTabs.tabBlock);
 	}
 
