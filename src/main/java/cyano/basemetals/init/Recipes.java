@@ -42,7 +42,7 @@ public abstract class Recipes {
 		CrusherRecipeRegistry.addNewCrusherRecipe("oreLapis", new ItemStack(Items.dye,8,4));
 		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.redstone_ore, new ItemStack(Items.redstone,6));
 		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.redstone_block, new ItemStack(Items.redstone,9));
-		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.reeds, new ItemStack(Items.sugar,2));
+		CrusherRecipeRegistry.addNewCrusherRecipe(Items.reeds, new ItemStack(Items.sugar,2));
 		CrusherRecipeRegistry.addNewCrusherRecipe(Items.bone, new ItemStack(Items.dye,3,15));
 		CrusherRecipeRegistry.addNewCrusherRecipe(Items.blaze_rod, new ItemStack(Items.blaze_powder,2));
 		CrusherRecipeRegistry.addNewCrusherRecipe("oreQuartz", new ItemStack(Items.quartz,2));
@@ -117,6 +117,9 @@ public abstract class Recipes {
 			if(ingot != null && block != null){
 				GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ingot,9), new ItemStack(block)));
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(block), "xxx","xxx","xxx",'x',ingot));
+			}
+			if(block != null && powder != null){
+				CrusherRecipeRegistry.addNewCrusherRecipe(block, new ItemStack(powder,9));
 			}
 			if(ingot != null && bars != null){
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bars,16), "xxx","xxx",'x',ingot));

@@ -7,10 +7,12 @@ import java.util.List;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.inventory.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
+import net.minecraftforge.fml.common.FMLLog;
 
 import org.lwjgl.opengl.GL11;
 
@@ -35,6 +37,7 @@ public class CrusherRecipeHandler extends TemplateRecipeHandler{
 	@Override
 	public void loadUsageRecipes(ItemStack ingredient) {
 		ICrusherRecipe recipe = CrusherRecipeRegistry.getInstance().getRecipeForInputItem(ingredient);
+		if(recipe == null) return;
 		arecipes.add(new CrusherPair(ingredient.copy(),recipe.getOutput()));
 	}
 
@@ -44,7 +47,7 @@ public class CrusherRecipeHandler extends TemplateRecipeHandler{
 		if(recipes == null) return; // no crusher recipes
 		for(ICrusherRecipe r : recipes){
 			for(ItemStack input : r.getValidInputs()){
-				arecipes.add(new CrusherPair(input.copy(),result.copy()));
+				arecipes.add(new CrusherPair(input.copy(),r.getOutput().copy()));
 			}
 		}
 	}
@@ -64,9 +67,11 @@ public class CrusherRecipeHandler extends TemplateRecipeHandler{
 		if (outputId.equals("crusher") && getClass() == CrusherRecipeHandler.class) {// we don't want overstep subclasses
 			// add all crusher recipes
 			Collection<ICrusherRecipe> recipes = CrusherRecipeRegistry.getInstance().getAllRecipes();
+			if(recipes == null) return;
 			for(ICrusherRecipe r : recipes){
+				if(r == null) continue;
 				for(ItemStack input : r.getValidInputs()){
-					arecipes.add(new CrusherPair(input,r.getOutput()));
+					arecipes.add(new CrusherPair(input.copy(),r.getOutput().copy()));
 				}
 			}
 			
@@ -99,7 +104,6 @@ public class CrusherRecipeHandler extends TemplateRecipeHandler{
 	public Class<? extends GuiContainer> getGuiClass() {
 		return GuiCrusher.class;
 	}
-	// TODO: copy code from FurnaceRecipeHandler
 	
 	public static class GuiCrusher extends GuiContainer{
 
@@ -132,6 +136,15 @@ public class CrusherRecipeHandler extends TemplateRecipeHandler{
 	public class CrusherPair extends CachedRecipe
 	{
 		public CrusherPair(ItemStack ingred, ItemStack result) {
+			if(ingred == null || result == null){
+				FMLLog.warning("Added null item to NEI GUI: "+ingred+" -> "+result);
+				if(ingred == null){
+					ingred = new ItemStack(Blocks.air);
+				}
+				if(result == null){
+					result = new ItemStack(Blocks.air);
+				}
+			}
 			ingred.stackSize = 1;
 			this.ingred = new PositionedStack(ingred, 65, 23);
 			this.result = new PositionedStack(result, 123, 23);

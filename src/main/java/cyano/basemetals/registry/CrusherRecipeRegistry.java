@@ -112,7 +112,7 @@ public class CrusherRecipeRegistry {
 			// add recipe cache
 			List<ICrusherRecipe> recipeCache = new ArrayList<>();
 			for(ICrusherRecipe r : recipes){
-				if(ItemStack.areItemStacksEqual(r.getOutput(), output)){
+				if(ItemStack.areItemsEqual(r.getOutput(), output)){
 					recipeCache.add(r);
 				}
 			}
