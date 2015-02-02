@@ -1,80 +1,160 @@
 package cyano.basemetals.items;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirt;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
+import net.minecraftforge.oredict.OreDictionary;
+import cyano.basemetals.init.Materials;
 import cyano.basemetals.material.MetalMaterial;
 
-public class ItemMetalHoe extends ItemMetalTool {
+public class ItemMetalHoe extends ItemHoe {
 
+	protected final MetalMaterial metal;
+	protected final Set<String> toolTypes;
+	protected final String repairOreDictName;
+	protected final boolean regenerates;
+	protected final long regenInterval = 200; 
+	protected final float attackDamage;
+	
 	public ItemMetalHoe(MetalMaterial metal) {
-		super("hoe", metal, 0);
+		super( ToolMaterial.IRON);
+		this.metal = metal;
+		this.setMaxDamage(metal.getToolDurability());
+		// this.damageVsEntity = attackDamage + metal.getBaseAttackDamage(); // damageVsEntity  is private, sadly
+		this.attackDamage =  metal.getBaseAttackDamage();
+		// this.toolClass = toolType; toolClass is private, sadly
+		this.toolTypes = new HashSet<>();
+		toolTypes.add("hoe");
+		repairOreDictName = "ingot"+metal.getCapitalizedName();
+		if(metal.equals(Materials.starsteel)){
+			regenerates = true;
+		} else {
+			regenerates = false;
+		}
 	}
 
-	@Override
-	public boolean onItemUse(final ItemStack item, final EntityPlayer player, final World world, final BlockPos coord, 
-			final EnumFacing facing, final float partialX, final float partialY, final float partialZ) {
-		if (!player.canPlayerEdit(coord.offset(facing), facing, item)) {
-			return false;
-		}
-		final int hook = ForgeEventFactory.onHoeUse(item, player, world, coord);
-		if (hook != 0) {
-			return hook > 0;
-		}
-		final IBlockState iblockstate = world.getBlockState(coord);
-		final Block block = iblockstate.getBlock();
-		if (facing != EnumFacing.DOWN && world.isAirBlock(coord.up())) {
-			if (block == Blocks.grass) {
-				return this.useHoe(item, player, world, coord, Blocks.farmland.getDefaultState());
-			}
-			if (block == Blocks.dirt) {
-				switch (SwitchDirtType.TYPE_LOOKUP[((BlockDirt.DirtType)iblockstate.getValue(BlockDirt.VARIANT)).ordinal()]) {
-					case 1: {
-						return this.useHoe(item, player, world, coord, Blocks.farmland.getDefaultState());
-					}
-					case 2: {
-						return this.useHoe(item, player, world, coord, Blocks.dirt.getDefaultState().withProperty(BlockDirt.VARIANT, BlockDirt.DirtType.DIRT));
-					}
-				}
-			}
+	
+
+
+
+	
+
+    @Override
+    public boolean getIsRepairable(final ItemStack intputItem, final ItemStack repairMaterial) {
+    	List<ItemStack> acceptableItems = OreDictionary.getOres(repairOreDictName);
+    	for(ItemStack i : acceptableItems ){
+    		if(ItemStack.areItemsEqual(i, repairMaterial)) return true;
+    	}
+    	return false;
+    }
+    
+    @Override
+    public int getHarvestLevel(final ItemStack item, final String typeRequested) {
+    	if (typeRequested != null && toolTypes.contains(typeRequested)) {
+            return metal.getToolHarvestLevel();
+        }
+        return -1;
+    }
+    @Override
+    public Set<String> getToolClasses(final ItemStack item) {
+        return toolTypes;
+    }
+    
+    @Override
+    public float getStrVsBlock(final ItemStack tool, final Block target){
+    	if(this.canHarvestBlock(target,tool)){
+    		return Math.max(1.0f,metal.getToolEfficiency());
+    	} else {
+    		return 1.0f;
+    	}
+    }
+    
+    @Override
+    public boolean hitEntity(final ItemStack item, final EntityLivingBase target, final EntityLivingBase attacker) {
+        super.hitEntity(item, target, attacker);
+        extraEffectsOnAttack(item, target, attacker);
+        return true;
+    }
+    
+    public void extraEffectsOnAttack(final ItemStack item, final EntityLivingBase target, final EntityLivingBase attacker){
+    	if(metal.equals(Materials.coldiron)){
+    		if(target.isImmuneToFire()){
+    			DamageSource extraDamage = DamageSource.generic; 
+    			target.attackEntityFrom(extraDamage, 3f);
+    		}
+    	} else if(metal.equals(Materials.adamantine)){
+    		if(target.getMaxHealth() > 20f){
+    			DamageSource extraDamage = DamageSource.generic; 
+    			target.attackEntityFrom(extraDamage, 2f);
+    		}
+    	} else if(metal.equals(Materials.mithril)){
+    		if(target.getCreatureAttribute() == EnumCreatureAttribute.UNDEAD){
+    			final PotionEffect poison = new PotionEffect(20,60,3);
+    			final PotionEffect blind = new PotionEffect(15,60,1);
+    			target.addPotionEffect(poison);
+    			target.addPotionEffect(blind);
+    		}
+    	}
+    }
+    
+    @Override
+    public void onCreated(final ItemStack item, final World world, final EntityPlayer crafter) {
+    	super.onCreated(item, world, crafter);
+    	extraEffectsOnCrafting(item, world, crafter);
+    }
+    
+    public void extraEffectsOnCrafting(final ItemStack item, final World world, final EntityPlayer crafter){
+    	if(metal.equals(Materials.mithril)){
+    		item.addEnchantment(Enchantment.smite, 2);
+    	}
+    }
+    
+    @Override
+    public void onUpdate(final ItemStack item, final World world, final Entity player, final int inventoryIndex, final boolean isHeld) {
+    	if(regenerates && !world.isRemote && isHeld && item.getItemDamage() > 0 && world.getTotalWorldTime() % regenInterval == 0){
+    		item.setItemDamage(item.getItemDamage() - 1);
+    	}
+    }
+    
+    @Override
+    public boolean canHarvestBlock(final Block target) {
+		if(this.toolTypes.contains(target.getHarvestTool(target.getDefaultState()))){
+			return metal.getToolHarvestLevel() >= target.getHarvestLevel(target.getDefaultState());
 		}
 		return false;
-	}
-
-	protected boolean useHoe(final ItemStack item, final EntityPlayer player, final World world, 
-			final BlockPos coord, final IBlockState bs) {
-		world.playSoundEffect(coord.getX() + 0.5f, coord.getY() + 0.5f, coord.getZ() + 0.5f, bs.getBlock().stepSound.getStepSound(), (bs.getBlock().stepSound.getVolume() + 1.0f) / 2.0f, bs.getBlock().stepSound.getFrequency() * 0.8f);
-		if (world.isRemote) {
-			return true;
-		}
-		world.setBlockState(coord, bs);
-		item.damageItem(1, player);
-		return true;
-	}
-
-
-	static final class SwitchDirtType
-	{
-		static final int[] TYPE_LOOKUP;
-
-		static {
-			TYPE_LOOKUP = new int[BlockDirt.DirtType.values().length];
-			try {
-				SwitchDirtType.TYPE_LOOKUP[BlockDirt.DirtType.DIRT.ordinal()] = 1;
-			}
-			catch (NoSuchFieldError noSuchFieldError) {}
-			try {
-				SwitchDirtType.TYPE_LOOKUP[BlockDirt.DirtType.COARSE_DIRT.ordinal()] = 2;
-			}
-			catch (NoSuchFieldError noSuchFieldError2) {}
-		}
-	}
+    }
+    /**
+     * 
+     * @return The amount of damage dealt to an entity when attacked by this 
+     * item
+     */
+    public float getAttackDamage(){
+    	return attackDamage;
+    }
+    
+    public String getMaterialName() {
+        return metal.getName();
+    }
+	
+	
 
 }

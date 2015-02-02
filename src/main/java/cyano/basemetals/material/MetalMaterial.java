@@ -179,7 +179,7 @@ public class MetalMaterial {
 	 * Gets the enchantibility score for this material
 	 * @return
 	 */
-	public int getEnchantibility(){
+	public int getEnchantability(){
 		return (int)(2.5f * magicAffinity);
 	}
 

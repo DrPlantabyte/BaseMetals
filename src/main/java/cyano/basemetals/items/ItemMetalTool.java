@@ -144,7 +144,6 @@ public abstract class ItemMetalTool extends net.minecraft.item.ItemTool{
     @Override
     public void onUpdate(final ItemStack item, final World world, final Entity player, final int inventoryIndex, final boolean isHeld) {
     	if(regenerates && !world.isRemote && isHeld && item.getItemDamage() > 0 && world.getTotalWorldTime() % regenInterval == 0){
-    		// TODO: test whether this code should be server-side only
     		item.setItemDamage(item.getItemDamage() - 1);
     	}
     }
