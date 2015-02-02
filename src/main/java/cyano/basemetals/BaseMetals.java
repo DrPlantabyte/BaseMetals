@@ -1,8 +1,14 @@
 package cyano.basemetals;
 
-import cyano.basemetals.registry.CrusherRecipeRegistry;
-import net.minecraftforge.common.MinecraftForge;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
+
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -10,6 +16,8 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import cyano.basemetals.data.DataConstants;
+import cyano.basemetals.registry.CrusherRecipeRegistry;
 
 @Mod(modid = BaseMetals.MODID, name=BaseMetals.NAME, version = BaseMetals.VERSION)
 public class BaseMetals
@@ -19,14 +27,27 @@ public class BaseMetals
 	public static final String NAME ="Base Metals";
 	public static final String VERSION = "1.0.0";
 	
+	
+	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		// load config
-		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
-		config.load();
+	//	Configuration config = new Configuration(event.getSuggestedConfigurationFile());
+	//	config.load();
+	//	config.save();
 		
-		config.save();
+		Path oreSpawnFile = Paths.get(event.getSuggestedConfigurationFile().toPath().getParent().toString(),"worldgen","ore-spawn.json");
+		if(Files.exists(oreSpawnFile) == false){
+			try {
+				Files.createDirectories(oreSpawnFile.getParent());
+				Files.write(oreSpawnFile, Arrays.asList(DataConstants.defaultOreSpawnJSON.split("\n")), Charset.forName("UTF-8"));
+				cyano.basemetals.init.WorldGen.configure(oreSpawnFile);
+			} catch (IOException e) {
+				FMLLog.severe(MODID+": Error: Failed to write file "+oreSpawnFile);
+			}
+		}
+		
 		cyano.basemetals.init.Materials.init();
 		cyano.basemetals.init.Blocks.init();
 		cyano.basemetals.init.Items.init();
@@ -54,6 +75,7 @@ public class BaseMetals
 	{
 		
 		cyano.basemetals.init.Recipes.init();
+		
 
 		if(event.getSide() == Side.CLIENT){
 			clientInit(event);
@@ -78,6 +100,8 @@ public class BaseMetals
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 	{
+		
+		cyano.basemetals.init.WorldGen.init();
 
 		if(event.getSide() == Side.CLIENT){
 			clientPostInit(event);
