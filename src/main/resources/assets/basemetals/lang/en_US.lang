@@ -262,11 +262,11 @@ item.basemetals.tin_powder.name=Powdered Tin
 item.basemetals.tin_shovel.name=Tin Shovel
 item.basemetals.tin_sword.name=Tin Sword
 item.basemetals.tin_trapdoor.name=Tin Trapdoor
-item.basemetals.zinc_block.name=Tin Block
-item.basemetals.zinc_ingot.name=Tin Ingot
-item.basemetals.zinc_nugget.name=Tin Nugget
-item.basemetals.zinc_ore.name=Tin Ore
-item.basemetals.zinc_powder.name=Powdered Tin
+item.basemetals.zinc_block.name=Zinc Block
+item.basemetals.zinc_ingot.name=Zinc Ingot
+item.basemetals.zinc_nugget.name=Zinc Nugget
+item.basemetals.zinc_ore.name=Zinc Ore
+item.basemetals.zinc_powder.name=Powdered Zinc
 
 tile.basemetals.adamantine_bars.name=Adamantine Bars
 tile.basemetals.adamantine_block.name=Adamantine Block
