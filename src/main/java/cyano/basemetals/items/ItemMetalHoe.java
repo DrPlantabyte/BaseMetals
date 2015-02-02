@@ -33,15 +33,11 @@ public class ItemMetalHoe extends ItemHoe {
 	protected final String repairOreDictName;
 	protected final boolean regenerates;
 	protected final long regenInterval = 200; 
-	protected final float attackDamage;
 	
 	public ItemMetalHoe(MetalMaterial metal) {
-		super( ToolMaterial.IRON);
+		super(Materials.getToolMaterialFor(metal));
 		this.metal = metal;
 		this.setMaxDamage(metal.getToolDurability());
-		// this.damageVsEntity = attackDamage + metal.getBaseAttackDamage(); // damageVsEntity  is private, sadly
-		this.attackDamage =  metal.getBaseAttackDamage();
-		// this.toolClass = toolType; toolClass is private, sadly
 		this.toolTypes = new HashSet<>();
 		toolTypes.add("hoe");
 		repairOreDictName = "ingot"+metal.getCapitalizedName();
@@ -141,14 +137,6 @@ public class ItemMetalHoe extends ItemHoe {
 			return metal.getToolHarvestLevel() >= target.getHarvestLevel(target.getDefaultState());
 		}
 		return false;
-    }
-    /**
-     * 
-     * @return The amount of damage dealt to an entity when attacked by this 
-     * item
-     */
-    public float getAttackDamage(){
-    	return attackDamage;
     }
     
     public String getMaterialName() {

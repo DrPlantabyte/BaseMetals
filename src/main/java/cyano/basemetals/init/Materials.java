@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.FMLLog;
@@ -18,6 +19,7 @@ public abstract class Materials {
 
 	private static Map<String,MetalMaterial> allMaterials = new HashMap<>();
 	private static Map<MetalMaterial,ArmorMaterial> armorMaterialMap= new HashMap<>();
+	private static Map<MetalMaterial,ToolMaterial> toolMaterialMap= new HashMap<>();
 	
 	public static MetalMaterial copper;
 	public static MetalMaterial silver;
@@ -91,12 +93,26 @@ public abstract class Materials {
 		}
 		armorMaterialMap.put(m, am);
 		FMLLog.info("Created armor material enum "+am);
+		
+		ToolMaterial tm = EnumHelper.addToolMaterial(enumName, m.getToolHarvestLevel(), m.getToolDurability(), m.getToolEfficiency(), m.getBaseAttackDamage(), m.getEnchantability());
+		if(tm == null){
+			// uh-oh
+			FMLLog.severe("Failed to create tool material enum for "+m);
+		}
+		toolMaterialMap.put(m, tm);
+		FMLLog.info("Created tool material enum "+tm);
 	}
 	
 	public static ArmorMaterial getArmorMaterialFor(MetalMaterial m){
 		return armorMaterialMap.get(m);
 	}
 
+
+	public static ToolMaterial getToolMaterialFor(MetalMaterial m){
+		return toolMaterialMap.get(m);
+	}
+
+	
 	public static Collection<MetalMaterial> getAllMetals() {
 		return allMaterials.values();
 	}

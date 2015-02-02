@@ -564,7 +564,7 @@ public abstract class Items {
 
 	private static Item create_crackhammer(MetalMaterial m){
 		String n = "crackhammer";
-		Item i = new ItemCrackHammer(m);
+		Item i = new ItemMetalCrackHammer(m);
 		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);

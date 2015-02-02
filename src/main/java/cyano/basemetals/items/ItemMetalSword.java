@@ -37,7 +37,7 @@ public class ItemMetalSword extends ItemSword {
 	protected final long regenInterval = 200; 
 	protected final float attackDamage;
 	public ItemMetalSword(MetalMaterial metal) {
-		super(ToolMaterial.IRON);
+		super(Materials.getToolMaterialFor(metal));
 		this.metal = metal;
 		this.setMaxDamage(metal.getToolDurability());
 		// this.damageVsEntity = attackDamage + metal.getBaseAttackDamage(); // damageVsEntity  is private, sadly

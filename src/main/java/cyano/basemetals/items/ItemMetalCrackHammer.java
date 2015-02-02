@@ -28,21 +28,17 @@ import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
 import cyano.basemetals.registry.recipe.ICrusherRecipe;
 
-public class ItemCrackHammer extends ItemTool{
+public class ItemMetalCrackHammer extends ItemTool{
 	protected final MetalMaterial metal;
 	protected final Set<String> toolTypes;
 	protected final String repairOreDictName;
 	protected final boolean regenerates;
 	protected final long regenInterval = 200; 
-	protected final float attackDamage;
-	public ItemCrackHammer(MetalMaterial metal) {
-		super(2 + metal.getBaseAttackDamage() - ToolMaterial.IRON.getDamageVsEntity(), ToolMaterial.IRON, new HashSet<Block>());
+	public ItemMetalCrackHammer(MetalMaterial metal) {
+		super(2 + Materials.getToolMaterialFor(metal).getDamageVsEntity(), Materials.getToolMaterialFor(metal), new HashSet<Block>());
 		this.metal = metal;
 		this.setMaxDamage(metal.getToolDurability());
 		this.efficiencyOnProperMaterial = metal.getToolEfficiency();
-		// this.damageVsEntity = attackDamage + metal.getBaseAttackDamage(); // damageVsEntity  is private, sadly
-		this.attackDamage = 2 + metal.getBaseAttackDamage();
-		// this.toolClass = toolType; toolClass is private, sadly
 		this.toolTypes = new HashSet<>();
 		toolTypes.add("crackhammer");
 		repairOreDictName = "ingot"+metal.getCapitalizedName();
@@ -234,15 +230,7 @@ public class ItemCrackHammer extends ItemTool{
 		}
 		return false;
     }
-    /**
-     * 
-     * @return The amount of damage dealt to an entity when attacked by this 
-     * item
-     */
-    public float getAttackDamage(){
-    	return attackDamage;
-    }
-    
+   
     public String getMaterialName() {
         return metal.getName();
     }

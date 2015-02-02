@@ -30,16 +30,12 @@ public class ItemMetalAxe extends ItemAxe {
 	protected final String repairOreDictName;
 	protected final boolean regenerates;
 	protected final long regenInterval = 200; 
-	protected final float attackDamage;
 	
 	public ItemMetalAxe(MetalMaterial metal) {
-		super( ToolMaterial.IRON);
+		super(Materials.getToolMaterialFor(metal));
 		this.metal = metal;
 		this.setMaxDamage(metal.getToolDurability());
 		this.efficiencyOnProperMaterial = metal.getToolEfficiency();
-		// this.damageVsEntity = attackDamage + metal.getBaseAttackDamage(); // damageVsEntity  is private, sadly
-		this.attackDamage = 3 + metal.getBaseAttackDamage();
-		// this.toolClass = toolType; toolClass is private, sadly
 		this.toolTypes = new HashSet<>();
 		toolTypes.add("axe");
 		repairOreDictName = "ingot"+metal.getCapitalizedName();
@@ -149,14 +145,6 @@ public class ItemMetalAxe extends ItemAxe {
 			return metal.getToolHarvestLevel() >= target.getHarvestLevel(target.getDefaultState());
 		}
 		return false;
-    }
-    /**
-     * 
-     * @return The amount of damage dealt to an entity when attacked by this 
-     * item
-     */
-    public float getAttackDamage(){
-    	return attackDamage;
     }
     
     public String getMaterialName() {

@@ -173,7 +173,7 @@ public class MetalMaterial {
 	 * @return
 	 */
 	public float getBaseAttackDamage(){
-		return hardness / 2.5f;
+		return Math.max(0f,(hardness / 3f) - 0.5f);
 	}
 	/**
 	 * Gets the enchantibility score for this material
