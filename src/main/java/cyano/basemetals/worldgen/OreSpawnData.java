@@ -10,6 +10,9 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import net.minecraft.block.Block;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.FMLLog;
+import net.minecraftforge.fml.common.registry.GameData;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class OreSpawnData {
@@ -38,6 +41,8 @@ public class OreSpawnData {
 		biomesByName = Collections.unmodifiableSet(list);
 	}
 	
+	private static boolean doOnce = true; 
+	
 	public OreSpawnData(JsonObject jsonEntry){
 		String blockName = jsonEntry.get("blockID").getAsString();
 		String modId;
@@ -49,7 +54,20 @@ public class OreSpawnData {
 			modId = "minecraft";
 			name = blockName;
 		}
-		this.ore = GameRegistry.findBlock(modId, name);
+		//this.ore = GameRegistry.findBlock(modId, name); // sadly, this doesn't work because the GameData now store the block key as a ResourceLocation instead of a String
+		this.ore = GameData.getBlockRegistry().getObject(new ResourceLocation(blockName));
+		if(ore == null){
+			FMLLog.severe("Failed to find ore block "+modId+":"+name);
+			if(doOnce){
+				StringBuilder sb = new StringBuilder("Valid block IDs:\n");
+				for(Object key : GameData.getBlockRegistry().getKeys()){
+					sb.append("\t(").append(key.getClass().getName()).append(")\t")
+					.append(String.valueOf(key)).append("\n");
+				}
+				FMLLog.severe(sb.toString());
+				doOnce = false;
+			}
+		}
 		this.metaData = get("blockMeta",0,jsonEntry);
 		this.spawnQuantity = (int)get("size",8.0f,jsonEntry);
 		this.frequency = get("frequency",20.0f,jsonEntry);

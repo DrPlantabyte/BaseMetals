@@ -7,42 +7,49 @@ import java.util.Random;
 import java.util.Set;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.pattern.BlockHelper;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.Vec3i;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 import com.google.common.base.Predicate;
 
 public class OreSpawner implements IWorldGenerator {
 
+	// TODO: add overflow cache so that ores that spawn at edge of chunk can 
+	// appear in the neighboring chunk without triggering a chunk-load
+	
 	private final long hash; // used to make prng's different
+	private final int dimension;
 
 	private final OreSpawnData spawnData;
 	
-	public OreSpawner(Block oreBlock, int minHeight, int maxHeight, float spawnFrequency, int spawnQuantity, int spawnQuantityVariation, long hash){
-		this(oreBlock,0,minHeight,maxHeight,spawnFrequency,spawnQuantity,spawnQuantityVariation,null,hash);
+	public OreSpawner(Block oreBlock, int minHeight, int maxHeight, float spawnFrequency, int spawnQuantity, int spawnQuantityVariation, int dimension, long hash){
+		this(oreBlock,0,minHeight,maxHeight,spawnFrequency,spawnQuantity,spawnQuantityVariation,null,dimension,hash);
 	}
-	public OreSpawner(Block oreBlock, int metaDataValue, int minHeight, int maxHeight, float spawnFrequency, int spawnQuantity, int spawnQuantityVariation, long hash){
-		this(oreBlock,metaDataValue,minHeight,maxHeight,spawnFrequency,spawnQuantity,spawnQuantityVariation,null,hash);
+	public OreSpawner(Block oreBlock, int metaDataValue, int minHeight, int maxHeight, float spawnFrequency, int spawnQuantity, int spawnQuantityVariation, int dimension, long hash){
+		this(oreBlock,metaDataValue,minHeight,maxHeight,spawnFrequency,spawnQuantity,spawnQuantityVariation,null, dimension,hash);
 	}
-	public OreSpawner(Block oreBlock, int metaDataValue, int minHeight, int maxHeight, float spawnFrequency, int spawnQuantity, int spawnQuantityVariation, Collection<String> biomes, long hash){
+	public OreSpawner(Block oreBlock, int metaDataValue, int minHeight, int maxHeight, float spawnFrequency, int spawnQuantity, int spawnQuantityVariation, Collection<String> biomes, int dimension, long hash){
 		//	oreGen = new WorldGenMinable(oreBlock, 0, spawnQuantity, Blocks.stone);
-		this.spawnData= new OreSpawnData(oreBlock, metaDataValue, minHeight, maxHeight, spawnFrequency, spawnQuantity, spawnQuantityVariation, biomes);
-		this.hash = hash;
+		this(new OreSpawnData(oreBlock, metaDataValue, minHeight, maxHeight, spawnFrequency, spawnQuantity, spawnQuantityVariation, biomes),dimension,hash);
 	}
-	public OreSpawner(OreSpawnData spawnData, long hash){
+	public OreSpawner(OreSpawnData spawnData, int dimension, long hash){
 		this.spawnData = spawnData;
 		this.hash = hash;
+		this.dimension = dimension;
 	}
 		
 	
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world,
 			IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
+		if(world.provider.getDimensionId() != this.dimension) return;
 		BlockPos coord = new BlockPos((chunkX << 4) & 0x08,64,(chunkZ << 4) & 0x08);
 		if(spawnData.restrictBiomes){
 			if(!spawnData.biomesByName.contains(world.getBiomeGenForCoords(coord).biomeName)){
@@ -60,6 +67,11 @@ public class OreSpawner implements IWorldGenerator {
 	        //    System.out.println("Generating deposite of "+ore.getUnlocalizedName()+" at ("+x+","+y+","+z+")");
 	            spawnOre( new BlockPos(x,y,z), spawnData.ore,spawnData.metaData, spawnData.spawnQuantity + random.nextInt(2 * spawnData.variation) - spawnData.variation, world, random);
 			}
+		} else if(random.nextFloat() < spawnData.frequency){
+			int x = (chunkX << 4) + random.nextInt(16);
+            int y = random.nextInt(spawnData.maxY - spawnData.minY) + spawnData.minY;
+            int z = (chunkZ << 4) + random.nextInt(16);
+			spawnOre( new BlockPos(x,y,z), spawnData.ore,spawnData.metaData, spawnData.spawnQuantity + random.nextInt(2 * spawnData.variation) - spawnData.variation, world, random);
 		}
 	}
 	
@@ -135,11 +147,13 @@ public class OreSpawner implements IWorldGenerator {
 			target[n] = temp;
 		}
 	}
-
-	private final static Predicate refState = (Predicate)BlockHelper.forBlock(Blocks.stone);
+	private static final Predicate stonep = (Predicate)BlockHelper.forBlock(Blocks.stone);
 	private static void spawn(Block b, int m, World w, BlockPos coord){
 		if(coord.getY() < 0 || coord.getY() >= w.getHeight()) return;
-		if(w.getBlockState(coord).getBlock().isReplaceableOreGen(w, coord, refState)){
+		if(w.isAirBlock(coord)) return;
+		IBlockState bs = w.getBlockState(coord);
+		FMLLog.info("Spawning ore block "+b.getUnlocalizedName()+" at "+coord);
+		if(bs.getBlock().isReplaceableOreGen(w, coord, stonep)){
 			if(m == 0){
 				w.setBlockState(coord, b.getDefaultState(), 2);
 			} else {

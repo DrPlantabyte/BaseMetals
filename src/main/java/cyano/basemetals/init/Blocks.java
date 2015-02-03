@@ -257,7 +257,7 @@ public abstract class Blocks {
 	@SideOnly(Side.CLIENT)
 	public static void registerItemRenders(FMLInitializationEvent event){
 		for(String name : allBlocks.keySet()){
-		//	if(allBlocks.get(name) instanceof BlockDoor) continue;// do not add door blocks
+			if(allBlocks.get(name) instanceof BlockDoor) continue;// do not add door blocks
 			Minecraft.getMinecraft().getRenderItem().getItemModelMesher()
 			.register(net.minecraft.item.Item.getItemFromBlock(allBlocks.get(name)), 0, 
 				new ModelResourceLocation(BaseMetals.MODID+":"+name, "inventory"));

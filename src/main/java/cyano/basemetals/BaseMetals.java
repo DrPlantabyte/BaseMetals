@@ -7,6 +7,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 
+import org.apache.logging.log4j.Level;
+
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
@@ -37,17 +39,23 @@ public class BaseMetals
 	//	config.load();
 	//	config.save();
 		
-		Path oreSpawnFile = Paths.get(event.getSuggestedConfigurationFile().toPath().getParent().toString(),"worldgen","ore-spawn.json");
+		// TODO: create door-block item models to make FML shut-up about them
+		
+		Path oreSpawnFile = Paths.get(event.getSuggestedConfigurationFile().toPath().getParent().toString(),"basemetals","ore-spawn.json");
 		if(Files.exists(oreSpawnFile) == false){
 			try {
 				Files.createDirectories(oreSpawnFile.getParent());
 				Files.write(oreSpawnFile, Arrays.asList(DataConstants.defaultOreSpawnJSON.split("\n")), Charset.forName("UTF-8"));
-				cyano.basemetals.init.WorldGen.configure(oreSpawnFile);
 			} catch (IOException e) {
 				FMLLog.severe(MODID+": Error: Failed to write file "+oreSpawnFile);
 			}
 		}
-		
+
+		try {
+			cyano.basemetals.init.WorldGen.loadConfig(oreSpawnFile);
+		} catch (IOException e) {
+			FMLLog.log(Level.ERROR, e,MODID+": Error parsing ore-spawn config file "+oreSpawnFile);
+		}
 		cyano.basemetals.init.Materials.init();
 		cyano.basemetals.init.Blocks.init();
 		cyano.basemetals.init.Items.init();
