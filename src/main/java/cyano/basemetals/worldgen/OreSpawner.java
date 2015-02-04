@@ -2,9 +2,11 @@ package cyano.basemetals.worldgen;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
 import java.util.Random;
-import java.util.Set;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -21,8 +23,11 @@ import com.google.common.base.Predicate;
 
 public class OreSpawner implements IWorldGenerator {
 
-	// TODO: add overflow cache so that ores that spawn at edge of chunk can 
-	// appear in the neighboring chunk without triggering a chunk-load
+	/** overflow cache so that ores that spawn at edge of chunk can 
+	* appear in the neighboring chunk without triggering a chunk-load */
+	private static final Map<Integer2D,Map<BlockPos,IBlockState>> overflowCache = new HashMap<>();
+	private static final Deque<Integer2D> cacheOrder = new LinkedList<>();
+	private static final int maxCacheSize = 64; 
 	
 	private final long hash; // used to make prng's different
 	private final int dimension;
@@ -49,6 +54,13 @@ public class OreSpawner implements IWorldGenerator {
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world,
 			IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
+		// First, load cached blocks for neighboring chunk ore spawns
+		Integer2D chunkCoord = new Integer2D(chunkX, chunkZ);
+		Map<BlockPos,IBlockState> cache = retrieveCache(chunkCoord);
+		for(BlockPos p : cache.keySet()){
+			world.setBlockState(p, cache.get(p), 2);
+		}
+		// now to ore spawn
 		if(world.provider.getDimensionId() != this.dimension) return;
 		BlockPos coord = new BlockPos((chunkX << 4) & 0x08,64,(chunkZ << 4) & 0x08);
 		if(spawnData.restrictBiomes){
@@ -150,16 +162,83 @@ public class OreSpawner implements IWorldGenerator {
 	private static final Predicate stonep = (Predicate)BlockHelper.forBlock(Blocks.stone);
 	private static void spawn(Block b, int m, World w, BlockPos coord){
 		if(coord.getY() < 0 || coord.getY() >= w.getHeight()) return;
-		if(w.isAirBlock(coord)) return;
-		IBlockState bs = w.getBlockState(coord);
-		FMLLog.info("Spawning ore block "+b.getUnlocalizedName()+" at "+coord);
-		if(bs.getBlock().isReplaceableOreGen(w, coord, stonep)){
-			if(m == 0){
-				w.setBlockState(coord, b.getDefaultState(), 2);
-			} else {
-				w.setBlockState(coord, b.getStateFromMeta(m), 2);
+		if(w.isAreaLoaded(coord, 0)){
+			if(w.isAirBlock(coord)) return;
+			IBlockState bs = w.getBlockState(coord);
+	//		FMLLog.info("Spawning ore block "+b.getUnlocalizedName()+" at "+coord);
+			if(bs.getBlock().isReplaceableOreGen(w, coord, stonep)){
+				if(m == 0){
+					w.setBlockState(coord, b.getDefaultState(), 2);
+				} else {
+					w.setBlockState(coord, b.getStateFromMeta(m), 2);
+				}
 			}
+		} else {
+			// cache the block
+			IBlockState block = b.getStateFromMeta(m);
+			cacheOverflowBlock(block,coord);
 		}
+	}
+	
+	
+	protected static void cacheOverflowBlock(IBlockState bs, BlockPos coord){
+		Integer2D chunkCoord = new Integer2D(coord.getX() >> 4, coord.getY() >> 4);
+		if(overflowCache.containsKey(chunkCoord) == false){
+			cacheOrder.addLast(chunkCoord);
+			if(cacheOrder.size() > maxCacheSize){
+				Integer2D drop = cacheOrder.removeFirst();
+				overflowCache.get(drop).clear();
+				overflowCache.remove(drop);
+			}
+			overflowCache.put(chunkCoord, new HashMap<BlockPos,IBlockState>());
+		}
+		Map<BlockPos,IBlockState> cache = overflowCache.get(chunkCoord);
+		cache.put(coord, bs);
+	}
+	
+	protected static Map<BlockPos,IBlockState> retrieveCache(Integer2D chunkCoord ){
+		if(overflowCache.containsKey(chunkCoord)){
+			Map<BlockPos,IBlockState> cache =overflowCache.get(chunkCoord);
+			cacheOrder.remove(chunkCoord);
+			overflowCache.remove(chunkCoord);
+			return cache;
+		} else {
+			return Collections.EMPTY_MAP;
+		}
+	}
+	
+	protected static class Integer2D{
+		/**
+		 * X-coordinate of X,Y coordinate pair
+		 */
+		public final int X;
+		/**
+		 * Y-coordinate of X,Y coordinate pair
+		 */
+		public final int Y;
+		/**
+		 * Creates an integer pair to be used as 2D coordinates
+		 * @param x X-coordinate of X,Y coordinate pair
+		 * @param y Y-coordinate of X,Y coordinate pair
+		 */
+		public Integer2D(int x, int y){
+			this.X = x;
+			this.Y = y;
+		}
+		@Override
+		public int hashCode(){
+			return Integer.hashCode(X) ^ Integer.hashCode(Y); 
+		}
+		@Override
+		public boolean equals(Object o){
+			if(this == o) return true;
+			if(o instanceof Integer2D){
+				Integer2D other = (Integer2D)o;
+				return other.X == this.X && other.Y == this.Y;
+			}
+			return false;
+		}
+		
 	}
 
 }
