@@ -25,8 +25,8 @@ public class OreSpawner implements IWorldGenerator {
 
 	/** overflow cache so that ores that spawn at edge of chunk can 
 	* appear in the neighboring chunk without triggering a chunk-load */
-	private static final Map<Integer2D,Map<BlockPos,IBlockState>> overflowCache = new HashMap<>();
-	private static final Deque<Integer2D> cacheOrder = new LinkedList<>();
+	private static final Map<Integer3D,Map<BlockPos,IBlockState>> overflowCache = new HashMap<>();
+	private static final Deque<Integer3D> cacheOrder = new LinkedList<>();
 	private static final int maxCacheSize = 64; 
 	
 	private final long hash; // used to make prng's different
@@ -54,13 +54,7 @@ public class OreSpawner implements IWorldGenerator {
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world,
 			IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
-		// First, load cached blocks for neighboring chunk ore spawns
-		Integer2D chunkCoord = new Integer2D(chunkX, chunkZ);
-		Map<BlockPos,IBlockState> cache = retrieveCache(chunkCoord);
-		for(BlockPos p : cache.keySet()){
-			world.setBlockState(p, cache.get(p), 2);
-		}
-		// now to ore spawn
+		// restriction checks
 		if(world.provider.getDimensionId() != this.dimension) return;
 		BlockPos coord = new BlockPos((chunkX << 4) & 0x08,64,(chunkZ << 4) & 0x08);
 		if(spawnData.restrictBiomes){
@@ -69,6 +63,15 @@ public class OreSpawner implements IWorldGenerator {
 				return;
 			}
 		}
+		// First, load cached blocks for neighboring chunk ore spawns
+		Integer3D chunkCoord = new Integer3D(chunkX, chunkZ, world.provider.getDimensionId());
+		Map<BlockPos,IBlockState> cache = retrieveCache(chunkCoord);
+		for(BlockPos p : cache.keySet()){
+		//	FMLLog.info("Placed block "+cache.get(p)+" from cache at "+p);
+			world.setBlockState(p, cache.get(p), 2);
+		}
+		// now to ore spawn
+		
 		random.setSeed(random.nextLong() ^ hash);
 		random.nextInt(); // prng prime
 		if(spawnData.frequency >= 1){
@@ -76,13 +79,14 @@ public class OreSpawner implements IWorldGenerator {
 				int x = (chunkX << 4) + random.nextInt(16);
 	            int y = random.nextInt(spawnData.maxY - spawnData.minY) + spawnData.minY;
 	            int z = (chunkZ << 4) + random.nextInt(16);
-	        //    System.out.println("Generating deposite of "+ore.getUnlocalizedName()+" at ("+x+","+y+","+z+")");
+	    //        FMLLog.info("Generating deposite of "+spawnData.ore.getUnlocalizedName()+" at ("+x+","+y+","+z+")");
 	            spawnOre( new BlockPos(x,y,z), spawnData.ore,spawnData.metaData, spawnData.spawnQuantity + random.nextInt(2 * spawnData.variation) - spawnData.variation, world, random);
 			}
 		} else if(random.nextFloat() < spawnData.frequency){
 			int x = (chunkX << 4) + random.nextInt(16);
             int y = random.nextInt(spawnData.maxY - spawnData.minY) + spawnData.minY;
             int z = (chunkZ << 4) + random.nextInt(16);
+        //    FMLLog.info("Generating deposit of "+spawnData.ore.getUnlocalizedName()+" at ("+x+","+y+","+z+")");
 			spawnOre( new BlockPos(x,y,z), spawnData.ore,spawnData.metaData, spawnData.spawnQuantity + random.nextInt(2 * spawnData.variation) - spawnData.variation, world, random);
 		}
 	}
@@ -109,7 +113,7 @@ public class OreSpawner implements IWorldGenerator {
 			System.arraycopy(offsetIndexRef, 0, scrambledLUT, 0, scrambledLUT.length);
 			scramble(scrambledLUT,prng);
 			while(count > 0){
-				spawn(oreBlock,metaData,world,blockPos.add(offsets[--count]));
+				spawn(oreBlock,metaData,world,blockPos.add(offsets[offsetIndexRef[--count]]),world.provider.getDimensionId());
 			}
 			return;
 		}
@@ -122,7 +126,7 @@ public class OreSpawner implements IWorldGenerator {
 					for(int dz = (int)(-1 * radius); dz < radius; dz++){
 						for(int dx = (int)(-1 * radius); dx < radius; dx++){
 							if((dx*dx + dy*dy + dz*dz) <= rSqr){
-								spawn(oreBlock,metaData,world,blockPos.add(dx,dy,dz));
+								spawn(oreBlock,metaData,world,blockPos.add(dx,dy,dz),world.provider.getDimensionId());
 								count--;
 							}
 							if(count <= 0) {
@@ -137,7 +141,7 @@ public class OreSpawner implements IWorldGenerator {
 					for(int dx = (int)(radius); dx >= (int)(-1 * radius); dx--){
 						for(int dz = (int)(radius); dz >= (int)(-1 * radius); dz--){
 							if((dx*dx + dy*dy + dz*dz) <= rSqr){
-								spawn(oreBlock,metaData,world,blockPos.add(dx,dy,dz));
+								spawn(oreBlock,metaData,world,blockPos.add(dx,dy,dz),world.provider.getDimensionId());
 								count--;
 							}
 							if(count <= 0) {
@@ -160,12 +164,12 @@ public class OreSpawner implements IWorldGenerator {
 		}
 	}
 	private static final Predicate stonep = (Predicate)BlockHelper.forBlock(Blocks.stone);
-	private static void spawn(Block b, int m, World w, BlockPos coord){
+	private static void spawn(Block b, int m, World w, BlockPos coord, int dimension){
 		if(coord.getY() < 0 || coord.getY() >= w.getHeight()) return;
 		if(w.isAreaLoaded(coord, 0)){
 			if(w.isAirBlock(coord)) return;
 			IBlockState bs = w.getBlockState(coord);
-	//		FMLLog.info("Spawning ore block "+b.getUnlocalizedName()+" at "+coord);
+		//	FMLLog.info("Spawning ore block "+b.getUnlocalizedName()+" at "+coord);
 			if(bs.getBlock().isReplaceableOreGen(w, coord, stonep)){
 				if(m == 0){
 					w.setBlockState(coord, b.getDefaultState(), 2);
@@ -176,17 +180,18 @@ public class OreSpawner implements IWorldGenerator {
 		} else {
 			// cache the block
 			IBlockState block = b.getStateFromMeta(m);
-			cacheOverflowBlock(block,coord);
+		//	FMLLog.info("Cached ore block "+block+" at "+coord);
+			cacheOverflowBlock(block,coord,dimension);
 		}
 	}
 	
 	
-	protected static void cacheOverflowBlock(IBlockState bs, BlockPos coord){
-		Integer2D chunkCoord = new Integer2D(coord.getX() >> 4, coord.getY() >> 4);
+	protected static void cacheOverflowBlock(IBlockState bs, BlockPos coord, int dimension){
+		Integer3D chunkCoord = new Integer3D(coord.getX() >> 4, coord.getY() >> 4, dimension);
 		if(overflowCache.containsKey(chunkCoord) == false){
 			cacheOrder.addLast(chunkCoord);
 			if(cacheOrder.size() > maxCacheSize){
-				Integer2D drop = cacheOrder.removeFirst();
+				Integer3D drop = cacheOrder.removeFirst();
 				overflowCache.get(drop).clear();
 				overflowCache.remove(drop);
 			}
@@ -196,7 +201,7 @@ public class OreSpawner implements IWorldGenerator {
 		cache.put(coord, bs);
 	}
 	
-	protected static Map<BlockPos,IBlockState> retrieveCache(Integer2D chunkCoord ){
+	protected static Map<BlockPos,IBlockState> retrieveCache(Integer3D chunkCoord ){
 		if(overflowCache.containsKey(chunkCoord)){
 			Map<BlockPos,IBlockState> cache =overflowCache.get(chunkCoord);
 			cacheOrder.remove(chunkCoord);
@@ -207,34 +212,39 @@ public class OreSpawner implements IWorldGenerator {
 		}
 	}
 	
-	protected static class Integer2D{
+	protected static class Integer3D{
 		/**
-		 * X-coordinate of X,Y coordinate pair
+		 * X-coordinate of X,Y,Z coordinate 
 		 */
 		public final int X;
 		/**
-		 * Y-coordinate of X,Y coordinate pair
+		 * Y-coordinate of X,Y,Z coordinate 
 		 */
 		public final int Y;
+		/**
+		 * Z-coordinate of X,Y,Z coordinate 
+		 */
+		public final int Z;
 		/**
 		 * Creates an integer pair to be used as 2D coordinates
 		 * @param x X-coordinate of X,Y coordinate pair
 		 * @param y Y-coordinate of X,Y coordinate pair
 		 */
-		public Integer2D(int x, int y){
+		public Integer3D(int x, int y, int z){
 			this.X = x;
 			this.Y = y;
+			this.Z = z;
 		}
 		@Override
 		public int hashCode(){
-			return Integer.hashCode(X) ^ Integer.hashCode(Y); 
+			return Integer.hashCode(X) ^ (Integer.hashCode(Y) << 8) ^ (Integer.hashCode(Z) << 16); 
 		}
 		@Override
 		public boolean equals(Object o){
 			if(this == o) return true;
-			if(o instanceof Integer2D){
-				Integer2D other = (Integer2D)o;
-				return other.X == this.X && other.Y == this.Y;
+			if(o instanceof Integer3D){
+				Integer3D other = (Integer3D)o;
+				return other.X == this.X && other.Y == this.Y && other.Z == this.Z;
 			}
 			return false;
 		}
