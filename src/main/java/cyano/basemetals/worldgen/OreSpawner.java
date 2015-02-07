@@ -68,7 +68,7 @@ public class OreSpawner implements IWorldGenerator {
 		Map<BlockPos,IBlockState> cache = retrieveCache(chunkCoord);
 		for(BlockPos p : cache.keySet()){
 		//	FMLLog.info("Placed block "+cache.get(p)+" from cache at "+p);
-			world.setBlockState(p, cache.get(p), 2);
+			spawn(cache.get(p),world,p,world.provider.getDimensionId(),false);
 		}
 		// now to ore spawn
 		
@@ -113,7 +113,7 @@ public class OreSpawner implements IWorldGenerator {
 			System.arraycopy(offsetIndexRef, 0, scrambledLUT, 0, scrambledLUT.length);
 			scramble(scrambledLUT,prng);
 			while(count > 0){
-				spawn(oreBlock,metaData,world,blockPos.add(offsets[scrambledLUT[--count]]),world.provider.getDimensionId());
+				spawn(oreBlock,metaData,world,blockPos.add(offsets[scrambledLUT[--count]]),world.provider.getDimensionId(),true);
 			}
 			return;
 		}
@@ -126,7 +126,7 @@ public class OreSpawner implements IWorldGenerator {
 					for(int dz = (int)(-1 * radius); dz < radius; dz++){
 						for(int dx = (int)(-1 * radius); dx < radius; dx++){
 							if((dx*dx + dy*dy + dz*dz) <= rSqr){
-								spawn(oreBlock,metaData,world,blockPos.add(dx,dy,dz),world.provider.getDimensionId());
+								spawn(oreBlock,metaData,world,blockPos.add(dx,dy,dz),world.provider.getDimensionId(),true);
 								count--;
 							}
 							if(count <= 0) {
@@ -141,7 +141,7 @@ public class OreSpawner implements IWorldGenerator {
 					for(int dx = (int)(radius); dx >= (int)(-1 * radius); dx--){
 						for(int dz = (int)(radius); dz >= (int)(-1 * radius); dz--){
 							if((dx*dx + dy*dy + dz*dz) <= rSqr){
-								spawn(oreBlock,metaData,world,blockPos.add(dx,dy,dz),world.provider.getDimensionId());
+								spawn(oreBlock,metaData,world,blockPos.add(dx,dy,dz),world.provider.getDimensionId(),true);
 								count--;
 							}
 							if(count <= 0) {
@@ -164,24 +164,27 @@ public class OreSpawner implements IWorldGenerator {
 		}
 	}
 	private static final Predicate stonep = (Predicate)BlockHelper.forBlock(Blocks.stone);
-	private static void spawn(Block b, int m, World w, BlockPos coord, int dimension){
+	private static void spawn(Block b, int m, World w, BlockPos coord, int dimension, boolean cacheOverflow){
+		if(m == 0){
+			spawn( b.getDefaultState(), w,coord,dimension,cacheOverflow);
+		} else {
+			spawn( b.getStateFromMeta(m), w,coord,dimension,cacheOverflow);
+		}
+	}
+	
+	private static void spawn(IBlockState b, World w, BlockPos coord, int dimension, boolean cacheOverflow){
 		if(coord.getY() < 0 || coord.getY() >= w.getHeight()) return;
 		if(w.isAreaLoaded(coord, 0)){
 			if(w.isAirBlock(coord)) return;
 			IBlockState bs = w.getBlockState(coord);
 		//	FMLLog.info("Spawning ore block "+b.getUnlocalizedName()+" at "+coord);
 			if(bs.getBlock().isReplaceableOreGen(w, coord, stonep)){
-				if(m == 0){
-					w.setBlockState(coord, b.getDefaultState(), 2);
-				} else {
-					w.setBlockState(coord, b.getStateFromMeta(m), 2);
-				}
+					w.setBlockState(coord, b, 2);
 			}
-		} else {
+		} else if(cacheOverflow){
 			// cache the block
-			IBlockState block = b.getStateFromMeta(m);
 		//	FMLLog.info("Cached ore block "+block+" at "+coord);
-			cacheOverflowBlock(block,coord,dimension);
+			cacheOverflowBlock(b,coord,dimension);
 		}
 	}
 	
