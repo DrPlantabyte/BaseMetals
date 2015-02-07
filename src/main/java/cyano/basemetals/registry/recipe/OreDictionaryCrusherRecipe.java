@@ -25,7 +25,12 @@ public class OreDictionaryCrusherRecipe implements ICrusherRecipe{
 	public boolean isValidInput(ItemStack input) {
 		List<ItemStack> validInputs = OreDictionary.getOres(oreDictSource);
 		for(int i = 0; i < validInputs.size(); i++){
-			if(ItemStack.areItemsEqual(validInputs.get(i),input)){
+			if(validInputs.get(i).getMetadata() == OreDictionary.WILDCARD_VALUE){
+				// do not compare metadata values
+				if(validInputs.get(i).getItem() == input.getItem()){
+					return true;
+				}
+			} else if(ItemStack.areItemsEqual(validInputs.get(i),input)){
 				return true;
 			}
 		}

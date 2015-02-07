@@ -133,7 +133,8 @@ public class ItemMetalCrackHammer extends ItemTool{
 	}
 	
 	protected ICrusherRecipe getCrusherRecipe(IBlockState block){
-		return CrusherRecipeRegistry.getInstance().getRecipeForInputItem(block);
+		//return CrusherRecipeRegistry.getInstance().getRecipeForInputItem(block);
+		return CrusherRecipeRegistry.getInstance().getRecipeForInputItem(new ItemStack(block.getBlock(),1,block.getBlock().getMetaFromState(block)));
 	}
 	
 
