@@ -38,7 +38,7 @@ public class ItemMetalCrackHammer extends ItemTool{
 	protected final boolean regenerates;
 	protected final long regenInterval = 200; 
 	public ItemMetalCrackHammer(MetalMaterial metal) {
-		super(2 + Materials.getToolMaterialFor(metal).getDamageVsEntity(), Materials.getToolMaterialFor(metal), new HashSet<Block>());
+		super(1 + Materials.getToolMaterialFor(metal).getDamageVsEntity(), Materials.getToolMaterialFor(metal), new HashSet<Block>());
 		this.metal = metal;
 		this.setMaxDamage(metal.getToolDurability());
 		this.efficiencyOnProperMaterial = metal.getToolEfficiency();
