@@ -19,16 +19,35 @@ import cyano.basemetals.items.*;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
 
+/**
+ * This classes initializes all items in Base Metals and provides some utility 
+ * methods for looking up items. 
+ * @author DrCyano
+ *
+ */
 public abstract class Items {
 
 	private static Map<Item,String> itemRegistry = new HashMap<>();
 	private static Map<String,Item> allItems = new HashMap<>();
 	
 	private static Map<BlockDoor,Item> doorMap = new HashMap<>();
-
+	/**
+	 * Gets an item by its name. The name is the name as it is registered in 
+	 * the GameRegistry, not its unlocalized name (the unlocalized name is the 
+	 * registered name plus the prefix "basemetals.")
+	 * @param name The name of the item in question
+	 * @return The item matching that name, or null if there isn't one
+	 */
 	public static Item getItemByName(String name){
 		return allItems.get(name);
 	}
+	/**
+	 * This is the reverse of the getItemByName(...) method, returning the 
+	 * registered name of an item instance (Base Metals items only).
+	 * @param i The item in question
+	 * @return The name of the item, or null if the item is not a Base Metals 
+	 * item.
+	 */
 	public static String getNameOfItem(Item i){
 		return itemRegistry.get(i);
 	}
@@ -248,7 +267,11 @@ public abstract class Items {
 	public static Item zinc_nugget;
 	public static Item zinc_powder;
 
-	
+	/**
+	 * Gets the inventory item corresponding to a given door block
+	 * @param b The door block
+	 * @return The item that the player should use to place that kind of door
+	 */
 	public static Item getDoorItemForBlock(BlockMetalDoor b){
 		return doorMap.get(b);
 	}

@@ -21,6 +21,15 @@ import com.google.gson.JsonParser;
 import cyano.basemetals.worldgen.OreSpawnData;
 import cyano.basemetals.worldgen.OreSpawner;
 
+
+/**
+ * This class contains static initializers to add ore spawning as world-gen. 
+ * To add a new ore via the Base Metals mod, either add the appropriate entry 
+ * in the config file config/basemetals/ore-spawn.json or directly invoke the 
+ * addOreSpawner(...) method from this class.
+ * @author DrCyano
+ *
+ */
 public abstract class WorldGen {
 
 	
@@ -43,12 +52,10 @@ public abstract class WorldGen {
 		parseConfig(settings);
 		// add custom spawners to the world
 		Random prng = new Random();
-		int weight = 100;
 		for(int dim : oreSpawnRegistry.keySet()){
 			List<OreSpawnData> ores = oreSpawnRegistry.get(dim);
 			for(OreSpawnData ore : ores){
-				OreSpawner spawner = new OreSpawner(ore,dim,prng.nextLong());
-				GameRegistry.registerWorldGenerator(spawner, weight++);
+				addOreSpawner(ore,dim,prng.nextLong());
 			}
 		}
 	}
@@ -71,5 +78,20 @@ public abstract class WorldGen {
 				oreSpawnRegistry.get(dimIndex).add(ore);
 			}
 		}
+	}
+	private static int weight = 100;
+	
+	/**
+	 * Adds a new ore spawner to Minecraft
+	 * @param spawnParameters An instance of OreSpawnData describing what to 
+	 * spawn and how
+	 * @param dimension Which dimension to spawn in (0 for the normal Minecraft 
+	 * world, -1 for the Nether, 1 for the End)
+	 * @param randomHash This is a random number that should be unique to each 
+	 * ore spawner that you add.
+	 */
+	public static void addOreSpawner(OreSpawnData spawnParameters, int dimension, long randomHash){
+		OreSpawner spawner = new OreSpawner(spawnParameters,dimension,randomHash);
+		GameRegistry.registerWorldGenerator(spawner, weight++);
 	}
 }

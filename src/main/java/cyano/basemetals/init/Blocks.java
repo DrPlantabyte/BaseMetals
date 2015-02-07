@@ -23,10 +23,22 @@ import cyano.basemetals.blocks.BlockMetalTrapDoor;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
 
+/**
+ * This classes initializes all blocks in Base Metals and provides some utility 
+ * methods for looking up blocks. 
+ * @author DrCyano
+ *
+ */
 public abstract class Blocks {
 	private static final Map<String,Block> allBlocks = new HashMap<>();
 	
-
+	/**
+	 * Gets an block by its name. The name is the name as it is registered in 
+	 * the GameRegistry, not its unlocalized name (the unlocalized name is the 
+	 * registered name plus the prefix "basemetals.")
+	 * @param name The name of the block in question
+	 * @return The block matching that name, or null if there isn't one
+	 */
 	public static Block getBlockByName(String string) {
 		return allBlocks.get(string);
 	}

@@ -21,6 +21,19 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import cyano.basemetals.data.DataConstants;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
 
+
+/**
+ * This is the entry point for this mod. If you are writing your own mod that 
+ * uses this mod, the classes of interest to you are the init classes (classes 
+ * in package cyano.basemetals.init) and the CrusherRecipeRegistry class (in 
+ * package cyano.basemetals.registry). Note that you should add 
+ * 'dependencies = "required-after:poweradvantage"' to your &#64;Mod annotation 
+ * (e.g. <br> 
+ * &#64;Mod(modid = "moremetals", name="More Metals!", version = "1.2.3", dependencies = "required-after:basemetals")
+ * <br>)
+ * @author DrCyano
+ *
+ */
 @Mod(modid = BaseMetals.MODID, name=BaseMetals.NAME, version = BaseMetals.VERSION)
 public class BaseMetals
 {
