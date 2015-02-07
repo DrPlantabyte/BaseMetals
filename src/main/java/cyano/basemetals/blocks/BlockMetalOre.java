@@ -10,6 +10,7 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.util.BlockPos;
@@ -40,5 +41,11 @@ public class BlockMetalOre extends BlockOre implements IOreDictionaryEntry{
 	@Override
 	public String getOreDictionaryName() {
 		return "ore"+metal.getCapitalizedName();
+	}
+	
+	@Override
+	public boolean canEntityDestroy(final IBlockAccess bs, final BlockPos coord, final Entity entity) {
+		if(this == cyano.basemetals.init.Blocks.starsteel_ore && entity instanceof net.minecraft.entity.boss.EntityDragon) return false;
+		return super.canEntityDestroy(bs, coord, entity);
 	}
 }

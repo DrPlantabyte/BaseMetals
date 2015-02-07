@@ -27,7 +27,7 @@ public abstract class Recipes {
 		initPureVanillaCrusherRecipes();
 		initVanillaRecipes();
 		initMetalRecipes();
-		// TODO
+		
 		initDone = true;
 	}
 	

@@ -39,7 +39,6 @@ public class BaseMetals
 	//	config.load();
 	//	config.save();
 		
-		// TODO: create door-block item models to make FML shut-up about them
 		
 		Path oreSpawnFile = Paths.get(event.getSuggestedConfigurationFile().toPath().getParent().toString(),"basemetals","ore-spawn.json");
 		if(Files.exists(oreSpawnFile) == false){

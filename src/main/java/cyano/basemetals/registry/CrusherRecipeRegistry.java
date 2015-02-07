@@ -8,6 +8,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -20,7 +21,7 @@ public class CrusherRecipeRegistry {
 	
 	private static final Lock initLock = new ReentrantLock();
 	private static CrusherRecipeRegistry instance = null;
-	
+	// TODO: documentation
 	/**
 	 * Gets a singleton instance of CrusherRecipeRegistry
 	 * @return A global instance of CrusherRecipeRegistry
@@ -138,6 +139,23 @@ public class CrusherRecipeRegistry {
 			return null;
 		}
 	}
+	public ICrusherRecipe getRecipeForInputItem(IBlockState input){
+		ItemLookupReference ref = new ItemLookupReference(input);
+		ItemStack stack = new ItemStack(input.getBlock(),1,ref.metaData);
+		if(recipeByInputCache.containsKey(ref)){
+			return recipeByInputCache.get(ref);
+		} else {
+			for(ICrusherRecipe r : recipes){
+				if(r.isValidInput(stack)){
+					recipeByInputCache.put(ref, r);
+					return r;
+				}
+			}
+			// no recipes, cache null result
+			recipeByInputCache.put(ref, null);
+			return null;
+		}
+	}
 	
 	private static final class ItemLookupReference{
 		final Item item;
@@ -150,14 +168,20 @@ public class CrusherRecipeRegistry {
 			hashCache = item.getUnlocalizedName().hashCode() + (57 * metaData);
 		}
 		
+		public ItemLookupReference(IBlockState inputBlock){
+			item = Item.getItemFromBlock(inputBlock.getBlock());
+			metaData = inputBlock.getBlock().getMetaFromState(inputBlock);
+			hashCache = inputBlock.getBlock().getUnlocalizedName().hashCode() + (57 * metaData);
+		}
+		
 		@Override
 		public boolean equals(Object other){
 			if(other instanceof ItemLookupReference){
 				ItemLookupReference that = (ItemLookupReference)other;
-				return this.item.equals(that.item) && this.metaData == that.metaData;
+				return this.hashCache == that.hashCache && this.item == that.item && this.metaData == that.metaData;
 			} else if(other instanceof ItemStack){
 				ItemStack that = (ItemStack)other;
-				return this.item.equals(that.getItem()) && this.metaData == that.getMetadata();
+				return this.item == that.getItem() && this.metaData == that.getMetadata();
 			} else {
 				return false;
 			}
