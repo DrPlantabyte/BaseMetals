@@ -28,7 +28,7 @@ group= "cyano.basemetals"
 archivesBaseName = "basemetals"
 
 minecraft {
-    version = "1.8-11.14.0.1273-1.8"
+    version = "1.8-11.14.0.1281-1.8"
     runDir = "eclipse"
     
     // the mappings can be changed at any time, and must be in the following format.

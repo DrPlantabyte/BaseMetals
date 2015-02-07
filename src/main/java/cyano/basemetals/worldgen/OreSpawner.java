@@ -113,7 +113,7 @@ public class OreSpawner implements IWorldGenerator {
 			System.arraycopy(offsetIndexRef, 0, scrambledLUT, 0, scrambledLUT.length);
 			scramble(scrambledLUT,prng);
 			while(count > 0){
-				spawn(oreBlock,metaData,world,blockPos.add(offsets[offsetIndexRef[--count]]),world.provider.getDimensionId());
+				spawn(oreBlock,metaData,world,blockPos.add(offsets[scrambledLUT[--count]]),world.provider.getDimensionId());
 			}
 			return;
 		}
