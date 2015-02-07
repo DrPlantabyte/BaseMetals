@@ -75,6 +75,17 @@ public class MetalMaterial {
 		}
 		return false;
 	}
+	
+
+	/**
+	 * Gets the amount of XP per ore block that is smelted
+	 * @return XP value per ore block
+	 */
+	public float getOreSmeltXP(){
+		return 0.1f * magicAffinity;
+	}
+	
+	
 	/**
 	 * Gets the tool harvest level
 	 * @return an integer from -1 (equivalent to no tool) to 3 (diamond tool equivalent)

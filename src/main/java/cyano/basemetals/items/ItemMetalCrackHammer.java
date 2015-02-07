@@ -13,6 +13,8 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemTool;
@@ -22,6 +24,7 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.oredict.OreDictionary;
 import cyano.basemetals.init.Materials;
 import cyano.basemetals.material.MetalMaterial;
@@ -65,7 +68,7 @@ public class ItemMetalCrackHammer extends ItemTool{
 			IBlockState bs = world.getBlockState(coord);
 			ICrusherRecipe recipe = getCrusherRecipe(bs);
 			if(recipe != null){
-				ItemStack output = recipe.getOutput();
+				ItemStack output = recipe.getOutput().copy();
 				world.setBlockToAir(coord);
 				if(output != null){
 					int num = output.stackSize;
@@ -133,6 +136,7 @@ public class ItemMetalCrackHammer extends ItemTool{
 	}
 	
 	protected ICrusherRecipe getCrusherRecipe(IBlockState block){
+		if(block == null || Item.getItemFromBlock(block.getBlock()) == null)return null;
 		//return CrusherRecipeRegistry.getInstance().getRecipeForInputItem(block);
 		return CrusherRecipeRegistry.getInstance().getRecipeForInputItem(new ItemStack(block.getBlock(),1,block.getBlock().getMetaFromState(block)));
 	}
