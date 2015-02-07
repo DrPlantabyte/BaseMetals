@@ -213,7 +213,7 @@ public class CrusherRecipeRegistry {
 	 * Gets the recipe for crushing the specified item, or null if ther is no 
 	 * recipe accepting the item.
 	 * @param input The item/block to crush
-	 * @returnThe crusher recipe for crushing this item/block, or null if no 
+	 * @return The crusher recipe for crushing this item/block, or null if no 
 	 * such recipe exists
 	 */
 	public ICrusherRecipe getRecipeForInputItem(ItemStack input){
@@ -236,7 +236,7 @@ public class CrusherRecipeRegistry {
 	 * Gets the recipe for crushing the specified item, or null if ther is no 
 	 * recipe accepting the item.
 	 * @param input The item/block to crush
-	 * @returnThe crusher recipe for crushing this item/block, or null if no 
+	 * @return The crusher recipe for crushing this item/block, or null if no 
 	 * such recipe exists
 	 */
 	public ICrusherRecipe getRecipeForInputItem(IBlockState input){

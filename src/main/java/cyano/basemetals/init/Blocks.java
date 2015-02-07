@@ -39,8 +39,8 @@ public abstract class Blocks {
 	 * @param name The name of the block in question
 	 * @return The block matching that name, or null if there isn't one
 	 */
-	public static Block getBlockByName(String string) {
-		return allBlocks.get(string);
+	public static Block getBlockByName(String name) {
+		return allBlocks.get(name);
 	}
 	
 	public static Block adamantine_bars;
