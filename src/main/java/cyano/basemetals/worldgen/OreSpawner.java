@@ -178,8 +178,22 @@ public class OreSpawner implements IWorldGenerator {
 			if(w.isAirBlock(coord)) return;
 			IBlockState bs = w.getBlockState(coord);
 		//	FMLLog.info("Spawning ore block "+b.getUnlocalizedName()+" at "+coord);
-			if(bs.getBlock().isReplaceableOreGen(w, coord, stonep)){
-					w.setBlockState(coord, b, 2);
+			switch(dimension){
+				case -1: // nether
+					if(bs.getBlock() == Blocks.netherrack || bs.getBlock().isReplaceableOreGen(w, coord, stonep)){
+						w.setBlockState(coord, b, 2);
+					}
+				break;
+				case 1: // end
+					if(bs.getBlock() == Blocks.end_stone || bs.getBlock().isReplaceableOreGen(w, coord, stonep)){
+						w.setBlockState(coord, b, 2);
+					}
+				break;
+				default:
+					if(bs.getBlock() == Blocks.stone || bs.getBlock().isReplaceableOreGen(w, coord, stonep)){
+							w.setBlockState(coord, b, 2);
+					}
+					break;
 			}
 		} else if(cacheOverflow){
 			// cache the block
