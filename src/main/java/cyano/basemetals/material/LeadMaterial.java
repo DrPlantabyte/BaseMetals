@@ -8,6 +8,6 @@ public class LeadMaterial extends MetalMaterial {
 
 	@Override
 	public float getBaseAttackDamage(){
-		return 5;
+		return 4;
 	}
 }
