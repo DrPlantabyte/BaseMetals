@@ -1,4 +1,4 @@
-language_support_goals=english (en_US,en_EN,en_CA,en_GB, en_AU, en_PT), spanish (es_MX,es_ES), simplified chinese (zh_CN), portugese(pt_BR), italian(IT_it), japanese (ja_JA), portugese (pt_BR), german (de_DE)
+language_support_goals=english (en_US,en_EN,en_CA,en_GB, en_AU, en_PT), italian(IT_it), spanish (es_MX,es_ES), simplified chinese (zh_CN), japanese (ja_JA), portugese (pt_BR), german (de_DE)
 
 nei.basemetals.recipehandler.crusher.name=Crushed Blocks
 

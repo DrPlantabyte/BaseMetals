@@ -27,6 +27,13 @@ public class MetalMaterial {
 	final String titleName;
 	
 	private final String enumName;
+	
+	/**
+	 * This is how common or rare items made from this material are when 
+	 * generating treasure chests. For reference, a loaf of bread is 1.0 and a 
+	 * golden apple is 0.01 
+	 */
+	final float lootFrequency;
 	/**
 	 * @param name String used to identify items and blocks using this material
 	 * @param hardness hardness on a scale from 0 to 10 (or more), where 0 is non-solid and 
@@ -38,12 +45,16 @@ public class MetalMaterial {
 	 * @param magic Scale from 0 to 10 (or more) on how magical the material is.
 	 * For reference, stone is 2, iron is 4.5, diamond is 4, wood is 6, gold is 10.
 	 * Used to calculate enchantibility
+	 * @param lootFrequency This is how common or rare items made from this material are when 
+	 * generating treasure chests. For reference, a loaf of bread is 1.0 and a 
+	 * golden apple is 0.01 
 	 */
-	public MetalMaterial(String name, float hardness, float strength, float magic){
+	public MetalMaterial(String name, float hardness, float strength, float magic, float lootFrequency){
 		this.hardness = hardness;
 		this.strength = strength;
 		this.magicAffinity = magic;
 		this.identifier = name;
+		this.lootFrequency = lootFrequency;
 		String firstLetter = name.substring(0,1);
 		String rest = name.substring(1);
 		titleName = firstLetter.toUpperCase(Locale.ENGLISH)+rest;

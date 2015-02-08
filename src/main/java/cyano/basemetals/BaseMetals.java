@@ -111,6 +111,7 @@ public class BaseMetals
 		// client-only code
 		cyano.basemetals.init.Items.registerItemRenders(event);
 		cyano.basemetals.init.Blocks.registerItemRenders(event);
+		cyano.basemetals.init.DungeonLoot.init();
 	}
 	@SideOnly(Side.SERVER)
 	private void serverInit(FMLInitializationEvent event){
