@@ -29,7 +29,7 @@ Fantasy metals have been added to the Nether and the End: Cold Iron, Mithril, Ad
 
 
 ###Metal Alloys
-*metal alloys are made by crafting together the powdered forms of the required metals, and then smelting the resulting alloy blend in a furnace.*
+*Metal alloys are made by crafting together the powdered forms of the required metals, and then smelting the resulting alloy blend in a furnace.*
 
 **Bronze**: This alloy of copper and tin (3:1 ratio) is as hard as iron, but not quite as durable.
 
@@ -70,6 +70,11 @@ This mod requires that you install Minecraft Forge version 1.8-11.14.0.1281 or l
 ## Installing
 
 After you have successfully installed Forge, simply place the file *basemetals-#.#.#.jar* in your *mods* folder. You can get the basemetals-#.#.jar file from the Releases tab of this repository page.
+
+##NEI
+
+The Crack Hammer recipes from this mod will appear in NEI if you have NEI installed. Hooray!
+
 
 ## Mod API
 
