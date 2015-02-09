@@ -607,7 +607,7 @@ public abstract class Items {
 	
 	private static Item create_pickaxe(MetalMaterial m){
 		String n = "pickaxe";
-		Item i = new ItemMetalPickAxe(m);
+		Item i = new ItemMetalPickaxe(m);
 		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);

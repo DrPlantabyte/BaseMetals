@@ -40,10 +40,11 @@ public class ItemMetalCrackHammer extends ItemTool{
 	public ItemMetalCrackHammer(MetalMaterial metal) {
 		super(1 + Materials.getToolMaterialFor(metal).getDamageVsEntity(), Materials.getToolMaterialFor(metal), new HashSet<Block>());
 		this.metal = metal;
-		this.setMaxDamage(metal.getToolDurability());
+		this.setMaxDamage((int)(0.75 * metal.getToolDurability()));
 		this.efficiencyOnProperMaterial = metal.getToolEfficiency();
 		this.toolTypes = new HashSet<>();
 		toolTypes.add("crackhammer");
+		toolTypes.add("pickaxe");
 		repairOreDictName = "ingot"+metal.getCapitalizedName();
 		if(metal.equals(Materials.starsteel)){
 			regenerates = true;
@@ -75,6 +76,7 @@ public class ItemMetalCrackHammer extends ItemTool{
 					output.stackSize = 1;
 					for(int i = 0; i < num; i++){
 						world.spawnEntityInWorld(new EntityItem(world, coord.getX()+0.5, coord.getY()+0.5, coord.getZ()+0.5, output.copy()));
+						world.playSoundAtEntity(player, "dig.gravel", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 					}
 				}
 			}
@@ -84,7 +86,6 @@ public class ItemMetalCrackHammer extends ItemTool{
 	}
 	
 	@Override
-	//public boolean onLeftClickEntity(final ItemStack item, final EntityPlayer player, final Entity target) {
 	public boolean onItemUse(final ItemStack item, final EntityPlayer player, final World w, 
 			final BlockPos coord, final EnumFacing facing, 
 			final float partialX, final float partialY, final float partialZ) {		
@@ -103,23 +104,27 @@ public class ItemMetalCrackHammer extends ItemTool{
 						// crush the item
 						ItemStack output = recipe.getOutput().copy();
 						int count = output.stackSize;
-						output.stackSize = targetItem.stackSize;
-				//		World w = target.getEntityWorld();
+						output.stackSize = 1;
 						double x = target.posX;
 						double y = target.posY;
 						double z = target.posZ;
 						
-						w.removeEntity(target);
+						targetItem.stackSize--;
+						if(targetItem.stackSize <= 0){
+							w.removeEntity(target);
+						}
 						for(int i = 0; i < count; i++){
 							w.spawnEntityInWorld(new EntityItem(w,x,y,z,output.copy()));
 						}
 						item.damageItem(1, player);
 						success = true;
-						if(item.stackSize <= 0) break;
-						
+						break;
 					}
 				}
 			}
+		}
+		if(success && !w.isRemote){
+			w.playSoundAtEntity(player, "dig.gravel", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 		}
         return success;
     }

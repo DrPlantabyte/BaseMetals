@@ -22,14 +22,14 @@ import net.minecraftforge.oredict.OreDictionary;
 import cyano.basemetals.init.Materials;
 import cyano.basemetals.material.MetalMaterial;
 
-public class ItemMetalPickAxe extends ItemPickaxe {
+public class ItemMetalPickaxe extends ItemPickaxe {
 
 	protected final MetalMaterial metal;
 	protected final Set<String> toolTypes;
 	protected final String repairOreDictName;
 	protected final boolean regenerates;
 	protected final long regenInterval = 200; 
-	public ItemMetalPickAxe(MetalMaterial metal) {
+	public ItemMetalPickaxe(MetalMaterial metal) {
 		super(Materials.getToolMaterialFor(metal));
 		this.metal = metal;
 		this.setMaxDamage(metal.getToolDurability());
@@ -139,7 +139,8 @@ public class ItemMetalPickAxe extends ItemPickaxe {
     public boolean canHarvestBlock(final Block target) {
 		if(this.toolTypes.contains(target.getHarvestTool(target.getDefaultState()))){
 			return metal.getToolHarvestLevel() >= target.getHarvestLevel(target.getDefaultState())
-					|| target.getMaterial() == Material.anvil;
+					|| target.getMaterial() == Material.anvil || target.getMaterial() == Material.iron
+					|| target.getMaterial() == Material.rock;
 		}
 		return false;
     }

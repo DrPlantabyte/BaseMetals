@@ -41,7 +41,7 @@ public abstract class Recipes {
 		CrusherRecipeRegistry.addNewCrusherRecipe("sandstone", new ItemStack(Blocks.sand,4));
 		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.glowstone, new ItemStack(Items.glowstone_dust,4));
 		CrusherRecipeRegistry.addNewCrusherRecipe("oreLapis", new ItemStack(Items.dye,8,4));
-		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.redstone_ore, new ItemStack(Items.redstone,6));
+		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.redstone_ore, new ItemStack(Items.redstone,4));
 		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.redstone_block, new ItemStack(Items.redstone,9));
 		CrusherRecipeRegistry.addNewCrusherRecipe(Items.reeds, new ItemStack(Items.sugar,2));
 		CrusherRecipeRegistry.addNewCrusherRecipe(Items.bone, new ItemStack(Items.dye,3,15));
