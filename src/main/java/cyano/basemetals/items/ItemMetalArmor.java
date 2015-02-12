@@ -22,6 +22,8 @@ import cyano.basemetals.material.MetalMaterial;
 
 public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 
+	// TODO: make a full-suite of cold-iron bestow fire immunity 
+	
 	protected final String customTexture;
 	protected final MetalMaterial metal;
 	protected final String repairOreDictName;
