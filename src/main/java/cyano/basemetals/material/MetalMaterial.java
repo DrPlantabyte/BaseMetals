@@ -152,20 +152,21 @@ public class MetalMaterial {
 	}
 	/**
 	 * Gets the hardness for blocks made from this material
-	 * @return
+	 * @return the hardness for blocks made from this material
 	 */
 	public float getMetalBlockHardness(){
 		return 2.0f * hardness;
 	}
 	/**
-	 * 
+	 * Gets the number of uses of a tool made from this material 
 	 * @return The number of uses of a tool made from this material 
 	 */
 	public int getToolDurability(){
 		return (int)(32 * strength);
 	}
 	/**
-	 * 
+	 * Gets the number used to determine how much damage an armor item can 
+	 * take.
 	 * @return The number used to determine how much damage an armor item can 
 	 * take.
 	 */
@@ -177,7 +178,8 @@ public class MetalMaterial {
 	/**
 	 * Gets the protection value for helmets, chestplates, leg armor, and boots 
 	 * made from this material
-	 * @return
+	 * @return the protection value for helmets, chestplates, leg armor, and boots 
+	 * made from this material
 	 */
 	public int[] getDamageReductionArray(){
 		if(cache == null){
@@ -192,14 +194,14 @@ public class MetalMaterial {
 	}
 	/**
 	 * Gets the base damage from attacks with tools made from this material
-	 * @return
+	 * @return the base damage from attacks with tools made from this material
 	 */
 	public float getBaseAttackDamage(){
 		return Math.max(0f,(hardness / 3f) - 0.5f);
 	}
 	/**
 	 * Gets the enchantibility score for this material
-	 * @return
+	 * @return the enchantibility score for this material
 	 */
 	public int getEnchantability(){
 		return (int)(2.5f * magicAffinity);

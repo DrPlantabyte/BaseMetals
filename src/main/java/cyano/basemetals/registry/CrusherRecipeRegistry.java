@@ -23,9 +23,10 @@ import net.minecraftforge.oredict.OreDictionary;
  * CrusherRecipeRegistry.getInstance().getRecipeForInputItem(...) or 
  * CrusherRecipeRegistry.getInstance().getRecipesForOutputItem(...). Added 
  * crusher recipes will automatically appear in the NEI crusher recipe section.
- * <p></p>
+ * <p>
  * To see all of the default crusher recipes, look at the source code of the 
  * class cyano.basemetals.init.Recipes
+ * </p>
  * @author DrCyano
  *
  */

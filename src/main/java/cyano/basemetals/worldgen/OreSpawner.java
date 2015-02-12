@@ -244,8 +244,9 @@ public class OreSpawner implements IWorldGenerator {
 		public final int Z;
 		/**
 		 * Creates an integer pair to be used as 2D coordinates
-		 * @param x X-coordinate of X,Y coordinate pair
-		 * @param y Y-coordinate of X,Y coordinate pair
+		 * @param x X-coordinate of X,Y,Z coordinate 
+		 * @param y Y-coordinate of X,Y,Z coordinate 
+		 * @param z Z-coordinate of X,Y,Z coordinate 
 		 */
 		public Integer3D(int x, int y, int z){
 			this.X = x;
@@ -254,7 +255,7 @@ public class OreSpawner implements IWorldGenerator {
 		}
 		@Override
 		public int hashCode(){
-			return Integer.hashCode(X) ^ (Integer.hashCode(Y) << 8) ^ (Integer.hashCode(Z) << 16); 
+			return ((X<< 8) ^ ((Y) ) ^ ((Z) << 16) * 17); 
 		}
 		@Override
 		public boolean equals(Object o){

@@ -56,7 +56,7 @@ public class ItemMetalCrackHammer extends ItemTool{
 	
 	@Override
     public float getStrVsBlock(final ItemStack tool, final Block target) {
-		if(isCrushableBlock(target) ){
+		if(isCrushableBlock(target) && canHarvestBlock(target) ){
 			return Math.max(1.0f, 0.5f * this.metal.getToolEfficiency());
 		}
 		return 1.0f;
@@ -65,7 +65,7 @@ public class ItemMetalCrackHammer extends ItemTool{
 	@Override
     public boolean onBlockDestroyed(final ItemStack tool, final World world, 
     		final Block target, final BlockPos coord, final EntityLivingBase player) {
-		if(!world.isRemote){
+		if(!world.isRemote && this.canHarvestBlock(target)){
 			IBlockState bs = world.getBlockState(coord);
 			ICrusherRecipe recipe = getCrusherRecipe(bs);
 			if(recipe != null){
@@ -76,7 +76,6 @@ public class ItemMetalCrackHammer extends ItemTool{
 					output.stackSize = 1;
 					for(int i = 0; i < num; i++){
 						world.spawnEntityInWorld(new EntityItem(world, coord.getX()+0.5, coord.getY()+0.5, coord.getZ()+0.5, output.copy()));
-						world.playSoundAtEntity(player, "dig.gravel", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 					}
 				}
 			}
