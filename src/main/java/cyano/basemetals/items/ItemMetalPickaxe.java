@@ -138,11 +138,9 @@ public class ItemMetalPickaxe extends ItemPickaxe {
     @Override
     public boolean canHarvestBlock(final Block target) {
 		if(this.toolTypes.contains(target.getHarvestTool(target.getDefaultState()))){
-			return metal.getToolHarvestLevel() >= target.getHarvestLevel(target.getDefaultState())
-					|| target.getMaterial() == Material.anvil || target.getMaterial() == Material.iron
-					|| target.getMaterial() == Material.rock;
+			return metal.getToolHarvestLevel() >= target.getHarvestLevel(target.getDefaultState());
 		}
-		return false;
+		return super.canHarvestBlock(target);
     }
     
     public String getMaterialName() {

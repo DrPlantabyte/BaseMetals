@@ -22,7 +22,6 @@ import cyano.basemetals.material.MetalMaterial;
 
 public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 
-	// TODO: make a full-suite of cold-iron bestow fire immunity 
 	
 	protected final String customTexture;
 	protected final MetalMaterial metal;
@@ -131,6 +130,15 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 					player.addPotionEffect(protection);
 				}
 				break adamantine;
+			}
+			// full suit of cold-iron makes you fire-proof
+			if(armorItem == cyano.basemetals.init.Items.coldiron_helmet){
+				if(player.inventory.armorItemInSlot(1).getItem() == cyano.basemetals.init.Items.coldiron_chestplate
+						&& player.inventory.armorItemInSlot(2).getItem() == cyano.basemetals.init.Items.coldiron_leggings
+						&& player.inventory.armorItemInSlot(3).getItem() == cyano.basemetals.init.Items.coldiron_boots){
+					final PotionEffect fireProtection = new PotionEffect(12,EFFECT_DURATION,1);
+					player.addPotionEffect(fireProtection);
+				}
 			}
 		}
 	}
