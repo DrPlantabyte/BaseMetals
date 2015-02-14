@@ -95,42 +95,17 @@ public class ItemMetalAxe extends ItemAxe {
     @Override
     public boolean hitEntity(final ItemStack item, final EntityLivingBase target, final EntityLivingBase attacker) {
         super.hitEntity(item, target, attacker);
-        extraEffectsOnAttack(item, target, attacker);
+        MetalToolEffects.extraEffectsOnAttack(metal,item, target, attacker);
         return true;
     }
     
-    public void extraEffectsOnAttack(final ItemStack item, final EntityLivingBase target, final EntityLivingBase attacker){
-    	if(metal.equals(Materials.coldiron)){
-    		if(target.isImmuneToFire()){
-    			DamageSource extraDamage = DamageSource.generic; 
-    			target.attackEntityFrom(extraDamage, 3f);
-    		}
-    	} else if(metal.equals(Materials.adamantine)){
-    		if(target.getMaxHealth() > 20f){
-    			DamageSource extraDamage = DamageSource.generic; 
-    			target.attackEntityFrom(extraDamage, 2f);
-    		}
-    	} else if(metal.equals(Materials.mithril)){
-    		if(target.getCreatureAttribute() == EnumCreatureAttribute.UNDEAD){
-    			final PotionEffect poison = new PotionEffect(20,60,3);
-    			final PotionEffect blind = new PotionEffect(15,60,1);
-    			target.addPotionEffect(poison);
-    			target.addPotionEffect(blind);
-    		}
-    	}
-    }
     
     @Override
     public void onCreated(final ItemStack item, final World world, final EntityPlayer crafter) {
     	super.onCreated(item, world, crafter);
-    	extraEffectsOnCrafting(item, world, crafter);
+    	MetalToolEffects.extraEffectsOnCrafting(metal,item, world, crafter);
     }
     
-    public void extraEffectsOnCrafting(final ItemStack item, final World world, final EntityPlayer crafter){
-    	if(metal.equals(Materials.mithril)){
-    		item.addEnchantment(Enchantment.smite, 2);
-    	}
-    }
     
     @Override
     public void onUpdate(final ItemStack item, final World world, final Entity player, final int inventoryIndex, final boolean isHeld) {

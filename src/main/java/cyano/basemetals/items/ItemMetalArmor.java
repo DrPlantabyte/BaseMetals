@@ -6,11 +6,14 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
+import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.relauncher.Side;
@@ -149,6 +152,20 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 					player.removePotionEffect(17);
 					player.removePotionEffect(19);
 					player.removePotionEffect(20);
+				}
+			}
+			// full suit of aquarium makes you breathe and heal underwater
+			if(armorItem == cyano.basemetals.init.Items.aquarium_helmet && player.posY > 0 && player.posY < 255){
+				if(player.getCurrentArmor(2).getItem() == cyano.basemetals.init.Items.aquarium_chestplate
+						&& player.getCurrentArmor(1).getItem() == cyano.basemetals.init.Items.aquarium_leggings
+						&& player.getCurrentArmor(0).getItem() == cyano.basemetals.init.Items.aquarium_boots){
+					Block b = player.worldObj.getBlockState(new BlockPos(player.posX,player.posY, player.posZ)).getBlock();
+					if(b == Blocks.water){
+						final PotionEffect waterBreathing = new PotionEffect(13,EFFECT_DURATION,1);
+						player.addPotionEffect(waterBreathing);
+						final PotionEffect regen = new PotionEffect(10,EFFECT_DURATION,1);
+						player.addPotionEffect(regen);
+					}
 				}
 			}
 		}

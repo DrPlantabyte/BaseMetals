@@ -43,6 +43,7 @@ public abstract class Materials {
 	public static MetalMaterial adamantine;
 	public static MetalMaterial starsteel;
 	public static MetalMaterial zinc;
+	public static MetalMaterial aquarium;
 	// vanilla imports
 	public static MetalMaterial vanilla_iron;
 	public static MetalMaterial vanilla_gold;
@@ -74,6 +75,7 @@ public abstract class Materials {
 		registerMaterial(adamantine.getName(), adamantine);
 		starsteel = new StarSteelMaterial("starsteel", 10, 25, 12,0.01f);
 		registerMaterial(starsteel.getName(), starsteel);
+		aquarium = addMaterial("aquarium", 4, 10, 10,0.05);
 		
 		
 		initDone = true;

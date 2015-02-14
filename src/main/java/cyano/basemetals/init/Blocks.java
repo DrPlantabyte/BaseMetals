@@ -48,6 +48,11 @@ public abstract class Blocks {
 	public static BlockDoor adamantine_door;
 	public static Block adamantine_ore;
 	public static Block adamantine_trapdoor;
+
+	public static Block aquarium_bars;
+	public static Block aquarium_block;
+	public static BlockDoor aquarium_door;
+	public static Block aquarium_trapdoor;
 	
 	public static Block brass_bars;
 	public static Block brass_block;
@@ -132,13 +137,18 @@ public abstract class Blocks {
 		if(initDone)return;
 		
 		cyano.basemetals.init.Materials.init();
-		
+
 
 		adamantine_block = createBlock(Materials.adamantine);
 		adamantine_ore = createOre(Materials.adamantine);
 		adamantine_bars = createBars(Materials.adamantine);
 		adamantine_door = createDoor(Materials.adamantine);
 		adamantine_trapdoor = createTrapDoor(Materials.adamantine);
+
+		aquarium_block = createBlock(Materials.aquarium);
+		aquarium_bars = createBars(Materials.aquarium);
+		aquarium_door = createDoor(Materials.aquarium);
+		aquarium_trapdoor = createTrapDoor(Materials.aquarium);
 
 		brass_block = createBlock(Materials.brass);
 		brass_bars = createBars(Materials.brass);

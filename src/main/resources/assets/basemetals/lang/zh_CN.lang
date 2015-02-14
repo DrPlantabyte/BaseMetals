@@ -1,6 +1,6 @@
 language_support_goals=english (en_US,en_EN,en_CA,en_GB, en_AU, en_PT), spanish (es_MX,es_ES), simplified chinese (zh_CN), portugese(pt_BR), italian(IT_it), japanese (ja_JA), portugese (pt_BR), german (de_DE)
 
-nei.basemetals.recipehandler.crusher.name=碎石
+nei.basemetals.recipehandler.crusher.name=粉碎机
 
 item.basemetals.adamantine_axe.name=超钢 斧
 item.basemetals.adamantine_bars.name=超钢 笼
@@ -56,7 +56,7 @@ item.basemetals.bronze_powder.name=粉 青铜
 item.basemetals.bronze_shovel.name=青铜 铲
 item.basemetals.bronze_sword.name=青铜 剑
 item.basemetals.bronze_trapdoor.name=青铜 暗门
-item.basemetals.carbon_powder.name=Carbon Dust
+item.basemetals.carbon_powder.name=碳粉
 item.basemetals.coldiron_axe.name=寒铁 斧
 item.basemetals.coldiron_bars.name=寒铁 笼
 item.basemetals.coldiron_block.name=寒铁 块
@@ -335,3 +335,27 @@ tile.basemetals.tin_ore.name=锡 矿
 tile.basemetals.tin_trapdoor.name=锡 暗门
 tile.basemetals.zinc_block.name=锌 块
 tile.basemetals.zinc_ore.name=锌 矿
+
+
+item.basemetals.aquarium_axe.name=鱼钢 斧
+item.basemetals.aquarium_bars.name=鱼钢 笼
+item.basemetals.aquarium_blend.name=鱼钢 粉
+item.basemetals.aquarium_block.name=鱼钢 块
+item.basemetals.aquarium_boots.name=鱼钢 靴子
+item.basemetals.aquarium_chestplate.name=鱼钢 护胸甲
+item.basemetals.aquarium_crackhammer.name=鱼钢 大锤
+item.basemetals.aquarium_door.name=鱼钢 门
+item.basemetals.aquarium_helmet.name=鱼钢 头盔
+item.basemetals.aquarium_hoe.name=鱼钢 锄
+item.basemetals.aquarium_ingot.name=鱼钢 锭
+item.basemetals.aquarium_leggings.name=鱼钢 裤子
+item.basemetals.aquarium_nugget.name=鱼钢 金块
+item.basemetals.aquarium_pickaxe.name=鱼钢 鹤嘴锄
+item.basemetals.aquarium_powder.name=鱼钢 粉
+item.basemetals.aquarium_shovel.name=鱼钢 铲
+item.basemetals.aquarium_sword.name=鱼钢 剑
+item.basemetals.aquarium_trapdoor.name=鱼钢 暗门
+tile.basemetals.aquarium_bars.name=鱼钢 笼
+tile.basemetals.aquarium_block.name=鱼钢 块
+tile.basemetals.aquarium_door.name=鱼钢 门
+tile.basemetals.aquarium_trapdoor.name=鱼钢 暗门

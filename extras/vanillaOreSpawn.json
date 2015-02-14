@@ -119,6 +119,20 @@
 					"biomes":[]
 				},
 			]
+		},
+		{
+			"dimension":-1,
+			"ores":[
+				{
+					"blockID":"minecraft:quartz_ore",
+					"size":15,
+					"variation":4,
+					"frequency":7,
+					"minHeight":0,
+					"maxHeight":128,
+					"biomes":[]
+				}
+			]
 		}
 	]
 }

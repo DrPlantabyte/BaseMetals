@@ -1,6 +1,6 @@
 language_support_goals=english (en_US,en_EN,en_CA,en_GB, en_AU, en_PT), italian(IT_it), spanish (es_MX,es_ES), simplified chinese (zh_CN), japanese (ja_JA), portugese (pt_BR), german (de_DE)
 
-nei.basemetals.recipehandler.crusher.name=Crushed Cubos
+nei.basemetals.recipehandler.crusher.name=Pulverizador
 
 item.basemetals.adamantine_axe.name=Adamantine Hacha
 item.basemetals.adamantine_bars.name=Adamantine Barras
@@ -335,3 +335,28 @@ tile.basemetals.tin_ore.name=Estaño Mineral
 tile.basemetals.tin_trapdoor.name=Estaño Trampa
 tile.basemetals.zinc_block.name=Zinc Cubo
 tile.basemetals.zinc_ore.name=Zinc Mineral
+
+
+item.basemetals.aquarium_axe.name=Hacha de Acero-Peces
+item.basemetals.aquarium_bars.name=Barras de Acero-Peces
+item.basemetals.aquarium_blend.name=Mezcla de Acero-Peces
+item.basemetals.aquarium_block.name=Cubo de Acero-Peces
+item.basemetals.aquarium_boots.name=Botas de Acero-Peces
+item.basemetals.aquarium_chestplate.name=Coraza de Acero-Peces
+item.basemetals.aquarium_crackhammer.name=Almádena de Acero-Peces
+item.basemetals.aquarium_door.name=Puerta de Acero-Peces
+item.basemetals.aquarium_helmet.name=Casca de Acero-Peces
+item.basemetals.aquarium_hoe.name=Azada de Acero-Peces
+item.basemetals.aquarium_ingot.name=Lingote de Acero-Peces
+item.basemetals.aquarium_leggings.name=Pantalones de Acero-Peces
+item.basemetals.aquarium_nugget.name=Pepita de Acero-Peces
+item.basemetals.aquarium_ore.name=Mineral de Acero-Peces
+item.basemetals.aquarium_pickaxe.name=Piqueta de Acero-Peces
+item.basemetals.aquarium_powder.name=Acero-Peces Pulverizado
+item.basemetals.aquarium_shovel.name=Pala de Acero-Peces
+item.basemetals.aquarium_sword.name=Espada de Acero-Peces
+item.basemetals.aquarium_trapdoor.name=Trampa de Acero-Peces
+tile.basemetals.aquarium_bars.name=Barras de Acero-Peces
+tile.basemetals.aquarium_block.name=Cubo de Acero-Peces
+tile.basemetals.aquarium_door.name=Puerta de Acero-Peces
+tile.basemetals.aquarium_trapdoor.name=Trampa de Acero-Peces

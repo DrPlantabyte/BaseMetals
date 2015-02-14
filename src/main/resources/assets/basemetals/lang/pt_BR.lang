@@ -335,3 +335,28 @@ tile.basemetals.tin_ore.name=Minério de Estanho
 tile.basemetals.tin_trapdoor.name=Alçapão de Estanho
 tile.basemetals.zinc_block.name=Zinco Cubo de Zinco
 tile.basemetals.zinc_ore.name=Minério de Zinco
+
+
+item.basemetals.aquarium_axe.name=Machado de Aço-Peixe
+item.basemetals.aquarium_bars.name=Barras de Aço-Peixe
+item.basemetals.aquarium_blend.name=Liga de Aço-Peixe
+item.basemetals.aquarium_block.name=Bloco de Aço-Peixe
+item.basemetals.aquarium_boots.name=Botas de Aço-Peixe
+item.basemetals.aquarium_chestplate.name=Peitoral de Aço-Peixe
+item.basemetals.aquarium_crackhammer.name=Marreta de Aço-Peixe
+item.basemetals.aquarium_door.name=Porta de Aço-Peixe
+item.basemetals.aquarium_helmet.name=Elmo de Aço-Peixe
+item.basemetals.aquarium_hoe.name=Enxada de Aço-Peixe
+item.basemetals.aquarium_ingot.name=Barra de Aço-Peixe
+item.basemetals.aquarium_leggings.name=Calças de Aço-Peixe
+item.basemetals.aquarium_nugget.name=Pepita de Aço-Peixe
+item.basemetals.aquarium_pickaxe.name=Picareta de Aço-Peixe
+item.basemetals.aquarium_powder.name=Aço-Peixe Pulverizado
+item.basemetals.aquarium_shovel.name=Pá de Aço-Peixe
+item.basemetals.aquarium_sword.name=Espada de Aço-Peixe
+item.basemetals.aquarium_trapdoor.name=Alçapão de Aço-Peixe
+tile.basemetals.aquarium_bars.name=Barras de Aço-Peixe
+tile.basemetals.aquarium_block.name=Cubo de Aço-Peixe
+tile.basemetals.aquarium_door.name=Porta de Aço-Peixe
+tile.basemetals.aquarium_trapdoor.name=Alçapão de Aço-Peixe
+
