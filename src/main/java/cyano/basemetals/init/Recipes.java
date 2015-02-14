@@ -39,6 +39,7 @@ public abstract class Recipes {
 		CrusherRecipeRegistry.addNewCrusherRecipe("cobblestone", new ItemStack(Blocks.gravel,1));
 		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.gravel, new ItemStack(Blocks.sand,1));
 		CrusherRecipeRegistry.addNewCrusherRecipe("sandstone", new ItemStack(Blocks.sand,4));
+		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.red_sandstone, new ItemStack(Blocks.sand,4,1));
 		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.glowstone, new ItemStack(Items.glowstone_dust,4));
 		CrusherRecipeRegistry.addNewCrusherRecipe("oreLapis", new ItemStack(Items.dye,8,4));
 		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.redstone_ore, new ItemStack(Items.redstone,4));
@@ -48,6 +49,12 @@ public abstract class Recipes {
 		CrusherRecipeRegistry.addNewCrusherRecipe(Items.blaze_rod, new ItemStack(Items.blaze_powder,2));
 		CrusherRecipeRegistry.addNewCrusherRecipe("oreQuartz", new ItemStack(Items.quartz,2));
 		CrusherRecipeRegistry.addNewCrusherRecipe("blockQuartz", new ItemStack(Items.quartz,4));
+		CrusherRecipeRegistry.addNewCrusherRecipe(new ItemStack(Blocks.prismarine,1,0), new ItemStack(Items.prismarine_shard,4));
+		CrusherRecipeRegistry.addNewCrusherRecipe(new ItemStack(Blocks.prismarine,1,1), new ItemStack(Items.prismarine_shard,9));
+		CrusherRecipeRegistry.addNewCrusherRecipe(new ItemStack(Blocks.prismarine,1,2), new ItemStack(Items.prismarine_shard,8));
+		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.sea_lantern, new ItemStack(Items.prismarine_crystals,4));
+		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.slime_block, new ItemStack(Items.slime_ball,9));
+		
 	}
 	
 	private static void initVanillaRecipes(){

@@ -133,11 +133,22 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 			}
 			// full suit of cold-iron makes you fire-proof
 			if(armorItem == cyano.basemetals.init.Items.coldiron_helmet){
-				if(player.inventory.armorItemInSlot(1).getItem() == cyano.basemetals.init.Items.coldiron_chestplate
-						&& player.inventory.armorItemInSlot(2).getItem() == cyano.basemetals.init.Items.coldiron_leggings
-						&& player.inventory.armorItemInSlot(3).getItem() == cyano.basemetals.init.Items.coldiron_boots){
+				if(player.getCurrentArmor(2).getItem() == cyano.basemetals.init.Items.coldiron_chestplate
+						&& player.getCurrentArmor(1).getItem() == cyano.basemetals.init.Items.coldiron_leggings
+						&& player.getCurrentArmor(0).getItem() == cyano.basemetals.init.Items.coldiron_boots){
 					final PotionEffect fireProtection = new PotionEffect(12,EFFECT_DURATION,1);
 					player.addPotionEffect(fireProtection);
+				}
+			}
+			// full suit of mithril protects you from withering, poison, nausea, and hunger effects
+			if(armorItem == cyano.basemetals.init.Items.mithril_helmet){
+				if(player.getCurrentArmor(2).getItem() == cyano.basemetals.init.Items.mithril_chestplate
+						&& player.getCurrentArmor(1).getItem() == cyano.basemetals.init.Items.mithril_leggings
+						&& player.getCurrentArmor(0).getItem() == cyano.basemetals.init.Items.mithril_boots){
+					player.removePotionEffect(9);
+					player.removePotionEffect(17);
+					player.removePotionEffect(19);
+					player.removePotionEffect(20);
 				}
 			}
 		}
