@@ -52,7 +52,7 @@ public abstract class Recipes {
 		CrusherRecipeRegistry.addNewCrusherRecipe(new ItemStack(Blocks.prismarine,1,0), new ItemStack(Items.prismarine_shard,4));
 		CrusherRecipeRegistry.addNewCrusherRecipe(new ItemStack(Blocks.prismarine,1,1), new ItemStack(Items.prismarine_shard,9));
 		CrusherRecipeRegistry.addNewCrusherRecipe(new ItemStack(Blocks.prismarine,1,2), new ItemStack(Items.prismarine_shard,8));
-		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.sea_lantern, new ItemStack(Items.prismarine_crystals,4));
+		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.sea_lantern, new ItemStack(Items.prismarine_crystals,3));
 		CrusherRecipeRegistry.addNewCrusherRecipe(Blocks.slime_block, new ItemStack(Items.slime_ball,9));
 		
 	}
