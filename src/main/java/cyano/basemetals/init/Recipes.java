@@ -162,7 +162,7 @@ public abstract class Recipes {
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.invar_blend,3), cyano.basemetals.init.Items.iron_powder,cyano.basemetals.init.Items.iron_powder,cyano.basemetals.init.Items.nickel_powder));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.electrum_blend,2), cyano.basemetals.init.Items.silver_powder,cyano.basemetals.init.Items.gold_powder));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.mithril_blend,3), cyano.basemetals.init.Items.silver_powder,cyano.basemetals.init.Items.silver_powder,cyano.basemetals.init.Items.coldiron_powder,cyano.basemetals.init.Items.mercury_ingot));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.aquarium_blend,3), cyano.basemetals.init.Items.copper_powder,cyano.basemetals.init.Items.copper_powder,cyano.basemetals.init.Items.zinc_powder, Items.prismarine_crystals));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.aquarium_blend,3), cyano.basemetals.init.Items.copper_powder,cyano.basemetals.init.Items.copper_powder,cyano.basemetals.init.Items.zinc_powder, Items.prismarine_crystals, Items.prismarine_crystals, Items.prismarine_crystals));
 		
 		
 		// misc recipes

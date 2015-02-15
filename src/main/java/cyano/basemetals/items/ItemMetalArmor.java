@@ -101,15 +101,15 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 				}
 			}
 		} else {
-			// apply potion effects
+			// apply potion effects. Note that "Level I" is actually effect level 0 in the effect constructor 
 			starsteel:{
 				if(starsteelUpdateCache.containsKey(player) == false) break starsteel;
 				int num = starsteelUpdateCache.get(player).getAndSet(0);
 				if(num == 0) break starsteel;
-				final PotionEffect jumpBoost = new PotionEffect(8,EFFECT_DURATION,num);
+				final PotionEffect jumpBoost = new PotionEffect(8,EFFECT_DURATION,num-1);
 				player.addPotionEffect(jumpBoost);
 				if(num > 1){
-					final PotionEffect speedBoost = new PotionEffect(1,EFFECT_DURATION,num-1);
+					final PotionEffect speedBoost = new PotionEffect(1,EFFECT_DURATION,num-2);
 					player.addPotionEffect(speedBoost);
 				}
 				break starsteel;
@@ -119,7 +119,7 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 				int level = leadUpdateCache.get(player).getAndSet(0) / 2;
 				if(level == 0) break lead;
 				if(level > 0){
-					final PotionEffect speedLoss = new PotionEffect(2,EFFECT_DURATION,level);
+					final PotionEffect speedLoss = new PotionEffect(2,EFFECT_DURATION,level-1);
 					player.addPotionEffect(speedLoss);
 				}
 				break lead;
@@ -129,7 +129,7 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 				int level = adamantineUpdateCache.get(player).getAndSet(0) / 2;
 				if(level == 0) break adamantine;
 				if(level > 0){
-					final PotionEffect protection = new PotionEffect(11,EFFECT_DURATION,level);
+					final PotionEffect protection = new PotionEffect(11,EFFECT_DURATION,level-1);
 					player.addPotionEffect(protection);
 				}
 				break adamantine;
@@ -139,7 +139,7 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 				if(player.getCurrentArmor(2).getItem() == cyano.basemetals.init.Items.coldiron_chestplate
 						&& player.getCurrentArmor(1).getItem() == cyano.basemetals.init.Items.coldiron_leggings
 						&& player.getCurrentArmor(0).getItem() == cyano.basemetals.init.Items.coldiron_boots){
-					final PotionEffect fireProtection = new PotionEffect(12,EFFECT_DURATION,1);
+					final PotionEffect fireProtection = new PotionEffect(12,EFFECT_DURATION);
 					player.addPotionEffect(fireProtection);
 				}
 			}
@@ -159,12 +159,13 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 				if(player.getCurrentArmor(2).getItem() == cyano.basemetals.init.Items.aquarium_chestplate
 						&& player.getCurrentArmor(1).getItem() == cyano.basemetals.init.Items.aquarium_leggings
 						&& player.getCurrentArmor(0).getItem() == cyano.basemetals.init.Items.aquarium_boots){
-					Block b = player.worldObj.getBlockState(new BlockPos(player.posX,player.posY, player.posZ)).getBlock();
-					if(b == Blocks.water){
-						final PotionEffect waterBreathing = new PotionEffect(13,EFFECT_DURATION,1);
+					Block b1 = player.worldObj.getBlockState(new BlockPos(player.posX,player.posY, player.posZ)).getBlock();
+					Block b2 = player.worldObj.getBlockState(new BlockPos(player.posX,player.posY+1, player.posZ)).getBlock();
+					if(b1 == Blocks.water && b2 == Blocks.water){
+						final PotionEffect waterBreathing = new PotionEffect(13,EFFECT_DURATION);
 						player.addPotionEffect(waterBreathing);
-						final PotionEffect regen = new PotionEffect(10,EFFECT_DURATION,1);
-						player.addPotionEffect(regen);
+						final PotionEffect protection = new PotionEffect(11,EFFECT_DURATION);
+						player.addPotionEffect(protection);
 					}
 				}
 			}
