@@ -145,7 +145,7 @@ public class MetalMaterial {
 	}
 	/**
 	 * Gets the hardness of the ore block for this material
-	 * @return
+	 * @return the hardness of the ore block for this material
 	 */
 	public float getOreBlockHardness(){
 		return 0.5f * hardness;

@@ -1,0 +1,7 @@
+{
+    "parent": "block/door_bottom",
+    "textures": {
+        "bottom": "basemetals:blocks/aquarium_door_lower",
+        "top": "basemetals:blocks/aquarium_door_upper"
+    }
+}
