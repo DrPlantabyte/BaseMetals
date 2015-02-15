@@ -95,6 +95,8 @@ public class BaseMetals
 	{
 		
 		cyano.basemetals.init.Recipes.init();
+		cyano.basemetals.init.DungeonLoot.init();
+		cyano.basemetals.init.VillagerTrades.init();
 		
 
 		if(event.getSide() == Side.CLIENT){
@@ -111,7 +113,6 @@ public class BaseMetals
 		// client-only code
 		cyano.basemetals.init.Items.registerItemRenders(event);
 		cyano.basemetals.init.Blocks.registerItemRenders(event);
-		cyano.basemetals.init.DungeonLoot.init();
 	}
 	@SideOnly(Side.SERVER)
 	private void serverInit(FMLInitializationEvent event){
