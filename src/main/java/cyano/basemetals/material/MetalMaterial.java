@@ -30,10 +30,10 @@ public class MetalMaterial {
 	
 	/**
 	 * This is how common or rare items made from this material are when 
-	 * generating treasure chests. For reference, a loaf of bread is 1.0 and a 
-	 * golden apple is 0.01 
+	 * generating treasure chests. For reference, a loaf of bread is 100 and a 
+	 * golden apple is 1 
 	 */
-	final float lootFrequency;
+	final int lootFrequency;
 	/**
 	 * @param name String used to identify items and blocks using this material
 	 * @param hardness hardness on a scale from 0 to 10 (or more), where 0 is non-solid and 
@@ -46,10 +46,10 @@ public class MetalMaterial {
 	 * For reference, stone is 2, iron is 4.5, diamond is 4, wood is 6, gold is 10.
 	 * Used to calculate enchantibility
 	 * @param lootFrequency This is how common or rare items made from this material are when 
-	 * generating treasure chests. For reference, a loaf of bread is 1.0 and a 
-	 * golden apple is 0.01 
+	 * generating treasure chests. For reference, a loaf of bread is 100 and a 
+	 * golden apple is 0 
 	 */
-	public MetalMaterial(String name, float hardness, float strength, float magic, float lootFrequency){
+	public MetalMaterial(String name, float hardness, float strength, float magic, int lootFrequency){
 		this.hardness = hardness;
 		this.strength = strength;
 		this.magicAffinity = magic;
@@ -210,5 +210,12 @@ public class MetalMaterial {
 	public String getEnumName() {
 		return enumName;
 	}
-	
+
+	/**
+	 * Returns the treasure chest spawn frequency
+	 * @return an integer from 1 to 100
+	 */
+	public int getLootSpawnWeight(){
+		return this.lootFrequency;
+	}
 }

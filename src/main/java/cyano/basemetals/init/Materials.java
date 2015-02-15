@@ -82,7 +82,7 @@ public abstract class Materials {
 	}
 	
 	private static MetalMaterial addMaterial(String name, double hardness, double strength, double magic, double rarity){
-		MetalMaterial m = new MetalMaterial(name,(float)hardness,(float)strength,(float)magic,(float)rarity);
+		MetalMaterial m = new MetalMaterial(name,(float)hardness,(float)strength,(float)magic,(int)(Math.max(100*rarity,1)));
 		registerMaterial(name, m);
 		return m;
 	}
