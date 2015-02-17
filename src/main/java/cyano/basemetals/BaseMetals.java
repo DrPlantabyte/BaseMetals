@@ -40,7 +40,7 @@ public class BaseMetals
 
 	public static final String MODID = "basemetals";
 	public static final String NAME ="Base Metals";
-	public static final String VERSION = "1.1.0";
+	public static final String VERSION = "1.1.1";
 	
 	
 	
@@ -97,6 +97,8 @@ public class BaseMetals
 		cyano.basemetals.init.Recipes.init();
 		cyano.basemetals.init.DungeonLoot.init();
 		cyano.basemetals.init.VillagerTrades.init();
+		
+		// TODO: achievements
 		
 
 		if(event.getSide() == Side.CLIENT){
