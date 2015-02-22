@@ -104,10 +104,28 @@ public class OreSpawner implements IWorldGenerator {
 			new Vec3i(-1, 0, 1),new Vec3i( 0, 0, 1),new Vec3i( 1, 0, 1),
 			new Vec3i(-1, 1, 1),new Vec3i( 0, 1, 1),new Vec3i( 1, 1, 1)
 	};
+	
+	private static final Vec3i[] offsets_small = {
+		new Vec3i( 0, 0, 0),new Vec3i( 1, 0, 0),
+		new Vec3i( 0, 1, 0),new Vec3i( 1, 1, 0),
+
+		new Vec3i( 0, 0, 1),new Vec3i( 1, 0, 1),
+		new Vec3i( 0, 1, 1),new Vec3i( 1, 1, 1)
+	};
 	private static final int[] offsetIndexRef = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26};
+	private static final int[] offsetIndexRef_small = {0,1,2,3,4,5,6,7};
 
 	public static void spawnOre( BlockPos blockPos, Block oreBlock, int metaData, int quantity, World world, Random prng) {
 		int count = quantity;
+		if(quantity <= 8){
+			int[] scrambledLUT = new int[offsetIndexRef_small.length];
+			System.arraycopy(offsetIndexRef_small, 0, scrambledLUT, 0, scrambledLUT.length);
+			scramble(scrambledLUT,prng);
+			while(count > 0){
+				spawn(oreBlock,metaData,world,blockPos.add(offsets_small[scrambledLUT[--count]]),world.provider.getDimensionId(),true);
+			}
+			return;
+		}
 		if(quantity < 27){
 			int[] scrambledLUT = new int[offsetIndexRef.length];
 			System.arraycopy(offsetIndexRef, 0, scrambledLUT, 0, scrambledLUT.length);
