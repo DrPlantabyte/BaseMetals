@@ -52,7 +52,7 @@ public abstract class WorldGen {
 		parseConfig(settings);
 		// add custom spawners to the world
 		Random prng = new Random();
-		for(int dim : oreSpawnRegistry.keySet()){
+		for(Integer dim : oreSpawnRegistry.keySet()){
 			List<OreSpawnData> ores = oreSpawnRegistry.get(dim);
 			for(OreSpawnData ore : ores){
 				addOreSpawner(ore,dim,prng.nextLong());
@@ -67,7 +67,13 @@ public abstract class WorldGen {
 				.getAsJsonArray();
 		for(int n = 0; n < dimensions.size(); n++){
 			JsonObject dim = dimensions.get(n).getAsJsonObject();
-			Integer dimIndex = dim.get("dimension").getAsInt();
+			final Integer dimIndex;
+			if(dim.get("dimension").getAsString().equals("*")){
+				// misc dimensions
+				dimIndex = null;
+			} else {
+				dimIndex = dim.get("dimension").getAsInt();
+			}
 			JsonArray ores = dim.get("ores").getAsJsonArray();
 			for(int i = 0; i < ores.size(); i++){
 				OreSpawnData ore = new OreSpawnData(ores.get(i).getAsJsonObject());
@@ -90,7 +96,7 @@ public abstract class WorldGen {
 	 * @param randomHash This is a random number that should be unique to each 
 	 * ore spawner that you add.
 	 */
-	public static void addOreSpawner(OreSpawnData spawnParameters, int dimension, long randomHash){
+	public static void addOreSpawner(OreSpawnData spawnParameters, Integer dimension, long randomHash){
 		OreSpawner spawner = new OreSpawner(spawnParameters,dimension,randomHash);
 		GameRegistry.registerWorldGenerator(spawner, weight++);
 	}

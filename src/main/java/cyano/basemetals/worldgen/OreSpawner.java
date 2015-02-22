@@ -4,9 +4,11 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Deque;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -16,7 +18,6 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.Vec3i;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 import com.google.common.base.Predicate;
@@ -29,8 +30,11 @@ public class OreSpawner implements IWorldGenerator {
 	private static final Deque<Integer3D> cacheOrder = new LinkedList<>();
 	private static final int maxCacheSize = 64; 
 	
+	private static final Set<Integer> registeredDimensions = new HashSet<>();
+	
 	private final long hash; // used to make prng's different
-	private final int dimension;
+	private final Integer dimension; // can be null
+	private final boolean miscDimension;
 
 	private final OreSpawnData spawnData;
 	
@@ -44,10 +48,12 @@ public class OreSpawner implements IWorldGenerator {
 		//	oreGen = new WorldGenMinable(oreBlock, 0, spawnQuantity, Blocks.stone);
 		this(new OreSpawnData(oreBlock, metaDataValue, minHeight, maxHeight, spawnFrequency, spawnQuantity, spawnQuantityVariation, biomes),dimension,hash);
 	}
-	public OreSpawner(OreSpawnData spawnData, int dimension, long hash){
+	public OreSpawner(OreSpawnData spawnData, Integer dimension, long hash){
 		this.spawnData = spawnData;
 		this.hash = hash;
 		this.dimension = dimension;
+		if(dimension != null)registeredDimensions.add(dimension);
+		this.miscDimension = false;
 	}
 		
 	
@@ -55,7 +61,16 @@ public class OreSpawner implements IWorldGenerator {
 	public void generate(Random random, int chunkX, int chunkZ, World world,
 			IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
 		// restriction checks
-		if(world.provider.getDimensionId() != this.dimension) return;
+		if(dimension == null){
+			// check if misc dimension (do not generate if there is any data specific for this dimension) 
+			if(registeredDimensions.contains(Integer.valueOf(world.provider.getDimensionId()))) {
+				// do not generate misc dimension ores in non-misc dimension
+				return;
+			}
+		} else if(world.provider.getDimensionId() != this.dimension.intValue()){
+			// wrong dimension
+			return;
+		}
 		BlockPos coord = new BlockPos((chunkX << 4) & 0x08,64,(chunkZ << 4) & 0x08);
 		if(spawnData.restrictBiomes){
 			if(!spawnData.biomesByName.contains(world.getBiomeGenForCoords(coord).biomeName)){
