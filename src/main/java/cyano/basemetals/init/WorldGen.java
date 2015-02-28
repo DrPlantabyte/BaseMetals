@@ -68,7 +68,7 @@ public abstract class WorldGen {
 		for(int n = 0; n < dimensions.size(); n++){
 			JsonObject dim = dimensions.get(n).getAsJsonObject();
 			final Integer dimIndex;
-			if(dim.get("dimension").getAsString().equals("*")){
+			if(dim.get("dimension").getAsString().equals("+")){
 				// misc dimensions
 				dimIndex = null;
 			} else {
