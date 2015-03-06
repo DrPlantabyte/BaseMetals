@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockOre;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
@@ -12,12 +13,14 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemTool;
+import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
@@ -25,7 +28,9 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLLog;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
+import cyano.basemetals.blocks.BlockMetalOre;
 import cyano.basemetals.init.Materials;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
@@ -76,6 +81,22 @@ public class ItemMetalCrackHammer extends ItemTool{
 					output.stackSize = 1;
 					for(int i = 0; i < num; i++){
 						world.spawnEntityInWorld(new EntityItem(world, coord.getX()+0.5, coord.getY()+0.5, coord.getZ()+0.5, output.copy()));
+					}
+					// XP from breaking ore
+					if(bs.getBlock() instanceof BlockOre){
+						float xp;
+						if(bs.getBlock() instanceof BlockMetalOre){
+							xp = ((BlockMetalOre)bs.getBlock()).getMetal().getOreSmeltXP();
+						} else {
+							xp = FurnaceRecipes.instance().getSmeltingExperience(new ItemStack(bs.getBlock(),1,bs.getBlock().getMetaFromState(bs)));
+						}
+						float chance = world.rand.nextFloat();
+						while(xp > chance){
+							world.spawnEntityInWorld(new EntityXPOrb(world,  
+									coord.getX()+0.5, coord.getY()+0.5, coord.getZ()+0.5, 
+									1));
+							xp -= 1;
+						}
 					}
 				}
 			}

@@ -12,3 +12,5 @@ zip -r --quiet ../../dev/javadoc *
 cd "../../../src/main/java/"
 zip -r --quiet ../../../build/dev/src *
 cd "../../.."
+echo "Build script competed on `date`"
+

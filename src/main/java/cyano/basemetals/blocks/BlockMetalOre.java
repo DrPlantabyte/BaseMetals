@@ -48,4 +48,8 @@ public class BlockMetalOre extends BlockOre implements IOreDictionaryEntry{
 		if(this == cyano.basemetals.init.Blocks.starsteel_ore && entity instanceof net.minecraft.entity.boss.EntityDragon) return false;
 		return super.canEntityDestroy(bs, coord, entity);
 	}
+	
+	public MetalMaterial getMetal(){
+		return metal;
+	}
 }
