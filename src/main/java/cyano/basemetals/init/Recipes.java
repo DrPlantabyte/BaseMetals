@@ -84,6 +84,7 @@ public abstract class Recipes {
 		for(MetalMaterial metal : Materials.getAllMetals()){
 			if(exceptions.contains(metal))continue;
 			String baseName = metal.getName()+"_";
+			String oreName = metal.getCapitalizedName();
 			Item axe = cyano.basemetals.init.Items.getItemByName(baseName+"axe");
 			Item blend = cyano.basemetals.init.Items.getItemByName(baseName+"blend");
 			Item boots = cyano.basemetals.init.Items.getItemByName(baseName+"boots");
@@ -106,13 +107,13 @@ public abstract class Recipes {
 			
 			// ingot-related recipes 
 			if(ore != null && powder != null){
-				CrusherRecipeRegistry.addNewCrusherRecipe(ore,new ItemStack(powder,2));
+				CrusherRecipeRegistry.addNewCrusherRecipe("ore"+oreName,new ItemStack(powder,2));
 			}
 			if(ore != null && ingot != null){
 				GameRegistry.addSmelting(ore, new ItemStack(ingot,1), metal.getOreSmeltXP());
 			}
 			if(ingot != null && powder != null){
-				CrusherRecipeRegistry.addNewCrusherRecipe(ingot,new ItemStack(powder,1));
+				CrusherRecipeRegistry.addNewCrusherRecipe("ingot"+oreName,new ItemStack(powder,1));
 				GameRegistry.addSmelting(powder, new ItemStack(ingot,1), 0);
 			}
 			if(ingot != null && blend != null){
@@ -120,49 +121,50 @@ public abstract class Recipes {
 			}
 			if(ingot != null && nugget != null){
 				GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(nugget,9), new ItemStack(ingot)));
-				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ingot), "xxx","xxx","xxx",'x',nugget));
+				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ingot), "xxx","xxx","xxx",'x',"nugget"+oreName));
 			}
 			if(ingot != null && block != null){
 				GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ingot,9), new ItemStack(block)));
-				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(block), "xxx","xxx","xxx",'x',ingot));
+				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(block), "xxx","xxx","xxx",'x',"ingot"+oreName));
 			}
 			if(block != null && powder != null){
-				CrusherRecipeRegistry.addNewCrusherRecipe(block, new ItemStack(powder,9));
+				CrusherRecipeRegistry.addNewCrusherRecipe("block"+oreName, new ItemStack(powder,9));
 			}
 			if(ingot != null && bars != null){
-				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bars,16), "xxx","xxx",'x',ingot));
+				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bars,16), "xxx","xxx",'x',"ingot"+oreName));
 			}
 			if(ingot != null && door != null){
-				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(door,3), "xx ","xx ","xx ",'x',ingot));
+				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(door,3), "xx ","xx ","xx ",'x',"ingot"+oreName));
 			}
 			if(ingot != null && trapdoor != null){
-				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(trapdoor), "xx","xx",'x',ingot));
+				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(trapdoor), "xx","xx",'x',"ingot"+oreName));
 			}
 			
 			// armor and tools
-			if(ingot != null && boots != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(boots), "x x","x x",'x',ingot));
-			if(ingot != null && helmet != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(helmet), "xxx","x x",'x',ingot));
-			if(ingot != null && chestplate != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(chestplate), "x x","xxx","xxx",'x',ingot));
-			if(ingot != null && leggings != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(leggings), "xxx","x x","x x",'x',ingot));
-			if(ingot != null && axe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(axe), "xx ","x/ "," / ",'x',ingot,'/',"stickWood"));
-			if(block != null && crackhammer != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(crackhammer), " x "," / "," / ",'x',block,'/',"stickWood"));
-			if(ingot != null && hoe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(hoe), "xx "," / "," / ",'x',ingot,'/',"stickWood"));
-			if(ingot != null && pickaxe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(pickaxe), "xxx"," / "," / ",'x',ingot,'/',"stickWood"));
-			if(ingot != null && shovel != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(shovel), " x "," / "," / ",'x',ingot,'/',"stickWood"));
-			if(ingot != null && sword != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(sword), " x "," x "," / ",'x',ingot,'/',"stickWood"));
+			if(ingot != null && boots != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(boots), "x x","x x",'x',"ingot"+oreName));
+			if(ingot != null && helmet != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(helmet), "xxx","x x",'x',"ingot"+oreName));
+			if(ingot != null && chestplate != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(chestplate), "x x","xxx","xxx",'x',"ingot"+oreName));
+			if(ingot != null && leggings != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(leggings), "xxx","x x","x x",'x',"ingot"+oreName));
+			if(ingot != null && axe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(axe), "xx ","x/ "," / ",'x',"ingot"+oreName,'/',"stickWood"));
+			if(block != null && crackhammer != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(crackhammer), " x "," / "," / ",'x',"block"+oreName,'/',"stickWood"));
+			if(ingot != null && hoe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(hoe), "xx "," / "," / ",'x',"ingot"+oreName,'/',"stickWood"));
+			if(ingot != null && pickaxe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(pickaxe), "xxx"," / "," / ",'x',"ingot"+oreName,'/',"stickWood"));
+			if(ingot != null && shovel != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(shovel), " x "," / "," / ",'x',"ingot"+oreName,'/',"stickWood"));
+			if(ingot != null && sword != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(sword), " x "," x "," / ",'x',"ingot"+oreName,'/',"stickWood"));
 			
 			// misc recipes
-			if(ingot != null && pickaxe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.bucket), "x x"," x ",'x',ingot));
+			if(ingot != null && pickaxe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.bucket), "x x"," x ",'x',"ingot"+oreName));
 		}
 		
 		// alloy blends
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.brass_blend,3), cyano.basemetals.init.Items.copper_powder,cyano.basemetals.init.Items.copper_powder,cyano.basemetals.init.Items.zinc_powder));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.bronze_blend,4), cyano.basemetals.init.Items.copper_powder,cyano.basemetals.init.Items.copper_powder,cyano.basemetals.init.Items.copper_powder,cyano.basemetals.init.Items.tin_powder));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.steel_blend,9), cyano.basemetals.init.Items.iron_powder, cyano.basemetals.init.Items.iron_powder, cyano.basemetals.init.Items.iron_powder, cyano.basemetals.init.Items.iron_powder, cyano.basemetals.init.Items.iron_powder, cyano.basemetals.init.Items.iron_powder, cyano.basemetals.init.Items.iron_powder, cyano.basemetals.init.Items.iron_powder, cyano.basemetals.init.Items.carbon_powder));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.invar_blend,3), cyano.basemetals.init.Items.iron_powder,cyano.basemetals.init.Items.iron_powder,cyano.basemetals.init.Items.nickel_powder));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.electrum_blend,2), cyano.basemetals.init.Items.silver_powder,cyano.basemetals.init.Items.gold_powder));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.mithril_blend,3), cyano.basemetals.init.Items.silver_powder,cyano.basemetals.init.Items.silver_powder,cyano.basemetals.init.Items.coldiron_powder,cyano.basemetals.init.Items.mercury_ingot));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.aquarium_blend,3), cyano.basemetals.init.Items.copper_powder,cyano.basemetals.init.Items.copper_powder,cyano.basemetals.init.Items.zinc_powder, Items.prismarine_crystals, Items.prismarine_crystals, Items.prismarine_crystals));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.brass_blend,3), "dustCopper","dustCopper","dustZinc"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.bronze_blend,4), "dustCopper","dustCopper","dustCopper","dustTin"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.steel_blend,8), "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustCarbon"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.steel_blend,8), "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustCoal"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.invar_blend,3), "dustIron","dustIron","dustNickel;"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.electrum_blend,2), "dustSilver","dustGold"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.mithril_blend,3), "dustSilver","dustSilver","dustColdiron","ingotMercury"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.aquarium_blend,3), "dustCopper","dustCopper","dustZinc", Items.prismarine_crystals, Items.prismarine_crystals, Items.prismarine_crystals));
 		
 		
 		// misc recipes
@@ -178,7 +180,7 @@ public abstract class Recipes {
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.shears), "x "," x",'x',cyano.basemetals.init.Items.steel_ingot));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.shears), " x","x ",'x',cyano.basemetals.init.Items.steel_ingot));
 		
-		CrusherRecipeRegistry.addNewCrusherRecipe(cyano.basemetals.init.Blocks.mercury_ore,new ItemStack(cyano.basemetals.init.Items.mercury_powder,2));
+		CrusherRecipeRegistry.addNewCrusherRecipe("oreMercury",new ItemStack(cyano.basemetals.init.Items.mercury_powder,2));
 		GameRegistry.addSmelting(cyano.basemetals.init.Items.mercury_powder, new ItemStack(cyano.basemetals.init.Items.mercury_ingot,1), 0);
 		GameRegistry.addSmelting(cyano.basemetals.init.Blocks.mercury_ore, new ItemStack(cyano.basemetals.init.Items.mercury_ingot,1), 1);
 		
