@@ -1,5 +1,6 @@
 package cyano.basemetals.blocks;
 
+import cyano.basemetals.init.Achievements;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.block.Block;
@@ -7,6 +8,9 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -72,5 +76,15 @@ public class BlockMetalBlock extends Block implements IOreDictionaryEntry{
 	@Override
 	public String getOreDictionaryName() {
 		return "block"+metal.getCapitalizedName();
+	}
+	
+
+	@Override
+	public void onBlockPlacedBy(final World w, final BlockPos coord, final IBlockState bs, final EntityLivingBase placer, final ItemStack src) {
+		super.onBlockPlacedBy(w, coord, bs, placer, src);
+    	// achievement
+		if(placer instanceof EntityPlayer){
+			((EntityPlayer)placer).addStat(Achievements.blocktastic, 1);
+		}
 	}
 }

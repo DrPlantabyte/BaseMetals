@@ -31,6 +31,7 @@ import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import cyano.basemetals.blocks.BlockMetalOre;
+import cyano.basemetals.init.Achievements;
 import cyano.basemetals.init.Materials;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
@@ -215,6 +216,8 @@ public class ItemMetalCrackHammer extends ItemTool{
     public void onCreated(final ItemStack item, final World world, final EntityPlayer crafter) {
     	super.onCreated(item, world, crafter);
     	MetalToolEffects.extraEffectsOnCrafting(metal,item, world, crafter);
+    	// achievement
+    	crafter.addStat(Achievements.geologist, 1);
     }
     
     

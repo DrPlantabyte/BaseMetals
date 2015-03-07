@@ -20,6 +20,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 import cyano.basemetals.BaseMetals;
+import cyano.basemetals.init.Achievements;
 import cyano.basemetals.init.Materials;
 import cyano.basemetals.material.MetalMaterial;
 
@@ -77,6 +78,7 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 						starsteelUpdateCache.put(player, new AtomicInteger(0));
 					}
 					starsteelUpdateCache.get(player).incrementAndGet();
+					if(armorItem == cyano.basemetals.init.Items.starsteel_boots) player.addStat(Achievements.moon_boots, 1);
 					break starsteel;
 				}
 			}
@@ -92,7 +94,7 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 			}
 			if(((ItemMetalArmor)armorItem).metal.equals(Materials.adamantine)){
 				adamantine:{
-					// used to count up the starsteel armor items
+					// used to count up the adamantine armor items
 					if(adamantineUpdateCache.containsKey(player) == false){
 						adamantineUpdateCache.put(player, new AtomicInteger(0));
 					}
@@ -126,11 +128,15 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 			}
 			adamantine:{
 				if(adamantineUpdateCache.containsKey(player) == false) break adamantine;
-				int level = adamantineUpdateCache.get(player).getAndSet(0) / 2;
+				int num = adamantineUpdateCache.get(player).getAndSet(0);
+				int level = num / 2;
 				if(level == 0) break adamantine;
 				if(level > 0){
 					final PotionEffect protection = new PotionEffect(11,EFFECT_DURATION,level-1);
 					player.addPotionEffect(protection);
+				}
+				if(num == 4){
+					player.addStat(Achievements.juggernaut, 1);
 				}
 				break adamantine;
 			}
@@ -141,6 +147,9 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 						&& player.getCurrentArmor(0).getItem() == cyano.basemetals.init.Items.coldiron_boots){
 					final PotionEffect fireProtection = new PotionEffect(12,EFFECT_DURATION);
 					player.addPotionEffect(fireProtection);
+					if(player.getCurrentEquippedItem().getItem() == cyano.basemetals.init.Items.coldiron_sword){
+						player.addStat(Achievements.demon_slayer, 1);
+					}
 				}
 			}
 			// full suit of mithril protects you from withering, poison, nausea, and hunger effects
@@ -152,6 +161,9 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 					player.removePotionEffect(17);
 					player.removePotionEffect(19);
 					player.removePotionEffect(20);
+					if(player.getCurrentEquippedItem().getItem() == cyano.basemetals.init.Items.mithril_sword){
+						player.addStat(Achievements.angel_of_death, 1);
+					}
 				}
 			}
 			// full suit of aquarium makes you breathe and heal underwater
@@ -164,8 +176,9 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 					if(b1 == Blocks.water && b2 == Blocks.water){
 						final PotionEffect waterBreathing = new PotionEffect(13,EFFECT_DURATION);
 						player.addPotionEffect(waterBreathing);
-						final PotionEffect protection = new PotionEffect(11,EFFECT_DURATION);
+						final PotionEffect protection = new PotionEffect(11,EFFECT_DURATION,2);
 						player.addPotionEffect(protection);
+						player.addStat(Achievements.scuba_diver, 1);
 					}
 				}
 			}
