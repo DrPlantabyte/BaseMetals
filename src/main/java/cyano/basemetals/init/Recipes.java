@@ -8,13 +8,17 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.FMLLog;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
+import net.minecraft.util.StatCollector;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 import cyano.basemetals.material.MetalMaterial;
+import cyano.basemetals.registry.BrewingRecipeRegistry;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
+import cyano.basemetals.registry.recipe.IBrewingRecipe;
 
 public abstract class Recipes {
 	
@@ -168,6 +172,8 @@ public abstract class Recipes {
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.aquarium_blend,3), "dustCopper","dustCopper","dustZinc", Items.prismarine_crystals, Items.prismarine_crystals, Items.prismarine_crystals));
 		
 		// potions
+		cyano.basemetals.init.Items.silver_powder.setPotionEffect("CUSTOM"); // make it brew-able
+		BrewingRecipeRegistry.getInstance().addRecipe(new SilverPotionRecipe());
 		// TODO: potion recipes
 		
 		// misc recipes
@@ -188,5 +194,68 @@ public abstract class Recipes {
 		GameRegistry.addSmelting(cyano.basemetals.init.Blocks.mercury_ore, new ItemStack(cyano.basemetals.init.Items.mercury_ingot,1), 1);
 		
 	}
+	
+	private static class SilverPotionRecipe implements IBrewingRecipe{
 
+		private final ItemStack output;
+		private final ItemStack input = new ItemStack(cyano.basemetals.init.Items.silver_powder);
+		SilverPotionRecipe(){
+			output = new ItemStack(net.minecraft.init.Items.potionitem,1,8194);
+			NBTTagCompound potionTag = new NBTTagCompound();
+			potionTag.setTag("display", makeNameTag(localize("potion.traveller.name")));
+			NBTTagList effects = new NBTTagList();
+			effects.appendTag(makePotionEffectTag(1,0,3*60*20));
+			effects.appendTag(makePotionEffectTag(8,0,3*60*20));
+			potionTag.setTag("CustomPotionEffects",effects);
+			output.setTagCompound(potionTag);
+		}
+		
+		@Override
+		public boolean canBrew(ItemStack ingredient, ItemStack basePotion) {
+			if(isOreDictEquivalent(ingredient,"dustZinc")){
+				return (basePotion.getMetadata() & 0x003F) == 16; // awkward potion
+			}
+			return false;
+		}
+
+		@Override
+		public ItemStack brewPotion(ItemStack ingredient, ItemStack basePotion) {
+			return output.copy();
+		}
+
+		@Override
+		public ItemStack getIngredient() {
+			return input;
+		}
+		
+	}
+	
+	private static boolean isOreDictEquivalent(ItemStack item, String oreDict){
+		List<ItemStack> items = OreDictionary.getOres("dustZinc");
+		for(ItemStack i : items){
+			if(ItemStack.areItemsEqual(i, item)) return true;
+		}
+		return false;
+	}
+	
+	private static String localize(String key){
+		if(StatCollector.canTranslate(key)){
+			return StatCollector.translateToLocal(key);
+		} else {
+			return key;
+		}
+	}
+
+	private static NBTTagCompound makeNameTag(String name){
+		NBTTagCompound tag = new NBTTagCompound();
+		tag.setString("Name", name);
+		return tag;
+	}
+	private static NBTTagCompound makePotionEffectTag(int effectID,int amplifier, int duration_ticks){
+		NBTTagCompound tag = new NBTTagCompound();
+		tag.setInteger("Id", effectID);
+		tag.setInteger("Amplifier", amplifier);
+		tag.setInteger("Duration", duration_ticks);
+		return tag;
+	}
 }

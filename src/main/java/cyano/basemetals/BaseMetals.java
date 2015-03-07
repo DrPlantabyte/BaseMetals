@@ -9,6 +9,7 @@ import java.util.Arrays;
 
 import org.apache.logging.log4j.Level;
 
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
@@ -19,6 +20,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import cyano.basemetals.data.DataConstants;
+import cyano.basemetals.events.PotionBrewEventHandler;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
 
 
@@ -73,6 +75,8 @@ public class BaseMetals
 		cyano.basemetals.init.Items.init();
 		
 
+		MinecraftForge.EVENT_BUS.register(new PotionBrewEventHandler());
+		
 		if(event.getSide() == Side.CLIENT){
 			clientPreInit(event);
 		}
@@ -97,6 +101,7 @@ public class BaseMetals
 		cyano.basemetals.init.Recipes.init();
 		cyano.basemetals.init.DungeonLoot.init();
 		cyano.basemetals.init.VillagerTrades.init();
+		
 		
 		// TODO: achievements
 		

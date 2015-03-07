@@ -357,3 +357,5 @@ tile.basemetals.tin_ore.name=Tin Ore
 tile.basemetals.tin_trapdoor.name=Tin Trapdoor
 tile.basemetals.zinc_block.name=Zinc Block
 tile.basemetals.zinc_ore.name=Zinc Ore
+
+potion.traveller.name=Traveler's Potion
