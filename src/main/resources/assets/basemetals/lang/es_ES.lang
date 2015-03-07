@@ -361,3 +361,16 @@ tile.basemetals.aquarium_bars.name=Barras de Acero-Peces
 tile.basemetals.aquarium_block.name=Cubo de Acero-Peces
 tile.basemetals.aquarium_door.name=Puerta de Acero-Peces
 tile.basemetals.aquarium_trapdoor.name=Trampa de Acero-Peces
+
+
+tooltip.adamantine.tool=+%x daño a los enemigos poderosos
+tooltip.aquarium.tool=+%x daño a los enemigos de agua
+tooltip.coldiron.tool=+%x daño a demonios
+tooltip.mithril.tool=Venenos muertos vivientes
+tooltip.starsteel.tool=Reparación automática
+
+tooltip.adamantine.armor=Reduce el daño recibido
+tooltip.aquarium.armor=Respirar bajo el agua
+tooltip.coldiron.armor=Inmunidad fuego
+tooltip.mithril.armor=Protección contra el veneno y se marchitan
+tooltip.starsteel.armor=Menos gravedad

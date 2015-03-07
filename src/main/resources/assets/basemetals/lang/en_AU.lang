@@ -357,3 +357,16 @@ tile.basemetals.tin_ore.name=Tin Ore
 tile.basemetals.tin_trapdoor.name=Tin Trapdoor
 tile.basemetals.zinc_block.name=Zinc Block
 tile.basemetals.zinc_ore.name=Zinc Ore
+
+
+tooltip.adamantine.tool=+%x damage against tough enemies
+tooltip.aquarium.tool=+%x damage against aquatic enemies
+tooltip.coldiron.tool=+%x damage against firey enemies
+tooltip.mithril.tool=Blinds and withers undead
+tooltip.starsteel.tool=Repairs 1 damage every %x seconds
+
+tooltip.adamantine.armor=Reduces damage taken
+tooltip.aquarium.armor=Full suit: breathe underwater
+tooltip.coldiron.armor=Full suit: fire immunity
+tooltip.mithril.armor=Full suit: protection from poison & wither
+tooltip.starsteel.armor=Reduces your weight

@@ -98,8 +98,7 @@ public class BaseMetals
 		cyano.basemetals.init.DungeonLoot.init();
 		cyano.basemetals.init.VillagerTrades.init();
 		
-		// TODO: achievements
-		
+		cyano.basemetals.init.Achievements.init();
 
 		if(event.getSide() == Side.CLIENT){
 			clientInit(event);

@@ -357,3 +357,16 @@ tile.basemetals.tin_ore.name=Tin Ore
 tile.basemetals.tin_trapdoor.name=Tin Trapdoor
 tile.basemetals.zinc_block.name=Zinc Block
 tile.basemetals.zinc_ore.name=Zinc Ore
+
+
+tooltip.adamantine.tool=Hurts th' giants +%x more
+tooltip.aquarium.tool=Hurts th' fish +%x more
+tooltip.coldiron.tool=Hurts th' devils +%x more
+tooltip.mithril.tool=Kiss o' Davey Jones
+tooltip.starsteel.tool=It fixes itself
+
+tooltip.adamantine.armor=Hurts less
+tooltip.aquarium.armor=Gives ya gills
+tooltip.coldiron.armor=Become a devil
+tooltip.mithril.armor=Protect's yer tummy
+tooltip.starsteel.armor=Ye can fly (sorta)

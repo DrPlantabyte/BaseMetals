@@ -360,3 +360,15 @@ tile.basemetals.aquarium_bars.name=鱼钢 笼
 tile.basemetals.aquarium_block.name=鱼钢 块
 tile.basemetals.aquarium_door.name=鱼钢 门
 tile.basemetals.aquarium_trapdoor.name=鱼钢 暗门
+
+tooltip.adamantine.tool=+%x 伤害强敌
+tooltip.aquarium.tool=+%x 伤害敌人的水
+tooltip.coldiron.tool=+%x 伤害恶魔
+tooltip.mithril.tool=不死的危害
+tooltip.starsteel.tool=自动修复
+
+tooltip.adamantine.armor=减少受到的伤害
+tooltip.aquarium.armor=水下呼吸
+tooltip.coldiron.armor=消防免疫力
+tooltip.mithril.armor=保护的毒药和枯萎
+tooltip.starsteel.armor=小于重力

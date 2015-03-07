@@ -197,7 +197,15 @@ public class MetalMaterial {
 	 * @return the base damage from attacks with tools made from this material
 	 */
 	public float getBaseAttackDamage(){
-		return Math.max(0f,(hardness / 3f) - 0.5f);
+		return round(Math.max(0f,(hardness / 3f) - 0.5f),1);
+	}
+	
+	private float round(float number, int numDecimalPlaces){
+		int x = 1;
+		for(int i = 0; i < numDecimalPlaces; i++){
+			x *= 10;
+		}
+		return (float)Math.round(number * x) / (float)x;
 	}
 	/**
 	 * Gets the enchantibility score for this material

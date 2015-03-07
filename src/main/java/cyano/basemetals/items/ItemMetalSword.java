@@ -7,25 +7,15 @@ import java.util.Set;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
-import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.BlockPos;
-import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
-
-import com.google.common.collect.Multimap;
-
 import cyano.basemetals.init.Materials;
 import cyano.basemetals.material.MetalMaterial;
 
@@ -158,6 +148,12 @@ public class ItemMetalSword extends ItemSword {
     
     public String getMaterialName() {
         return metal.getName();
+    }
+    
+    @Override
+    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b){
+    	super.addInformation(stack,player,list,b);
+    	MetalToolEffects.addToolSpecialPropertiesToolTip(metal,list);
     }
 	
 }

@@ -168,7 +168,7 @@ public abstract class Recipes {
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.aquarium_blend,3), "dustCopper","dustCopper","dustZinc", Items.prismarine_crystals, Items.prismarine_crystals, Items.prismarine_crystals));
 		
 		// potions
-		// TODO: potion recipes
+		// TODO: potion recipes (didn't work)
 		
 		// misc recipes
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blocks.activator_rail,6), "x/x","x*x","x/x",'x',cyano.basemetals.init.Items.steel_ingot,'/',"stickWood",'*',Blocks.redstone_torch));

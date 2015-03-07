@@ -125,5 +125,11 @@ public class ItemMetalAxe extends ItemAxe {
     public String getMaterialName() {
         return metal.getName();
     }
-	
+
+    
+    @Override
+    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b){
+    	super.addInformation(stack,player,list,b);
+    	MetalToolEffects.addToolSpecialPropertiesToolTip(metal,list);
+    }
 }
