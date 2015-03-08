@@ -44,7 +44,7 @@ public class BlockMetalDoor extends net.minecraft.block.BlockDoor{
     public boolean onBlockActivated(final World world, final BlockPos coord, IBlockState blockstate, 
     		final EntityPlayer player, final EnumFacing face, 
     		final float partialX, final float partialY, final float partialZ) {
-        if (this.blockMaterial == Material.iron) {
+		if (this.metal.getToolHarvestLevel() > 1) {
             return false;
         }
         final BlockPos blockpos1 = (blockstate.getValue(BlockDoor.HALF) == EnumDoorHalf.LOWER) ? coord : coord.down();
