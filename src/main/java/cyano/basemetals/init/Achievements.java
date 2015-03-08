@@ -34,7 +34,6 @@ public abstract class Achievements {
 	public static void init(){
 		if(initDone)return;
 
-		// TODO: achievements
 		this_is_new = makeAchievement("this_is_new",AchievementList.buildFurnace,4,6,Items.copper_ingot);
 		blocktastic = makeAchievement("blocktastic",this_is_new,6,6,Blocks.copper_block);
 		geologist = makeAchievement("geologist",this_is_new,8,8,Items.iron_crackhammer);

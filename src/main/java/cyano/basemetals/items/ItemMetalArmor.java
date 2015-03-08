@@ -25,7 +25,6 @@ import cyano.basemetals.init.Materials;
 import cyano.basemetals.material.MetalMaterial;
 
 public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
-	// TODO: make special properties appear in tooltip
 	
 	protected final String customTexture;
 	protected final MetalMaterial metal;
