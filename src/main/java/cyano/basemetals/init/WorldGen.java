@@ -36,20 +36,20 @@ public abstract class WorldGen {
 	
 	private static final Map<Integer,List<OreSpawnData>> oreSpawnRegistry  = new HashMap<>();
 	
-	private static JsonObject settings = null;
+	
 	
 	public static void loadConfig(Path jsonFile) throws IOException{
+		final JsonObject settings;
 		JsonParser parser = new JsonParser();
 		BufferedReader fileReader = Files.newBufferedReader(jsonFile, Charset.forName("UTF-8"));
 		settings = parser.parse(fileReader).getAsJsonObject();
 		fileReader.close();
+		parseConfig(settings);
 	}
 	
 	
 	public static void init(){
-		Blocks.init();
 		// load ore settings (must be done AFTER loading the blocks
-		parseConfig(settings);
 		// add custom spawners to the world
 		Random prng = new Random();
 		for(Integer dim : oreSpawnRegistry.keySet()){

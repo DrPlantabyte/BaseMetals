@@ -1,15 +1,15 @@
 package cyano.basemetals;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
-import org.apache.logging.log4j.Level;
-
-import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -18,6 +18,9 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import org.apache.logging.log4j.Level;
+
 import cyano.basemetals.data.DataConstants;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
 
@@ -40,8 +43,10 @@ public class BaseMetals
 
 	public static final String MODID = "basemetals";
 	public static final String NAME ="Base Metals";
-	public static final String VERSION = "1.1.2";
+	public static final String VERSION = "1.2.0";
 	
+	
+	public static final List<Path> oreSpawnConfigFiles = new LinkedList<>();
 	
 	
 	@EventHandler
@@ -53,7 +58,8 @@ public class BaseMetals
 	//	config.save();
 		
 		
-		Path oreSpawnFile = Paths.get(event.getSuggestedConfigurationFile().toPath().getParent().toString(),"basemetals","ore-spawn.json");
+		Path oreSpawnFolder = Paths.get(event.getSuggestedConfigurationFile().toPath().getParent().toString(),"orespawn");
+		Path oreSpawnFile = Paths.get(oreSpawnFolder.toString(),MODID+".json");
 		if(Files.exists(oreSpawnFile) == false){
 			try {
 				Files.createDirectories(oreSpawnFile.getParent());
@@ -63,10 +69,11 @@ public class BaseMetals
 			}
 		}
 
-		try {
-			cyano.basemetals.init.WorldGen.loadConfig(oreSpawnFile);
-		} catch (IOException e) {
-			FMLLog.log(Level.ERROR, e,MODID+": Error parsing ore-spawn config file "+oreSpawnFile);
+		File[] files = oreSpawnFolder.toFile().listFiles(); // sigh, java 8 does this so much better
+		for(File f : files){
+			if(f.getName().toLowerCase().endsWith(".json")){
+				oreSpawnConfigFiles.add(f.toPath());
+			}
 		}
 		cyano.basemetals.init.Materials.init();
 		cyano.basemetals.init.Blocks.init();
@@ -123,6 +130,15 @@ public class BaseMetals
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 	{
+		
+		for(Path oreSpawnFile : oreSpawnConfigFiles){
+			try {
+				cyano.basemetals.init.WorldGen.loadConfig(oreSpawnFile);
+
+			} catch (IOException e) {
+				FMLLog.log(Level.ERROR, e,MODID+": Error parsing ore-spawn config file "+oreSpawnFile);
+			}
+		}
 		
 		cyano.basemetals.init.WorldGen.init();
 
