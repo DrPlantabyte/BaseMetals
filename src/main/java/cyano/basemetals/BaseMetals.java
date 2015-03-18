@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -43,20 +44,25 @@ public class BaseMetals
 
 	public static final String MODID = "basemetals";
 	public static final String NAME ="Base Metals";
-	public static final String VERSION = "1.2.1";
+	public static final String VERSION = "1.2.2";
 	
 	
 	public static final List<Path> oreSpawnConfigFiles = new LinkedList<>();
 	
 	
+	public static float chestLootFactor = 1.0f;
+	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		// load config
-	//	Configuration config = new Configuration(event.getSuggestedConfigurationFile());
-	//	config.load();
-	//	config.save();
+		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
+		config.load();
 		
+		chestLootFactor = config.getFloat("treasure_chest_loot_factor", "options", 0.5f, 0.0f, 1000.0f, 
+				"Controls the rarity of metal ingots being found in treasure chests relative to \n"
+			 +  "the frequency of other chest loot items. Set to 0 to disable metal ingots from \n"
+			 +  "appearing in treasure chests.");
 		
 		Path oreSpawnFolder = Paths.get(event.getSuggestedConfigurationFile().toPath().getParent().toString(),"orespawn");
 		Path oreSpawnFile = Paths.get(oreSpawnFolder.toString(),MODID+".json");
@@ -79,6 +85,9 @@ public class BaseMetals
 		cyano.basemetals.init.Blocks.init();
 		cyano.basemetals.init.Items.init();
 		
+		
+
+		config.save();
 
 		if(event.getSide() == Side.CLIENT){
 			clientPreInit(event);
