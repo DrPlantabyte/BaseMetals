@@ -74,7 +74,6 @@ public abstract class Recipes {
 		CrusherRecipeRegistry.addNewCrusherRecipe(new ItemStack(Items.coal,1,0), new ItemStack(cyano.basemetals.init.Items.carbon_powder,1));
 		CrusherRecipeRegistry.addNewCrusherRecipe(new ItemStack(Items.coal,1,1), new ItemStack(cyano.basemetals.init.Items.carbon_powder,1));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blocks.coal_block), "xxx","xxx","xxx",'x',cyano.basemetals.init.Items.carbon_powder));
-		
 	}
 	
 	private static void initMetalRecipes(){

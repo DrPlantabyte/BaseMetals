@@ -31,7 +31,7 @@ import cyano.basemetals.registry.CrusherRecipeRegistry;
  * uses this mod, the classes of interest to you are the init classes (classes 
  * in package cyano.basemetals.init) and the CrusherRecipeRegistry class (in 
  * package cyano.basemetals.registry). Note that you should add 
- * 'dependencies = "required-after:poweradvantage"' to your &#64;Mod annotation 
+ * 'dependencies = "required-after:basemetals"' to your &#64;Mod annotation 
  * (e.g. <br> 
  * &#64;Mod(modid = "moremetals", name="More Metals!", version = "1.2.3", dependencies = "required-after:basemetals")
  * <br>)
@@ -44,7 +44,7 @@ public class BaseMetals
 
 	public static final String MODID = "basemetals";
 	public static final String NAME ="Base Metals";
-	public static final String VERSION = "1.2.2";
+	public static final String VERSION = "1.2.3";
 	
 	
 	public static final List<Path> oreSpawnConfigFiles = new LinkedList<>();
