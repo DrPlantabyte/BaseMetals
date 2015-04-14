@@ -6,6 +6,7 @@ import java.util.Set;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.enchantment.Enchantment;
@@ -230,7 +231,7 @@ public class ItemMetalCrackHammer extends ItemTool{
     
     @Override
     public boolean canHarvestBlock(final Block target) {
-		if(this.toolTypes.contains(target.getHarvestTool(target.getDefaultState()))){
+		if(this.toolTypes.contains(target.getHarvestTool(target.getDefaultState())) || target.getMaterial() == Material.rock){
 			return metal.getToolHarvestLevel() >= target.getHarvestLevel(target.getDefaultState());
 		}
 		return false;
