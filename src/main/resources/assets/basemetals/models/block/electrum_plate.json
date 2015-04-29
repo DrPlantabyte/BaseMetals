@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/plate",
+    "textures": {
+        "top": "basemetals:blocks/electrum_plate",
+        "side": "basemetals:blocks/electrum_plate",
+        "bottom": "basemetals:blocks/electrum_plate"
+    }
+}

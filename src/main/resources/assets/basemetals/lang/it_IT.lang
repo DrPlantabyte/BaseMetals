@@ -363,6 +363,28 @@ tile.basemetals.aquarium_door.name=Porta Pesce-Acciaio
 tile.basemetals.aquarium_trapdoor.name=Fuori Porta Pesce-Acciaio
 
 
+
+tile.basemetals.adamantine_plate.name=Lastra di Adamantio
+tile.basemetals.aquarium_plate.name=Lastra di Pesce-Acciaio
+tile.basemetals.brass_plate.name=Lastra d'Ottone
+tile.basemetals.bronze_plate.name=Lastra di Bronzo
+tile.basemetals.coldiron_plate.name=Lastra di Ferro-Freddo
+tile.basemetals.copper_plate.name=Lastra di Rame
+tile.basemetals.electrum_plate.name=Lastra di Lega di Rame
+tile.basemetals.invar_plate.name=Lastra di Invar
+tile.basemetals.lead_plate.name=Lastra di Piombo
+tile.basemetals.mithril_plate.name=Lastra di Mithril
+tile.basemetals.nickel_plate.name=Lastra di Nichel
+tile.basemetals.silver_plate.name=Lastra di Argento
+tile.basemetals.starsteel_plate.name=Lastra di Ferro-Stelle
+tile.basemetals.steel_plate.name=Lastra di Acciaio
+tile.basemetals.tin_plate.name=Lastra di Latta
+tile.basemetals.zinc_plate.name=Lastra di Zinco
+tile.basemetals.iron_plate.name=Lastra di Ferro
+tile.basemetals.gold_plate.name=Lastra d'Oro
+
+
+
 tooltip.adamantine.tool=+%x danni ai nemici potenti
 tooltip.aquarium.tool=+%x danni ai nemici d'acqua
 tooltip.coldiron.tool=+%x danno ai demoni

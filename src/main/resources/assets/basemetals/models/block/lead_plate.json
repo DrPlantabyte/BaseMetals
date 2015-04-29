@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/plate",
+    "textures": {
+        "top": "basemetals:blocks/lead_plate",
+        "side": "basemetals:blocks/lead_plate",
+        "bottom": "basemetals:blocks/lead_plate"
+    }
+}

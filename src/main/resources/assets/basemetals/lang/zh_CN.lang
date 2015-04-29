@@ -361,6 +361,25 @@ tile.basemetals.aquarium_block.name=鱼钢 块
 tile.basemetals.aquarium_door.name=鱼钢 门
 tile.basemetals.aquarium_trapdoor.name=鱼钢 暗门
 
+tile.basemetals.adamantine_plate.name=超钢板
+tile.basemetals.aquarium_plate.name=鱼钢板
+tile.basemetals.brass_plate.name=黄铜板
+tile.basemetals.bronze_plate.name=黄铜板
+tile.basemetals.coldiron_plate.name=寒铁板
+tile.basemetals.copper_plate.name=铜板
+tile.basemetals.electrum_plate.name=电金板
+tile.basemetals.invar_plate.name=殷钢板
+tile.basemetals.lead_plate.name=铅金板
+tile.basemetals.mithril_plate.name=秘银板
+tile.basemetals.nickel_plate.name=镍板
+tile.basemetals.silver_plate.name=银板
+tile.basemetals.starsteel_plate.name=星钢板
+tile.basemetals.steel_plate.name=钢板
+tile.basemetals.tin_plate.name=锡板
+tile.basemetals.zinc_plate.name=锌板
+tile.basemetals.iron_plate.name=鐵板
+tile.basemetals.gold_plate.name=金板
+
 tooltip.adamantine.tool=+%x 伤害强敌
 tooltip.aquarium.tool=+%x 伤害敌人的水
 tooltip.coldiron.tool=+%x 伤害恶魔

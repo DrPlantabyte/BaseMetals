@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/plate",
+    "textures": {
+        "top": "basemetals:blocks/tin_plate",
+        "side": "basemetals:blocks/tin_plate",
+        "bottom": "basemetals:blocks/tin_plate"
+    }
+}

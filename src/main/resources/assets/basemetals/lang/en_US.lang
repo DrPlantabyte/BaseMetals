@@ -359,6 +359,27 @@ tile.basemetals.zinc_block.name=Zinc Block
 tile.basemetals.zinc_ore.name=Zinc Ore
 
 
+tile.basemetals.adamantine_plate.name=Adamantine Plate
+tile.basemetals.aquarium_plate.name=Aquarium Plate
+tile.basemetals.brass_plate.name=Brass Plate
+tile.basemetals.bronze_plate.name=Bronze Plate
+tile.basemetals.coldiron_plate.name=Cold-Iron Plate
+tile.basemetals.copper_plate.name=Copper Plate
+tile.basemetals.electrum_plate.name=Electrum Plate
+tile.basemetals.invar_plate.name=Invar Plate
+tile.basemetals.lead_plate.name=Lead Plate
+tile.basemetals.mithril_plate.name=Mithril Plate
+tile.basemetals.nickel_plate.name=Nickel Plate
+tile.basemetals.silver_plate.name=Silver Plate
+tile.basemetals.starsteel_plate.name=Star-Steel Plate
+tile.basemetals.steel_plate.name=Steel Plate
+tile.basemetals.tin_plate.name=Tin Plate
+tile.basemetals.zinc_plate.name=Zinc Plate
+tile.basemetals.iron_plate.name=Iron Plate
+tile.basemetals.gold_plate.name=Gold Plate
+
+
+
 tooltip.adamantine.tool=+%x damage against tough enemies
 tooltip.aquarium.tool=+%x damage against aquatic enemies
 tooltip.coldiron.tool=+%x damage against firey enemies

@@ -361,6 +361,25 @@ tile.basemetals.aquarium_block.name=Cubo de Aço-Peixe
 tile.basemetals.aquarium_door.name=Porta de Aço-Peixe
 tile.basemetals.aquarium_trapdoor.name=Alçapão de Aço-Peixe
 
+tile.basemetals.adamantine_plate.name=Chapa de Magnetita
+tile.basemetals.aquarium_plate.name=Chapa de Aço-Peixe
+tile.basemetals.brass_plate.name=Chapa de Latão
+tile.basemetals.bronze_plate.name=Chapa de Bronze
+tile.basemetals.coldiron_plate.name=Chapa de Ferro-Frio
+tile.basemetals.copper_plate.name=Chapa de Cobre
+tile.basemetals.electrum_plate.name=Chapa de Electrum
+tile.basemetals.invar_plate.name=Chapa de Invar
+tile.basemetals.lead_plate.name=Chapa de Chumbo
+tile.basemetals.mithril_plate.name=Chapa de Mithril
+tile.basemetals.nickel_plate.name=Chapa de Níquel
+tile.basemetals.silver_plate.name=Chapa de Prata
+tile.basemetals.starsteel_plate.name=Chapa de Ferro-Estrela
+tile.basemetals.steel_plate.name=Chapa de Aço
+tile.basemetals.tin_plate.name=Chapa de Estanho
+tile.basemetals.zinc_plate.name=Chapa de Zinco
+tile.basemetals.iron_plate.name=Chapa de Ferro
+tile.basemetals.gold_plate.name=Chapa de Ouro
+
 tooltip.adamantine.tool=+%x dano aos inimigos poderosos
 tooltip.aquarium.tool=+%x dano aos inimigos de água
 tooltip.coldiron.tool=+%x dano aos demônios

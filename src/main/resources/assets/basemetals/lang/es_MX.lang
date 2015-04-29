@@ -363,6 +363,26 @@ tile.basemetals.aquarium_door.name=Puerta de Acero-Peces
 tile.basemetals.aquarium_trapdoor.name=Trampa de Acero-Peces
 
 
+tile.basemetals.adamantine_plate.name=Placa de Adamantine
+tile.basemetals.aquarium_plate.name=Placa de Acero-Peces
+tile.basemetals.brass_plate.name=Placa de Latón
+tile.basemetals.bronze_plate.name=Placa de Bronce
+tile.basemetals.coldiron_plate.name=Placa de Hierro-Frío
+tile.basemetals.copper_plate.name=Placa de Cobre
+tile.basemetals.electrum_plate.name=Placa de Electrum
+tile.basemetals.invar_plate.name=Placa de Invar
+tile.basemetals.lead_plate.name=Placa de Plomo
+tile.basemetals.mithril_plate.name=Placa de Mithril
+tile.basemetals.nickel_plate.name=Placa de Níquel
+tile.basemetals.silver_plate.name=Placa de Plata
+tile.basemetals.starsteel_plate.name=Placa de Hierro-Estrella
+tile.basemetals.steel_plate.name=Placa de Acero
+tile.basemetals.tin_plate.name=Placa de Estaño
+tile.basemetals.zinc_plate.name=Placa de Zinc
+tile.basemetals.iron_plate.name=Placa de Hierro
+tile.basemetals.gold_plate.name=Placa de Oro
+
+
 tooltip.adamantine.tool=+%x daño a los enemigos poderosos
 tooltip.aquarium.tool=+%x daño a los enemigos de agua
 tooltip.coldiron.tool=+%x daño a demonios
