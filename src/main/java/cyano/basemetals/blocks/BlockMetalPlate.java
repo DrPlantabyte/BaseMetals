@@ -3,6 +3,7 @@ package cyano.basemetals.blocks;
 import java.util.List;
 
 import cyano.basemetals.material.MetalMaterial;
+import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -17,7 +18,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockMetalPlate extends net.minecraft.block.Block{
+public class BlockMetalPlate extends net.minecraft.block.Block implements IOreDictionaryEntry{
 
 
 	/**
@@ -133,6 +134,10 @@ public class BlockMetalPlate extends net.minecraft.block.Block{
         }
         this.setBlockBounds(x1, y1, z1, x2, y2, z2);
         super.addCollisionBoxesToList(world, coord, bs, box, collisionBoxList, entity);
+	}
+	@Override
+	public String getOreDictionaryName() {
+		return "plate"+metal.getCapitalizedName();
 	}
 
 }
