@@ -108,6 +108,8 @@ public abstract class Recipes {
 			Block ore = cyano.basemetals.init.Blocks.getBlockByName(baseName+"ore");
 			Block trapdoor = cyano.basemetals.init.Blocks.getBlockByName(baseName+"trapdoor");
 			
+			
+			// NOTE: smelting XP is based on output item, not input item
 			// ingot-related recipes 
 			if(ore != null && powder != null){
 				CrusherRecipeRegistry.addNewCrusherRecipe("ore"+oreDictName,new ItemStack(powder,2));
@@ -117,10 +119,10 @@ public abstract class Recipes {
 			}
 			if(ingot != null && powder != null){
 				CrusherRecipeRegistry.addNewCrusherRecipe("ingot"+oreDictName,new ItemStack(powder,1));
-				GameRegistry.addSmelting(powder, new ItemStack(ingot,1), 0);
+				GameRegistry.addSmelting(powder, new ItemStack(ingot,1), metal.getOreSmeltXP());
 			}
 			if(ingot != null && blend != null){
-				GameRegistry.addSmelting(blend, new ItemStack(ingot,1), 0);
+				GameRegistry.addSmelting(blend, new ItemStack(ingot,1), metal.getOreSmeltXP());
 			}
 			if(ingot != null && nugget != null){
 				GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(nugget,9), new ItemStack(ingot)));
@@ -132,7 +134,7 @@ public abstract class Recipes {
 			}
 			if(ingot != null && plate != null){
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(plate,3), "xxx",'x',"ingot"+oreDictName));
-				GameRegistry.addSmelting(plate, new ItemStack(ingot,1), 0);
+				GameRegistry.addSmelting(plate, new ItemStack(ingot,1), metal.getOreSmeltXP());
 			}
 			if(block != null && powder != null){
 				CrusherRecipeRegistry.addNewCrusherRecipe("block"+oreDictName, new ItemStack(powder,9));

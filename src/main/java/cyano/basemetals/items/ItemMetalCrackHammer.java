@@ -5,33 +5,22 @@ import java.util.List;
 import java.util.Set;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockOre;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemTool;
-import net.minecraft.item.crafting.FurnaceRecipes;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.FMLLog;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
-import cyano.basemetals.blocks.BlockMetalOre;
+import cyano.basemetals.BaseMetals;
 import cyano.basemetals.init.Achievements;
 import cyano.basemetals.init.Materials;
 import cyano.basemetals.material.MetalMaterial;
@@ -84,28 +73,13 @@ public class ItemMetalCrackHammer extends ItemTool{
 					for(int i = 0; i < num; i++){
 						world.spawnEntityInWorld(new EntityItem(world, coord.getX()+0.5, coord.getY()+0.5, coord.getZ()+0.5, output.copy()));
 					}
-					// XP from breaking ore
-					if(bs.getBlock() instanceof BlockOre){
-						float xp;
-						if(bs.getBlock() instanceof BlockMetalOre){
-							xp = ((BlockMetalOre)bs.getBlock()).getMetal().getOreSmeltXP();
-						} else {
-							xp = FurnaceRecipes.instance().getSmeltingExperience(new ItemStack(bs.getBlock(),1,bs.getBlock().getMetaFromState(bs)));
-						}
-						float chance = world.rand.nextFloat();
-						while(xp > chance){
-							world.spawnEntityInWorld(new EntityXPOrb(world,  
-									coord.getX()+0.5, coord.getY()+0.5, coord.getZ()+0.5, 
-									1));
-							xp -= 1;
-						}
-					}
 				}
 			}
 		}
 		return super.onBlockDestroyed(tool, world, target, coord, player);
 		
 	}
+	
 	
 	@Override
 	public boolean onItemUse(final ItemStack item, final EntityPlayer player, final World w, 
@@ -123,6 +97,16 @@ public class ItemMetalCrackHammer extends ItemTool{
 				if(targetItem != null ){
 					ICrusherRecipe recipe = CrusherRecipeRegistry.getInstance().getRecipeForInputItem(targetItem);
 					if(recipe != null){
+						// hardness check
+						if(BaseMetals.enforceHardness){
+							if(targetItem.getItem() instanceof ItemBlock){
+								Block b = ((ItemBlock)targetItem.getItem()).getBlock();
+								if(!this.canHarvestBlock(b)){
+									// cannot harvest the block, no crush for you!
+									return false;
+								}
+							}
+						}
 						// crush the item
 						ItemStack output = recipe.getOutput().copy();
 						int count = output.stackSize;
@@ -195,7 +179,11 @@ public class ItemMetalCrackHammer extends ItemTool{
     @Override
     public int getHarvestLevel(final ItemStack item, final String typeRequested) {
     	if (typeRequested != null && toolTypes.contains(typeRequested)) {
-            return metal.getToolHarvestLevel();
+            if(BaseMetals.strongHammers){
+            	return metal.getToolHarvestLevel();
+            }else{
+            	return metal.getToolHarvestLevel() - 1;
+            }
         }
         return -1;
     }
@@ -232,7 +220,7 @@ public class ItemMetalCrackHammer extends ItemTool{
     @Override
     public boolean canHarvestBlock(final Block target) {
 		if(this.toolTypes.contains(target.getHarvestTool(target.getDefaultState())) || target.getMaterial() == Material.rock){
-			return metal.getToolHarvestLevel() >= target.getHarvestLevel(target.getDefaultState());
+			return this.getHarvestLevel(null, "pickaxe") >= target.getHarvestLevel(target.getDefaultState());
 		}
 		return false;
     }

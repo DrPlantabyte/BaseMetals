@@ -52,6 +52,9 @@ public class BaseMetals
 	
 	public static float chestLootFactor = 1.0f;
 	
+	public static boolean enforceHardness = true;
+	public static boolean strongHammers = true;
+	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
@@ -63,6 +66,15 @@ public class BaseMetals
 				"Controls the rarity of metal ingots being found in treasure chests relative to \n"
 			 +  "the frequency of other chest loot items. Set to 0 to disable metal ingots from \n"
 			 +  "appearing in treasure chests.");
+		
+		enforceHardness = config.getBoolean("enforce_hardness", "options", enforceHardness, 
+				"If true, then the crack hammer cannot crush ingots into powders if that \n"
+			+	"crackhammer is not hard enough to crush the ingot's ore.");
+		
+		strongHammers = config.getBoolean("strong_hammers", "options", strongHammers, 
+				"If true, then the crack hammer can crush ingots/ores that a pickaxe of the same \n"
+			+	"material can harvest. If false, then your crack hammer must be made of a harder \n"
+			+	"material than the ore you are crushing.");
 		
 		Path oreSpawnFolder = Paths.get(event.getSuggestedConfigurationFile().toPath().getParent().toString(),"orespawn");
 		Path oreSpawnFile = Paths.get(oreSpawnFolder.toString(),MODID+".json");
