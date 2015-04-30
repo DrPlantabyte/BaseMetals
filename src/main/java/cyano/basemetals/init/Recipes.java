@@ -61,20 +61,20 @@ public abstract class Recipes {
 	private static void initVanillaRecipes(){
 		OreDictionary.registerOre("barsIron", Blocks.iron_bars);
 		OreDictionary.registerOre("bars", Blocks.iron_bars);
-		OreDictionary.registerOre("doorIron", Blocks.iron_door);
-		OreDictionary.registerOre("door", Blocks.iron_door);
-		OreDictionary.registerOre("doorWood", Blocks.oak_door);
-		OreDictionary.registerOre("doorWood", Blocks.jungle_door);
-		OreDictionary.registerOre("doorWood", Blocks.spruce_door);
-		OreDictionary.registerOre("doorWood", Blocks.dark_oak_door);
-		OreDictionary.registerOre("doorWood", Blocks.birch_door);
-		OreDictionary.registerOre("doorWood", Blocks.acacia_door);
-		OreDictionary.registerOre("door", Blocks.oak_door);
-		OreDictionary.registerOre("door", Blocks.jungle_door);
-		OreDictionary.registerOre("door", Blocks.spruce_door);
-		OreDictionary.registerOre("door", Blocks.dark_oak_door);
-		OreDictionary.registerOre("door", Blocks.birch_door);
-		OreDictionary.registerOre("door", Blocks.acacia_door);
+		OreDictionary.registerOre("doorIron", Items.iron_door);
+		OreDictionary.registerOre("door", Items.iron_door);
+		OreDictionary.registerOre("doorWood", Items.oak_door);
+		OreDictionary.registerOre("doorWood", Items.jungle_door);
+		OreDictionary.registerOre("doorWood", Items.spruce_door);
+		OreDictionary.registerOre("doorWood", Items.dark_oak_door);
+		OreDictionary.registerOre("doorWood", Items.birch_door);
+		OreDictionary.registerOre("doorWood", Items.acacia_door);
+		OreDictionary.registerOre("door", Items.oak_door);
+		OreDictionary.registerOre("door", Items.jungle_door);
+		OreDictionary.registerOre("door", Items.spruce_door);
+		OreDictionary.registerOre("door", Items.dark_oak_door);
+		OreDictionary.registerOre("door", Items.birch_door);
+		OreDictionary.registerOre("door", Items.acacia_door);
 		
 		CrusherRecipeRegistry.addNewCrusherRecipe("oreIron", new ItemStack(cyano.basemetals.init.Items.iron_powder,2));
 		CrusherRecipeRegistry.addNewCrusherRecipe("blockIron", new ItemStack(cyano.basemetals.init.Items.iron_powder,9));
