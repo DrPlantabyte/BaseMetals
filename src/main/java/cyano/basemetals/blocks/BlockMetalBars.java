@@ -5,7 +5,7 @@ import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
-public class BlockMetalBars extends net.minecraft.block.BlockPane {
+public class BlockMetalBars extends net.minecraft.block.BlockPane implements IOreDictionaryEntry {
 
 	final MetalMaterial metal;
 	public BlockMetalBars(MetalMaterial metal) {
@@ -16,5 +16,8 @@ public class BlockMetalBars extends net.minecraft.block.BlockPane {
 		this.blockResistance = metal.getBlastResistance();
 		this.setHarvestLevel("pickaxe", metal.getRequiredHarvestLevel());
 	}
-	
+	@Override
+	public String getOreDictionaryName() {
+		return "bars"+metal.getCapitalizedName();
+	}
 }

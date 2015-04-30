@@ -59,6 +59,23 @@ public abstract class Recipes {
 	}
 	
 	private static void initVanillaRecipes(){
+		OreDictionary.registerOre("barsIron", Blocks.iron_bars);
+		OreDictionary.registerOre("bars", Blocks.iron_bars);
+		OreDictionary.registerOre("doorIron", Blocks.iron_door);
+		OreDictionary.registerOre("door", Blocks.iron_door);
+		OreDictionary.registerOre("doorWood", Blocks.oak_door);
+		OreDictionary.registerOre("doorWood", Blocks.jungle_door);
+		OreDictionary.registerOre("doorWood", Blocks.spruce_door);
+		OreDictionary.registerOre("doorWood", Blocks.dark_oak_door);
+		OreDictionary.registerOre("doorWood", Blocks.birch_door);
+		OreDictionary.registerOre("doorWood", Blocks.acacia_door);
+		OreDictionary.registerOre("door", Blocks.oak_door);
+		OreDictionary.registerOre("door", Blocks.jungle_door);
+		OreDictionary.registerOre("door", Blocks.spruce_door);
+		OreDictionary.registerOre("door", Blocks.dark_oak_door);
+		OreDictionary.registerOre("door", Blocks.birch_door);
+		OreDictionary.registerOre("door", Blocks.acacia_door);
+		
 		CrusherRecipeRegistry.addNewCrusherRecipe("oreIron", new ItemStack(cyano.basemetals.init.Items.iron_powder,2));
 		CrusherRecipeRegistry.addNewCrusherRecipe("blockIron", new ItemStack(cyano.basemetals.init.Items.iron_powder,9));
 		CrusherRecipeRegistry.addNewCrusherRecipe("ingotIron", new ItemStack(cyano.basemetals.init.Items.iron_powder,1));
@@ -141,12 +158,15 @@ public abstract class Recipes {
 			}
 			if(ingot != null && bars != null){
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bars,16), "xxx","xxx",'x',"ingot"+oreDictName));
+				OreDictionary.registerOre("bars", bars);
 			}
 			if(ingot != null && door != null){
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(door,3), "xx","xx","xx",'x',"ingot"+oreDictName));
+				OreDictionary.registerOre("door", door);
 			}
 			if(ingot != null && trapdoor != null){
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(trapdoor), "xx","xx",'x',"ingot"+oreDictName));
+				OreDictionary.registerOre("trapdoor", trapdoor);
 			}
 			
 			// armor and tools

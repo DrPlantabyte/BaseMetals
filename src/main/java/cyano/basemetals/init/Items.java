@@ -703,7 +703,7 @@ public abstract class Items {
 	}
 	private static Item create_door(MetalMaterial m,BlockDoor door){
 		String n = "door";
-		Item i = new ItemMetalDoor(door);
+		Item i = new ItemMetalDoor(door,m);
 		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n+"_item";
 		GameRegistry.registerItem(i, regName);
