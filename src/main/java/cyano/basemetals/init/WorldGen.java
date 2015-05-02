@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -49,6 +50,9 @@ public abstract class WorldGen {
 	
 	
 	public static void init(){
+		WorldGenMinable b;
+		net.minecraft.world.gen.ChunkProviderHell h;
+		net.minecraft.world.biome.BiomeDecorator bd;
 		// load ore settings (must be done AFTER loading the blocks
 		// add custom spawners to the world
 		Random prng = new Random();

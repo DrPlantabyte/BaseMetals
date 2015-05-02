@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
@@ -23,6 +24,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.logging.log4j.Level;
 
 import cyano.basemetals.data.DataConstants;
+import cyano.basemetals.events.VanillaOreGenDisabler;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
 
 
@@ -55,6 +57,8 @@ public class BaseMetals
 	public static boolean enforceHardness = true;
 	public static boolean strongHammers = true;
 	
+	public static boolean disableVanillaOreGen = false;
+	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
@@ -75,6 +79,10 @@ public class BaseMetals
 				"If true, then the crack hammer can crush ingots/ores that a pickaxe of the same \n"
 			+	"material can harvest. If false, then your crack hammer must be made of a harder \n"
 			+	"material than the ore you are crushing.");
+		
+		disableVanillaOreGen = config.getBoolean("disable_standard_ore_generation", "options", disableVanillaOreGen, 
+				"If true, then ore generation will be handled exclusively by oregen .json files \n"
+			+	"(vanilla ore generation will be disabled)");
 		
 		Path oreSpawnFolder = Paths.get(event.getSuggestedConfigurationFile().toPath().getParent().toString(),"orespawn");
 		Path oreSpawnFile = Paths.get(oreSpawnFolder.toString(),MODID+".json");
@@ -127,6 +135,10 @@ public class BaseMetals
 		cyano.basemetals.init.VillagerTrades.init();
 		
 		cyano.basemetals.init.Achievements.init();
+		
+		if(disableVanillaOreGen){
+			MinecraftForge.ORE_GEN_BUS.register(VanillaOreGenDisabler.getInstance());
+		}
 
 		if(event.getSide() == Side.CLIENT){
 			clientInit(event);
