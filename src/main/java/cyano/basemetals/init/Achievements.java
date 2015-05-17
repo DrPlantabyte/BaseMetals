@@ -9,6 +9,7 @@ import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraftforge.common.ChestGenHooks;
 import cyano.basemetals.material.MetalMaterial;
 
+/** initializer for achievements */
 public abstract class Achievements {
 
 	public static Achievement this_is_new; // smelt a new metal ingot
