@@ -51,16 +51,16 @@ public class ItemMetalCrackHammer extends ItemTool{
 
 	
 	@Override
-    public float getStrVsBlock(final ItemStack tool, final Block target) {
+	public float getStrVsBlock(final ItemStack tool, final Block target) {
 		if(isCrushableBlock(target) && canHarvestBlock(target) ){
 			return Math.max(1.0f, 0.5f * this.metal.getToolEfficiency());
 		}
 		return 1.0f;
-    }
+	}
 	
 	@Override
-    public boolean onBlockDestroyed(final ItemStack tool, final World world, 
-    		final Block target, final BlockPos coord, final EntityLivingBase player) {
+	public boolean onBlockDestroyed(final ItemStack tool, final World world, 
+			final Block target, final BlockPos coord, final EntityLivingBase player) {
 		if(!world.isRemote && this.canHarvestBlock(target)){
 			IBlockState bs = world.getBlockState(coord);
 			ICrusherRecipe recipe = getCrusherRecipe(bs);
@@ -132,8 +132,8 @@ public class ItemMetalCrackHammer extends ItemTool{
 		if(success && !w.isRemote){
 			w.playSoundAtEntity(player, "dig.gravel", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 		}
-        return success;
-    }
+		return success;
+	}
 	
 	protected boolean isCrushableBlock(IBlockState block){
 		return getCrusherRecipe(block) != null;
@@ -154,85 +154,92 @@ public class ItemMetalCrackHammer extends ItemTool{
 	
 
 
-    public ToolMaterial getToolMaterial() {
-        return this.toolMaterial;
-    }
-    
-    @Override
-    public int getItemEnchantability() {
-        return this.toolMaterial.getEnchantability();
-    }
-    
-    public String getToolMaterialName() {
-        return this.toolMaterial.toString();
-    }
-    
-    @Override
-    public boolean getIsRepairable(final ItemStack intputItem, final ItemStack repairMaterial) {
-    	List<ItemStack> acceptableItems = OreDictionary.getOres(repairOreDictName);
-    	for(ItemStack i : acceptableItems ){
-    		if(ItemStack.areItemsEqual(i, repairMaterial)) return true;
-    	}
-    	return false;
-    }
-    
-    @Override
-    public int getHarvestLevel(final ItemStack item, final String typeRequested) {
-    	if (typeRequested != null && toolTypes.contains(typeRequested)) {
-            if(BaseMetals.strongHammers){
-            	return metal.getToolHarvestLevel();
-            }else{
-            	return metal.getToolHarvestLevel() - 1;
-            }
-        }
-        return -1;
-    }
-    @Override
-    public Set<String> getToolClasses(final ItemStack item) {
-        return toolTypes;
-    }
-    
-   
-    
-    @Override
-    public boolean hitEntity(final ItemStack item, final EntityLivingBase target, final EntityLivingBase attacker) {
-        super.hitEntity(item, target, attacker);
-        MetalToolEffects.extraEffectsOnAttack(metal,item, target, attacker);
-        return true;
-    }
-    
-    @Override
-    public void onCreated(final ItemStack item, final World world, final EntityPlayer crafter) {
-    	super.onCreated(item, world, crafter);
-    	MetalToolEffects.extraEffectsOnCrafting(metal,item, world, crafter);
-    	// achievement
-    	crafter.addStat(Achievements.geologist, 1);
-    }
-    
-    
-    @Override
-    public void onUpdate(final ItemStack item, final World world, final Entity player, final int inventoryIndex, final boolean isHeld) {
-    	if(regenerates && !world.isRemote && isHeld && item.getItemDamage() > 0 && world.getTotalWorldTime() % regenInterval == 0){
-    		item.setItemDamage(item.getItemDamage() - 1);
-    	}
-    }
-    
-    @Override
-    public boolean canHarvestBlock(final Block target) {
-		if(this.toolTypes.contains(target.getHarvestTool(target.getDefaultState())) || target.getMaterial() == Material.rock){
-			return this.getHarvestLevel(null, "pickaxe") >= target.getHarvestLevel(target.getDefaultState());
+	public ToolMaterial getToolMaterial() {
+		return this.toolMaterial;
+	}
+	
+	@Override
+	public int getItemEnchantability() {
+		return this.toolMaterial.getEnchantability();
+	}
+	
+	public String getToolMaterialName() {
+		return this.toolMaterial.toString();
+	}
+	
+	@Override
+	public boolean getIsRepairable(final ItemStack intputItem, final ItemStack repairMaterial) {
+		List<ItemStack> acceptableItems = OreDictionary.getOres(repairOreDictName);
+		for(ItemStack i : acceptableItems ){
+			if(ItemStack.areItemsEqual(i, repairMaterial)) return true;
 		}
 		return false;
-    }
+	}
+	
+	@Override
+	public int getHarvestLevel(final ItemStack item, final String typeRequested) {
+		if (typeRequested != null && toolTypes.contains(typeRequested)) {
+			if(BaseMetals.strongHammers){
+				return metal.getToolHarvestLevel();
+			}else{
+				return metal.getToolHarvestLevel() - 1;
+			}
+		}
+		return -1;
+	}
+	@Override
+	public Set<String> getToolClasses(final ItemStack item) {
+		return toolTypes;
+	}
+	
    
-    public String getMaterialName() {
-        return metal.getName();
-    }
+	
+	@Override
+	public boolean hitEntity(final ItemStack item, final EntityLivingBase target, final EntityLivingBase attacker) {
+		super.hitEntity(item, target, attacker);
+		MetalToolEffects.extraEffectsOnAttack(metal,item, target, attacker);
+		return true;
+	}
+	
+	@Override
+	public void onCreated(final ItemStack item, final World world, final EntityPlayer crafter) {
+		super.onCreated(item, world, crafter);
+		MetalToolEffects.extraEffectsOnCrafting(metal,item, world, crafter);
+		// achievement
+		crafter.addStat(Achievements.geologist, 1);
+	}
+	
+	
+	@Override
+	public void onUpdate(final ItemStack item, final World world, final Entity player, final int inventoryIndex, final boolean isHeld) {
+		if(regenerates && !world.isRemote && isHeld && item.getItemDamage() > 0 && world.getTotalWorldTime() % regenInterval == 0){
+			item.setItemDamage(item.getItemDamage() - 1);
+		}
+	}
+	
+	@Override
+	public boolean canHarvestBlock(final Block target) {
+		// go to net.minecraftforge.common.ForgeHooks.initTools(); to see all tool type strings
+		String toolType = target.getHarvestTool(target.getDefaultState());
+		if(this.toolTypes.contains(toolType) || target.getMaterial() == Material.rock){
+			// can mine like a pickaxe
+			return this.getHarvestLevel(null, "pickaxe") >= target.getHarvestLevel(target.getDefaultState());
+		} else if("shovel".equals(toolType) && target.getHarvestLevel(target.getDefaultState()) <= 0){
+			// can be dug with wooden shovel
+			return true;
+		}
+		// return true if block doesn't need tools
+		return target.getHarvestLevel(target.getDefaultState()) == -1;
+	}
 
-    
-    @Override
-    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b){
-    	super.addInformation(stack,player,list,b);
-    	MetalToolEffects.addToolSpecialPropertiesToolTip(metal,list);
-    }
+	public String getMaterialName() {
+		return metal.getName();
+	}
+
+	
+	@Override
+	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b){
+		super.addInformation(stack,player,list,b);
+		MetalToolEffects.addToolSpecialPropertiesToolTip(metal,list);
+	}
 }
