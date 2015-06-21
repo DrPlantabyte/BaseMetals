@@ -6,20 +6,26 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.config.ConfigCategory;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.OreDictionary;
 
 import org.apache.logging.log4j.Level;
 
@@ -50,7 +56,7 @@ public class BaseMetals
 	public static final String NAME ="Base Metals";
 	/** Version number, in Major.Minor.Build format. The minor number is increased whenever a change 
 	 * is made that has the potential to break compatibility with other mods that depend on this one. */
-	public static final String VERSION = "1.3.2";
+	public static final String VERSION = "1.3.3";
 	
 	/** All ore-spawn files discovered in the ore-spawn folder */
 	public static final List<Path> oreSpawnConfigFiles = new LinkedList<>();
@@ -65,6 +71,8 @@ public class BaseMetals
 	public static boolean strongHammers = true;
 	/** Whether or not vanilla ore-gen has been disabled */
 	public static boolean disableVanillaOreGen = false;
+	/** For when the user adds specific recipies via the config file */
+	public static List<String> userCrusherRecipes = new ArrayList<>();
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -90,6 +98,32 @@ public class BaseMetals
 		disableVanillaOreGen = config.getBoolean("disable_standard_ore_generation", "options", disableVanillaOreGen, 
 				"If true, then ore generation will be handled exclusively by oregen .json files \n"
 			+	"(vanilla ore generation will be disabled)");
+		
+		ConfigCategory userRecipeCat = config.getCategory("hammer recipes");
+		userRecipeCat.setComment(
+			  "This section allows you to add your own recipes for the Crack Hammer (and other rock \n"
+			+ "crushers). Recipes are specified in semicolon (;) delimited lists of formulas in the \n"
+			+ "format modid:name#y->x*modid:name#y, where x is the number of items in a stack and y \n"
+			+ "is the metadata value. Note that both x and y are optional, so you can use the \n"
+			+ "formula modid:name->modid:name for most items/blocks. \n\n"
+			+ "All properties in this section will be parsed for formulas, regardless their name. \n"
+			+ "This lets you organize your recipe lists for easier reading."); // TODO: explanation
+		if(userRecipeCat.keySet().size()==0){
+			Property prop = new Property("custom","",Property.Type.STRING);
+			prop.comment = "Example: minecraft:stained_glass#11->minecraft:dye#4; minecraft:wool->4*minecraft:string"; // TODO: explanation
+			userRecipeCat.put("custom", prop);
+		}
+		for(Property p : userRecipeCat.values()){
+			String[] recipes = p.getString().split(";");
+			for(String r : recipes){
+				String recipe = r.trim();
+				if(recipe.isEmpty()) continue;
+				if(recipe.contains("->") == false){
+					throw new IllegalArgumentException ("Malformed hammer recipe expression '"+recipe+"'. Should be in format 'modid:itemname->modid:itemname'");
+				}
+				userCrusherRecipes.add(recipe);
+			}
+		}
 		
 		Path oreSpawnFolder = Paths.get(event.getSuggestedConfigurationFile().toPath().getParent().toString(),"orespawn");
 		Path oreSpawnFile = Paths.get(oreSpawnFolder.toString(),MODID+".json");
@@ -170,7 +204,7 @@ public class BaseMetals
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 	{
-		
+		// parse orespawn data
 		for(Path oreSpawnFile : oreSpawnConfigFiles){
 			try {
 				cyano.basemetals.init.WorldGen.loadConfig(oreSpawnFile);
@@ -182,6 +216,21 @@ public class BaseMetals
 		
 		cyano.basemetals.init.WorldGen.init();
 
+		
+		// parse user crusher recipes
+		for(String recipe : userCrusherRecipes){
+			FMLLog.info(MODID+": adding custom crusher recipe '"+recipe+"'");
+			int i = recipe.indexOf("->");
+			String inputStr = recipe.substring(0,i);
+			String outputStr = recipe.substring(i+2,recipe.length());
+			ItemStack input = parseStringAsItemStack(inputStr,true);
+			ItemStack output = parseStringAsItemStack(outputStr,false);
+			if(input == null || output == null){
+				FMLLog.severe("Failed to add recipe formula '"+recipe+"' because the blocks/items could not be found");
+			}
+			CrusherRecipeRegistry.addNewCrusherRecipe(input, output);
+		}
+		
 		if(event.getSide() == Side.CLIENT){
 			clientPostInit(event);
 		}
@@ -200,5 +249,47 @@ public class BaseMetals
 	@SideOnly(Side.SERVER)
 	private void serverPostInit(FMLPostInitializationEvent event){
 		// client-only code
+	}
+	
+
+	/**
+	 * Parses a String in the format (stack-size)*(modid):(item/block name)#(metadata value). The 
+	 * stacksize and metadata value parameters are optional.
+	 * @param str A String describing an itemstack (e.g. "4*minecraft:dye#15" or "minecraft:bow")
+	 * @return
+	 */
+	public static ItemStack parseStringAsItemStack(String str, boolean allowWildcard){
+		str = str.trim();
+		int count = 1;
+		int meta;
+		if(allowWildcard){
+			meta = OreDictionary.WILDCARD_VALUE;
+		} else {
+			meta = 0;
+		}
+		int nameStart = 0;
+		int nameEnd = str.length();
+		if(str.contains("*")){
+			count = Integer.parseInt(str.substring(0,str.indexOf("*")).trim());
+			nameStart = str.indexOf("*")+1;
+		}
+		if(str.contains("#")){
+			meta = Integer.parseInt(str.substring(str.indexOf("#")+1,str.length()).trim());
+			nameEnd = str.indexOf("#");
+		}
+		String id = str.substring(nameStart,nameEnd).trim();
+		String mod = id.substring(0,id.indexOf(":")).trim();
+		String name = id.substring(id.indexOf(":")+1,id.length()).trim();
+		if(GameRegistry.findBlock(mod, name) != null){
+			// is a block
+			return new ItemStack(GameRegistry.findBlock(mod, name),count,meta);
+		} else if(GameRegistry.findItem(mod, name) != null){
+			// is an item
+			return new ItemStack(GameRegistry.findItem(mod, name),count,meta);
+		} else {
+			// item not found
+			FMLLog.severe("Failed to find item or block for ID '"+id+"'");
+			return null;
+		}
 	}
 }

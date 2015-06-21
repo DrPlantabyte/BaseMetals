@@ -21,7 +21,9 @@ public class ArbitraryCrusherRecipe implements ICrusherRecipe {
 
 	/**
 	 * Constructs a new instance of this ICrusherRecipe class representing a recipe with an input 
-	 * and an output.
+	 * and an output. If the input ItemStack has OreDictionary.WILDCARD_VALUE as its damage value, 
+	 * then metadata values will be ignored when testing an item for being a valid input for this 
+	 * recipe.
 	 * @param input The input item as a direct ItemStack reference.
 	 * @param output The result of applying this recipe to an input item
 	 */
@@ -47,6 +49,9 @@ public class ArbitraryCrusherRecipe implements ICrusherRecipe {
 	 */
 	@Override
 	public boolean isValidInput(ItemStack input) {
+		if(this.input.getItemDamage() == OreDictionary.WILDCARD_VALUE && input != null){
+			return this.input.getItem() == input.getItem();
+		}
 		return ItemStack.areItemsEqual(this.input, input);
 	}
 	/**
