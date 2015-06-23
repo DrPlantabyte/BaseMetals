@@ -257,7 +257,9 @@ public class BaseMetals
 	 * Parses a String in the format (stack-size)*(modid):(item/block name)#(metadata value). The 
 	 * stacksize and metadata value parameters are optional.
 	 * @param str A String describing an itemstack (e.g. "4*minecraft:dye#15" or "minecraft:bow")
-	 * @return
+	 * @param allowWildcard If true, then item strings that do not specify a metadata value will use 
+	 * the OreDictionary wildcard value. If false, then the default meta value is 0 instead.
+	 * @return An ItemStack representing the item, or null if the item is not found
 	 */
 	public static ItemStack parseStringAsItemStack(String str, boolean allowWildcard){
 		str = str.trim();
