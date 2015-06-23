@@ -227,8 +227,9 @@ public class BaseMetals
 			ItemStack output = parseStringAsItemStack(outputStr,false);
 			if(input == null || output == null){
 				FMLLog.severe("Failed to add recipe formula '"+recipe+"' because the blocks/items could not be found");
+			} else {
+				CrusherRecipeRegistry.addNewCrusherRecipe(input, output);
 			}
-			CrusherRecipeRegistry.addNewCrusherRecipe(input, output);
 		}
 		
 		if(event.getSide() == Side.CLIENT){
