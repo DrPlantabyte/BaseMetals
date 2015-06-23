@@ -56,7 +56,7 @@ public class BaseMetals
 	public static final String NAME ="Base Metals";
 	/** Version number, in Major.Minor.Build format. The minor number is increased whenever a change 
 	 * is made that has the potential to break compatibility with other mods that depend on this one. */
-	public static final String VERSION = "1.3.3";
+	public static final String VERSION = "1.3.4";
 	
 	/** All ore-spawn files discovered in the ore-spawn folder */
 	public static final List<Path> oreSpawnConfigFiles = new LinkedList<>();
@@ -107,10 +107,10 @@ public class BaseMetals
 			+ "is the metadata value. Note that both x and y are optional, so you can use the \n"
 			+ "formula modid:name->modid:name for most items/blocks. \n\n"
 			+ "All properties in this section will be parsed for formulas, regardless their name. \n"
-			+ "This lets you organize your recipe lists for easier reading."); // TODO: explanation
+			+ "This lets you organize your recipe lists for easier reading.");
 		if(userRecipeCat.keySet().size()==0){
 			Property prop = new Property("custom","",Property.Type.STRING);
-			prop.comment = "Example: minecraft:stained_glass#11->minecraft:dye#4; minecraft:wool->4*minecraft:string"; // TODO: explanation
+			prop.comment = "Example: minecraft:stained_glass#11->minecraft:dye#4; minecraft:wool->4*minecraft:string"; 
 			userRecipeCat.put("custom", prop);
 		}
 		for(Property p : userRecipeCat.values()){
