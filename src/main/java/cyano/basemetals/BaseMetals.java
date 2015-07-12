@@ -56,13 +56,16 @@ public class BaseMetals
 	public static final String NAME ="Base Metals";
 	/** Version number, in Major.Minor.Build format. The minor number is increased whenever a change 
 	 * is made that has the potential to break compatibility with other mods that depend on this one. */
-	public static final String VERSION = "1.3.4";
+	public static final String VERSION = "1.4.0";
 	
 	/** All ore-spawn files discovered in the ore-spawn folder */
 	public static final List<Path> oreSpawnConfigFiles = new LinkedList<>();
 	
 	/** multiplier to increase or reduce the frequency of metal ingots appearing in treasure chests */
 	public static float chestLootFactor = 0.5f;
+	
+	/** If true, some metals can be used to brew potions */
+	public static boolean enablePotionRecipes = true;
 	
 	/** If true, hammers cannot crush ores that they cannot mine */
 	public static boolean enforceHardness = true;
@@ -80,6 +83,10 @@ public class BaseMetals
 		// load config
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		config.load();
+		
+		enablePotionRecipes = config.getBoolean("enable_potions", "options", enablePotionRecipes, 
+				"If true, then some metals can be used to brew potions.");
+		
 		
 		chestLootFactor = config.getFloat("treasure_chest_loot_factor", "options", 0.5f, 0.0f, 1000.0f, 
 				"Controls the rarity of metal ingots being found in treasure chests relative to \n"
