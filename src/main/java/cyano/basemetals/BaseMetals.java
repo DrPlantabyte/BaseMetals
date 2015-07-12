@@ -64,8 +64,8 @@ public class BaseMetals
 	/** multiplier to increase or reduce the frequency of metal ingots appearing in treasure chests */
 	public static float chestLootFactor = 0.5f;
 	
-	/** If true, some metals can be used to brew potions */
-	public static boolean enablePotionRecipes = true;
+//	/** If true, some metals can be used to brew potions */
+//	public static boolean enablePotionRecipes = true;
 	
 	/** If true, hammers cannot crush ores that they cannot mine */
 	public static boolean enforceHardness = true;
@@ -84,8 +84,8 @@ public class BaseMetals
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		config.load();
 		
-		enablePotionRecipes = config.getBoolean("enable_potions", "options", enablePotionRecipes, 
-				"If true, then some metals can be used to brew potions.");
+//		enablePotionRecipes = config.getBoolean("enable_potions", "options", enablePotionRecipes, 
+//				"If true, then some metals can be used to brew potions.");
 		
 		
 		chestLootFactor = config.getFloat("treasure_chest_loot_factor", "options", 0.5f, 0.0f, 1000.0f, 
