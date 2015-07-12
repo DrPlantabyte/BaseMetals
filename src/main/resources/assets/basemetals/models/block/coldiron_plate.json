@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/plate",
+    "textures": {
+        "top": "basemetals:blocks/coldiron_plate",
+        "side": "basemetals:blocks/coldiron_plate",
+        "bottom": "basemetals:blocks/coldiron_plate"
+    }
+}

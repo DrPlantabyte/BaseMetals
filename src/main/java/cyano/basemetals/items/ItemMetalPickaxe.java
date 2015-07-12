@@ -67,26 +67,6 @@ public class ItemMetalPickaxe extends ItemPickaxe {
     	return false;
     }
     
-    @Override
-    public int getHarvestLevel(final ItemStack item, final String typeRequested) {
-    	if (typeRequested != null && toolTypes.contains(typeRequested)) {
-            return metal.getToolHarvestLevel();
-        }
-        return -1;
-    }
-    @Override
-    public Set<String> getToolClasses(final ItemStack item) {
-        return toolTypes;
-    }
-    
-    @Override
-    public float getStrVsBlock(final ItemStack tool, final Block target){
-    	if(this.canHarvestBlock(target,tool)){
-    		return Math.max(1.0f,metal.getToolEfficiency());
-    	} else {
-    		return 1.0f;
-    	}
-    }
     
     @Override
     public boolean hitEntity(final ItemStack item, final EntityLivingBase target, final EntityLivingBase attacker) {
@@ -122,5 +102,11 @@ public class ItemMetalPickaxe extends ItemPickaxe {
     public String getMaterialName() {
         return metal.getName();
     }
-	
+
+    
+    @Override
+    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b){
+    	super.addInformation(stack,player,list,b);
+    	MetalToolEffects.addToolSpecialPropertiesToolTip(metal,list);
+    }
 }

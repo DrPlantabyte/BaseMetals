@@ -281,6 +281,9 @@ public abstract class Items {
 	public static Item zinc_ingot;
 	public static Item zinc_nugget;
 	public static Item zinc_powder;
+	
+
+	public static Item potion_zombie_cure;
 
 	/**
 	 * Gets the inventory item corresponding to a given door block
@@ -541,7 +544,8 @@ public abstract class Items {
 		zinc_ingot = create_ingot(Materials.zinc);
 		zinc_nugget = create_nugget(Materials.zinc);
 		zinc_powder = create_powder(Materials.zinc);
-
+		
+		potion_zombie_cure = init(new ItemZombieCure(),"potion_zombie_cure",CreativeTabs.tabBrewing);
 		
 		for(Item i : itemRegistry.keySet()){
 			allItems.put(itemRegistry.get(i), i);
@@ -703,7 +707,7 @@ public abstract class Items {
 	}
 	private static Item create_door(MetalMaterial m,BlockDoor door){
 		String n = "door";
-		Item i = new ItemMetalDoor(door);
+		Item i = new ItemMetalDoor(door,m);
 		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n+"_item";
 		GameRegistry.registerItem(i, regName);

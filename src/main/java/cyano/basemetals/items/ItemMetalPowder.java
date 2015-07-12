@@ -1,7 +1,7 @@
 package cyano.basemetals.items;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
 
@@ -17,10 +17,5 @@ public class ItemMetalPowder extends net.minecraft.item.Item implements IOreDict
 	
 	public String getOreDictionaryName(){
 		return oreDict;
-	}
-	
-	@Override
-	public boolean isPotionIngredient(ItemStack src){
-		return true;
 	}
 }

@@ -358,4 +358,69 @@ tile.basemetals.tin_trapdoor.name=Tin Trapdoor
 tile.basemetals.zinc_block.name=Zinc Block
 tile.basemetals.zinc_ore.name=Zinc Ore
 
-potion.traveller.name=Traveler's Potion
+
+tile.basemetals.adamantine_plate.name=Adamantine Plate
+tile.basemetals.aquarium_plate.name=Aquarium Plate
+tile.basemetals.brass_plate.name=Brass Plate
+tile.basemetals.bronze_plate.name=Bronze Plate
+tile.basemetals.coldiron_plate.name=Cold-Iron Plate
+tile.basemetals.copper_plate.name=Copper Plate
+tile.basemetals.electrum_plate.name=Electrum Plate
+tile.basemetals.invar_plate.name=Invar Plate
+tile.basemetals.lead_plate.name=Lead Plate
+tile.basemetals.mithril_plate.name=Mithril Plate
+tile.basemetals.nickel_plate.name=Nickel Plate
+tile.basemetals.silver_plate.name=Silver Plate
+tile.basemetals.starsteel_plate.name=Star-Steel Plate
+tile.basemetals.steel_plate.name=Steel Plate
+tile.basemetals.tin_plate.name=Tin Plate
+tile.basemetals.zinc_plate.name=Zinc Plate
+tile.basemetals.iron_plate.name=Iron Plate
+tile.basemetals.gold_plate.name=Gold Plate
+
+
+
+tooltip.adamantine.tool=+%x damage against tough enemies
+tooltip.aquarium.tool=+%x damage against aquatic enemies
+tooltip.coldiron.tool=+%x damage against firey enemies
+tooltip.mithril.tool=Blinds and withers undead
+tooltip.starsteel.tool=Repairs 1 damage every %x seconds
+
+tooltip.adamantine.armor=Reduces damage taken
+tooltip.aquarium.armor=Full suit: breathe underwater
+tooltip.coldiron.armor=Full suit: fire immunity
+tooltip.mithril.armor=Full suit: protection from poison & wither
+tooltip.starsteel.armor=Reduces your weight
+
+achievement.this_is_new=This is new...
+achievement.blocktastic=Blocktastic!
+achievement.geologist=Geologist
+achievement.brass_maker=Brass
+achievement.bronze_maker=Bronze
+achievement.electrum_maker=Electrum
+achievement.steel_maker=Steel
+achievement.invar_maker=Invar
+achievement.mithril_maker=Mithril
+achievement.aquarium_maker=Aquarium
+achievement.metallurgy=Metallurgy
+achievement.demon_slayer=Demon Slayer
+achievement.angel_of_death=Angel of Death
+achievement.scuba_diver=SCUBA Diver 
+achievement.juggernaut=Juggernaut
+achievement.moon_boots=Moon Walker
+achievement.this_is_new.desc=Smelt a new metal from the Base Metals mod
+achievement.blocktastic.desc=Place a metal block that is neither iron nor gold
+achievement.geologist.desc=Make a hammer from a metal block
+achievement.brass_maker.desc=Combine powdered copper and zinc to make brass
+achievement.bronze_maker.desc=Combine powdered copper and tin to make bronze
+achievement.electrum_maker.desc=Combine powdered silver and gold to make electrum
+achievement.steel_maker.desc=Combine powdered iron and charcoal to make steel
+achievement.invar_maker.desc=Combine powdered iron and nickel to make invar
+achievement.mithril_maker.desc=Combine powdered silver, cold-iron and mercury to make mithril
+achievement.aquarium_maker.desc=Combine powdered copper and zinc with prismarine crystals to make aquarium
+achievement.metallurgy.desc=Craft any alloy blend
+achievement.demon_slayer.desc=Wear a full suit of cold-iron armor and wield a cold-iron sword
+achievement.angel_of_death.desc=Wear a full suit of mithril armor and wield a mithril sword
+achievement.scuba_diver.desc=Wear a full suit of aquarium armor and swim under water
+achievement.juggernaut.desc=Wear a full suit of adamantine armor
+achievement.moon_boots.desc=Wear a pair of star-steel boots

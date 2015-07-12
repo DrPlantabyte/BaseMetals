@@ -361,3 +361,72 @@ tile.basemetals.aquarium_bars.name=Barra Pesce-Acciaio
 tile.basemetals.aquarium_block.name=Cubo Pesce-Acciaio
 tile.basemetals.aquarium_door.name=Porta Pesce-Acciaio
 tile.basemetals.aquarium_trapdoor.name=Fuori Porta Pesce-Acciaio
+
+
+
+tile.basemetals.adamantine_plate.name=Lastra di Adamantio
+tile.basemetals.aquarium_plate.name=Lastra di Pesce-Acciaio
+tile.basemetals.brass_plate.name=Lastra d'Ottone
+tile.basemetals.bronze_plate.name=Lastra di Bronzo
+tile.basemetals.coldiron_plate.name=Lastra di Ferro-Freddo
+tile.basemetals.copper_plate.name=Lastra di Rame
+tile.basemetals.electrum_plate.name=Lastra di Lega di Rame
+tile.basemetals.invar_plate.name=Lastra di Invar
+tile.basemetals.lead_plate.name=Lastra di Piombo
+tile.basemetals.mithril_plate.name=Lastra di Mithril
+tile.basemetals.nickel_plate.name=Lastra di Nichel
+tile.basemetals.silver_plate.name=Lastra di Argento
+tile.basemetals.starsteel_plate.name=Lastra di Ferro-Stelle
+tile.basemetals.steel_plate.name=Lastra di Acciaio
+tile.basemetals.tin_plate.name=Lastra di Latta
+tile.basemetals.zinc_plate.name=Lastra di Zinco
+tile.basemetals.iron_plate.name=Lastra di Ferro
+tile.basemetals.gold_plate.name=Lastra d'Oro
+
+
+
+tooltip.adamantine.tool=+%x danni ai nemici potenti
+tooltip.aquarium.tool=+%x danni ai nemici d'acqua
+tooltip.coldiron.tool=+%x danno ai demoni
+tooltip.mithril.tool=Veleni morti
+tooltip.starsteel.tool=Riparazione automatica
+
+tooltip.adamantine.armor=Riduce i danni presi
+tooltip.aquarium.armor=Respirare sott'acqua
+tooltip.coldiron.armor=Immunità al fuoco
+tooltip.mithril.armor=Protezione da veleno & appassire
+tooltip.starsteel.armor=Meno gravità
+
+
+achievement.this_is_new=Questa è una novità ...
+achievement.blocktastic=Cubo!
+achievement.geologist=Geologo
+achievement.brass_maker=Brass
+achievement.bronze_maker=Bronzo
+achievement.electrum_maker=Electrum
+achievement.steel_maker=Acciaio
+achievement.invar_maker=Invar
+achievement.mithril_maker=Mithril
+achievement.aquarium_maker=Aquarium
+achievement.metallurgy=Metallurgia
+achievement.demon_slayer=Demone Slayer
+achievement.angel_of_death=Angel of Death
+achievement.scuba_diver=SCUBA Diver
+achievement.juggernaut=Juggernaut
+achievement.moon_boots=Luna Walker
+achievement.this_is_new.desc=puzzava un nuovo metallo dai metalli di base mod
+achievement.blocktastic.desc=Inserite un blocco di metallo che non è né il ferro, né oro
+achievement.geologist.desc=Fare un martello da un blocco di metallo
+achievement.brass_maker.desc=Combina il rame e zinco in polvere per fare in ottone
+achievement.bronze_maker.desc=Combina il rame in polvere e stagno per fare il bronzo
+achievement.electrum_maker.desc=Combina l'argento in polvere e oro per fare electrum
+achievement.steel_maker.desc=Combina polvere di ferro e carbone per produrre l'acciaio
+achievement.invar_maker.desc=Combine polvere di ferro e nichel per fare invar
+achievement.mithril_maker.desc=Combine argento in polvere, freddo-ferro e mercurio per fare Mithril
+achievement.aquarium_maker.desc=Combine di rame e zinco in polvere con cristalli prismarine per rendere acquario
+achievement.metallurgy.desc=Craft qualsiasi miscela lega
+achievement.demon_slayer.desc=Indossare un abito pieno di armatura freddo-ferro e brandire una spada a freddo-ferro
+achievement.angel_of_death.desc=Indossare un abito pieno di mithril armatura e brandire una spada mithril
+achievement.scuba_diver.desc=Indossare un abito pieno di armatura acquario e nuotare sotto l'acqua
+achievement.juggernaut.desc=Indossare un abito pieno di armatura adamantina
+achievement.moon_boots.desc=Indossare un paio di stivali star-acciaio

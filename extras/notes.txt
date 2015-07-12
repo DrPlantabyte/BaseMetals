@@ -26,7 +26,7 @@ adamantine deals an extra 4 damage when it hits a creature that is immune to fil
 
 Potions
 Silver: makes combination switftness & jumping potion 
-Zinc: make zombie antitode potion <-- too hard!
+Zinc: make zombie antitode potion
 Mercury: makes wither potion
 Lead: makes slowness potion
 Nickel: upgrades level 2 potions to level 3

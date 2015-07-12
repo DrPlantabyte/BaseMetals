@@ -1,0 +1,8 @@
+{
+    "parent": "basemetals:block/plate",
+    "textures": {
+        "top": "basemetals:blocks/zinc_plate",
+        "side": "basemetals:blocks/zinc_plate",
+        "bottom": "basemetals:blocks/zinc_plate"
+    }
+}

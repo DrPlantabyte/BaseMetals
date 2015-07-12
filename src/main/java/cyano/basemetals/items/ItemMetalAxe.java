@@ -26,7 +26,6 @@ public class ItemMetalAxe extends ItemAxe {
 
 
 	protected final MetalMaterial metal;
-	protected final Set<String> toolTypes;
 	protected final String repairOreDictName;
 	protected final boolean regenerates;
 	protected final long regenInterval = 200; 
@@ -36,8 +35,6 @@ public class ItemMetalAxe extends ItemAxe {
 		this.metal = metal;
 		this.setMaxDamage(metal.getToolDurability());
 		this.efficiencyOnProperMaterial = metal.getToolEfficiency();
-		this.toolTypes = new HashSet<>();
-		toolTypes.add("axe");
 		repairOreDictName = "ingot"+metal.getCapitalizedName();
 		if(metal.equals(Materials.starsteel)){
 			regenerates = true;
@@ -70,28 +67,7 @@ public class ItemMetalAxe extends ItemAxe {
     	}
     	return false;
     }
-    
-    @Override
-    public int getHarvestLevel(final ItemStack item, final String typeRequested) {
-    	if (typeRequested != null && toolTypes.contains(typeRequested)) {
-            return metal.getToolHarvestLevel();
-        }
-        return -1;
-    }
-    @Override
-    public Set<String> getToolClasses(final ItemStack item) {
-        return toolTypes;
-    }
-    
-    @Override
-    public float getStrVsBlock(final ItemStack tool, final Block target){
-    	if(this.canHarvestBlock(target,tool)){
-    		return Math.max(1.0f,metal.getToolEfficiency());
-    	} else {
-    		return 1.0f;
-    	}
-    }
-    
+ 
     @Override
     public boolean hitEntity(final ItemStack item, final EntityLivingBase target, final EntityLivingBase attacker) {
         super.hitEntity(item, target, attacker);
@@ -114,16 +90,16 @@ public class ItemMetalAxe extends ItemAxe {
     	}
     }
     
-    @Override
-    public boolean canHarvestBlock(final Block target) {
-		if(this.toolTypes.contains(target.getHarvestTool(target.getDefaultState()))){
-			return metal.getToolHarvestLevel() >= target.getHarvestLevel(target.getDefaultState());
-		}
-		return false;
-    }
+  
     
     public String getMaterialName() {
         return metal.getName();
     }
-	
+
+    
+    @Override
+    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b){
+    	super.addInformation(stack,player,list,b);
+    	MetalToolEffects.addToolSpecialPropertiesToolTip(metal,list);
+    }
 }

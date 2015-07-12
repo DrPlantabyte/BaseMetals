@@ -150,7 +150,7 @@ public class OreSpawner implements IWorldGenerator {
 			}
 			return;
 		}
-		double radius = Math.pow(quantity, 1.0/3.0) * (3.0 / 4.0 / Math.PI) + 1;
+		double radius = Math.pow(quantity, 1.0/3.0) * (3.0 / 4.0 / Math.PI) + 2;
 		int rSqr = (int)(radius * radius);
 		fill:{
 			if(prng.nextBoolean()){ // switch-up the direction of fill to reduce predictability

@@ -8,17 +8,17 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
-import net.minecraft.util.StatCollector;
+import net.minecraftforge.common.brewing.BrewingOreRecipe;
+import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
+import net.minecraftforge.common.brewing.IBrewingRecipe;
+import net.minecraftforge.common.brewing.VanillaBrewingRecipe;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
+import cyano.basemetals.BaseMetals;
 import cyano.basemetals.material.MetalMaterial;
-import cyano.basemetals.registry.BrewingRecipeRegistry;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
-import cyano.basemetals.registry.recipe.IBrewingRecipe;
 
 public abstract class Recipes {
 	
@@ -33,6 +33,7 @@ public abstract class Recipes {
 		initPureVanillaCrusherRecipes();
 		initVanillaRecipes();
 		initMetalRecipes();
+		initPotionRecipes();
 		
 		initDone = true;
 	}
@@ -63,6 +64,23 @@ public abstract class Recipes {
 	}
 	
 	private static void initVanillaRecipes(){
+		OreDictionary.registerOre("barsIron", Blocks.iron_bars);
+		OreDictionary.registerOre("bars", Blocks.iron_bars);
+		OreDictionary.registerOre("doorIron", Items.iron_door);
+		OreDictionary.registerOre("door", Items.iron_door);
+		OreDictionary.registerOre("doorWood", Items.oak_door);
+		OreDictionary.registerOre("doorWood", Items.jungle_door);
+		OreDictionary.registerOre("doorWood", Items.spruce_door);
+		OreDictionary.registerOre("doorWood", Items.dark_oak_door);
+		OreDictionary.registerOre("doorWood", Items.birch_door);
+		OreDictionary.registerOre("doorWood", Items.acacia_door);
+		OreDictionary.registerOre("door", Items.oak_door);
+		OreDictionary.registerOre("door", Items.jungle_door);
+		OreDictionary.registerOre("door", Items.spruce_door);
+		OreDictionary.registerOre("door", Items.dark_oak_door);
+		OreDictionary.registerOre("door", Items.birch_door);
+		OreDictionary.registerOre("door", Items.acacia_door);
+		
 		CrusherRecipeRegistry.addNewCrusherRecipe("oreIron", new ItemStack(cyano.basemetals.init.Items.iron_powder,2));
 		CrusherRecipeRegistry.addNewCrusherRecipe("blockIron", new ItemStack(cyano.basemetals.init.Items.iron_powder,9));
 		CrusherRecipeRegistry.addNewCrusherRecipe("ingotIron", new ItemStack(cyano.basemetals.init.Items.iron_powder,1));
@@ -78,13 +96,14 @@ public abstract class Recipes {
 		CrusherRecipeRegistry.addNewCrusherRecipe(new ItemStack(Items.coal,1,0), new ItemStack(cyano.basemetals.init.Items.carbon_powder,1));
 		CrusherRecipeRegistry.addNewCrusherRecipe(new ItemStack(Items.coal,1,1), new ItemStack(cyano.basemetals.init.Items.carbon_powder,1));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blocks.coal_block), "xxx","xxx","xxx",'x',cyano.basemetals.init.Items.carbon_powder));
-		
 	}
 	
 	private static void initMetalRecipes(){
 		List<MetalMaterial> exceptions = Arrays.asList(Materials.vanilla_iron,Materials.vanilla_gold); 
 
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(cyano.basemetals.init.Items.iron_crackhammer), " x "," / "," / ",'x',"blockIron",'/',"stickWood"));
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(cyano.basemetals.init.Items.iron_crackhammer), "x","/","/",'x',"blockIron",'/',"stickWood"));
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(cyano.basemetals.init.Blocks.iron_plate), "xxx",'x',"ingotIron"));
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(cyano.basemetals.init.Blocks.gold_plate), "xxx",'x',"ingotGold"));
 		
 		for(MetalMaterial metal : Materials.getAllMetals()){
 			if(exceptions.contains(metal))continue;
@@ -107,9 +126,12 @@ public abstract class Recipes {
 			Item sword = cyano.basemetals.init.Items.getItemByName(baseName+"sword");
 			Block bars = cyano.basemetals.init.Blocks.getBlockByName(baseName+"bars");
 			Block block = cyano.basemetals.init.Blocks.getBlockByName(baseName+"block");
+			Block plate = cyano.basemetals.init.Blocks.getBlockByName(baseName+"plate");
 			Block ore = cyano.basemetals.init.Blocks.getBlockByName(baseName+"ore");
 			Block trapdoor = cyano.basemetals.init.Blocks.getBlockByName(baseName+"trapdoor");
 			
+			
+			// NOTE: smelting XP is based on output item, not input item
 			// ingot-related recipes 
 			if(ore != null && powder != null){
 				CrusherRecipeRegistry.addNewCrusherRecipe("ore"+oreDictName,new ItemStack(powder,2));
@@ -119,10 +141,10 @@ public abstract class Recipes {
 			}
 			if(ingot != null && powder != null){
 				CrusherRecipeRegistry.addNewCrusherRecipe("ingot"+oreDictName,new ItemStack(powder,1));
-				GameRegistry.addSmelting(powder, new ItemStack(ingot,1), 0);
+				GameRegistry.addSmelting(powder, new ItemStack(ingot,1), metal.getOreSmeltXP());
 			}
 			if(ingot != null && blend != null){
-				GameRegistry.addSmelting(blend, new ItemStack(ingot,1), 0);
+				GameRegistry.addSmelting(blend, new ItemStack(ingot,1), metal.getOreSmeltXP());
 			}
 			if(ingot != null && nugget != null){
 				GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(nugget,9), new ItemStack(ingot)));
@@ -132,17 +154,24 @@ public abstract class Recipes {
 				GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ingot,9), new ItemStack(block)));
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(block), "xxx","xxx","xxx",'x',"ingot"+oreDictName));
 			}
+			if(ingot != null && plate != null){
+				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(plate,3), "xxx",'x',"ingot"+oreDictName));
+				GameRegistry.addSmelting(plate, new ItemStack(ingot,1), metal.getOreSmeltXP());
+			}
 			if(block != null && powder != null){
 				CrusherRecipeRegistry.addNewCrusherRecipe("block"+oreDictName, new ItemStack(powder,9));
 			}
 			if(ingot != null && bars != null){
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bars,16), "xxx","xxx",'x',"ingot"+oreDictName));
+				OreDictionary.registerOre("bars", bars);
 			}
 			if(ingot != null && door != null){
-				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(door,3), "xx ","xx ","xx ",'x',"ingot"+oreDictName));
+				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(door,3), "xx","xx","xx",'x',"ingot"+oreDictName));
+				OreDictionary.registerOre("door", door);
 			}
 			if(ingot != null && trapdoor != null){
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(trapdoor), "xx","xx",'x',"ingot"+oreDictName));
+				OreDictionary.registerOre("trapdoor", trapdoor);
 			}
 			
 			// armor and tools
@@ -150,12 +179,14 @@ public abstract class Recipes {
 			if(ingot != null && helmet != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(helmet), "xxx","x x",'x',"ingot"+oreDictName));
 			if(ingot != null && chestplate != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(chestplate), "x x","xxx","xxx",'x',"ingot"+oreDictName));
 			if(ingot != null && leggings != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(leggings), "xxx","x x","x x",'x',"ingot"+oreDictName));
-			if(ingot != null && axe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(axe), "xx ","x/ "," / ",'x',"ingot"+oreDictName,'/',"stickWood"));
-			if(block != null && crackhammer != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(crackhammer), " x "," / "," / ",'x',"block"+oreDictName,'/',"stickWood"));
-			if(ingot != null && hoe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(hoe), "xx "," / "," / ",'x',"ingot"+oreDictName,'/',"stickWood"));
+			if(ingot != null && axe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(axe), "xx","x/"," /",'x',"ingot"+oreDictName,'/',"stickWood"));
+			if(ingot != null && axe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(axe), "xx","/x","/ ",'x',"ingot"+oreDictName,'/',"stickWood"));
+			if(block != null && crackhammer != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(crackhammer), "x","/","/",'x',"block"+oreDictName,'/',"stickWood"));
+			if(ingot != null && hoe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(hoe), "xx"," /"," /",'x',"ingot"+oreDictName,'/',"stickWood"));
+			if(ingot != null && hoe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(hoe), "xx","/ ","/ ",'x',"ingot"+oreDictName,'/',"stickWood"));
 			if(ingot != null && pickaxe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(pickaxe), "xxx"," / "," / ",'x',"ingot"+oreDictName,'/',"stickWood"));
-			if(ingot != null && shovel != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(shovel), " x "," / "," / ",'x',"ingot"+oreDictName,'/',"stickWood"));
-			if(ingot != null && sword != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(sword), " x "," x "," / ",'x',"ingot"+oreDictName,'/',"stickWood"));
+			if(ingot != null && shovel != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(shovel), "x","/","/",'x',"ingot"+oreDictName,'/',"stickWood"));
+			if(ingot != null && sword != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(sword),   "x","x","/",'x',"ingot"+oreDictName,'/',"stickWood"));
 			
 			// misc recipes
 			if(ingot != null && pickaxe != null) GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.bucket), "x x"," x ",'x',"ingot"+oreDictName));
@@ -166,15 +197,13 @@ public abstract class Recipes {
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.bronze_blend,4), "dustCopper","dustCopper","dustCopper","dustTin"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.steel_blend,8), "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustCarbon"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.steel_blend,8), "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustCoal"));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.invar_blend,3), "dustIron","dustIron","dustNickel;"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.invar_blend,3), "dustIron","dustIron","dustNickel"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.electrum_blend,2), "dustSilver","dustGold"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.mithril_blend,3), "dustSilver","dustSilver","dustColdiron","ingotMercury"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.aquarium_blend,3), "dustCopper","dustCopper","dustZinc", Items.prismarine_crystals, Items.prismarine_crystals, Items.prismarine_crystals));
 		
 		// potions
-		cyano.basemetals.init.Items.silver_powder.setPotionEffect("CUSTOM"); // make it brew-able
-		BrewingRecipeRegistry.getInstance().addRecipe(new SilverPotionRecipe());
-		// TODO: potion recipes
+		// TODO: potion recipes (didn't work)
 		
 		// misc recipes
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blocks.activator_rail,6), "x/x","x*x","x/x",'x',cyano.basemetals.init.Items.steel_ingot,'/',"stickWood",'*',Blocks.redstone_torch));
@@ -194,68 +223,46 @@ public abstract class Recipes {
 		GameRegistry.addSmelting(cyano.basemetals.init.Blocks.mercury_ore, new ItemStack(cyano.basemetals.init.Items.mercury_ingot,1), 1);
 		
 	}
+
 	
-	private static class SilverPotionRecipe implements IBrewingRecipe{
 
-		private final ItemStack output;
-		private final ItemStack input = new ItemStack(cyano.basemetals.init.Items.silver_powder);
-		SilverPotionRecipe(){
-			output = new ItemStack(net.minecraft.init.Items.potionitem,1,8194);
-			NBTTagCompound potionTag = new NBTTagCompound();
-			potionTag.setTag("display", makeNameTag(localize("potion.traveller.name")));
-			NBTTagList effects = new NBTTagList();
-			effects.appendTag(makePotionEffectTag(1,0,3*60*20));
-			effects.appendTag(makePotionEffectTag(8,0,3*60*20));
-			potionTag.setTag("CustomPotionEffects",effects);
-			output.setTagCompound(potionTag);
-		}
-		
-		@Override
-		public boolean canBrew(ItemStack ingredient, ItemStack basePotion) {
-			if(isOreDictEquivalent(ingredient,"dustZinc")){
-				return (basePotion.getMetadata() & 0x003F) == 16; // awkward potion
-			}
-			return false;
-		}
-
-		@Override
-		public ItemStack brewPotion(ItemStack ingredient, ItemStack basePotion) {
-			return output.copy();
-		}
-
-		@Override
-		public ItemStack getIngredient() {
-			return input;
-		}
-		
+	private static void initPotionRecipes(){
+		if(!BaseMetals.enablePotionRecipes) return;
+		initVanillaPotionOreDictionaryNames();
+		BrewingRecipeRegistry.addRecipe(new ItemStack(net.minecraft.init.Items.potionitem,1,8197),"dustZinc",new ItemStack(cyano.basemetals.init.Items.potion_zombie_cure));
+		// TODO: remove
+		for(ItemStack input : OreDictionary.getOres("potionInstantHealth"))
+		BrewingRecipeRegistry.addRecipe(input,"dustZinc",new ItemStack(cyano.basemetals.init.Items.potion_zombie_cure));
 	}
-	
-	private static boolean isOreDictEquivalent(ItemStack item, String oreDict){
-		List<ItemStack> items = OreDictionary.getOres("dustZinc");
-		for(ItemStack i : items){
-			if(ItemStack.areItemsEqual(i, item)) return true;
+
+
+	private static void initVanillaPotionOreDictionaryNames() {
+		String[] potionNames = {"Regeneration","Swiftness","FireResistance","Poison","InstantHealth",
+				"NightVision","Misc","Weakness","Strength","Slowness","Leaping","Harming","WaterBreathing","Invisibility"};
+		for(int i = 0; i < potionNames.length; i++){
+			String baseName = "potion"+potionNames[i];
+			ItemStack regular = new ItemStack(net.minecraft.init.Items.potionitem,1,8193 | i);
+			ItemStack lvl2 = new ItemStack(net.minecraft.init.Items.potionitem,1,8225 | i);
+			ItemStack extended = new ItemStack(net.minecraft.init.Items.potionitem,1,8257 | i);
+			ItemStack splash = new ItemStack(net.minecraft.init.Items.potionitem,1,16385 | i);
+			ItemStack lvl2splash = new ItemStack(net.minecraft.init.Items.potionitem,1,16417 | i);
+			ItemStack extendedsplash = new ItemStack(net.minecraft.init.Items.potionitem,1,16449 | i);
+
+			OreDictionary.registerOre(baseName, regular);
+			OreDictionary.registerOre(baseName, lvl2);
+			OreDictionary.registerOre(baseName, extended);
+			OreDictionary.registerOre(baseName, splash);
+			OreDictionary.registerOre(baseName, lvl2splash);
+			OreDictionary.registerOre(baseName, extendedsplash);
+			
+
+			OreDictionary.registerOre(baseName+"Basic", regular);
+			OreDictionary.registerOre(baseName+"2", lvl2);
+			OreDictionary.registerOre(baseName+"Long", extended);
+			OreDictionary.registerOre(baseName+"Splash", splash);
+			OreDictionary.registerOre(baseName+"Splash2", lvl2splash);
+			OreDictionary.registerOre(baseName+"SplashLong", extendedsplash);
 		}
-		return false;
 	}
 	
-	private static String localize(String key){
-		if(StatCollector.canTranslate(key)){
-			return StatCollector.translateToLocal(key);
-		} else {
-			return key;
-		}
-	}
-
-	private static NBTTagCompound makeNameTag(String name){
-		NBTTagCompound tag = new NBTTagCompound();
-		tag.setString("Name", name);
-		return tag;
-	}
-	private static NBTTagCompound makePotionEffectTag(int effectID,int amplifier, int duration_ticks){
-		NBTTagCompound tag = new NBTTagCompound();
-		tag.setInteger("Id", effectID);
-		tag.setInteger("Amplifier", amplifier);
-		tag.setInteger("Duration", duration_ticks);
-		return tag;
-	}
 }

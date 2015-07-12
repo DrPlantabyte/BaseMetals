@@ -9,8 +9,9 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import cyano.basemetals.material.MetalMaterial;
+import cyano.basemetals.registry.IOreDictionaryEntry;
 
-public class BlockMetalTrapDoor extends net.minecraft.block.BlockTrapDoor{
+public class BlockMetalTrapDoor extends net.minecraft.block.BlockTrapDoor implements IOreDictionaryEntry{
 
 	final MetalMaterial metal;
 	public BlockMetalTrapDoor(MetalMaterial metal) {
@@ -36,4 +37,10 @@ public class BlockMetalTrapDoor extends net.minecraft.block.BlockTrapDoor{
         world.playAuxSFXAtEntity(player, ((Boolean)state.getValue(BlockTrapDoor.OPEN)) ? 1003 : 1006, coord, 0);
         return true;
     }
+	
+
+	@Override
+	public String getOreDictionaryName() {
+		return "trapdoor"+metal.getCapitalizedName();
+	}
 }

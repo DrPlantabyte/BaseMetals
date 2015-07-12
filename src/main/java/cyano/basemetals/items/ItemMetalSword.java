@@ -7,31 +7,20 @@ import java.util.Set;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
-import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.BlockPos;
-import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
-
-import com.google.common.collect.Multimap;
-
 import cyano.basemetals.init.Materials;
 import cyano.basemetals.material.MetalMaterial;
 
 public class ItemMetalSword extends ItemSword {
 	protected final MetalMaterial metal;
-	protected final Set<String> toolTypes;
 	protected final String repairOreDictName;
 	protected final boolean regenerates;
 	protected final long regenInterval = 200; 
@@ -42,9 +31,6 @@ public class ItemMetalSword extends ItemSword {
 		this.setMaxDamage(metal.getToolDurability());
 		// this.damageVsEntity = attackDamage + metal.getBaseAttackDamage(); // damageVsEntity  is private, sadly
 		this.attackDamage = 4 + metal.getBaseAttackDamage();
-		// this.toolClass = toolType; toolClass is private, sadly
-		this.toolTypes = new HashSet<>();
-		toolTypes.add("sword");
 		repairOreDictName = "ingot"+metal.getCapitalizedName();
 		if(metal.equals(Materials.starsteel)){
 			regenerates = true;
@@ -55,20 +41,7 @@ public class ItemMetalSword extends ItemSword {
 		
 	}
 
-	@Override
-    public boolean canHarvestBlock(final Block target) {
-		return super.canHarvestBlock(target) 
-				|| target.getMaterial() == Material.web ; 
-    }
-
-	protected boolean canBreakBlock(Block target){
-		return target.getMaterial() == Material.plants
-				|| target.getMaterial() == Material.leaves
-				|| target.getMaterial() == Material.web 
-				|| target.getMaterial() == Material.vine
-				|| target.getMaterial() == Material.coral
-				|| target.getMaterial() == Material.gourd;
-	}
+	
 	
 	@Override
     public boolean hitEntity(final ItemStack item, final EntityLivingBase target, final EntityLivingBase attacker) {
@@ -77,19 +50,6 @@ public class ItemMetalSword extends ItemSword {
         return true;
     }
 	
-	@Override
-    public float getStrVsBlock(final ItemStack tool, final Block target){
-		if(target == Blocks.web) {
-            return 15.0f;
-        }
-		if(canBreakBlock(target)) return 1.5f;
-		float str = super.getStrVsBlock(tool, target);
-    	if(this.canHarvestBlock(target,tool)){
-    		return Math.min(Math.max(1.0f,0.5f*str),2f);
-    	} else {
-    		return 1.0f;
-    	}
-    }
 	
 	@Override
     public boolean onBlockDestroyed(final ItemStack item, final World world, final Block block, final BlockPos coord, 
@@ -117,18 +77,7 @@ public class ItemMetalSword extends ItemSword {
     	return false;
     }
     
-    @Override
-    public int getHarvestLevel(final ItemStack item, final String typeRequested) {
-    	if (typeRequested != null && toolTypes.contains(typeRequested)) {
-            return metal.getToolHarvestLevel();
-        }
-        return -1;
-    }
-    @Override
-    public Set<String> getToolClasses(final ItemStack item) {
-        return toolTypes;
-    }
-    
+   
     
     
    
@@ -158,6 +107,12 @@ public class ItemMetalSword extends ItemSword {
     
     public String getMaterialName() {
         return metal.getName();
+    }
+    
+    @Override
+    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b){
+    	super.addInformation(stack,player,list,b);
+    	MetalToolEffects.addToolSpecialPropertiesToolTip(metal,list);
     }
 	
 }
