@@ -94,11 +94,14 @@ public abstract class Recipes {
 	}
 	
 	private static void initMetalRecipes(){
-		List<MetalMaterial> exceptions = Arrays.asList(Materials.vanilla_iron,Materials.vanilla_gold); 
+		List<MetalMaterial> exceptions = Arrays.asList(Materials.vanilla_iron,Materials.vanilla_gold,Materials.vanilla_diamond,Materials.vanilla_stone,Materials.vanilla_wood); 
 
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(cyano.basemetals.init.Items.wood_crackhammer), "x","/","/",'x',"logWood",'/',"stickWood"));
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(cyano.basemetals.init.Items.stone_crackhammer), "x","/","/",'x',net.minecraft.init.Blocks.stonebrick,'/',"stickWood"));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(cyano.basemetals.init.Items.iron_crackhammer), "x","/","/",'x',"blockIron",'/',"stickWood"));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(cyano.basemetals.init.Blocks.iron_plate), "xxx",'x',"ingotIron"));
-		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(cyano.basemetals.init.Blocks.gold_plate), "xxx",'x',"ingotGold"));
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(cyano.basemetals.init.Items.diamond_crackhammer), "x","/","/",'x',"blockDiamond",'/',"stickWood"));
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(cyano.basemetals.init.Blocks.iron_plate,3), "xxx",'x',"ingotIron"));
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(cyano.basemetals.init.Blocks.gold_plate,3), "xxx",'x',"ingotGold"));
 		
 		for(MetalMaterial metal : Materials.getAllMetals()){
 			if(exceptions.contains(metal))continue;

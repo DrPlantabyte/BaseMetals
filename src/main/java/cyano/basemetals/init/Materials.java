@@ -45,16 +45,22 @@ public abstract class Materials {
 	public static MetalMaterial zinc;
 	public static MetalMaterial aquarium;
 	// vanilla imports
+	public static MetalMaterial vanilla_wood;
+	public static MetalMaterial vanilla_stone;
 	public static MetalMaterial vanilla_iron;
 	public static MetalMaterial vanilla_gold;
+	public static MetalMaterial vanilla_diamond;
 	
 	private static boolean initDone = false;
 	public static void init(){
 		if(initDone)return;
 		
 		// vanilla metals
+		vanilla_wood = addMaterial("wood",2,2,6,0);
+		vanilla_stone = addMaterial("stone",5,4,2,0);
 		vanilla_iron = addMaterial("iron",8,8,4.5,0.3);
 		vanilla_gold = addMaterial("gold",1,1,10,0.1);
+		vanilla_diamond = addMaterial("diamond",10,15,4,0);
 		
 		// mod metals
 		copper = addMaterial("copper",4,4,5,0.5);

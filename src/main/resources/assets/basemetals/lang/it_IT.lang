@@ -430,3 +430,8 @@ achievement.angel_of_death.desc=Indossare un abito pieno di mithril armatura e b
 achievement.scuba_diver.desc=Indossare un abito pieno di armatura acquario e nuotare sotto l'acqua
 achievement.juggernaut.desc=Indossare un abito pieno di armatura adamantina
 achievement.moon_boots.desc=Indossare un paio di stivali star-acciaio
+
+
+item.basemetals.diamond_crackhammer.name=Mazza Diamante
+item.basemetals.wood_crackhammer.name=Mazza di Legno
+item.basemetals.stone_crackhammer.name=Mazza Stone

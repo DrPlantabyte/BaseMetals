@@ -424,3 +424,8 @@ achievement.angel_of_death.desc=Wear a full suit of mithril armor and wield a mi
 achievement.scuba_diver.desc=Wear a full suit of aquarium armor and swim under water
 achievement.juggernaut.desc=Wear a full suit of adamantine armor
 achievement.moon_boots.desc=Wear a pair of star-steel boots
+
+
+item.basemetals.diamond_crackhammer.name=Diamond Crack Hammer
+item.basemetals.wood_crackhammer.name=Wooden Crack Hammer
+item.basemetals.stone_crackhammer.name=Stone Crack Hammer

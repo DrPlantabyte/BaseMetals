@@ -424,3 +424,8 @@ achievement.angel_of_death.desc=Usar um terno completo de armadura mithril e emp
 achievement.scuba_diver.desc=visto uma armadura completa aquário e nadar debaixo de água
 achievement.juggernaut.desc=Usar um terno completo de armadura adamantine
 achievement.moon_boots.desc=Usar um par de botas de estrela de aço
+
+
+item.basemetals.diamond_crackhammer.name=Marreta de Diamante
+item.basemetals.wood_crackhammer.name=Marreta de Madeira
+item.basemetals.stone_crackhammer.name=Marreta de Pedra

@@ -141,6 +141,7 @@ public abstract class Items {
 	public static Item copper_powder;
 	public static Item copper_shovel;
 	public static Item copper_sword;
+	public static Item diamond_crackhammer;
 	public static Item electrum_axe;
 	public static Item electrum_blend;
 	public static Item electrum_boots;
@@ -278,6 +279,7 @@ public abstract class Items {
 	public static Item tin_powder;
 	public static Item tin_shovel;
 	public static Item tin_sword;
+	public static Item wood_crackhammer;
 	public static Item zinc_ingot;
 	public static Item zinc_nugget;
 	public static Item zinc_powder;
@@ -394,6 +396,7 @@ public abstract class Items {
 		copper_powder = create_powder(Materials.copper);
 		copper_shovel = create_shovel(Materials.copper);
 		copper_sword = create_sword(Materials.copper);
+		diamond_crackhammer = create_crackhammer(Materials.vanilla_diamond);
 		electrum_axe = create_axe(Materials.electrum);
 		electrum_blend = create_blend(Materials.electrum);
 		electrum_boots = create_boots(Materials.electrum);
@@ -442,6 +445,8 @@ public abstract class Items {
 		lead_powder = create_powder(Materials.lead);
 		lead_shovel = create_shovel(Materials.lead);
 		lead_sword = create_sword(Materials.lead);
+		stone_crackhammer = create_crackhammer(Materials.vanilla_stone);
+		wood_crackhammer = create_crackhammer(Materials.vanilla_wood);
 		
 		mercury_ingot = new Item().setUnlocalizedName(BaseMetals.MODID+"."+"mercury_ingot").setCreativeTab(CreativeTabs.tabMaterials);
 		GameRegistry.registerItem(mercury_ingot,"mercury_ingot");
