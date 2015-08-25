@@ -49,7 +49,6 @@ import cyano.basemetals.registry.CrusherRecipeRegistry;
 @Mod(modid = BaseMetals.MODID, name=BaseMetals.NAME, version = BaseMetals.VERSION)
 public class BaseMetals
 {
-
 	/** ID of this mod */
 	public static final String MODID = "basemetals";
 	/** display name of this mod */
@@ -76,6 +75,8 @@ public class BaseMetals
 	public static boolean disableVanillaOreGen = false;
 	/** For when the user adds specific recipies via the config file */
 	public static List<String> userCrusherRecipes = new ArrayList<>();
+	/** location of ore-spawn files */
+	public static Path oreSpawnFolder = null;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -132,7 +133,7 @@ public class BaseMetals
 			}
 		}
 		
-		Path oreSpawnFolder = Paths.get(event.getSuggestedConfigurationFile().toPath().getParent().toString(),"orespawn");
+		oreSpawnFolder = Paths.get(event.getSuggestedConfigurationFile().toPath().getParent().toString(),"orespawn");
 		Path oreSpawnFile = Paths.get(oreSpawnFolder.toString(),MODID+".json");
 		if(Files.exists(oreSpawnFile) == false){
 			try {
@@ -143,12 +144,6 @@ public class BaseMetals
 			}
 		}
 
-		File[] files = oreSpawnFolder.toFile().listFiles(); // sigh, java 8 does this so much better
-		for(File f : files){
-			if(f.getName().toLowerCase().endsWith(".json")){
-				oreSpawnConfigFiles.add(f.toPath());
-			}
-		}
 		cyano.basemetals.init.Materials.init();
 		cyano.basemetals.init.Blocks.init();
 		cyano.basemetals.init.Items.init();
@@ -177,6 +172,13 @@ public class BaseMetals
 	@EventHandler
 	public void init(FMLInitializationEvent event)
 	{
+
+		File[] files = oreSpawnFolder.toFile().listFiles(); // sigh, java 8 does this so much better
+		for(File f : files){
+			if(f.getName().toLowerCase().endsWith(".json")){
+				oreSpawnConfigFiles.add(f.toPath());
+			}
+		}
 		
 		cyano.basemetals.init.Recipes.init();
 		cyano.basemetals.init.DungeonLoot.init();

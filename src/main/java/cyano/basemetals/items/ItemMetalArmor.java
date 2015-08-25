@@ -146,7 +146,7 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 						&& player.getCurrentArmor(0).getItem() == cyano.basemetals.init.Items.coldiron_boots){
 					final PotionEffect fireProtection = new PotionEffect(12,EFFECT_DURATION);
 					player.addPotionEffect(fireProtection);
-					if(player.getCurrentEquippedItem().getItem() == cyano.basemetals.init.Items.coldiron_sword){
+					if(player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() == cyano.basemetals.init.Items.coldiron_sword){
 						player.addStat(Achievements.demon_slayer, 1);
 					}
 				}
