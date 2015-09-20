@@ -23,7 +23,7 @@ allprojects {
     targetCompatibility = 1.7
 }
 
-version = "1.4.0"
+version = "1.4.1"
 group= "cyano.basemetals"
 archivesBaseName = "BaseMetals"
 

@@ -66,6 +66,10 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 	private static final int EFFECT_DURATION = UPDATE_INTERVAL * 3;
 	protected void doArmorUpdate(World w, EntityPlayer player, ItemStack armor,
 			int i) {
+		// some sanity checks
+		if(armor == null) return;
+		if(armor.getItem() == null) return;
+		if(player == null) return;
 	//	FMLLog.info("doArmorUpdate "+i+" for "+player.getName()+" on item "+armor); // debug code
 		Item armorItem = armor.getItem();
 		if(i % 2 == 0){
@@ -141,9 +145,9 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 			}
 			// full suit of cold-iron makes you fire-proof
 			if(armorItem == cyano.basemetals.init.Items.coldiron_helmet){
-				if(player.getCurrentArmor(2).getItem() == cyano.basemetals.init.Items.coldiron_chestplate
-						&& player.getCurrentArmor(1).getItem() == cyano.basemetals.init.Items.coldiron_leggings
-						&& player.getCurrentArmor(0).getItem() == cyano.basemetals.init.Items.coldiron_boots){
+				if(player.getCurrentArmor(2) != null && player.getCurrentArmor(2).getItem() == cyano.basemetals.init.Items.coldiron_chestplate
+						&& player.getCurrentArmor(1) != null && player.getCurrentArmor(1).getItem() == cyano.basemetals.init.Items.coldiron_leggings
+						&& player.getCurrentArmor(0) != null && player.getCurrentArmor(0).getItem() == cyano.basemetals.init.Items.coldiron_boots){
 					final PotionEffect fireProtection = new PotionEffect(12,EFFECT_DURATION);
 					player.addPotionEffect(fireProtection);
 					if(player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() == cyano.basemetals.init.Items.coldiron_sword){
@@ -153,25 +157,25 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
 			}
 			// full suit of mithril protects you from withering, poison, nausea, and hunger effects
 			if(armorItem == cyano.basemetals.init.Items.mithril_helmet){
-				if(player.getCurrentArmor(2).getItem() == cyano.basemetals.init.Items.mithril_chestplate
-						&& player.getCurrentArmor(1).getItem() == cyano.basemetals.init.Items.mithril_leggings
-						&& player.getCurrentArmor(0).getItem() == cyano.basemetals.init.Items.mithril_boots){
+				if(player.getCurrentArmor(2) != null && player.getCurrentArmor(2).getItem() == cyano.basemetals.init.Items.mithril_chestplate
+						&& player.getCurrentArmor(1) != null && player.getCurrentArmor(1).getItem() == cyano.basemetals.init.Items.mithril_leggings
+						&& player.getCurrentArmor(0) != null && player.getCurrentArmor(0).getItem() == cyano.basemetals.init.Items.mithril_boots){
 					player.removePotionEffect(9);
 					player.removePotionEffect(17);
 					player.removePotionEffect(19);
 					player.removePotionEffect(20);
-					if(player.getCurrentEquippedItem().getItem() == cyano.basemetals.init.Items.mithril_sword){
+					if(player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() == cyano.basemetals.init.Items.mithril_sword){
 						player.addStat(Achievements.angel_of_death, 1);
 					}
 				}
 			}
 			// full suit of aquarium makes you breathe and heal underwater
 			if(armorItem == cyano.basemetals.init.Items.aquarium_helmet && player.posY > 0 && player.posY < 255){
-				if(player.getCurrentArmor(2).getItem() == cyano.basemetals.init.Items.aquarium_chestplate
-						&& player.getCurrentArmor(1).getItem() == cyano.basemetals.init.Items.aquarium_leggings
-						&& player.getCurrentArmor(0).getItem() == cyano.basemetals.init.Items.aquarium_boots){
-					Block b1 = player.worldObj.getBlockState(new BlockPos(player.posX,player.posY, player.posZ)).getBlock();
-					Block b2 = player.worldObj.getBlockState(new BlockPos(player.posX,player.posY+1, player.posZ)).getBlock();
+				if(player.getCurrentArmor(2) != null && player.getCurrentArmor(2).getItem() == cyano.basemetals.init.Items.aquarium_chestplate
+						&& player.getCurrentArmor(1) != null && player.getCurrentArmor(1).getItem() == cyano.basemetals.init.Items.aquarium_leggings
+						&& player.getCurrentArmor(0) != null && player.getCurrentArmor(0).getItem() == cyano.basemetals.init.Items.aquarium_boots){
+					Block b1 = w.getBlockState(new BlockPos(player.posX,player.posY, player.posZ)).getBlock();
+					Block b2 = w.getBlockState(new BlockPos(player.posX,player.posY+1, player.posZ)).getBlock();
 					if(b1 == Blocks.water && b2 == Blocks.water){
 						final PotionEffect waterBreathing = new PotionEffect(13,EFFECT_DURATION);
 						player.addPotionEffect(waterBreathing);
