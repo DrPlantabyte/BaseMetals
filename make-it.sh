@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 CURRENT_DIR="`dirname "$0"`"
 cd "${CURRENT_DIR}"
 
@@ -17,7 +17,7 @@ cd "build/dev"
 ORIG_NAME="`ls BaseMetals-*.jar`"
 API_INSERT="-API-"
 zip -d "${ORIG_NAME}" assets/\*
-mv -v "${ORIG_NAME}" "${ORIG_NAME/-/$API_INSERT}"
+mv -v "${ORIG_NAME}" "${ORIG_NAME/\-/$API_INSERT}"
 mv -v src.zip BaseMetals-src.zip
 mv -v javadoc.zip BaseMetals-javadoc.zip
 cd "../.."
