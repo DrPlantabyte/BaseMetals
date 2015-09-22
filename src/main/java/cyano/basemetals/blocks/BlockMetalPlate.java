@@ -37,8 +37,9 @@ public class BlockMetalPlate extends net.minecraft.block.Block implements IOreDi
 		this.blockHardness = metal.getMetalBlockHardness();
 		this.blockResistance = metal.getBlastResistance();
 		this.setHarvestLevel("pickaxe", metal.getRequiredHarvestLevel());
-    	this.setDefaultState(this.blockState.getBaseState()
-	    		.withProperty(FACING,EnumFacing.NORTH));
+		this.setDefaultState(this.blockState.getBaseState()
+				.withProperty(FACING,EnumFacing.NORTH));
+		this.useNeighborBrightness = true;
 	}
 	
 	@Override
