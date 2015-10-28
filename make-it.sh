@@ -6,8 +6,10 @@ mkdir -p build/dev
 mkdir -p build/dist
 rm -v build/libs/*.jar build/dev/* build/dist/*
 ./gradlew jar
+rm -f build/libs/*-sources.jar
 cp -vf build/libs/*.jar build/dev/
 ./gradlew build javadoc
+rm -f build/libs/*-sources.jar
 cd build/docs/javadoc/
 zip -r --quiet ../../dev/javadoc *
 cd "../../../src/main/java/"
