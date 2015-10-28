@@ -11,6 +11,12 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.apache.logging.log4j.Level;
+
+import cyano.basemetals.data.DataConstants;
+import cyano.basemetals.events.BucketHandler;
+import cyano.basemetals.events.VanillaOreGenDisabler;
+import cyano.basemetals.registry.CrusherRecipeRegistry;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.ConfigCategory;
@@ -26,12 +32,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
-
-import org.apache.logging.log4j.Level;
-
-import cyano.basemetals.data.DataConstants;
-import cyano.basemetals.events.VanillaOreGenDisabler;
-import cyano.basemetals.registry.CrusherRecipeRegistry;
 
 
 /**
@@ -55,7 +55,7 @@ public class BaseMetals
 	public static final String NAME ="Base Metals";
 	/** Version number, in Major.Minor.Build format. The minor number is increased whenever a change 
 	 * is made that has the potential to break compatibility with other mods that depend on this one. */
-	public static final String VERSION = "1.4.3";
+	public static final String VERSION = "1.5.0";
 	
 	/** All ore-spawn files discovered in the ore-spawn folder */
 	public static final List<Path> oreSpawnConfigFiles = new LinkedList<>();
@@ -144,6 +144,7 @@ public class BaseMetals
 			}
 		}
 
+		cyano.basemetals.init.Fluids.init();
 		cyano.basemetals.init.Materials.init();
 		cyano.basemetals.init.Blocks.init();
 		cyano.basemetals.init.Items.init();
@@ -163,6 +164,7 @@ public class BaseMetals
 	@SideOnly(Side.CLIENT)
 	private void clientPreInit(FMLPreInitializationEvent event){
 		// client-only code
+		cyano.basemetals.init.Fluids.bakeModels(MODID);
 	}
 	@SideOnly(Side.SERVER)
 	private void serverPreInit(FMLPreInitializationEvent event){
@@ -180,11 +182,15 @@ public class BaseMetals
 			}
 		}
 		
+		cyano.basemetals.init.Fluids.init();
 		cyano.basemetals.init.Recipes.init();
 		cyano.basemetals.init.DungeonLoot.init();
 		cyano.basemetals.init.VillagerTrades.init();
 		
 		cyano.basemetals.init.Achievements.init();
+		
+		
+		MinecraftForge.EVENT_BUS.register(BucketHandler.getInstance());
 		
 		if(disableVanillaOreGen){
 			MinecraftForge.ORE_GEN_BUS.register(VanillaOreGenDisabler.getInstance());

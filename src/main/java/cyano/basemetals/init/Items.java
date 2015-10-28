@@ -8,6 +8,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBucket;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -15,6 +18,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 import cyano.basemetals.BaseMetals;
 import cyano.basemetals.blocks.BlockMetalDoor;
+import cyano.basemetals.events.BucketHandler;
 import cyano.basemetals.items.*;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
@@ -31,6 +35,7 @@ public abstract class Items {
 	private static Map<String,Item> allItems = new HashMap<>();
 	
 	private static Map<BlockDoor,Item> doorMap = new HashMap<>();
+	
 	/**
 	 * Gets an item by its name. The name is the name as it is registered in 
 	 * the GameRegistry, not its unlocalized name (the unlocalized name is the 
@@ -51,7 +56,8 @@ public abstract class Items {
 	public static String getNameOfItem(Item i){
 		return itemRegistry.get(i);
 	}
-	
+
+	public static ItemBucket bucket_mercury;
 	
 	public static Item adamantine_axe;
 	public static Item adamantine_boots;
@@ -302,6 +308,7 @@ public abstract class Items {
 		if(initDone) return;
 		
 		cyano.basemetals.init.Blocks.init();
+		
 		adamantine_axe = create_axe(Materials.adamantine);
 		adamantine_boots = create_boots(Materials.adamantine);
 		adamantine_chestplate = create_chestplate(Materials.adamantine);
@@ -448,6 +455,7 @@ public abstract class Items {
 		stone_crackhammer = create_crackhammer(Materials.vanilla_stone);
 		wood_crackhammer = create_crackhammer(Materials.vanilla_wood);
 		
+		// mercury is special
 		mercury_ingot = new Item().setUnlocalizedName(BaseMetals.MODID+"."+"mercury_ingot").setCreativeTab(CreativeTabs.tabMaterials);
 		GameRegistry.registerItem(mercury_ingot,"mercury_ingot");
 		itemRegistry.put(mercury_ingot, "mercury_ingot");
@@ -456,6 +464,10 @@ public abstract class Items {
 		GameRegistry.registerItem(mercury_powder,"mercury_powder");
 		itemRegistry.put(mercury_powder, "mercury_powder");
 		OreDictionary.registerOre("dustMercury", mercury_powder);
+		bucket_mercury = (ItemBucket)init(new ItemBucket(Fluids.fluidBlockMercury),"bucket_mercury",CreativeTabs.tabMisc);
+		OreDictionary.registerOre("bucketMercury", bucket_mercury);
+		FluidContainerRegistry.registerFluidContainer(Fluids.fluidMercury, new ItemStack(bucket_mercury), new ItemStack(net.minecraft.init.Items.bucket));
+		BucketHandler.getInstance().buckets.put(Fluids.fluidBlockMercury, bucket_mercury);
 		
 		mithril_axe = create_axe(Materials.mithril);
 		mithril_blend = create_blend(Materials.mithril);
