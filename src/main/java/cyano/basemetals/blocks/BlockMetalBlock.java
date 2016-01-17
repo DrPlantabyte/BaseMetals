@@ -39,7 +39,7 @@ public class BlockMetalBlock extends Block implements IOreDictionaryEntry{
     }
 	
 	@Override
-	public boolean isSolidFullCube() {
+	public boolean isFullBlock() {
         return true;
     }
     

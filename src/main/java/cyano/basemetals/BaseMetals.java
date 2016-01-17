@@ -55,7 +55,7 @@ public class BaseMetals
 	public static final String NAME ="Base Metals";
 	/** Version number, in Major.Minor.Build format. The minor number is increased whenever a change 
 	 * is made that has the potential to break compatibility with other mods that depend on this one. */
-	public static final String VERSION = "1.5.0";
+	public static final String VERSION = "1.6.0";
 	
 	/** All ore-spawn files discovered in the ore-spawn folder */
 	public static final List<Path> oreSpawnConfigFiles = new LinkedList<>();
@@ -141,6 +141,15 @@ public class BaseMetals
 				Files.write(oreSpawnFile, Arrays.asList(DataConstants.defaultOreSpawnJSON.split("\n")), Charset.forName("UTF-8"));
 			} catch (IOException e) {
 				FMLLog.severe(MODID+": Error: Failed to write file "+oreSpawnFile);
+			}
+		}
+		Path oreVanillaSpawnFile = Paths.get(oreSpawnFolder.toString(),"minecraft.json");
+		if(disableVanillaOreGen && Files.exists(oreVanillaSpawnFile) == false){
+			try {
+				Files.createDirectories(oreVanillaSpawnFile.getParent());
+				Files.write(oreVanillaSpawnFile, Arrays.asList(DataConstants.defaultVanillaOreSpawnJSON.split("\n")), Charset.forName("UTF-8"));
+			} catch (IOException e) {
+				FMLLog.severe(MODID+": Error: Failed to write file "+oreVanillaSpawnFile);
 			}
 		}
 

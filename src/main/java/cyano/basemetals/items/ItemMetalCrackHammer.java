@@ -87,12 +87,11 @@ public class ItemMetalCrackHammer extends ItemTool{
 			final float partialX, final float partialY, final float partialZ) {		
 		if(facing != EnumFacing.UP) return false;
 		if(w.isRemote) return true;
-		List<Entity> entities = w.getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(
+		List<EntityItem> entities = w.getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(
 				coord.getX(),coord.getY()+1,coord.getZ(),
 				coord.getX()+1,coord.getY()+2,coord.getZ()+1));
 		boolean success = false;
-		for(Entity target : entities){
-			if(target instanceof net.minecraft.entity.item.EntityItem){
+		for(EntityItem target : entities){
 				ItemStack targetItem = ((net.minecraft.entity.item.EntityItem)target).getEntityItem();
 				if(targetItem != null ){
 					ICrusherRecipe recipe = CrusherRecipeRegistry.getInstance().getRecipeForInputItem(targetItem);
@@ -127,7 +126,6 @@ public class ItemMetalCrackHammer extends ItemTool{
 						break;
 					}
 				}
-			}
 		}
 		if(success && !w.isRemote){
 			w.playSoundAtEntity(player, "dig.gravel", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
