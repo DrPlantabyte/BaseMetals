@@ -6,21 +6,26 @@ import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+import com.google.common.base.Predicate;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.block.state.pattern.BlockHelper;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.Vec3i;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.fml.common.IWorldGenerator;
-
-import com.google.common.base.Predicate;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class OreSpawner implements IWorldGenerator {
 
@@ -196,7 +201,34 @@ public class OreSpawner implements IWorldGenerator {
 			target[n] = temp;
 		}
 	}
-	private static final Predicate stonep = (Predicate)BlockHelper.forBlock(Blocks.stone);
+	private static final Predicate stonep = new Predicate<IBlockState>(){
+		Set<Block> cache = null;
+		boolean cacheEmpty = true;
+		private final Lock initLock = new ReentrantLock();
+		@Override
+		public boolean apply(IBlockState input) {
+			Block b = input.getBlock();
+			if(b == Blocks.air) return false;
+			if(cacheEmpty){
+				initLock.lock();
+				try{
+					if(cacheEmpty){
+						cacheEmpty = false;
+						cache = new HashSet<>();
+						List<ItemStack> dict = OreDictionary.getOres("stone");
+						for(ItemStack i : dict){
+							if(i.getItem() instanceof ItemBlock){
+								cache.add(((ItemBlock)i.getItem()).getBlock());
+							}
+						}
+					}
+				}finally{
+					initLock.unlock();
+				}
+			}
+			return cache.contains(b);
+		}
+	};
 	private static void spawn(Block b, int m, World w, BlockPos coord, int dimension, boolean cacheOverflow){
 		if(m == 0){
 			spawn( b.getDefaultState(), w,coord,dimension,cacheOverflow);
