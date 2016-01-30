@@ -19,17 +19,21 @@ public class BlockMetalBlock extends Block implements IOreDictionaryEntry{
 
 	final MetalMaterial metal;
 	
-	public BlockMetalBlock(MetalMaterial metal) {
+	public BlockMetalBlock(MetalMaterial metal){
+		this(metal,false);
+	}
+	public BlockMetalBlock(MetalMaterial metal, boolean glows) {
 		super(Material.iron);
 		this.stepSound = Block.soundTypeMetal;
 		this.fullBlock = true;
-        this.lightOpacity = 255;
+		this.lightOpacity = 255;
 		this.translucent = false;
 		this.metal = metal;
 		this.blockHardness = metal.getMetalBlockHardness();
 		this.blockResistance = metal.getBlastResistance();
 		this.setHarvestLevel("pickaxe", metal.getRequiredHarvestLevel());
 		this.setCreativeTab(CreativeTabs.tabBlock);
+		if(glows) this.setLightLevel(0.5f);
 	}
 
 	///// OVERRIDE OF ALL METHODS THAT DEPEND ON BLOCK MATERIAL: /////

@@ -240,6 +240,8 @@ public class BaseMetals
 		
 		cyano.basemetals.init.WorldGen.init();
 
+		// TODO: auto-detect ore dictionary entries that should be crusher recipes
+		
 		
 		// parse user crusher recipes
 		for(String recipe : userCrusherRecipes){

@@ -297,7 +297,10 @@ public abstract class Blocks {
 		return block;
 	}
 	private static Block createBlock(MetalMaterial metal){
-		Block block = new BlockMetalBlock(metal);
+		return createBlock(metal,false);
+	}
+	private static Block createBlock(MetalMaterial metal, boolean glow){
+		Block block = new BlockMetalBlock(metal,glow);
 		block.setUnlocalizedName(BaseMetals.MODID+"."+metal.getName()+"_block");
 		GameRegistry.registerBlock(block, metal.getName()+"_block");
 		allBlocks.put(metal.getName()+"_block", block);

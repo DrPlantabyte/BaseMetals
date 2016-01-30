@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import cyano.basemetals.BaseMetals;
+import cyano.basemetals.blocks.InteractiveFluidBlock;
 import cyano.basemetals.fluids.BlockFluidMercury;
 import cyano.basemetals.fluids.CustomFluid;
 import net.minecraft.block.material.Material;
@@ -13,9 +14,13 @@ import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.fluids.Fluid;
@@ -41,7 +46,10 @@ public abstract class Fluids{
 		fluidMercury = newFluid(BaseMetals.MODID, "mercury",13594,2000,300,0, 0xFFFFFFFF);
 		
 		// fluid blocks
-		fluidBlockMercury = registerFluidBlock(fluidMercury, new BlockFluidMercury(fluidMercury,Material.water),"liquid_mercury");
+		fluidBlockMercury = registerFluidBlock(fluidMercury, new InteractiveFluidBlock(
+				fluidMercury, false, (World w, EntityLivingBase e)->{
+					if(w.rand.nextInt(32) == 0)e.addPotionEffect(new PotionEffect(Potion.confusion.id,1200,2));
+				}),"liquid_mercury");
 		
 		initDone = true;
 	}
