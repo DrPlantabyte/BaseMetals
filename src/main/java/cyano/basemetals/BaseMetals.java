@@ -8,8 +8,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.logging.log4j.Level;
 
@@ -77,6 +79,8 @@ public class BaseMetals
 	public static List<String> userCrusherRecipes = new ArrayList<>();
 	/** location of ore-spawn files */
 	public static Path oreSpawnFolder = null;
+	/** if true, then this mod will scan the Ore Dictionary for obvious hammer recipes from other mods */
+	public static boolean autoDetectRecipes = true;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -106,6 +110,10 @@ public class BaseMetals
 		disableVanillaOreGen = config.getBoolean("disable_standard_ore_generation", "options", disableVanillaOreGen, 
 				"If true, then ore generation will be handled exclusively by oregen .json files \n"
 			+	"(vanilla ore generation will be disabled)");
+		
+		autoDetectRecipes = config.getBoolean("automatic_recipes", "options", autoDetectRecipes, 
+				"If true, then Base Metals will scan the Ore Dictionary to automatically add a \n"
+			+	"Crack Hammer recipe for every material that has an ore, dust, and ingot.");
 		
 		ConfigCategory userRecipeCat = config.getCategory("hammer recipes");
 		userRecipeCat.setComment(
@@ -240,8 +248,6 @@ public class BaseMetals
 		
 		cyano.basemetals.init.WorldGen.init();
 
-		// TODO: auto-detect ore dictionary entries that should be crusher recipes
-		
 		
 		// parse user crusher recipes
 		for(String recipe : userCrusherRecipes){
@@ -255,6 +261,50 @@ public class BaseMetals
 				FMLLog.severe("Failed to add recipe formula '"+recipe+"' because the blocks/items could not be found");
 			} else {
 				CrusherRecipeRegistry.addNewCrusherRecipe(input, output);
+			}
+		}
+		
+
+		if(autoDetectRecipes){
+			// add recipe for every X where the Ore Dictionary has dustX, oreX, and ingotX
+			Set<String> dictionary = new HashSet<>();
+			dictionary.addAll(Arrays.asList(OreDictionary.getOreNames()));
+			for(String entry : dictionary){
+				if(entry.contains("Mercury")) continue;
+				if(entry.startsWith("dust")){
+					String X = entry.substring("dust".length());
+					String dustX = entry;
+					String ingotX = "ingot".concat(X);
+					String oreX = "ore".concat(X);
+					if(dictionary.contains(oreX) && dictionary.contains(ingotX) && !OreDictionary.getOres(dustX).isEmpty()){
+						ItemStack dustX1 = OreDictionary.getOres(dustX).get(0).copy();
+						dustX1.stackSize = 1; 
+						ItemStack dustX2 = dustX1.copy();
+						dustX2.stackSize = 2; 
+						// recipe found
+						// but is it already registered
+						List<ItemStack> oreBlocks = OreDictionary.getOres(oreX);
+						boolean alreadyHasOreRecipe = true;
+						for(ItemStack i : oreBlocks){
+							alreadyHasOreRecipe = alreadyHasOreRecipe 
+									&& (CrusherRecipeRegistry.getInstance().getRecipeForInputItem(i) != null);
+						}
+						List<ItemStack> ingotStacks = OreDictionary.getOres(ingotX);
+						boolean alreadyHasIngotRecipe = true;
+						for(ItemStack i : ingotStacks){
+							alreadyHasIngotRecipe = alreadyHasIngotRecipe 
+									&& (CrusherRecipeRegistry.getInstance().getRecipeForInputItem(i) != null);
+						}
+						if(!alreadyHasOreRecipe){
+							FMLLog.info(MODID+": automatically adding custom crusher recipe \"%s\" -> %s",oreX,dustX2);
+							CrusherRecipeRegistry.addNewCrusherRecipe(oreX, dustX2);
+						}
+						if(!alreadyHasIngotRecipe){
+							FMLLog.info(MODID+": automatically adding custom crusher recipe \"%s\" -> %s",ingotX,dustX1);
+							CrusherRecipeRegistry.addNewCrusherRecipe(ingotX, dustX1);
+						}
+					}
+				}
 			}
 		}
 		

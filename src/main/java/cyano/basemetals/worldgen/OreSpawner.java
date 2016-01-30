@@ -23,6 +23,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.Vec3i;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.fml.common.IWorldGenerator;
 import net.minecraftforge.oredict.OreDictionary;
@@ -78,7 +79,10 @@ public class OreSpawner implements IWorldGenerator {
 		}
 		BlockPos coord = new BlockPos((chunkX << 4) & 0x08,64,(chunkZ << 4) & 0x08);
 		if(spawnData.restrictBiomes){
-			if(!spawnData.biomesByName.contains(world.getBiomeGenForCoords(coord).biomeName)){
+			BiomeGenBase biome = world.getBiomeGenForCoords(coord);
+			if(!(spawnData.biomesByName.contains(biome.biomeName)
+					|| spawnData.biomesByName.contains(biome.biomeID))
+			){
 				// wrong biome
 				return;
 			}
