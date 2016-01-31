@@ -1,5 +1,8 @@
 nei.basemetals.recipehandler.crusher.name=破碎的方塊/物件
 
+itemGroup.basemetals.items=Base Metals
+itemGroup.basemetals.tools=Base Metals
+itemGroup.basemetals.blocks=Base Metals
 item.basemetals.adamantine_axe.name=精金斧
 item.basemetals.adamantine_bars.name=精金欄杆
 item.basemetals.adamantine_block.name=精金磚

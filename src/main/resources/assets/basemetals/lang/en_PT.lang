@@ -1,3 +1,6 @@
+itemGroup.basemetals.items=Base Metals
+itemGroup.basemetals.tools=Base Metals
+itemGroup.basemetals.blocks=Base Metals
 nei.basemetals.recipehandler.crusher.name=Crushed Blocks/Items
 
 item.basemetals.adamantine_axe.name=Unbreakable Axe

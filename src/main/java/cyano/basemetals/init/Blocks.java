@@ -160,6 +160,7 @@ public abstract class Blocks {
 		if(initDone)return;
 		
 		cyano.basemetals.init.Materials.init();
+		cyano.basemetals.init.ItemGroups.init();
 
 
 		adamantine_block = createBlock(Materials.adamantine);
