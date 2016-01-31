@@ -8,7 +8,6 @@ import net.minecraft.block.BlockDoor;
 import net.minecraft.block.BlockOre;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -273,9 +272,10 @@ public abstract class Blocks {
 		iron_plate = createPlate(Materials.vanilla_iron);
 		gold_plate = createPlate(Materials.vanilla_gold);
 		
-		
+		// final block settings
 		for(Block b : allBlocks.values()){
 			if(b instanceof IOreDictionaryEntry){OreDictionary.registerOre(((IOreDictionaryEntry)b).getOreDictionaryName(), b);}
+			b.setCreativeTab(ItemGroups.tab_blocks);
 		}
 		
 		initDone = true;
@@ -285,7 +285,6 @@ public abstract class Blocks {
 		Block block = new BlockMetalPlate(metal);
 		block.setUnlocalizedName(BaseMetals.MODID+"."+metal.getName()+"_plate");
 		GameRegistry.registerBlock(block, metal.getName()+"_plate");
-		block.setCreativeTab(CreativeTabs.tabDecorations);
 		allBlocks.put(metal.getName()+"_plate", block);
 		return block;
 	}

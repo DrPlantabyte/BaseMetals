@@ -369,7 +369,7 @@ public abstract class Items {
 		bronze_shovel = create_shovel(Materials.bronze);
 		bronze_sword = create_sword(Materials.bronze);
 		
-		carbon_powder = new Item().setUnlocalizedName(BaseMetals.MODID+"."+"carbon_powder").setCreativeTab(CreativeTabs.tabMaterials);
+		carbon_powder = new Item().setUnlocalizedName(BaseMetals.MODID+"."+"carbon_powder").setCreativeTab(ItemGroups.tab_items);
 		GameRegistry.registerItem(carbon_powder,"carbon_powder");
 		itemRegistry.put(carbon_powder, "carbon_powder");
 		OreDictionary.registerOre("dustCoal", carbon_powder);
@@ -456,15 +456,15 @@ public abstract class Items {
 		wood_crackhammer = create_crackhammer(Materials.vanilla_wood);
 		
 		// mercury is special
-		mercury_ingot = new Item().setUnlocalizedName(BaseMetals.MODID+"."+"mercury_ingot").setCreativeTab(CreativeTabs.tabMaterials);
+		mercury_ingot = new Item().setUnlocalizedName(BaseMetals.MODID+"."+"mercury_ingot").setCreativeTab(ItemGroups.tab_items);
 		GameRegistry.registerItem(mercury_ingot,"mercury_ingot");
 		itemRegistry.put(mercury_ingot, "mercury_ingot");
 		OreDictionary.registerOre("ingotMercury", mercury_ingot);
-		mercury_powder = new Item().setUnlocalizedName(BaseMetals.MODID+"."+"mercury_powder").setCreativeTab(CreativeTabs.tabMaterials);
+		mercury_powder = new Item().setUnlocalizedName(BaseMetals.MODID+"."+"mercury_powder").setCreativeTab(ItemGroups.tab_items);
 		GameRegistry.registerItem(mercury_powder,"mercury_powder");
 		itemRegistry.put(mercury_powder, "mercury_powder");
 		OreDictionary.registerOre("dustMercury", mercury_powder);
-		bucket_mercury = (ItemBucket)init(new ItemBucket(Fluids.fluidBlockMercury),"bucket_mercury",CreativeTabs.tabMisc);
+		bucket_mercury = (ItemBucket)init(new ItemBucket(Fluids.fluidBlockMercury),"bucket_mercury",ItemGroups.tab_items);
 		OreDictionary.registerOre("bucketMercury", bucket_mercury);
 		FluidContainerRegistry.registerFluidContainer(Fluids.fluidMercury, new ItemStack(bucket_mercury), new ItemStack(net.minecraft.init.Items.bucket));
 		BucketHandler.getInstance().buckets.put(Fluids.fluidBlockMercury, bucket_mercury);
@@ -589,6 +589,7 @@ public abstract class Items {
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		itemRegistry.put(i, regName);
+		i.setCreativeTab(ItemGroups.tab_items);
 		return i;
 	}
 	
@@ -599,6 +600,7 @@ public abstract class Items {
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		itemRegistry.put(i, regName);
+		i.setCreativeTab(ItemGroups.tab_items);
 		return i;
 	}
 	
@@ -609,6 +611,7 @@ public abstract class Items {
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		itemRegistry.put(i, regName);
+		i.setCreativeTab(ItemGroups.tab_items);
 		return i;
 	}
 	
@@ -619,6 +622,7 @@ public abstract class Items {
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		itemRegistry.put(i, regName);
+		i.setCreativeTab(ItemGroups.tab_items);
 		return i;
 	}
 	
@@ -629,6 +633,7 @@ public abstract class Items {
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		itemRegistry.put(i, regName);
+		i.setCreativeTab(ItemGroups.tab_tools);
 		return i;
 	}
 
@@ -639,6 +644,7 @@ public abstract class Items {
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		itemRegistry.put(i, regName);
+		i.setCreativeTab(ItemGroups.tab_tools);
 		return i;
 	}
 	
@@ -649,6 +655,7 @@ public abstract class Items {
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		itemRegistry.put(i, regName);
+		i.setCreativeTab(ItemGroups.tab_tools);
 		return i;
 	}
 	
@@ -659,6 +666,7 @@ public abstract class Items {
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		itemRegistry.put(i, regName);
+		i.setCreativeTab(ItemGroups.tab_tools);
 		return i;
 	}
 	
@@ -669,6 +677,7 @@ public abstract class Items {
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		itemRegistry.put(i, regName);
+		i.setCreativeTab(ItemGroups.tab_tools);
 		return i;
 	}
 	
@@ -679,6 +688,7 @@ public abstract class Items {
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		itemRegistry.put(i, regName);
+		i.setCreativeTab(ItemGroups.tab_tools);
 		return i;
 	}
 
@@ -689,6 +699,7 @@ public abstract class Items {
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		itemRegistry.put(i, regName);
+		i.setCreativeTab(ItemGroups.tab_tools);
 		return i;
 	}
 	private static Item create_chestplate(MetalMaterial m){
@@ -698,6 +709,7 @@ public abstract class Items {
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		itemRegistry.put(i, regName);
+		i.setCreativeTab(ItemGroups.tab_tools);
 		return i;
 	}
 	private static Item create_leggings(MetalMaterial m){
@@ -707,6 +719,7 @@ public abstract class Items {
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		itemRegistry.put(i, regName);
+		i.setCreativeTab(ItemGroups.tab_tools);
 		return i;
 	}
 	private static Item create_boots(MetalMaterial m){
@@ -716,6 +729,7 @@ public abstract class Items {
 		String regName = m.getName()+"_"+n;
 		GameRegistry.registerItem(i, regName);
 		itemRegistry.put(i, regName);
+		i.setCreativeTab(ItemGroups.tab_tools);
 		return i;
 	}
 	private static Item create_door(MetalMaterial m,BlockDoor door){
@@ -726,6 +740,7 @@ public abstract class Items {
 		GameRegistry.registerItem(i, regName);
 		itemRegistry.put(i, regName);
 		doorMap.put(door, i);
+		i.setCreativeTab(ItemGroups.tab_blocks);
 		return i;
 	}
 
