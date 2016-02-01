@@ -26,9 +26,9 @@ public class ItemGroups {
 //		toolItem = net.minecraft.init.Items.iron_ingot;
 
 		tab_blocks = new FunctionalCreativeTab( BaseMetals.MODID.concat(".blocks"),
-				()->blockItem, 
+				()->Items.copper_crackhammer, 
 				(ItemStack a,ItemStack b)->{
-					int delta = Items.getSortingValue(b)-Items.getSortingValue(a);
+					int delta = Items.getSortingValue(a)-Items.getSortingValue(b);
 					if(delta == 0) return a.getItem().getUnlocalizedName().compareToIgnoreCase(b.getItem().getUnlocalizedName());
 					return delta;
 				});
@@ -41,15 +41,5 @@ public class ItemGroups {
 		initDone = true;
 	}
 	
-	private static boolean postInitDone = false;
-	public static void postInit(){
-		if(postInitDone) return;
-
-		blockItem = new ItemBlock(Blocks.copper_ore);
-//		itemItem = Items.copper_ingot;
-//		toolItem = Items.copper_crackhammer;
-		
-		postInitDone = true;
-	}
 	
 }

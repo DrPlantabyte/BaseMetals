@@ -248,7 +248,6 @@ public class BaseMetals
 		}
 		
 		cyano.basemetals.init.WorldGen.init();
-		cyano.basemetals.init.ItemGroups.postInit();
 
 		
 		// parse user crusher recipes

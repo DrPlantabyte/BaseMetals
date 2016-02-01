@@ -31,6 +31,7 @@ public class FunctionalCreativeTab  extends CreativeTabs {
 				return itemSortingAlgorithm.apply(o1, o2);
 			}
 		};
+		setBackgroundImageName("item_search.png");
 	}
 
 

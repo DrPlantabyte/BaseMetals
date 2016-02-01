@@ -598,10 +598,11 @@ public abstract class Items {
 		classSortingValues.put(ItemMetalTool.class, ++ss * 10000);
 		
 		
-		MetalMaterial[] metlist = Materials.getAllMetals().toArray(new MetalMaterial[0]);
-		Arrays.sort(metlist);
-		for(int i = 0; i < metlist.length; i++){
-			materialSortingValues.put(metlist[i], i*100);
+		List<MetalMaterial> metlist = new ArrayList<>(Materials.getAllMetals().size());
+		metlist.addAll(Materials.getAllMetals());
+		metlist.sort((MetalMaterial a, MetalMaterial b)-> a.getName().compareToIgnoreCase(b.getName()));
+		for(int i = 0; i < metlist.size(); i++){
+			materialSortingValues.put(metlist.get(i), i*100);
 		}
 		
 		initDone = true;
@@ -788,10 +789,10 @@ public abstract class Items {
 					(Class c)->990000);
 			metalVal = materialSortingValues.computeIfAbsent(((IMetalObject)((ItemBlock)a.getItem()).getBlock()).getMetalMaterial(),
 					(MetalMaterial m)->9900);
-		} else if(a.getItem() instanceof net.minecraft.item.Item){
+		} else if(a.getItem() instanceof IMetalObject){
 			classVal = classSortingValues.computeIfAbsent(a.getItem().getClass(),
 					(Class c)->990000);
-			metalVal = materialSortingValues.computeIfAbsent(((IMetalObject)((ItemBlock)a.getItem()).getBlock()).getMetalMaterial(),
+			metalVal = materialSortingValues.computeIfAbsent(((IMetalObject)a.getItem()).getMetalMaterial(),
 					(MetalMaterial m)->9900);
 		}
 		return classVal + metalVal + (a.getMetadata() % 100);
