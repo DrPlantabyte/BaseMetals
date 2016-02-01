@@ -251,6 +251,12 @@ public abstract class Blocks {
 		starsteel_bars = createBars(Materials.starsteel);
 		starsteel_door = createDoor(Materials.starsteel);
 		starsteel_trapdoor = createTrapDoor(Materials.starsteel);
+		starsteel_block.setLightLevel(0.5f);
+		starsteel_plate.setLightLevel(0.5f);
+		starsteel_ore.setLightLevel(0.5f);
+		starsteel_bars.setLightLevel(0.5f);
+		starsteel_door.setLightLevel(0.5f);
+		starsteel_trapdoor.setLightLevel(0.5f);
 
 		steel_block = createBlock(Materials.steel);
 		steel_plate = createPlate(Materials.steel);
