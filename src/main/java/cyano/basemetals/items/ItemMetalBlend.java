@@ -6,10 +6,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import cyano.basemetals.init.Achievements;
 import cyano.basemetals.init.Materials;
+import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
 
-public class ItemMetalBlend extends net.minecraft.item.Item implements IOreDictionaryEntry{
+public class ItemMetalBlend extends net.minecraft.item.Item implements IOreDictionaryEntry, IMetalObject {
 
 	protected final MetalMaterial metal;
 	private final String oreDict;
@@ -34,5 +35,10 @@ public class ItemMetalBlend extends net.minecraft.item.Item implements IOreDicti
         	crafter.addStat(Achievements.metallurgy, 1);
     	}
     	
+	}
+
+	@Override
+	public MetalMaterial getMetalMaterial(){
+		return metal;
 	}
 }

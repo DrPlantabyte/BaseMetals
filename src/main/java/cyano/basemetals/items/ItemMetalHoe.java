@@ -24,9 +24,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
 import net.minecraftforge.oredict.OreDictionary;
 import cyano.basemetals.init.Materials;
+import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 
-public class ItemMetalHoe extends ItemHoe {
+public class ItemMetalHoe extends ItemHoe  implements IMetalObject {
 
 	protected final MetalMaterial metal;
 	protected final Set<String> toolTypes;
@@ -51,6 +52,10 @@ public class ItemMetalHoe extends ItemHoe {
 	
 
 
+	@Override
+	public MetalMaterial getMetalMaterial(){
+		return metal;
+	}
 
 	
 

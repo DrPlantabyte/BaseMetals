@@ -17,9 +17,10 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 import cyano.basemetals.init.Materials;
+import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 
-public class ItemMetalSword extends ItemSword {
+public class ItemMetalSword extends ItemSword  implements IMetalObject {
 	protected final MetalMaterial metal;
 	protected final String repairOreDictName;
 	protected final boolean regenerates;
@@ -114,5 +115,9 @@ public class ItemMetalSword extends ItemSword {
     	super.addInformation(stack,player,list,b);
     	MetalToolEffects.addToolSpecialPropertiesToolTip(metal,list);
     }
-	
+
+	@Override
+	public MetalMaterial getMetalMaterial(){
+		return metal;
+	}
 }

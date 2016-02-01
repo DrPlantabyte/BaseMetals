@@ -1,11 +1,12 @@
 package cyano.basemetals.blocks;
 
+import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
-public class BlockMetalBars extends net.minecraft.block.BlockPane implements IOreDictionaryEntry {
+public class BlockMetalBars extends net.minecraft.block.BlockPane implements IOreDictionaryEntry, IMetalObject {
 
 	final MetalMaterial metal;
 	public BlockMetalBars(MetalMaterial metal) {
@@ -19,5 +20,10 @@ public class BlockMetalBars extends net.minecraft.block.BlockPane implements IOr
 	@Override
 	public String getOreDictionaryName() {
 		return "bars"+metal.getCapitalizedName();
+	}
+	
+	@Override
+	public MetalMaterial getMetalMaterial(){
+		return metal;
 	}
 }

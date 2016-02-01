@@ -1,10 +1,11 @@
 package cyano.basemetals.items;
 
-import net.minecraft.block.BlockDoor;
+import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
+import net.minecraft.block.BlockDoor;
 
-public class ItemMetalDoor extends net.minecraft.item.ItemDoor implements IOreDictionaryEntry{
+public class ItemMetalDoor extends net.minecraft.item.ItemDoor implements IOreDictionaryEntry, IMetalObject{
 
 	private final MetalMaterial metal;
 	public ItemMetalDoor(BlockDoor block,MetalMaterial metal) {
@@ -15,5 +16,9 @@ public class ItemMetalDoor extends net.minecraft.item.ItemDoor implements IOreDi
 	@Override
 	public String getOreDictionaryName() {
 		return "door"+metal.getCapitalizedName();
+	}
+	@Override
+	public MetalMaterial getMetalMaterial(){
+		return metal;
 	}
 }

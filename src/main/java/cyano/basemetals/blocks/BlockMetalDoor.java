@@ -2,9 +2,10 @@ package cyano.basemetals.blocks;
 
 import java.util.Random;
 
+import cyano.basemetals.material.IMetalObject;
+import cyano.basemetals.material.MetalMaterial;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
-import net.minecraft.block.BlockDoor.EnumDoorHalf;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,9 +15,8 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import cyano.basemetals.material.MetalMaterial;
 
-public class BlockMetalDoor extends net.minecraft.block.BlockDoor{
+public class BlockMetalDoor extends net.minecraft.block.BlockDoor implements IMetalObject{
 
 	final MetalMaterial metal;
 	public BlockMetalDoor(MetalMaterial metal) {
@@ -59,4 +59,8 @@ public class BlockMetalDoor extends net.minecraft.block.BlockDoor{
         return true;
     }
 
+	@Override
+	public MetalMaterial getMetalMaterial(){
+		return metal;
+	}
 }

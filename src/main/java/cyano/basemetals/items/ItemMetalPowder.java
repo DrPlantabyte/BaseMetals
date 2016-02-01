@@ -1,11 +1,11 @@
 package cyano.basemetals.items;
 
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraftforge.oredict.OreDictionary;
+import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
+import net.minecraft.creativetab.CreativeTabs;
 
-public class ItemMetalPowder extends net.minecraft.item.Item implements IOreDictionaryEntry{
+public class ItemMetalPowder extends net.minecraft.item.Item implements IOreDictionaryEntry, IMetalObject{
 
 	protected final MetalMaterial metal;
 	private final String oreDict;
@@ -17,5 +17,10 @@ public class ItemMetalPowder extends net.minecraft.item.Item implements IOreDict
 	
 	public String getOreDictionaryName(){
 		return oreDict;
+	}
+
+	@Override
+	public MetalMaterial getMetalMaterial(){
+		return metal;
 	}
 }

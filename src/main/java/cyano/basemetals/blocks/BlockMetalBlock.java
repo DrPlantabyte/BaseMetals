@@ -1,6 +1,7 @@
 package cyano.basemetals.blocks;
 
 import cyano.basemetals.init.Achievements;
+import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.block.Block;
@@ -15,7 +16,7 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockMetalBlock extends Block implements IOreDictionaryEntry{
+public class BlockMetalBlock extends Block implements IOreDictionaryEntry, IMetalObject{
 
 	final MetalMaterial metal;
 	
@@ -90,5 +91,11 @@ public class BlockMetalBlock extends Block implements IOreDictionaryEntry{
 		if(placer instanceof EntityPlayer){
 			((EntityPlayer)placer).addStat(Achievements.blocktastic, 1);
 		}
+	}
+	
+
+	@Override
+	public MetalMaterial getMetalMaterial(){
+		return metal;
 	}
 }

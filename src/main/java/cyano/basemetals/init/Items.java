@@ -1,6 +1,9 @@
 package cyano.basemetals.init;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import net.minecraft.block.BlockDoor;
@@ -8,6 +11,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemBucket;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidContainerRegistry;
@@ -17,9 +21,10 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 import cyano.basemetals.BaseMetals;
-import cyano.basemetals.blocks.BlockMetalDoor;
+import cyano.basemetals.blocks.*;
 import cyano.basemetals.events.BucketHandler;
 import cyano.basemetals.items.*;
+import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
 
@@ -36,6 +41,10 @@ public abstract class Items {
 	
 	private static Map<BlockDoor,Item> doorMap = new HashMap<>();
 	
+	
+
+	private static Map<Class,Integer> classSortingValues = new HashMap<>();
+	private static Map<MetalMaterial,Integer> materialSortingValues = new HashMap<>();
 	/**
 	 * Gets an item by its name. The name is the name as it is registered in 
 	 * the GameRegistry, not its unlocalized name (the unlocalized name is the 
@@ -565,8 +574,35 @@ public abstract class Items {
 			if(i instanceof IOreDictionaryEntry){OreDictionary.registerOre(((IOreDictionaryEntry)i).getOreDictionaryName(), i);}
 		}
 		
+
+		int ss = 0;
+		classSortingValues.put(BlockMetalOre.class, ++ss * 10000);
+		classSortingValues.put(BlockMetalBlock.class, ++ss * 10000);
+		classSortingValues.put(BlockMetalPlate.class, ++ss * 10000);
+		classSortingValues.put(BlockMetalBars.class, ++ss * 10000);
+		classSortingValues.put(BlockMetalDoor.class, ++ss * 10000);
+		classSortingValues.put(BlockMetalTrapDoor.class, ++ss * 10000);
+		classSortingValues.put(InteractiveFluidBlock.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalIngot.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalNugget.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalPowder.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalBlend.class, classSortingValues.get(ItemMetalPowder.class));
+		classSortingValues.put(ItemMetalCrackHammer.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalPickaxe.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalShovel.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalAxe.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalHoe.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalSword.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalArmor.class, ++ss * 10000);
+		classSortingValues.put(ItemMetalDoor.class, classSortingValues.get(BlockMetalDoor.class));
+		classSortingValues.put(ItemMetalTool.class, ++ss * 10000);
 		
 		
+		MetalMaterial[] metlist = Materials.getAllMetals().toArray(new MetalMaterial[0]);
+		Arrays.sort(metlist);
+		for(int i = 0; i < metlist.length; i++){
+			materialSortingValues.put(metlist[i], i*100);
+		}
 		
 		initDone = true;
 	}
@@ -744,7 +780,22 @@ public abstract class Items {
 		return i;
 	}
 
-	
+	public static int getSortingValue(ItemStack a){
+		int classVal = 990000;
+		int metalVal = 9900;
+		if(a.getItem() instanceof ItemBlock && ((ItemBlock)a.getItem()).getBlock() instanceof IMetalObject){
+			classVal = classSortingValues.computeIfAbsent(((ItemBlock)a.getItem()).getBlock().getClass(),
+					(Class c)->990000);
+			metalVal = materialSortingValues.computeIfAbsent(((IMetalObject)((ItemBlock)a.getItem()).getBlock()).getMetalMaterial(),
+					(MetalMaterial m)->9900);
+		} else if(a.getItem() instanceof net.minecraft.item.Item){
+			classVal = classSortingValues.computeIfAbsent(a.getItem().getClass(),
+					(Class c)->990000);
+			metalVal = materialSortingValues.computeIfAbsent(((IMetalObject)((ItemBlock)a.getItem()).getBlock()).getMetalMaterial(),
+					(MetalMaterial m)->9900);
+		}
+		return classVal + metalVal + (a.getMetadata() % 100);
+	}
 	
 	@SideOnly(Side.CLIENT)
 	public static void registerItemRenders(FMLInitializationEvent event){

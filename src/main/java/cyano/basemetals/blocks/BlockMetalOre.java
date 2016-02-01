@@ -1,25 +1,15 @@
 package cyano.basemetals.blocks;
 
-import java.util.Random;
-
+import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
-import net.minecraft.block.material.MapColor;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.util.BlockPos;
-import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.common.FMLLog;
 
-public class BlockMetalOre extends BlockOre implements IOreDictionaryEntry{
+public class BlockMetalOre extends BlockOre implements IOreDictionaryEntry, IMetalObject{
 
 	final MetalMaterial metal;
 	
@@ -50,6 +40,10 @@ public class BlockMetalOre extends BlockOre implements IOreDictionaryEntry{
 	}
 	
 	public MetalMaterial getMetal(){
+		return metal;
+	}
+	@Override
+	public MetalMaterial getMetalMaterial(){
 		return metal;
 	}
 }

@@ -20,9 +20,10 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 import cyano.basemetals.init.Materials;
+import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 
-public class ItemMetalPickaxe extends ItemPickaxe {
+public class ItemMetalPickaxe extends ItemPickaxe  implements IMetalObject {
 
 	protected final MetalMaterial metal;
 	protected final Set<String> toolTypes;
@@ -109,4 +110,10 @@ public class ItemMetalPickaxe extends ItemPickaxe {
     	super.addInformation(stack,player,list,b);
     	MetalToolEffects.addToolSpecialPropertiesToolTip(metal,list);
     }
+    
+
+	@Override
+	public MetalMaterial getMetalMaterial(){
+		return metal;
+	}
 }

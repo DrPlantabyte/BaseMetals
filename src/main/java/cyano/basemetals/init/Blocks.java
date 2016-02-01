@@ -275,7 +275,7 @@ public abstract class Blocks {
 		// final block settings
 		for(Block b : allBlocks.values()){
 			if(b instanceof IOreDictionaryEntry){OreDictionary.registerOre(((IOreDictionaryEntry)b).getOreDictionaryName(), b);}
-			b.setCreativeTab(ItemGroups.tab_blocks);
+			if(b instanceof BlockMetalDoor == false) b.setCreativeTab(ItemGroups.tab_blocks);
 		}
 		
 		initDone = true;

@@ -20,9 +20,10 @@ import net.minecraftforge.oredict.OreDictionary;
 import com.google.common.collect.ImmutableSet;
 
 import cyano.basemetals.init.Materials;
+import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 
-public abstract class ItemMetalTool extends net.minecraft.item.ItemTool{
+public abstract class ItemMetalTool extends net.minecraft.item.ItemTool implements IMetalObject {
 
 	protected final MetalMaterial metal;
 	protected final Set<String> toolTypes;
@@ -167,4 +168,9 @@ public abstract class ItemMetalTool extends net.minecraft.item.ItemTool{
     public String getMaterialName() {
         return metal.getName();
     }
+
+	@Override
+	public MetalMaterial getMetalMaterial(){
+		return metal;
+	}
 }

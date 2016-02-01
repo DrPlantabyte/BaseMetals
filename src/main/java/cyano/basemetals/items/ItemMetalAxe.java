@@ -20,9 +20,10 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 import cyano.basemetals.init.Materials;
+import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 
-public class ItemMetalAxe extends ItemAxe {
+public class ItemMetalAxe extends ItemAxe implements IMetalObject {
 
 
 	protected final MetalMaterial metal;
@@ -43,7 +44,11 @@ public class ItemMetalAxe extends ItemAxe {
 		}
 	}
 
-	
+
+	@Override
+	public MetalMaterial getMetalMaterial(){
+		return metal;
+	}
 
 
     public ToolMaterial getToolMaterial() {

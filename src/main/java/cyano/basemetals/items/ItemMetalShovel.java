@@ -20,9 +20,10 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 import cyano.basemetals.init.Materials;
+import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 
-public class ItemMetalShovel extends ItemSpade {
+public class ItemMetalShovel extends ItemSpade  implements IMetalObject {
 
 	protected final MetalMaterial metal;
 	protected final String repairOreDictName;
@@ -100,5 +101,9 @@ public class ItemMetalShovel extends ItemSpade {
     	super.addInformation(stack,player,list,b);
     	MetalToolEffects.addToolSpecialPropertiesToolTip(metal,list);
     }
-	
+
+	@Override
+	public MetalMaterial getMetalMaterial(){
+		return metal;
+	}
 }

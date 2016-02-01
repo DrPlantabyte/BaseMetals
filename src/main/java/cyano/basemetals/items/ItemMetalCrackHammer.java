@@ -23,11 +23,12 @@ import net.minecraftforge.oredict.OreDictionary;
 import cyano.basemetals.BaseMetals;
 import cyano.basemetals.init.Achievements;
 import cyano.basemetals.init.Materials;
+import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
 import cyano.basemetals.registry.recipe.ICrusherRecipe;
 
-public class ItemMetalCrackHammer extends ItemTool{
+public class ItemMetalCrackHammer extends ItemTool implements IMetalObject {
 	protected final MetalMaterial metal;
 	protected final Set<String> toolTypes;
 	protected final String repairOreDictName;
@@ -239,5 +240,10 @@ public class ItemMetalCrackHammer extends ItemTool{
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b){
 		super.addInformation(stack,player,list,b);
 		MetalToolEffects.addToolSpecialPropertiesToolTip(metal,list);
+	}
+
+	@Override
+	public MetalMaterial getMetalMaterial(){
+		return metal;
 	}
 }

@@ -6,6 +6,11 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
+import cyano.basemetals.BaseMetals;
+import cyano.basemetals.init.Achievements;
+import cyano.basemetals.init.Materials;
+import cyano.basemetals.material.IMetalObject;
+import cyano.basemetals.material.MetalMaterial;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -19,12 +24,8 @@ import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
-import cyano.basemetals.BaseMetals;
-import cyano.basemetals.init.Achievements;
-import cyano.basemetals.init.Materials;
-import cyano.basemetals.material.MetalMaterial;
 
-public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
+public class ItemMetalArmor extends net.minecraft.item.ItemArmor implements IMetalObject {
 	
 	protected final String customTexture;
 	protected final MetalMaterial metal;
@@ -262,4 +263,8 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor {
     	MetalToolEffects.addArmorSpecialPropertiesToolTip(metal,list);
     }
 
+	@Override
+	public MetalMaterial getMetalMaterial(){
+		return metal;
+	}
 }
