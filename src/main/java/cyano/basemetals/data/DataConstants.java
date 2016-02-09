@@ -122,7 +122,7 @@ public abstract class DataConstants {
 	public static final String defaultVanillaOreSpawnJSON = "{"
 + "\n	\"dimensions\":["
 + "\n		{"
-+ "\n			\"dimension\":0,"
++ "\n			\"dimension\":\"+\","
 + "\n			\"ores\":["
 + "\n				{"
 + "\n					\"blockID\":\"minecraft:coal_ore\","

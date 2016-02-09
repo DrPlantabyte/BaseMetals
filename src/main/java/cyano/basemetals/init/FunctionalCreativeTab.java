@@ -18,7 +18,9 @@ public class FunctionalCreativeTab  extends CreativeTabs {
 	private final java.util.Comparator<ItemStack> itemSortingAlgorithm;
 	/**
 	 * Constructor
-	 * @param unlocalizedName Unlocalized name for the tab
+	 * @param unlocalizedName Name for translation
+	 * @param itemSupplier Function that provides the item used for the icon
+	 * @param itemSortingAlgorithm Algorithm for sorting the items (Comparable interface implementation)
 	 */
 	public FunctionalCreativeTab( String unlocalizedName,
 			final java.util.function.Supplier<Item> itemSupplier,
@@ -48,6 +50,7 @@ public class FunctionalCreativeTab  extends CreativeTabs {
 
 	/**
 	 * only shows items which have tabToDisplayOn == this
+	 * @param itemList 
 	 */
 	@Override
 	@SideOnly(Side.CLIENT)

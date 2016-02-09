@@ -15,6 +15,8 @@ import java.util.concurrent.locks.ReentrantLock;
 
 import com.google.common.base.Predicate;
 
+import cyano.basemetals.BaseMetals;
+import cyano.basemetals.events.BaseMetalsOreGenEvent;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
@@ -26,6 +28,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.fml.common.IWorldGenerator;
+import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class OreSpawner implements IWorldGenerator {
@@ -78,6 +81,8 @@ public class OreSpawner implements IWorldGenerator {
 			return;
 		}
 		BlockPos coord = new BlockPos((chunkX << 4) & 0x08,64,(chunkZ << 4) & 0x08);
+		
+		
 		if(spawnData.restrictBiomes){
 			BiomeGenBase biome = world.getBiomeGenForCoords(coord);
 			if(!(spawnData.biomesByName.contains(biome.biomeName)
@@ -152,6 +157,16 @@ public class OreSpawner implements IWorldGenerator {
 	private static final int[] offsetIndexRef_small = {0,1,2,3,4,5,6,7};
 
 	public static void spawnOre( BlockPos blockPos, Block oreBlock, int metaData, int quantity, World world, Random prng) {
+		net.minecraftforge.common.MinecraftForge.ORE_GEN_BUS.post(new net.minecraftforge.event.terraingen.OreGenEvent.Pre(world, prng, blockPos));
+		if(!BaseMetals.forceOreGen){
+			// cooperating with the event bus
+			BaseMetalsOreGenEvent oreEvent = new BaseMetalsOreGenEvent(world, prng, blockPos, BaseMetals.MODID);
+			net.minecraftforge.common.MinecraftForge.ORE_GEN_BUS.post(oreEvent);
+			if(oreEvent.getResult() == Result.DENY) {
+				// canceled by other mod
+				return;
+			}
+		}
 		int count = quantity;
 		if(quantity <= 8){
 			int[] scrambledLUT = new int[offsetIndexRef_small.length];
@@ -160,6 +175,7 @@ public class OreSpawner implements IWorldGenerator {
 			while(count > 0){
 				spawn(oreBlock,metaData,world,blockPos.add(offsets_small[scrambledLUT[--count]]),world.provider.getDimensionId(),true);
 			}
+			net.minecraftforge.common.MinecraftForge.ORE_GEN_BUS.post(new net.minecraftforge.event.terraingen.OreGenEvent.Post(world, prng, blockPos));
 			return;
 		}
 		if(quantity < 27){
@@ -169,6 +185,7 @@ public class OreSpawner implements IWorldGenerator {
 			while(count > 0){
 				spawn(oreBlock,metaData,world,blockPos.add(offsets[scrambledLUT[--count]]),world.provider.getDimensionId(),true);
 			}
+			net.minecraftforge.common.MinecraftForge.ORE_GEN_BUS.post(new net.minecraftforge.event.terraingen.OreGenEvent.Post(world, prng, blockPos));
 			return;
 		}
 		double radius = Math.pow(quantity, 1.0/3.0) * (3.0 / 4.0 / Math.PI) + 2;
@@ -206,6 +223,7 @@ public class OreSpawner implements IWorldGenerator {
 				}
 			}
 		}
+		net.minecraftforge.common.MinecraftForge.ORE_GEN_BUS.post(new net.minecraftforge.event.terraingen.OreGenEvent.Post(world, prng, blockPos));
 		return;
 	}
 

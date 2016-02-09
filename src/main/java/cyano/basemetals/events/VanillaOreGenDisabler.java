@@ -3,6 +3,7 @@ package cyano.basemetals.events;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+import cyano.basemetals.BaseMetals;
 import net.minecraftforge.event.terraingen.OreGenEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -15,7 +16,15 @@ public class VanillaOreGenDisabler {
 
 	@SubscribeEvent(priority=EventPriority.HIGHEST) 	
 	public void handleOreGenEvent(OreGenEvent event){
-		event.setResult(Result.DENY);
+		if(event instanceof BaseMetalsOreGenEvent){
+			if(!((BaseMetalsOreGenEvent)event).modID.equals(BaseMetals.MODID)){
+				// other mod or vanilla
+				event.setResult(Result.DENY);
+			}
+		} else {
+			// other mod or vanilla
+			event.setResult(Result.DENY);
+		}
 	}
 	
 	

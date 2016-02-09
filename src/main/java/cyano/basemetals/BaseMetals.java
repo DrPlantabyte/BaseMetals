@@ -57,7 +57,7 @@ public class BaseMetals
 	public static final String NAME ="Base Metals";
 	/** Version number, in Major.Minor.Build format. The minor number is increased whenever a change 
 	 * is made that has the potential to break compatibility with other mods that depend on this one. */
-	public static final String VERSION = "1.6.2";
+	public static final String VERSION = "1.6.3";
 	
 	/** All ore-spawn files discovered in the ore-spawn folder */
 	public static final List<Path> oreSpawnConfigFiles = new LinkedList<>();
@@ -75,6 +75,8 @@ public class BaseMetals
 	public static boolean strongHammers = true;
 	/** Whether or not vanilla ore-gen has been disabled */
 	public static boolean disableVanillaOreGen = false;
+	/** Ignores other mods telling this mod not to generate ore */
+	public static boolean forceOreGen = false;
 	/** For when the user adds specific recipies via the config file */
 	public static List<String> userCrusherRecipes = new ArrayList<>();
 	/** location of ore-spawn files */
@@ -106,10 +108,13 @@ public class BaseMetals
 				"If true, then the crack hammer can crush ingots/ores that a pickaxe of the same \n"
 			+	"material can harvest. If false, then your crack hammer must be made of a harder \n"
 			+	"material than the ore you are crushing.");
-		
+
 		disableVanillaOreGen = config.getBoolean("disable_standard_ore_generation", "options", disableVanillaOreGen, 
 				"If true, then ore generation will be handled exclusively by oregen .json files \n"
 			+	"(vanilla ore generation will be disabled)");
+
+		forceOreGen = config.getBoolean("force_ore_generation", "options", forceOreGen, 
+				"If true, then ore generation cannot be disabled by other mods.");
 		
 		autoDetectRecipes = config.getBoolean("automatic_recipes", "options", autoDetectRecipes, 
 				"If true, then Base Metals will scan the Ore Dictionary to automatically add a \n"
