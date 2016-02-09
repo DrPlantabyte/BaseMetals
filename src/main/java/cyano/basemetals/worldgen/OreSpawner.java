@@ -157,7 +157,6 @@ public class OreSpawner implements IWorldGenerator {
 	private static final int[] offsetIndexRef_small = {0,1,2,3,4,5,6,7};
 
 	public static void spawnOre( BlockPos blockPos, Block oreBlock, int metaData, int quantity, World world, Random prng) {
-		net.minecraftforge.common.MinecraftForge.ORE_GEN_BUS.post(new net.minecraftforge.event.terraingen.OreGenEvent.Pre(world, prng, blockPos));
 		if(!BaseMetals.forceOreGen){
 			// cooperating with the event bus
 			BaseMetalsOreGenEvent oreEvent = new BaseMetalsOreGenEvent(world, prng, blockPos, BaseMetals.MODID);
@@ -185,7 +184,6 @@ public class OreSpawner implements IWorldGenerator {
 			while(count > 0){
 				spawn(oreBlock,metaData,world,blockPos.add(offsets[scrambledLUT[--count]]),world.provider.getDimensionId(),true);
 			}
-			net.minecraftforge.common.MinecraftForge.ORE_GEN_BUS.post(new net.minecraftforge.event.terraingen.OreGenEvent.Post(world, prng, blockPos));
 			return;
 		}
 		double radius = Math.pow(quantity, 1.0/3.0) * (3.0 / 4.0 / Math.PI) + 2;
