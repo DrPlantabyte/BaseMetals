@@ -2,6 +2,7 @@ package cyano.basemetals.init;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,6 +39,7 @@ public abstract class Items {
 
 	private static Map<Item,String> itemRegistry = new HashMap<>();
 	private static Map<String,Item> allItems = new HashMap<>();
+	private static Map<MetalMaterial,List<Item>> itemsByMetal = new HashMap<>();
 	
 	private static Map<BlockDoor,Item> doorMap = new HashMap<>();
 	
@@ -64,6 +66,13 @@ public abstract class Items {
 	 */
 	public static String getNameOfItem(Item i){
 		return itemRegistry.get(i);
+	}
+	/**
+	 * Gets a map of all items added, sorted by metal
+	 * @return An unmodifiable map of added items catagorized by metal material
+	 */
+	public static Map<MetalMaterial,List<Item>> getItemsByMetal(){
+		return Collections.unmodifiableMap(itemsByMetal);
 	}
 
 	public static ItemBucket bucket_mercury;
@@ -608,12 +617,22 @@ public abstract class Items {
 		initDone = true;
 	}
 	
+	
 
+	private static Item registerItem(Item i, String regName, MetalMaterial m){
+		GameRegistry.registerItem(i, regName);
+		itemRegistry.put(i, regName);
+		if(m != null){
+			itemsByMetal.computeIfAbsent(m, (MetalMaterial g)->new ArrayList<>());
+			itemsByMetal.get(m).add(i);
+		}
+		return i;
+	}
+	
 	private static Item init(Item i, String n, CreativeTabs tab){
 		i.setUnlocalizedName(BaseMetals.MODID+"."+n);
 		String regName = n;
-		GameRegistry.registerItem(i, regName);
-		itemRegistry.put(i, regName);
+		registerItem(i, regName, null);
 		i.setCreativeTab(tab);
 		return i;
 	}
@@ -624,8 +643,7 @@ public abstract class Items {
 		Item i = new ItemMetalIngot(m);
 		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
-		GameRegistry.registerItem(i, regName);
-		itemRegistry.put(i, regName);
+		registerItem(i, regName, m);
 		i.setCreativeTab(ItemGroups.tab_items);
 		return i;
 	}
@@ -635,8 +653,7 @@ public abstract class Items {
 		Item i = new ItemMetalNugget(m);
 		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
-		GameRegistry.registerItem(i, regName);
-		itemRegistry.put(i, regName);
+		registerItem(i, regName, m);
 		i.setCreativeTab(ItemGroups.tab_items);
 		return i;
 	}
@@ -646,8 +663,7 @@ public abstract class Items {
 		Item i = new ItemMetalPowder(m);
 		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
-		GameRegistry.registerItem(i, regName);
-		itemRegistry.put(i, regName);
+		registerItem(i, regName, m);
 		i.setCreativeTab(ItemGroups.tab_items);
 		return i;
 	}
@@ -657,8 +673,7 @@ public abstract class Items {
 		Item i = new ItemMetalBlend(m);
 		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
-		GameRegistry.registerItem(i, regName);
-		itemRegistry.put(i, regName);
+		registerItem(i, regName, m);
 		i.setCreativeTab(ItemGroups.tab_items);
 		return i;
 	}
@@ -668,8 +683,7 @@ public abstract class Items {
 		Item i = new ItemMetalAxe(m);
 		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
-		GameRegistry.registerItem(i, regName);
-		itemRegistry.put(i, regName);
+		registerItem(i, regName, m);
 		i.setCreativeTab(ItemGroups.tab_tools);
 		return i;
 	}
@@ -679,8 +693,7 @@ public abstract class Items {
 		Item i = new ItemMetalCrackHammer(m);
 		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
-		GameRegistry.registerItem(i, regName);
-		itemRegistry.put(i, regName);
+		registerItem(i, regName, m);
 		i.setCreativeTab(ItemGroups.tab_tools);
 		return i;
 	}
@@ -690,8 +703,7 @@ public abstract class Items {
 		Item i = new ItemMetalHoe(m);
 		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
-		GameRegistry.registerItem(i, regName);
-		itemRegistry.put(i, regName);
+		registerItem(i, regName, m);
 		i.setCreativeTab(ItemGroups.tab_tools);
 		return i;
 	}
@@ -701,8 +713,7 @@ public abstract class Items {
 		Item i = new ItemMetalPickaxe(m);
 		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
-		GameRegistry.registerItem(i, regName);
-		itemRegistry.put(i, regName);
+		registerItem(i, regName, m);
 		i.setCreativeTab(ItemGroups.tab_tools);
 		return i;
 	}
@@ -712,8 +723,7 @@ public abstract class Items {
 		Item i = new ItemMetalShovel(m);
 		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
-		GameRegistry.registerItem(i, regName);
-		itemRegistry.put(i, regName);
+		registerItem(i, regName, m);
 		i.setCreativeTab(ItemGroups.tab_tools);
 		return i;
 	}
@@ -723,8 +733,7 @@ public abstract class Items {
 		Item i = new ItemMetalSword(m);
 		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
-		GameRegistry.registerItem(i, regName);
-		itemRegistry.put(i, regName);
+		registerItem(i, regName, m);
 		i.setCreativeTab(ItemGroups.tab_tools);
 		return i;
 	}
@@ -734,8 +743,7 @@ public abstract class Items {
 		Item i = ItemMetalArmor.createHelmet(m);
 		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
-		GameRegistry.registerItem(i, regName);
-		itemRegistry.put(i, regName);
+		registerItem(i, regName, m);
 		i.setCreativeTab(ItemGroups.tab_tools);
 		return i;
 	}
@@ -744,8 +752,7 @@ public abstract class Items {
 		Item i = ItemMetalArmor.createChestplate(m);
 		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
-		GameRegistry.registerItem(i, regName);
-		itemRegistry.put(i, regName);
+		registerItem(i, regName, m);
 		i.setCreativeTab(ItemGroups.tab_tools);
 		return i;
 	}
@@ -754,8 +761,7 @@ public abstract class Items {
 		Item i = ItemMetalArmor.createLeggings(m);
 		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
-		GameRegistry.registerItem(i, regName);
-		itemRegistry.put(i, regName);
+		registerItem(i, regName, m);
 		i.setCreativeTab(ItemGroups.tab_tools);
 		return i;
 	}
@@ -764,8 +770,7 @@ public abstract class Items {
 		Item i = ItemMetalArmor.createBoots(m);
 		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n;
-		GameRegistry.registerItem(i, regName);
-		itemRegistry.put(i, regName);
+		registerItem(i, regName, m);
 		i.setCreativeTab(ItemGroups.tab_tools);
 		return i;
 	}
@@ -774,8 +779,7 @@ public abstract class Items {
 		Item i = new ItemMetalDoor(door,m);
 		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
 		String regName = m.getName()+"_"+n+"_item";
-		GameRegistry.registerItem(i, regName);
-		itemRegistry.put(i, regName);
+		registerItem(i, regName, m);
 		doorMap.put(door, i);
 		i.setCreativeTab(ItemGroups.tab_blocks);
 		return i;

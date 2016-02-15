@@ -16,14 +16,22 @@ import java.util.Set;
 import org.apache.logging.log4j.Level;
 
 import cyano.basemetals.data.DataConstants;
+import cyano.basemetals.entities.EntityBetterVillager;
 import cyano.basemetals.events.BucketHandler;
 import cyano.basemetals.events.VanillaOreGenDisabler;
+import cyano.basemetals.events.VillagerReplacer;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.renderer.entity.RenderVillager;
+import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.ConfigCategory;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
+import net.minecraftforge.fml.client.registry.IRenderFactory;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -51,13 +59,15 @@ import net.minecraftforge.oredict.OreDictionary;
 @Mod(modid = BaseMetals.MODID, name=BaseMetals.NAME, version = BaseMetals.VERSION)
 public class BaseMetals
 {
+	
+	public static BaseMetals INSTANCE = null;
 	/** ID of this mod */
 	public static final String MODID = "basemetals";
 	/** display name of this mod */
 	public static final String NAME ="Base Metals";
 	/** Version number, in Major.Minor.Build format. The minor number is increased whenever a change 
 	 * is made that has the potential to break compatibility with other mods that depend on this one. */
-	public static final String VERSION = "1.6.4";
+	public static final String VERSION = "1.7.0";
 	
 	/** All ore-spawn files discovered in the ore-spawn folder */
 	public static final List<Path> oreSpawnConfigFiles = new LinkedList<>();
@@ -83,10 +93,13 @@ public class BaseMetals
 	public static Path oreSpawnFolder = null;
 	/** if true, then this mod will scan the Ore Dictionary for obvious hammer recipes from other mods */
 	public static boolean autoDetectRecipes = true;
+	/** Activates better villagers and adds villager recipes */
+	public static boolean enableBetterVillagers = true;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
+		INSTANCE = this;
 		// load config
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 		config.load();
@@ -119,6 +132,10 @@ public class BaseMetals
 		autoDetectRecipes = config.getBoolean("automatic_recipes", "options", autoDetectRecipes, 
 				"If true, then Base Metals will scan the Ore Dictionary to automatically add a \n"
 			+	"Crack Hammer recipe for every material that has an ore, dust, and ingot.");
+
+		enableBetterVillagers = config.getBoolean("enable_custom_villagers", "options", enableBetterVillagers, 
+				"If true, then villagers will be replaced with clones that have a better trading API.\n"
+				+ "If false, then no villager trades will be added");
 		
 		ConfigCategory userRecipeCat = config.getCategory("hammer recipes");
 		userRecipeCat.setComment(
@@ -188,6 +205,10 @@ public class BaseMetals
 	private void clientPreInit(FMLPreInitializationEvent event){
 		// client-only code
 		cyano.basemetals.init.Fluids.bakeModels(MODID);
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityBetterVillager.class, (IRenderFactory)(RenderManager manager)->{
+			return new RenderVillager(manager);
+		});
 	}
 	@SideOnly(Side.SERVER)
 	private void serverPreInit(FMLPreInitializationEvent event){
@@ -208,12 +229,14 @@ public class BaseMetals
 		cyano.basemetals.init.Fluids.init();
 		cyano.basemetals.init.Recipes.init();
 		cyano.basemetals.init.DungeonLoot.init();
-		cyano.basemetals.init.VillagerTrades.init();
+		cyano.basemetals.init.Entities.init();
+		if(enableBetterVillagers) cyano.basemetals.init.VillagerTrades.init();
 		
 		cyano.basemetals.init.Achievements.init();
 		
 		
 		MinecraftForge.EVENT_BUS.register(BucketHandler.getInstance());
+		if(enableBetterVillagers) MinecraftForge.EVENT_BUS.register(VillagerReplacer.getInstance());
 		
 		if(disableVanillaOreGen){
 			MinecraftForge.ORE_GEN_BUS.register(VanillaOreGenDisabler.getInstance());
@@ -233,6 +256,7 @@ public class BaseMetals
 		// client-only code
 		cyano.basemetals.init.Items.registerItemRenders(event);
 		cyano.basemetals.init.Blocks.registerItemRenders(event);
+		RenderingRegistry.registerEntityRenderingHandler(EntityBetterVillager.class, new RenderVillager(Minecraft.getMinecraft().getRenderManager()));
 	}
 	@SideOnly(Side.SERVER)
 	private void serverInit(FMLInitializationEvent event){

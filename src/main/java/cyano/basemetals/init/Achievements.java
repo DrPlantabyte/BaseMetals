@@ -1,16 +1,17 @@
 package cyano.basemetals.init;
 
+import cyano.basemetals.BaseMetals;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Achievement;
 import net.minecraft.stats.AchievementList;
-import net.minecraft.util.WeightedRandomChestContent;
-import net.minecraftforge.common.ChestGenHooks;
-import cyano.basemetals.material.MetalMaterial;
+import net.minecraftforge.common.AchievementPage;
 
 /** initializer for achievements */
 public abstract class Achievements {
+	
+	public static AchievementPage page;
 
 	public static Achievement this_is_new; // smelt a new metal ingot
 	public static Achievement blocktastic; // make a metal block
@@ -34,25 +35,28 @@ public abstract class Achievements {
 	private static boolean initDone = false;
 	public static void init(){
 		if(initDone)return;
-
-		this_is_new = makeAchievement("this_is_new",AchievementList.buildFurnace,4,6,Items.copper_ingot);
-		blocktastic = makeAchievement("blocktastic",this_is_new,6,6,Blocks.copper_block);
-		geologist = makeAchievement("geologist",this_is_new,8,8,Items.iron_crackhammer);
-		metallurgy = makeAchievement("metallurgy",geologist,10,8,Items.brass_blend);
-		brass_maker = makeAchievement("brass_maker",metallurgy,13,9,Items.brass_ingot);
-		bronze_maker = makeAchievement("bronze_maker",metallurgy,13,10,Items.bronze_ingot);
-		electrum_maker = makeAchievement("electrum_maker",metallurgy,13,11,Items.electrum_ingot);
-		steel_maker = makeAchievement("steel_maker",metallurgy,13,12,Items.steel_ingot);
-		invar_maker = makeAchievement("invar_maker",metallurgy,13,13,Items.invar_ingot);
-		mithril_maker = makeAchievement("mithril_maker",metallurgy,15,15,Items.mithril_ingot);
-		aquarium_maker = makeAchievement("aquarium_maker",metallurgy,15,17,Items.aquarium_ingot);
-		demon_slayer = makeAchievement("demon_slayer",AchievementList.portal,-1,11,Items.coldiron_sword);
-		angel_of_death = makeAchievement("angel_of_death",mithril_maker,16,16,Items.mithril_sword);
-		scuba_diver = makeAchievement("scuba_diver",aquarium_maker,16,18,Items.aquarium_sword);
+		
+		page = new AchievementPage(BaseMetals.NAME);
+		AchievementPage.registerAchievementPage(page);
+		
+		this_is_new = makeAchievement("this_is_new",AchievementList.buildFurnace,0,0,Items.copper_ingot);
+		blocktastic = makeAchievement("blocktastic",this_is_new,2,0,Blocks.copper_block);
+		geologist = makeAchievement("geologist",this_is_new,4,2,Items.iron_crackhammer);
+		metallurgy = makeAchievement("metallurgy",geologist,6,2,Items.brass_blend);
+		brass_maker = makeAchievement("brass_maker",metallurgy,9,3,Items.brass_ingot);
+		bronze_maker = makeAchievement("bronze_maker",metallurgy,9,4,Items.bronze_ingot);
+		electrum_maker = makeAchievement("electrum_maker",metallurgy,9,5,Items.electrum_ingot);
+		steel_maker = makeAchievement("steel_maker",metallurgy,9,6,Items.steel_ingot);
+		invar_maker = makeAchievement("invar_maker",metallurgy,9,7,Items.invar_ingot);
+		mithril_maker = makeAchievement("mithril_maker",metallurgy,11,9,Items.mithril_ingot);
+		aquarium_maker = makeAchievement("aquarium_maker",metallurgy,11,11,Items.aquarium_ingot);
+		demon_slayer = makeAchievement("demon_slayer",AchievementList.portal,-5,5,Items.coldiron_sword);
+		angel_of_death = makeAchievement("angel_of_death",mithril_maker,11,10,Items.mithril_sword);
+		scuba_diver = makeAchievement("scuba_diver",aquarium_maker,11,12,Items.aquarium_sword);
 		scuba_diver.setSpecial();
-		juggernaut = makeAchievement("juggernaut",AchievementList.portal,-3,9,Items.adamantine_helmet);
+		juggernaut = makeAchievement("juggernaut",AchievementList.portal,-7,3,Items.adamantine_helmet);
 		juggernaut.setSpecial();
-		moon_boots = makeAchievement("moon_boots",AchievementList.theEnd,2,12,Items.starsteel_boots);
+		moon_boots = makeAchievement("moon_boots",AchievementList.theEnd,-2,6,Items.starsteel_boots);
 		moon_boots.setSpecial();
 		
 		
@@ -67,7 +71,7 @@ public abstract class Achievements {
 	private static Achievement makeAchievement(String baseName, Achievement requirement, int x, int y, ItemStack icon) {
 		Achievement a = new Achievement(baseName,baseName,x,y,icon,requirement);
 		a.registerStat();
-		AchievementList.achievementList.add(a);
+		page.getAchievements().add(a);
 		return a;
 	}
 	
