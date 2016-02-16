@@ -15,23 +15,19 @@ import java.util.Set;
 
 import org.apache.logging.log4j.Level;
 
+import cyano.basemetals.client.ProxyFunctions;
 import cyano.basemetals.data.DataConstants;
 import cyano.basemetals.entities.EntityBetterVillager;
 import cyano.basemetals.events.BucketHandler;
 import cyano.basemetals.events.VanillaOreGenDisabler;
 import cyano.basemetals.events.VillagerReplacer;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.client.renderer.entity.RenderVillager;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.ConfigCategory;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
-import net.minecraftforge.fml.client.registry.IRenderFactory;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -67,7 +63,7 @@ public class BaseMetals
 	public static final String NAME ="Base Metals";
 	/** Version number, in Major.Minor.Build format. The minor number is increased whenever a change 
 	 * is made that has the potential to break compatibility with other mods that depend on this one. */
-	public static final String VERSION = "1.7.0";
+	public static final String VERSION = "1.7.1";
 	
 	/** All ore-spawn files discovered in the ore-spawn folder */
 	public static final List<Path> oreSpawnConfigFiles = new LinkedList<>();
@@ -206,13 +202,12 @@ public class BaseMetals
 		// client-only code
 		cyano.basemetals.init.Fluids.bakeModels(MODID);
 		
-		RenderingRegistry.registerEntityRenderingHandler(EntityBetterVillager.class, (IRenderFactory)(RenderManager manager)->{
-			return new RenderVillager(manager);
-		});
+		net.minecraftforge.fml.client.registry.RenderingRegistry.registerEntityRenderingHandler(
+				EntityBetterVillager.class, ProxyFunctions.entityVillagerRenderer());
 	}
 	@SideOnly(Side.SERVER)
 	private void serverPreInit(FMLPreInitializationEvent event){
-		// client-only code
+		// server-only code
 	}
 	
 	@EventHandler
@@ -256,11 +251,13 @@ public class BaseMetals
 		// client-only code
 		cyano.basemetals.init.Items.registerItemRenders(event);
 		cyano.basemetals.init.Blocks.registerItemRenders(event);
-		RenderingRegistry.registerEntityRenderingHandler(EntityBetterVillager.class, new RenderVillager(Minecraft.getMinecraft().getRenderManager()));
+		net.minecraftforge.fml.client.registry.RenderingRegistry.registerEntityRenderingHandler(
+				EntityBetterVillager.class, new net.minecraft.client.renderer.entity.RenderVillager(
+						net.minecraft.client.Minecraft.getMinecraft().getRenderManager()));
 	}
 	@SideOnly(Side.SERVER)
 	private void serverInit(FMLInitializationEvent event){
-		// client-only code
+		// server-only code
 	}
 	
 	@EventHandler
@@ -355,7 +352,7 @@ public class BaseMetals
 	}
 	@SideOnly(Side.SERVER)
 	private void serverPostInit(FMLPostInitializationEvent event){
-		// client-only code
+		// server-only code
 	}
 	
 
