@@ -30,6 +30,8 @@ public class ArbitraryCrusherRecipe implements ICrusherRecipe {
 	public ArbitraryCrusherRecipe(ItemStack input, ItemStack output){
 		this.input = input;
 		this.output = output;
+		if(input == null) throw new NullPointerException(this.getClass().getName()+": cannot have null input item");
+		if(output == null) throw new NullPointerException(this.getClass().getName()+": cannot have null output item");
 	}
 
 	/**
@@ -49,7 +51,7 @@ public class ArbitraryCrusherRecipe implements ICrusherRecipe {
 	 */
 	@Override
 	public boolean isValidInput(ItemStack input) {
-		if(this.input.getItemDamage() == OreDictionary.WILDCARD_VALUE && input != null){
+		if(input != null && this.input.getItemDamage() == OreDictionary.WILDCARD_VALUE){
 			return this.input.getItem() == input.getItem();
 		}
 		return ItemStack.areItemsEqual(this.input, input);

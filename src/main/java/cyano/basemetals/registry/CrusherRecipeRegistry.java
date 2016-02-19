@@ -2,6 +2,7 @@ package cyano.basemetals.registry;
 
 import java.util.*;
 
+import cyano.basemetals.BaseMetals;
 import cyano.basemetals.registry.recipe.*;
 
 import java.util.concurrent.locks.Lock;
@@ -11,6 +12,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.oredict.OreDictionary;
 
 /**
@@ -78,6 +80,10 @@ public class CrusherRecipeRegistry {
 	 * @param output The item to create as the result of this crusher recipe.
 	 */
 	public static void addNewCrusherRecipe(final ItemStack input, final ItemStack output){
+		if(input == null || output == null) FMLLog.severe("%s: %s: Crusher recipe not registered because of null input or output. \n %s", 
+				BaseMetals.MODID, CrusherRecipeRegistry.class,
+				Arrays.toString(Thread.currentThread().getStackTrace()).replace(", ", "\n").replace("[", "").replace("]", "")
+				);
 		getInstance().addRecipe(new ArbitraryCrusherRecipe(input,output));
 	}
 
