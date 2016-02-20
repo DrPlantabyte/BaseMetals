@@ -26,7 +26,7 @@ allprojects {
     targetCompatibility = 1.8
 }
 
-version = "1.7.2"
+version = "1.7.3"
 group= "cyano.basemetals"
 archivesBaseName = "BaseMetals"
 
@@ -46,7 +46,8 @@ minecraft {
 dependencies {
     compile files(
         'lib/NEI/CodeChickenCore-1.8-1.0.5.34-dev.jar',
-        'lib/NEI/NotEnoughItems-1.8-1.0.5.84-dev.jar'
+        'lib/NEI/NotEnoughItems-1.8-1.0.5.84-dev.jar',
+        'lib/JEI/jei_1.8.9-2.28.0.160.jar'
     )
 
 }
