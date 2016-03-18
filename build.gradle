@@ -26,12 +26,12 @@ allprojects {
     targetCompatibility = 1.8
 }
 
-version = "1.7.3"
+version = "1.7.4"
 group= "cyano.basemetals"
 archivesBaseName = "BaseMetals"
 
 minecraft {
-    version = "1.8.9-11.15.0.1705"
+    version = "1.9-12.16.0.1766-1.9"
     runDir = "run"
     
     // the mappings can be changed at any time, and must be in the following format.
