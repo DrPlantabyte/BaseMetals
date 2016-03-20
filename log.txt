@@ -1,21 +1,459 @@
-#################################################
-         ForgeGradle 2.1-SNAPSHOT-9e8f067        
-  https://github.com/MinecraftForge/ForgeGradle  
-#################################################
-               Powered by MCP unknown               
-             http://modcoderpack.com             
-         by: Searge, ProfMobius, Fesh0r,         
-         R4wk, ZeuX, IngisKahn, bspkrs           
-#################################################
-:deobfCompileDummyTask
-:deobfProvidedDummyTask
-:sourceApiJava UP-TO-DATE
-:compileApiJava UP-TO-DATE
-:processApiResources UP-TO-DATE
-:apiClasses UP-TO-DATE
-:sourceMainJava UP-TO-DATE
-:compileJava FAILED
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\fluids\BlockFluidMercury.java:8: error: cannot find symbol
+import net.minecraft.util.BlockPos;
+                         ^
+  symbol:   class BlockPos
+  location: package net.minecraft.util
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalHoe.java:20: error: cannot find symbol
+import net.minecraft.util.BlockPos;
+                         ^
+  symbol:   class BlockPos
+  location: package net.minecraft.util
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:21: error: cannot find symbol
+import net.minecraft.util.BlockPos;
+                         ^
+  symbol:   class BlockPos
+  location: package net.minecraft.util
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:25: error: cannot find symbol
+import net.minecraft.util.BlockPos;
+                         ^
+  symbol:   class BlockPos
+  location: package net.minecraft.util
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:26: error: cannot find symbol
+import net.minecraft.util.Vec3i;
+                         ^
+  symbol:   class Vec3i
+  location: package net.minecraft.util
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:38: error: cannot find symbol
+	private static final Map<Integer3D,Map<BlockPos,IBlockState>> overflowCache = new HashMap<>();
+	                                       ^
+  symbol:   class BlockPos
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:135: error: cannot find symbol
+	private static final Vec3i[] offsets = {
+	                     ^
+  symbol:   class Vec3i
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:149: error: cannot find symbol
+	private static final Vec3i[] offsets_small = {
+	                     ^
+  symbol:   class Vec3i
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:159: error: cannot find symbol
+	public static void spawnOre( BlockPos blockPos, Block oreBlock, int metaData, int quantity, World world, Random prng) {
+	                             ^
+  symbol:   class BlockPos
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:264: error: cannot find symbol
+	private static void spawn(Block b, int m, World w, BlockPos coord, int dimension, boolean cacheOverflow){
+	                                                   ^
+  symbol:   class BlockPos
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:272: error: cannot find symbol
+	private static void spawn(IBlockState b, World w, BlockPos coord, int dimension, boolean cacheOverflow){
+	                                                  ^
+  symbol:   class BlockPos
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:303: error: cannot find symbol
+	protected static void cacheOverflowBlock(IBlockState bs, BlockPos coord, int dimension){
+	                                                         ^
+  symbol:   class BlockPos
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:318: error: cannot find symbol
+	protected static Map<BlockPos,IBlockState> retrieveCache(Integer3D chunkCoord ){
+	                     ^
+  symbol:   class BlockPos
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\init\Fluids.java:14: error: package net.minecraft.client.resources.model does not exist
+import net.minecraft.client.resources.model.ModelBakery;
+                                           ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\init\Fluids.java:15: error: package net.minecraft.client.resources.model does not exist
+import net.minecraft.client.resources.model.ModelResourceLocation;
+                                           ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalHoe.java:83: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalHoe.java:85: error: incompatible types: Block cannot be converted to IBlockState
+    	if(this.canHarvestBlock(target,tool)){
+    	                        ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalHoe.java:112: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:36: error: incompatible types: int cannot be converted to EntityEquipmentSlot
+		super(armorMat, renderIndex, slot);
+		                             ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:57: error: cannot find symbol
+				if(player.getCurrentArmor(i) != null && player.getCurrentArmor(i).getItem() instanceof ItemMetalArmor){
+				         ^
+  symbol:   method getCurrentArmor(int)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:57: error: cannot find symbol
+				if(player.getCurrentArmor(i) != null && player.getCurrentArmor(i).getItem() instanceof ItemMetalArmor){
+				                                              ^
+  symbol:   method getCurrentArmor(int)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:58: error: cannot find symbol
+					doArmorUpdate(w,player,player.getCurrentArmor(i),updateCount);
+					                             ^
+  symbol:   method getCurrentArmor(int)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:115: error: incompatible types: int cannot be converted to Potion
+				final PotionEffect jumpBoost = new PotionEffect(8,EFFECT_DURATION,num-1);
+				                                                ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:118: error: incompatible types: int cannot be converted to Potion
+					final PotionEffect speedBoost = new PotionEffect(1,EFFECT_DURATION,num-2);
+					                                                 ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:128: error: incompatible types: int cannot be converted to Potion
+					final PotionEffect speedLoss = new PotionEffect(2,EFFECT_DURATION,level-1);
+					                                                ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:139: error: incompatible types: int cannot be converted to Potion
+					final PotionEffect protection = new PotionEffect(11,EFFECT_DURATION,level-1);
+					                                                 ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:149: error: cannot find symbol
+				if(player.getCurrentArmor(2) != null && player.getCurrentArmor(2).getItem() == cyano.basemetals.init.Items.coldiron_chestplate
+				         ^
+  symbol:   method getCurrentArmor(int)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:149: error: cannot find symbol
+				if(player.getCurrentArmor(2) != null && player.getCurrentArmor(2).getItem() == cyano.basemetals.init.Items.coldiron_chestplate
+				                                              ^
+  symbol:   method getCurrentArmor(int)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:150: error: cannot find symbol
+						&& player.getCurrentArmor(1) != null && player.getCurrentArmor(1).getItem() == cyano.basemetals.init.Items.coldiron_leggings
+						         ^
+  symbol:   method getCurrentArmor(int)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:150: error: cannot find symbol
+						&& player.getCurrentArmor(1) != null && player.getCurrentArmor(1).getItem() == cyano.basemetals.init.Items.coldiron_leggings
+						                                              ^
+  symbol:   method getCurrentArmor(int)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:151: error: cannot find symbol
+						&& player.getCurrentArmor(0) != null && player.getCurrentArmor(0).getItem() == cyano.basemetals.init.Items.coldiron_boots){
+						         ^
+  symbol:   method getCurrentArmor(int)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:151: error: cannot find symbol
+						&& player.getCurrentArmor(0) != null && player.getCurrentArmor(0).getItem() == cyano.basemetals.init.Items.coldiron_boots){
+						                                              ^
+  symbol:   method getCurrentArmor(int)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:152: error: incompatible types: int cannot be converted to Potion
+					final PotionEffect fireProtection = new PotionEffect(12,EFFECT_DURATION);
+					                                                     ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:154: error: cannot find symbol
+					if(player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() == cyano.basemetals.init.Items.coldiron_sword){
+					         ^
+  symbol:   method getCurrentEquippedItem()
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:154: error: cannot find symbol
+					if(player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() == cyano.basemetals.init.Items.coldiron_sword){
+					                                                    ^
+  symbol:   method getCurrentEquippedItem()
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:161: error: cannot find symbol
+				if(player.getCurrentArmor(2) != null && player.getCurrentArmor(2).getItem() == cyano.basemetals.init.Items.mithril_chestplate
+				         ^
+  symbol:   method getCurrentArmor(int)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:161: error: cannot find symbol
+				if(player.getCurrentArmor(2) != null && player.getCurrentArmor(2).getItem() == cyano.basemetals.init.Items.mithril_chestplate
+				                                              ^
+  symbol:   method getCurrentArmor(int)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:162: error: cannot find symbol
+						&& player.getCurrentArmor(1) != null && player.getCurrentArmor(1).getItem() == cyano.basemetals.init.Items.mithril_leggings
+						         ^
+  symbol:   method getCurrentArmor(int)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:162: error: cannot find symbol
+						&& player.getCurrentArmor(1) != null && player.getCurrentArmor(1).getItem() == cyano.basemetals.init.Items.mithril_leggings
+						                                              ^
+  symbol:   method getCurrentArmor(int)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:163: error: cannot find symbol
+						&& player.getCurrentArmor(0) != null && player.getCurrentArmor(0).getItem() == cyano.basemetals.init.Items.mithril_boots){
+						         ^
+  symbol:   method getCurrentArmor(int)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:163: error: cannot find symbol
+						&& player.getCurrentArmor(0) != null && player.getCurrentArmor(0).getItem() == cyano.basemetals.init.Items.mithril_boots){
+						                                              ^
+  symbol:   method getCurrentArmor(int)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:164: error: incompatible types: int cannot be converted to Potion
+					player.removePotionEffect(9);
+					                          ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:165: error: incompatible types: int cannot be converted to Potion
+					player.removePotionEffect(17);
+					                          ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:166: error: incompatible types: int cannot be converted to Potion
+					player.removePotionEffect(19);
+					                          ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:167: error: incompatible types: int cannot be converted to Potion
+					player.removePotionEffect(20);
+					                          ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:168: error: cannot find symbol
+					if(player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() == cyano.basemetals.init.Items.mithril_sword){
+					         ^
+  symbol:   method getCurrentEquippedItem()
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:168: error: cannot find symbol
+					if(player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() == cyano.basemetals.init.Items.mithril_sword){
+					                                                    ^
+  symbol:   method getCurrentEquippedItem()
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:175: error: cannot find symbol
+				if(player.getCurrentArmor(2) != null && player.getCurrentArmor(2).getItem() == cyano.basemetals.init.Items.aquarium_chestplate
+				         ^
+  symbol:   method getCurrentArmor(int)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:175: error: cannot find symbol
+				if(player.getCurrentArmor(2) != null && player.getCurrentArmor(2).getItem() == cyano.basemetals.init.Items.aquarium_chestplate
+				                                              ^
+  symbol:   method getCurrentArmor(int)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:176: error: cannot find symbol
+						&& player.getCurrentArmor(1) != null && player.getCurrentArmor(1).getItem() == cyano.basemetals.init.Items.aquarium_leggings
+						         ^
+  symbol:   method getCurrentArmor(int)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:176: error: cannot find symbol
+						&& player.getCurrentArmor(1) != null && player.getCurrentArmor(1).getItem() == cyano.basemetals.init.Items.aquarium_leggings
+						                                              ^
+  symbol:   method getCurrentArmor(int)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:177: error: cannot find symbol
+						&& player.getCurrentArmor(0) != null && player.getCurrentArmor(0).getItem() == cyano.basemetals.init.Items.aquarium_boots){
+						         ^
+  symbol:   method getCurrentArmor(int)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:177: error: cannot find symbol
+						&& player.getCurrentArmor(0) != null && player.getCurrentArmor(0).getItem() == cyano.basemetals.init.Items.aquarium_boots){
+						                                              ^
+  symbol:   method getCurrentArmor(int)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:178: error: cannot find symbol
+					Block b1 = w.getBlockState(new BlockPos(player.posX,player.posY, player.posZ)).getBlock();
+					                               ^
+  symbol:   class BlockPos
+  location: class ItemMetalArmor
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:179: error: cannot find symbol
+					Block b2 = w.getBlockState(new BlockPos(player.posX,player.posY+1, player.posZ)).getBlock();
+					                               ^
+  symbol:   class BlockPos
+  location: class ItemMetalArmor
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:181: error: incompatible types: int cannot be converted to Potion
+						final PotionEffect waterBreathing = new PotionEffect(13,EFFECT_DURATION);
+						                                                     ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:183: error: incompatible types: int cannot be converted to Potion
+						final PotionEffect protection = new PotionEffect(11,EFFECT_DURATION,2);
+						                                                 ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalArmor.java:254: error: method does not override or implement a method from a supertype
+	@Override public String getArmorTexture(ItemStack stack, Entity e, int slot, String layer){
+	^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalTool.java:43: error: no suitable constructor found for ItemTool(float,ToolMaterial,HashSet<Block>)
+		super(attackDamageBonus + metal.getBaseAttackDamage() - ToolMaterial.IRON.getDamageVsEntity(), ToolMaterial.IRON, new HashSet<Block>());
+		^
+    constructor ItemTool.ItemTool(float,float,ToolMaterial,Set<Block>) is not applicable
+      (actual and formal argument lists differ in length)
+    constructor ItemTool.ItemTool(ToolMaterial,Set<Block>) is not applicable
+      (actual and formal argument lists differ in length)
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalTool.java:96: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalTool.java:98: error: incompatible types: Block cannot be converted to IBlockState
+    	if(this.canHarvestBlock(target,tool)){
+    	                        ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalTool.java:125: error: incompatible types: int cannot be converted to Potion
+    			final PotionEffect poison = new PotionEffect(20,60,3);
+    			                                             ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalTool.java:126: error: incompatible types: int cannot be converted to Potion
+    			final PotionEffect blind = new PotionEffect(15,60,1);
+    			                                            ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalTool.java:141: error: cannot find symbol
+    		item.addEnchantment(Enchantment.smite, 2);
+    		                               ^
+  symbol:   variable smite
+  location: class Enchantment
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalTool.java:152: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemZombieCure.java:21: error: method does not override or implement a method from a supertype
+	@Override
+	^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemZombieCure.java:29: error: cannot find symbol
+				PotionEffect weakness = new PotionEffect(Potion.weakness.id,200);
+				                                               ^
+  symbol:   variable weakness
+  location: class Potion
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemZombieCure.java:31: error: cannot find symbol
+				player.setCurrentItemOrArmor(0, new ItemStack(net.minecraft.init.Items.golden_apple,1,0));
+				      ^
+  symbol:   method setCurrentItemOrArmor(int,ItemStack)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemZombieCure.java:32: error: cannot find symbol
+				zombo.interact(player);
+				     ^
+  symbol:   method interact(EntityPlayer)
+  location: variable zombo of type EntityZombie
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemZombieCure.java:33: error: cannot find symbol
+				player.setCurrentItemOrArmor(0, stack);
+				      ^
+  symbol:   method setCurrentItemOrArmor(int,ItemStack)
+  location: variable player of type EntityPlayer
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalPickaxe.java:95: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\items\ItemMetalPickaxe.java:100: error: no suitable method found for canHarvestBlock(Block)
+		return super.canHarvestBlock(target);
+		            ^
+    method Item.canHarvestBlock(IBlockState) is not applicable
+      (argument mismatch; Block cannot be converted to IBlockState)
+    method ItemPickaxe.canHarvestBlock(IBlockState) is not applicable
+      (argument mismatch; Block cannot be converted to IBlockState)
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\blocks\BlockMetalDoor.java:34: error: method does not override or implement a method from a supertype
+    @Override
+    ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\blocks\BlockMetalDoor.java:44: error: method does not override or implement a method from a supertype
+	@Override
+	^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\blocks\BlockMetalBars.java:14: error: cannot find symbol
+		this.stepSound = Block.soundTypeMetal;
+		                      ^
+  symbol:   variable soundTypeMetal
+  location: class Block
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:34: error: OreSpawner is not abstract and does not override abstract method generate(Random,int,int,World,IChunkGenerator,IChunkProvider) in IWorldGenerator
+public class OreSpawner implements IWorldGenerator {
+       ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:69: error: method does not override or implement a method from a supertype
+	@Override
+	^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:75: error: cannot find symbol
+			if(registeredDimensions.contains(Integer.valueOf(world.provider.getDimensionId()))) {
+			                                                               ^
+  symbol:   method getDimensionId()
+  location: variable provider of type WorldProvider
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:79: error: cannot find symbol
+		} else if(world.provider.getDimensionId() != this.dimension.intValue()){
+		                        ^
+  symbol:   method getDimensionId()
+  location: variable provider of type WorldProvider
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:83: error: cannot find symbol
+		BlockPos coord = new BlockPos((chunkX << 4) & 0x08,64,(chunkZ << 4) & 0x08);
+		^
+  symbol:   class BlockPos
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:83: error: cannot find symbol
+		BlockPos coord = new BlockPos((chunkX << 4) & 0x08,64,(chunkZ << 4) & 0x08);
+		                     ^
+  symbol:   class BlockPos
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:88: error: biomeName has private access in BiomeGenBase
+			if(!(spawnData.biomesByName.contains(biome.biomeName)
+			                                          ^
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:89: error: cannot find symbol
+					|| spawnData.biomesByName.contains(String.valueOf(biome.biomeID)))
+					                                                       ^
+  symbol:   variable biomeID
+  location: variable biome of type BiomeGenBase
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:96: error: cannot find symbol
+		Integer3D chunkCoord = new Integer3D(chunkX, chunkZ, world.provider.getDimensionId());
+		                                                                   ^
+  symbol:   method getDimensionId()
+  location: variable provider of type WorldProvider
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:97: error: cannot find symbol
+		Map<BlockPos,IBlockState> cache = retrieveCache(chunkCoord);
+		    ^
+  symbol:   class BlockPos
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:98: error: cannot find symbol
+		for(BlockPos p : cache.keySet()){
+		    ^
+  symbol:   class BlockPos
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:100: error: cannot find symbol
+			spawn(cache.get(p),world,p,world.provider.getDimensionId(),false);
+			                                         ^
+  symbol:   method getDimensionId()
+  location: variable provider of type WorldProvider
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:118: error: cannot find symbol
+				spawnOre( new BlockPos(x,y,z), spawnData.ore,spawnData.metaData, spawnData.spawnQuantity + r, world, random);
+				              ^
+  symbol:   class BlockPos
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:131: error: cannot find symbol
+			spawnOre( new BlockPos(x,y,z), spawnData.ore,spawnData.metaData, spawnData.spawnQuantity + r, world, random);
+			              ^
+  symbol:   class BlockPos
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:136: error: cannot find symbol
+			new Vec3i(-1,-1,-1),new Vec3i( 0,-1,-1),new Vec3i( 1,-1,-1),
+			    ^
+  symbol:   class Vec3i
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:136: error: cannot find symbol
+			new Vec3i(-1,-1,-1),new Vec3i( 0,-1,-1),new Vec3i( 1,-1,-1),
+			                        ^
+  symbol:   class Vec3i
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:136: error: cannot find symbol
+			new Vec3i(-1,-1,-1),new Vec3i( 0,-1,-1),new Vec3i( 1,-1,-1),
+			                                            ^
+  symbol:   class Vec3i
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:137: error: cannot find symbol
+			new Vec3i(-1, 0,-1),new Vec3i( 0, 0,-1),new Vec3i( 1, 0,-1),
+			    ^
+  symbol:   class Vec3i
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:137: error: cannot find symbol
+			new Vec3i(-1, 0,-1),new Vec3i( 0, 0,-1),new Vec3i( 1, 0,-1),
+			                        ^
+  symbol:   class Vec3i
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:137: error: cannot find symbol
+			new Vec3i(-1, 0,-1),new Vec3i( 0, 0,-1),new Vec3i( 1, 0,-1),
+			                                            ^
+  symbol:   class Vec3i
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:138: error: cannot find symbol
+			new Vec3i(-1, 1,-1),new Vec3i( 0, 1,-1),new Vec3i( 1, 1,-1),
+			    ^
+  symbol:   class Vec3i
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:138: error: cannot find symbol
+			new Vec3i(-1, 1,-1),new Vec3i( 0, 1,-1),new Vec3i( 1, 1,-1),
+			                        ^
+  symbol:   class Vec3i
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:138: error: cannot find symbol
+			new Vec3i(-1, 1,-1),new Vec3i( 0, 1,-1),new Vec3i( 1, 1,-1),
+			                                            ^
+  symbol:   class Vec3i
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:140: error: cannot find symbol
+			new Vec3i(-1,-1, 0),new Vec3i( 0,-1, 0),new Vec3i( 1,-1, 0),
+			    ^
+  symbol:   class Vec3i
+  location: class OreSpawner
+M:\Data Share\Minecraft Mods\mod-src\BaseMetals\build\sources\main\java\cyano\basemetals\worldgen\OreSpawner.java:140: error: cannot find symbol
+			new Vec3i(-1,-1, 0),new Vec3i( 0,-1, 0),new Vec3i( 1,-1, 0),
+			                        ^
+  symbol:   class Vec3i
+  location: class OreSpawner
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+100 errors
 
-BUILD FAILED
+FAILURE: Build failed with an exception.
 
-Total time: 29.285 secs
+* What went wrong:
+Execution failed for task ':compileJava'.
+> Compilation failed; see the compiler error output for details.
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.

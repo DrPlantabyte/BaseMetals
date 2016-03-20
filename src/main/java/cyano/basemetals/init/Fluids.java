@@ -5,9 +5,7 @@ import java.util.Map;
 
 import cyano.basemetals.BaseMetals;
 import cyano.basemetals.blocks.InteractiveFluidBlock;
-import cyano.basemetals.fluids.BlockFluidMercury;
 import cyano.basemetals.fluids.CustomFluid;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;

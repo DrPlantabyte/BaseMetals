@@ -9,6 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 
@@ -26,8 +27,10 @@ public abstract class MetalToolEffects {
     		}
     	} else if(metal.equals(Materials.mithril)){
     		if(target.getCreatureAttribute() == EnumCreatureAttribute.UNDEAD){
-    			final PotionEffect wither = new PotionEffect(Potion.getPotionById(20),60,3);
-    			final PotionEffect blind = new PotionEffect(Potion.getPotionById(15),60,1);
+                final ResourceLocation witherKey = new ResourceLocation("wither");
+                final ResourceLocation blindKey = new ResourceLocation("wither");
+    			final PotionEffect wither = new PotionEffect(Potion.potionRegistry.getObject(witherKey),60,3);
+    			final PotionEffect blind = new PotionEffect(Potion.potionRegistry.getObject(blindKey),60,1);
     			target.addPotionEffect(wither);
     			target.addPotionEffect(blind);
     		}
