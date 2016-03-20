@@ -43,6 +43,8 @@ public class ItemMetalCrackHammer extends ItemTool implements IMetalObject {
 	public ItemMetalCrackHammer(MetalMaterial metal) {
 		super(1 + Materials.getToolMaterialFor(metal).getDamageVsEntity(),attack_speed, Materials.getToolMaterialFor(metal), new HashSet<Block>());
 		this.metal = metal;
+        this.damageVsEntity = 1F + 2*metal.getBaseAttackDamage();
+        this.attackSpeed = -3.1F;
 		this.setMaxDamage((int)(0.75 * metal.getToolDurability()));
 		this.efficiencyOnProperMaterial = metal.getToolEfficiency();
 		this.toolTypes = new HashSet<>();

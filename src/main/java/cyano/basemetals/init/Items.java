@@ -16,12 +16,17 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemBucket;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidContainerRegistry;
+import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+import scala.annotation.meta.field;
 
+import java.lang.reflect.Array;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.*;
 
 /**
@@ -321,7 +326,13 @@ public abstract class Items {
 		if(initDone) return;
 		
 		cyano.basemetals.init.Blocks.init();
-		
+
+        try {
+            expandCombatArrays(net.minecraft.item.ItemAxe.class);
+        }catch (IllegalAccessException | NoSuchFieldException ex){
+            FMLLog.severe("Error modifying item classes: %s", ex);
+        }
+
 		adamantine_axe = create_axe(Materials.adamantine);
 		adamantine_boots = create_boots(Materials.adamantine);
 		adamantine_chestplate = create_chestplate(Materials.adamantine);
@@ -610,10 +621,10 @@ public abstract class Items {
 		
 		initDone = true;
 	}
-	
-	
 
-	private static Item registerItem(Item i, String regName, MetalMaterial m){
+
+
+    private static Item registerItem(Item i, String regName, MetalMaterial m){
 		GameRegistry.registerItem(i, regName);
 		itemRegistry.put(i, regName);
 		if(m != null){
@@ -778,6 +789,34 @@ public abstract class Items {
 		i.setCreativeTab(ItemGroups.tab_blocks);
 		return i;
 	}
+
+
+    /**
+     * Uses reflection to expand the size of the combat damage and attack speed arrays to prevent initialization
+     * index-out-of-bounds errors
+     * @param itemClass The class to modify
+     */
+    private static void expandCombatArrays(Class itemClass) throws IllegalAccessException, NoSuchFieldException {
+        // WARNING: this method contains black magic
+        final int expandedSize = 256;
+        Field[] fields = itemClass.getDeclaredFields();
+        for(Field f : fields){
+            if(Modifier.isStatic(f.getModifiers())
+                    && f.getType().isArray()
+                    && f.getType().getComponentType().equals(float.class)){
+                FMLLog.info("%s: Expanding array variable %s.%s to size %s", Thread.currentThread().getStackTrace()[0], itemClass.getSimpleName(), f.getName(), expandedSize);
+                f.setAccessible(true); // bypass 'private' key word
+                Field modifiersField = Field.class.getDeclaredField("modifiers");
+                modifiersField.setAccessible(true);
+                modifiersField.setInt(f, f.getModifiers() & ~Modifier.FINAL); // bypass 'final' key word
+                float[] newArray = new float[expandedSize];
+                Arrays.fill(newArray,0F);
+                System.arraycopy(f.get(null),0,newArray,0, Array.getLength(f.get(null)));
+                f.set(null,newArray);
+            }
+        }
+    }
+
 
 	public static int getSortingValue(ItemStack a){
 		int classVal = 990000;

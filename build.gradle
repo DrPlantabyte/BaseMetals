@@ -33,7 +33,7 @@ plugins {
 
 version = "2.0.0"
 group= "cyano.basemetals"
-archivesBaseName = "BaseMetals-1.9-"
+archivesBaseName = "BaseMetals_1.9"
 
 minecraft {
     version = "1.9-12.16.0.1770-1.9"
