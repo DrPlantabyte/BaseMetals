@@ -5,6 +5,7 @@ import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -12,7 +13,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
@@ -25,7 +26,7 @@ public class BlockMetalBlock extends Block implements IOreDictionaryEntry, IMeta
 	}
 	public BlockMetalBlock(MetalMaterial metal, boolean glows) {
 		super(Material.iron);
-		this.stepSound = Block.soundTypeMetal;
+		this.stepSound = SoundType.METAL;
 		this.fullBlock = true;
 		this.lightOpacity = 255;
 		this.translucent = false;
@@ -44,12 +45,12 @@ public class BlockMetalBlock extends Block implements IOreDictionaryEntry, IMeta
     }
 	
 	@Override
-	public boolean isFullBlock() {
+	public boolean isFullBlock(IBlockState bs) {
         return true;
     }
     
 	@Override
-	public boolean isNormalCube() {
+	public boolean isNormalCube(IBlockState bs) {
         return true;
     }
     
@@ -59,7 +60,7 @@ public class BlockMetalBlock extends Block implements IOreDictionaryEntry, IMeta
     }
     
 	@Override
-	public boolean isFullCube() {
+	public boolean isFullCube(IBlockState bs) {
         return true;
     }
     
@@ -69,13 +70,13 @@ public class BlockMetalBlock extends Block implements IOreDictionaryEntry, IMeta
     }
     
 	@Override
-	public boolean isReplaceable(final World p_isReplaceable_1_, final BlockPos p_isReplaceable_2_) {
+	public boolean isReplaceable(final IBlockAccess w, final BlockPos p) {
         return false;
     }
     
 	@Override
-	public boolean isNormalCube(final IBlockAccess bs, final BlockPos coord) {
-        return this.isNormalCube();
+	public boolean isNormalCube(final IBlockState bs, final IBlockAccess w, final BlockPos coord) {
+        return this.isNormalCube(bs);
     }
 
 	@Override

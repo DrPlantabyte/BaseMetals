@@ -6,8 +6,9 @@ import java.util.Map;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.BlockOre;
+import net.minecraft.block.SoundType;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -220,7 +221,7 @@ public abstract class Blocks {
 		lead_door = createDoor(Materials.lead);
 		lead_trapdoor = createTrapDoor(Materials.lead);
 
-		mercury_ore = new BlockOre().setHardness(3.0f).setResistance(5.0f).setStepSound(Block.soundTypePiston).setUnlocalizedName(BaseMetals.MODID+".mercury_ore");
+		mercury_ore = new BlockOre().setHardness(3.0f).setResistance(5.0f).setUnlocalizedName(BaseMetals.MODID+".mercury_ore");
 		GameRegistry.registerBlock(mercury_ore, "mercury_ore");
 		allBlocks.put("mercury_ore", mercury_ore);
 		OreDictionary.registerOre("oreMercury", mercury_ore);

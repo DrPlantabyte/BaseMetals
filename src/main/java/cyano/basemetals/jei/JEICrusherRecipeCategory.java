@@ -8,7 +8,7 @@ import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.recipe.BlankRecipeCategory;
 import mezz.jei.api.recipe.IRecipeWrapper;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.StatCollector;
+import net.minecraft.util.text.translation.I18n;
 
 public class JEICrusherRecipeCategory extends BlankRecipeCategory {
 
@@ -31,8 +31,8 @@ public class JEICrusherRecipeCategory extends BlankRecipeCategory {
 	@Override
 	public String getTitle() {
 		String key = "nei."+BaseMetals.MODID+".recipehandler.crusher.name";
-		if(StatCollector.canTranslate(key)){
-			return StatCollector.translateToLocal(key); 
+		if(I18n.canTranslate(key)){
+			return I18n.translateToLocal(key);
 		} else {
 			return "Crusher";
 		}

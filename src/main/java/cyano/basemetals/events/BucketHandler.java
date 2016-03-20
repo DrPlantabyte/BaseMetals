@@ -8,8 +8,8 @@ import java.util.concurrent.locks.ReentrantLock;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
-import net.minecraft.util.MovingObjectPosition;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.FillBucketEvent;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
@@ -43,16 +43,16 @@ public class BucketHandler {
     	@SubscribeEvent(priority=EventPriority.HIGH) 
         public void onBucketFill(FillBucketEvent event) {
 
-                ItemStack result = fillCustomBucket(event.world, event.target);
+                ItemStack result = fillCustomBucket(event.getWorld(), event.getTarget());
 
                 if (result == null)
                         return;
 
-                event.result = result;
+                event.setFilledBucket(result);
                 event.setResult(Result.ALLOW);
         }
 
-        private ItemStack fillCustomBucket(World world, MovingObjectPosition location) {
+        private ItemStack fillCustomBucket(World world, RayTraceResult location) {
         		BlockPos pos = location.getBlockPos();
                 Block block = world.getBlockState(pos).getBlock();
 

@@ -1,10 +1,10 @@
 package cyano.basemetals.events;
 
-import java.util.Random;
-
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.terraingen.OreGenEvent.GenerateMinable;
+
+import java.util.Random;
 
 public class BaseMetalsOreGenEvent extends GenerateMinable{
 

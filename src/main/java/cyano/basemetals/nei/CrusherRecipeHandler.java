@@ -11,7 +11,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.inventory.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.StatCollector;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.fml.common.FMLLog;
 
 import org.lwjgl.opengl.GL11;
@@ -88,8 +88,8 @@ public class CrusherRecipeHandler extends TemplateRecipeHandler{
 	@Override
 	public String getRecipeName() {
 		String key = "nei."+BaseMetals.MODID+".recipehandler.crusher.name";
-		if(StatCollector.canTranslate(key)){
-			return StatCollector.translateToLocal(key); 
+		if(I18n.canTranslate(key)){
+			return I18n.translateToLocal(key);
 		} else {
 			return "Crusher";
 		}

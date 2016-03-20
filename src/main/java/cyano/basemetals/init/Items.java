@@ -1,15 +1,15 @@
 package cyano.basemetals.init;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import cyano.basemetals.BaseMetals;
+import cyano.basemetals.blocks.*;
+import cyano.basemetals.events.BucketHandler;
+import cyano.basemetals.items.*;
+import cyano.basemetals.material.IMetalObject;
+import cyano.basemetals.material.MetalMaterial;
+import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -21,13 +21,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
-import cyano.basemetals.BaseMetals;
-import cyano.basemetals.blocks.*;
-import cyano.basemetals.events.BucketHandler;
-import cyano.basemetals.items.*;
-import cyano.basemetals.material.IMetalObject;
-import cyano.basemetals.material.MetalMaterial;
-import cyano.basemetals.registry.IOreDictionaryEntry;
+
+import java.util.*;
 
 /**
  * This classes initializes all items in Base Metals and provides some utility 

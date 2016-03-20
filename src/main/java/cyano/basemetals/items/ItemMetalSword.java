@@ -1,24 +1,20 @@
 package cyano.basemetals.items;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
+import cyano.basemetals.init.Materials;
+import cyano.basemetals.material.IMetalObject;
+import cyano.basemetals.material.MetalMaterial;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
-import cyano.basemetals.init.Materials;
-import cyano.basemetals.material.IMetalObject;
-import cyano.basemetals.material.MetalMaterial;
+
+import java.util.List;
 
 public class ItemMetalSword extends ItemSword  implements IMetalObject {
 	protected final MetalMaterial metal;
@@ -53,9 +49,9 @@ public class ItemMetalSword extends ItemSword  implements IMetalObject {
 	
 	
 	@Override
-    public boolean onBlockDestroyed(final ItemStack item, final World world, final Block block, final BlockPos coord, 
-    		final EntityLivingBase entity) {
-        if (block.getBlockHardness(world, coord) != 0.0) {
+    public boolean onBlockDestroyed(final ItemStack item, final World world, final IBlockState block, final BlockPos coord,
+                                    final EntityLivingBase entity) {
+        if (block.getBlockHardness( world, coord) != 0.0) {
             item.damageItem(2, entity);
         }
         return true;

@@ -5,8 +5,10 @@ import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
 public class BlockMetalOre extends BlockOre implements IOreDictionaryEntry, IMetalObject{
@@ -15,7 +17,7 @@ public class BlockMetalOre extends BlockOre implements IOreDictionaryEntry, IMet
 	
 	public BlockMetalOre(MetalMaterial metal) {
 		super();
-		this.setStepSound(Block.soundTypePiston);
+		this.setStepSound(SoundType.STONE);
 		this.metal = metal;
 		this.blockHardness = Math.max(5f,metal.getOreBlockHardness());
 		this.blockResistance = Math.max(1.5f,metal.getBlastResistance()*0.75f);
@@ -24,7 +26,7 @@ public class BlockMetalOre extends BlockOre implements IOreDictionaryEntry, IMet
 	}
 
 	@Override
-    public int getExpDrop(final IBlockAccess bs, final BlockPos coord, final int i) {
+    public int getExpDrop(final IBlockState bs, IBlockAccess w, final BlockPos coord, final int i) {
         return 0; // xp comes from smelting
     }
 
@@ -34,9 +36,9 @@ public class BlockMetalOre extends BlockOre implements IOreDictionaryEntry, IMet
 	}
 	
 	@Override
-	public boolean canEntityDestroy(final IBlockAccess bs, final BlockPos coord, final Entity entity) {
+	public boolean canEntityDestroy(IBlockState bs, IBlockAccess w, BlockPos coord, Entity entity) {
 		if(this == cyano.basemetals.init.Blocks.starsteel_ore && entity instanceof net.minecraft.entity.boss.EntityDragon) return false;
-		return super.canEntityDestroy(bs, coord, entity);
+		return super.canEntityDestroy(bs, w, coord, entity);
 	}
 	
 	public MetalMaterial getMetal(){

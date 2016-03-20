@@ -1,12 +1,5 @@
 package cyano.basemetals.init;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.WeightedRandomChestContent;
-import net.minecraftforge.common.ChestGenHooks;
-import cyano.basemetals.BaseMetals;
-import cyano.basemetals.material.MetalMaterial;
-
 public abstract class DungeonLoot {
 
 	
@@ -15,7 +8,7 @@ public abstract class DungeonLoot {
 		if(initDone)return;
 		cyano.basemetals.init.Materials.init();
 		cyano.basemetals.init.Items.init();
-		
+		/*
 		for(MetalMaterial metal : Materials.getAllMetals()){
 			WeightedRandomChestContent loot = makeChestLootEntry(metal);
 			if(loot == null) continue;
@@ -24,9 +17,12 @@ public abstract class DungeonLoot {
 			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CORRIDOR).addItem(loot);
 			ChestGenHooks.getInfo(ChestGenHooks.STRONGHOLD_CROSSING).addItem(loot);
 		}
+		*/
+
+        // TODO: chest loot, the new 1.9 way
 		initDone = true;
 	}
-	
+	/*
 	private static WeightedRandomChestContent makeChestLootEntry(MetalMaterial metal){
 		Item item = cyano.basemetals.init.Items.getItemByName(metal.getName()+"_ingot");
 		if(item == null) return null;
@@ -37,4 +33,5 @@ public abstract class DungeonLoot {
 		int maxSpawnNumber=Math.max(Math.min(metal.getLootSpawnWeight() / 5, 6), 2);
 		return new WeightedRandomChestContent(itemStack,minSpawnNumber,maxSpawnNumber,spawnWeight);
 	}
+	*/
 }

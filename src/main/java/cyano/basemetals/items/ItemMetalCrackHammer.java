@@ -1,25 +1,5 @@
 package cyano.basemetals.items;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemTool;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.BlockPos;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.world.World;
-import net.minecraftforge.oredict.OreDictionary;
 import cyano.basemetals.BaseMetals;
 import cyano.basemetals.init.Achievements;
 import cyano.basemetals.init.Materials;
@@ -27,15 +7,41 @@ import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
 import cyano.basemetals.registry.recipe.ICrusherRecipe;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemTool;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraftforge.oredict.OreDictionary;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class ItemMetalCrackHammer extends ItemTool implements IMetalObject {
+	private static final float attack_speed = -3.0F;
+
 	protected final MetalMaterial metal;
 	protected final Set<String> toolTypes;
 	protected final String repairOreDictName;
 	protected final boolean regenerates;
 	protected final long regenInterval = 200; 
 	public ItemMetalCrackHammer(MetalMaterial metal) {
-		super(1 + Materials.getToolMaterialFor(metal).getDamageVsEntity(), Materials.getToolMaterialFor(metal), new HashSet<Block>());
+		super(1 + Materials.getToolMaterialFor(metal).getDamageVsEntity(),attack_speed, Materials.getToolMaterialFor(metal), new HashSet<Block>());
 		this.metal = metal;
 		this.setMaxDamage((int)(0.75 * metal.getToolDurability()));
 		this.efficiencyOnProperMaterial = metal.getToolEfficiency();
@@ -52,7 +58,7 @@ public class ItemMetalCrackHammer extends ItemTool implements IMetalObject {
 
 	
 	@Override
-	public float getStrVsBlock(final ItemStack tool, final Block target) {
+	public float getStrVsBlock(final ItemStack tool, final IBlockState target) {
 		if(isCrushableBlock(target) && canHarvestBlock(target) ){
 			return Math.max(1.0f, 0.5f * this.metal.getToolEfficiency());
 		}
@@ -61,7 +67,7 @@ public class ItemMetalCrackHammer extends ItemTool implements IMetalObject {
 	
 	@Override
 	public boolean onBlockDestroyed(final ItemStack tool, final World world, 
-			final Block target, final BlockPos coord, final EntityLivingBase player) {
+			final IBlockState target, final BlockPos coord, final EntityLivingBase player) {
 		if(!world.isRemote && this.canHarvestBlock(target)){
 			IBlockState bs = world.getBlockState(coord);
 			ICrusherRecipe recipe = getCrusherRecipe(bs);
@@ -83,11 +89,11 @@ public class ItemMetalCrackHammer extends ItemTool implements IMetalObject {
 	
 	
 	@Override
-	public boolean onItemUse(final ItemStack item, final EntityPlayer player, final World w, 
-			final BlockPos coord, final EnumFacing facing, 
-			final float partialX, final float partialY, final float partialZ) {		
-		if(facing != EnumFacing.UP) return false;
-		if(w.isRemote) return true;
+	public EnumActionResult onItemUse(final ItemStack item, final EntityPlayer player, final World w,
+									  final BlockPos coord, EnumHand hand, final EnumFacing facing,
+									  final float partialX, final float partialY, final float partialZ) {
+		if(facing != EnumFacing.UP) return EnumActionResult.PASS;
+		if(w.isRemote) return EnumActionResult.SUCCESS;
 		List<EntityItem> entities = w.getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(
 				coord.getX(),coord.getY()+1,coord.getZ(),
 				coord.getX()+1,coord.getY()+2,coord.getZ()+1));
@@ -101,9 +107,9 @@ public class ItemMetalCrackHammer extends ItemTool implements IMetalObject {
 						if(BaseMetals.enforceHardness){
 							if(targetItem.getItem() instanceof ItemBlock){
 								Block b = ((ItemBlock)targetItem.getItem()).getBlock();
-								if(!this.canHarvestBlock(b)){
+								if(!this.canHarvestBlock(b.getStateFromMeta(targetItem.getMetadata()))){
 									// cannot harvest the block, no crush for you!
-									return false;
+									return EnumActionResult.PASS;
 								}
 							}
 						}
@@ -129,9 +135,10 @@ public class ItemMetalCrackHammer extends ItemTool implements IMetalObject {
 				}
 		}
 		if(success && !w.isRemote){
-			w.playSoundAtEntity(player, "dig.gravel", 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
+			w.playSound(player, coord, SoundEvents.block_gravel_break, SoundCategory.BLOCKS, 0.5F, 0.5F + (itemRand.nextFloat() * 0.3F));
+
 		}
-		return success;
+		return success ? EnumActionResult.SUCCESS : EnumActionResult.PASS;
 	}
 	
 	protected boolean isCrushableBlock(IBlockState block){
@@ -217,10 +224,11 @@ public class ItemMetalCrackHammer extends ItemTool implements IMetalObject {
 	}
 	
 	@Override
-	public boolean canHarvestBlock(final Block target) {
+	public boolean canHarvestBlock(final IBlockState targetBS) {
+        Block target = targetBS.getBlock();
 		// go to net.minecraftforge.common.ForgeHooks.initTools(); to see all tool type strings
 		String toolType = target.getHarvestTool(target.getDefaultState());
-		if(this.toolTypes.contains(toolType) || target.getMaterial() == Material.rock){
+		if(this.toolTypes.contains(toolType) || target.getMaterial(targetBS) == Material.rock){
 			// can mine like a pickaxe
 			return this.getHarvestLevel(null, "pickaxe") >= target.getHarvestLevel(target.getDefaultState());
 		} else if("shovel".equals(toolType) && target.getHarvestLevel(target.getDefaultState()) <= 0){

@@ -1,21 +1,16 @@
 package cyano.basemetals.items;
 
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.SharedMonsterAttributes;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemSword;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.StatCollector;
-import net.minecraft.world.World;
-
-import com.google.common.collect.Multimap;
-
 import cyano.basemetals.init.Materials;
 import cyano.basemetals.material.MetalMaterial;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.text.translation.I18n;
+import net.minecraft.world.World;
 
 public abstract class MetalToolEffects {
 	public static void extraEffectsOnAttack(final MetalMaterial metal, final ItemStack item, final EntityLivingBase target, final EntityLivingBase attacker){
@@ -31,8 +26,8 @@ public abstract class MetalToolEffects {
     		}
     	} else if(metal.equals(Materials.mithril)){
     		if(target.getCreatureAttribute() == EnumCreatureAttribute.UNDEAD){
-    			final PotionEffect wither = new PotionEffect(20,60,3);
-    			final PotionEffect blind = new PotionEffect(15,60,1);
+    			final PotionEffect wither = new PotionEffect(Potion.getPotionById(20),60,3);
+    			final PotionEffect blind = new PotionEffect(Potion.getPotionById(15),60,1);
     			target.addPotionEffect(wither);
     			target.addPotionEffect(blind);
     		}
@@ -50,29 +45,29 @@ public abstract class MetalToolEffects {
 	
 	public static void addToolSpecialPropertiesToolTip(MetalMaterial metal, java.util.List tooltipList){
 		if(metal == Materials.adamantine){
-			tooltipList.add(StatCollector.translateToLocal("tooltip.adamantine.tool").replace("%x", String.valueOf(4)));
+			tooltipList.add(I18n.translateToLocal("tooltip.adamantine.tool").replace("%x", String.valueOf(4)));
 		} else if(metal == Materials.aquarium){
-			tooltipList.add(StatCollector.translateToLocal("tooltip.aquarium.tool").replace("%x", String.valueOf(4)));
+			tooltipList.add(I18n.translateToLocal("tooltip.aquarium.tool").replace("%x", String.valueOf(4)));
 		} else if(metal == Materials.coldiron){
-			tooltipList.add(StatCollector.translateToLocal("tooltip.coldiron.tool").replace("%x", String.valueOf(3)));
+			tooltipList.add(I18n.translateToLocal("tooltip.coldiron.tool").replace("%x", String.valueOf(3)));
 		} else if(metal == Materials.mithril){
-			tooltipList.add(StatCollector.translateToLocal("tooltip.mithril.tool"));
+			tooltipList.add(I18n.translateToLocal("tooltip.mithril.tool"));
 		} else if(metal == Materials.starsteel){
-			tooltipList.add(StatCollector.translateToLocal("tooltip.starsteel.tool").replace("%x", String.valueOf(10)));
+			tooltipList.add(I18n.translateToLocal("tooltip.starsteel.tool").replace("%x", String.valueOf(10)));
 		}
 	}
 	
 	public static void addArmorSpecialPropertiesToolTip(MetalMaterial metal, java.util.List tooltipList){
 		if(metal == Materials.adamantine){
-			tooltipList.add(StatCollector.translateToLocal("tooltip.adamantine.armor").replace("%x", String.valueOf(4)));
+			tooltipList.add(I18n.translateToLocal("tooltip.adamantine.armor").replace("%x", String.valueOf(4)));
 		} else if(metal == Materials.aquarium){
-			tooltipList.add(StatCollector.translateToLocal("tooltip.aquarium.armor").replace("%x", String.valueOf(4)));
+			tooltipList.add(I18n.translateToLocal("tooltip.aquarium.armor").replace("%x", String.valueOf(4)));
 		} else if(metal == Materials.coldiron){
-			tooltipList.add(StatCollector.translateToLocal("tooltip.coldiron.armor").replace("%x", String.valueOf(3)));
+			tooltipList.add(I18n.translateToLocal("tooltip.coldiron.armor").replace("%x", String.valueOf(3)));
 		} else if(metal == Materials.mithril){
-			tooltipList.add(StatCollector.translateToLocal("tooltip.mithril.armor"));
+			tooltipList.add(I18n.translateToLocal("tooltip.mithril.armor"));
 		} else if(metal == Materials.starsteel){
-			tooltipList.add(StatCollector.translateToLocal("tooltip.starsteel.armor").replace("%x", String.valueOf(10)));
+			tooltipList.add(I18n.translateToLocal("tooltip.starsteel.armor").replace("%x", String.valueOf(10)));
 		}
 	}
 }

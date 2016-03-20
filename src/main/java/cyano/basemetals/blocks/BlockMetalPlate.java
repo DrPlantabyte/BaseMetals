@@ -1,23 +1,23 @@
 package cyano.basemetals.blocks;
 
-import java.util.List;
-
 import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
-import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+
+import java.util.List;
 
 public class BlockMetalPlate extends net.minecraft.block.Block implements IOreDictionaryEntry, IMetalObject{
 
@@ -33,7 +33,7 @@ public class BlockMetalPlate extends net.minecraft.block.Block implements IOreDi
 	
 	public BlockMetalPlate(MetalMaterial metal) {
 		super(Material.iron);
-		this.stepSound = Block.soundTypeMetal;
+        this.stepSound = SoundType.METAL;
 		this.metal = metal;
 		this.blockHardness = metal.getMetalBlockHardness();
 		this.blockResistance = metal.getBlastResistance();
@@ -44,20 +44,20 @@ public class BlockMetalPlate extends net.minecraft.block.Block implements IOreDi
 	}
 	
 	@Override
-	public boolean isOpaqueCube() {
+	public boolean isOpaqueCube(IBlockState bs) {
 		return false;
 	}
 
 
     @Override
-    public boolean isFullCube() {
+    public boolean isFullCube(IBlockState bs) {
         return false;
     }
     
 	@Override
-	public IBlockState onBlockPlaced(final World w, final BlockPos coord, final EnumFacing face, 
-			final float partialX, final float partialY, final float partialZ, 
-			final int i, final EntityLivingBase placer) {
+	public IBlockState onBlockPlaced(final World w, final BlockPos coord, final EnumFacing face,
+                                     final float partialX, final float partialY, final float partialZ,
+                                     final int i, final EntityLivingBase placer) {
 		return this.getDefaultState().withProperty(FACING, face);
 	}
 
@@ -73,14 +73,13 @@ public class BlockMetalPlate extends net.minecraft.block.Block implements IOreDi
     }
     
     @Override
-    protected BlockState createBlockState() {
-        return new BlockState(this, new IProperty[] { FACING });
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, new IProperty[] { FACING });
     }
     
     
     @Override
-    public void setBlockBoundsBasedOnState(final IBlockAccess world, final BlockPos coord) {
-    	
+    public AxisAlignedBB getBoundingBox(final IBlockState bs, final IBlockAccess world, final BlockPos coord) {
         final EnumFacing orientation = (EnumFacing) world.getBlockState(coord).getValue(FACING);
         float x1 = 0, x2 = 1, y1 = 0,y2 = 1, z1 = 0, z2 = 1;
         switch(orientation){
@@ -104,12 +103,13 @@ public class BlockMetalPlate extends net.minecraft.block.Block implements IOreDi
         	y2 = thickness;
         	break;
         }
-        this.setBlockBounds(x1, y1, z1, x2, y2, z2);
+        // TODO: cache bounding box combos
+        return new AxisAlignedBB(x1, y1, z1, x2, y2, z2);
     }
 	@Override
-    public void addCollisionBoxesToList(final World world, final BlockPos coord, 
-    		final IBlockState bs, final AxisAlignedBB box, final List collisionBoxList, 
-    		final Entity entity) {
+    public void addCollisionBoxToList(final IBlockState bs, final World world, final BlockPos coord,
+                                        final AxisAlignedBB box, final List<AxisAlignedBB> collisionBoxList,
+                                        final Entity entity) {
 
         final EnumFacing orientation = (EnumFacing) world.getBlockState(coord).getValue(FACING);
         float x1 = 0, x2 = 1, y1 = 0,y2 = 1, z1 = 0, z2 = 1;
@@ -134,8 +134,9 @@ public class BlockMetalPlate extends net.minecraft.block.Block implements IOreDi
         	y2 = thickness;
         	break;
         }
-        this.setBlockBounds(x1, y1, z1, x2, y2, z2);
-        super.addCollisionBoxesToList(world, coord, bs, box, collisionBoxList, entity);
+        // TODO: replace with call to getBoundingBox() or with pre-calc cache
+        AxisAlignedBB newbox = new AxisAlignedBB(x1, y1, z1, x2, y2, z2);
+        super.addCollisionBoxToList(coord, box, collisionBoxList, newbox);
 	}
 	@Override
 	public String getOreDictionaryName() {

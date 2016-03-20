@@ -3,13 +3,15 @@ package cyano.basemetals.blocks;
 import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockTrapDoor;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.BlockPos;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class BlockMetalTrapDoor extends net.minecraft.block.BlockTrapDoor implements IOreDictionaryEntry, IMetalObject{
@@ -20,16 +22,16 @@ public class BlockMetalTrapDoor extends net.minecraft.block.BlockTrapDoor implem
 		this.metal = metal;
 		this.blockHardness = metal.getMetalBlockHardness();
 		this.blockResistance = metal.getBlastResistance();
-		this.stepSound = Block.soundTypeMetal;
+		this.stepSound = SoundType.METAL;
 		this.setHarvestLevel("pickaxe", metal.getRequiredHarvestLevel());
 		this.disableStats();
 	}
 
 	
 	@Override
-    public boolean onBlockActivated(final World world, final BlockPos coord, IBlockState state, 
-    		final EntityPlayer player, final EnumFacing facing, 
-    		final float partialX, final float partialY, final float partialZ) {
+    public boolean onBlockActivated(final World world, final BlockPos coord, IBlockState state,
+                                    final EntityPlayer player, EnumHand hand, ItemStack heldItem, final EnumFacing facing,
+                                    final float partialX, final float partialY, final float partialZ) {
         if (this.metal.getToolHarvestLevel() > 1) {
             return true;
         }
