@@ -49,6 +49,7 @@ public class InteractiveFluidBlock extends BlockFluidClassic{
 	
 	@Override
 	public void onEntityCollidedWithBlock( World world, BlockPos coord, Entity entity ) {
+        super.onEntityCollidedWithBlock(world,coord,entity);
 		if (immersionEffect != null && entity instanceof EntityLivingBase 
 				) {
 			immersionEffect.accept(world,(EntityLivingBase)entity);

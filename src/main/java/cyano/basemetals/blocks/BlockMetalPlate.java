@@ -80,7 +80,7 @@ public class BlockMetalPlate extends net.minecraft.block.Block implements IOreDi
     
     @Override
     public AxisAlignedBB getBoundingBox(final IBlockState bs, final IBlockAccess world, final BlockPos coord) {
-        final EnumFacing orientation = (EnumFacing) world.getBlockState(coord).getValue(FACING);
+        final EnumFacing orientation = (EnumFacing) bs.getValue(FACING);
         float x1 = 0, x2 = 1, y1 = 0,y2 = 1, z1 = 0, z2 = 1;
         switch(orientation){
         case DOWN:

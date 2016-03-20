@@ -216,7 +216,7 @@ public abstract class Recipes {
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blocks.piston), "www","sxs","s*s",'x',"ingotSteel",'w',"plankWood",'s',"cobblestone",'*',"dustRedstone"));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.shears), "x "," x",'x',"ingotSteel"));
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.shears), " x","x ",'x',"ingotSteel"));
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.shears), "wiw","www", " w ",'w',"plankWood",'x',"ingotSteel"));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.shield), "wxw","www", " w ",'w',"plankWood",'x',"ingotSteel"));
 		
 		CrusherRecipeRegistry.addNewCrusherRecipe("oreMercury",new ItemStack(cyano.basemetals.init.Items.mercury_powder,2));
 		GameRegistry.addSmelting(cyano.basemetals.init.Items.mercury_powder, new ItemStack(cyano.basemetals.init.Items.mercury_ingot,1), 0);

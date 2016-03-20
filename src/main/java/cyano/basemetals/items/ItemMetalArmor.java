@@ -22,9 +22,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -35,6 +33,8 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor implements IMet
     private static final ResourceLocation slowPotionKey = new ResourceLocation("slowness");
     private static final ResourceLocation protectionPotionKey = new ResourceLocation("resistance");
     private static final ResourceLocation waterBreathingPotionKey = new ResourceLocation("water_breathing");
+    private static final ResourceLocation waterBuffPotionKey = new ResourceLocation("resistance");
+    private static final ResourceLocation fatiguePotionKey = new ResourceLocation("mining_fatigue");
     private static final ResourceLocation fireproofPotionKey = new ResourceLocation("fire_resistance");
 
 
@@ -51,7 +51,7 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor implements IMet
 	}
 	
 	private static final int UPDATE_INTERVAL = 11;
-    private static final int EFFECT_DURATION = 37;
+    private static final int EFFECT_DURATION = 39;
 	private static final Map<EntityPlayer,AtomicLong> playerUpdateTimestampMap = new HashMap<>();
 	private static final Map<EntityPlayer,AtomicInteger> playerUpdateCountMap = new HashMap<>();
 	@Override
@@ -172,12 +172,18 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor implements IMet
 				if(player.inventory.armorInventory[2] != null && player.inventory.armorInventory[2].getItem() == cyano.basemetals.init.Items.mithril_chestplate
 						&& player.inventory.armorInventory[1] != null && player.inventory.armorInventory[1].getItem() == cyano.basemetals.init.Items.mithril_leggings
 						&& player.inventory.armorInventory[0] != null && player.inventory.armorInventory[0].getItem() == cyano.basemetals.init.Items.mithril_boots){
-					player.getActivePotionEffects().stream()
-                            .map((PotionEffect e)->e.getPotion())
-                            .filter((Potion p)->p.isBadEffect())
-                            .forEach((Potion p)->{
-                        player.removeActivePotionEffect(p);
-                    });
+                    final List<Potion> removeList = new LinkedList<>(); // needed to avoid concurrent modification error
+                    Iterator<PotionEffect> effectIterator = player.getActivePotionEffects().iterator();
+                    while(effectIterator.hasNext()){
+                        PotionEffect pe = effectIterator.next();
+                        Potion p = pe.getPotion();
+                        if(p.isBadEffect()){
+                            removeList.add(p);
+                        }
+                    }
+                    for(Potion p : removeList){
+                        player.removePotionEffect(p);
+                    }
 					if(player.getHeldItemMainhand() != null && player.getHeldItemMainhand().getItem() == cyano.basemetals.init.Items.mithril_sword){
 						player.addStat(Achievements.angel_of_death, 1);
 					}
@@ -193,8 +199,9 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor implements IMet
 					if(b1 == Blocks.water && b2 == Blocks.water){
 						final PotionEffect waterBreathing = new PotionEffect(Potion.potionRegistry.getObject(waterBreathingPotionKey),EFFECT_DURATION,0,false,false);
 						player.addPotionEffect(waterBreathing);
-						final PotionEffect protection = new PotionEffect(Potion.potionRegistry.getObject(protectionPotionKey),EFFECT_DURATION,2,false,false);
+						final PotionEffect protection = new PotionEffect(Potion.potionRegistry.getObject(waterBuffPotionKey),EFFECT_DURATION,0,false,false);
 						player.addPotionEffect(protection);
+                        player.removePotionEffect(Potion.potionRegistry.getObject(fatiguePotionKey));
 						player.addStat(Achievements.scuba_diver, 1);
 					}
 				}

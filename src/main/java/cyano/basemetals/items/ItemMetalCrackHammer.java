@@ -15,10 +15,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemTool;
+import net.minecraft.item.*;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -95,7 +92,6 @@ public class ItemMetalCrackHammer extends ItemTool implements IMetalObject {
 									  final BlockPos coord, EnumHand hand, final EnumFacing facing,
 									  final float partialX, final float partialY, final float partialZ) {
 		if(facing != EnumFacing.UP) return EnumActionResult.PASS;
-		if(w.isRemote) return EnumActionResult.SUCCESS;
 		List<EntityItem> entities = w.getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(
 				coord.getX(),coord.getY()+1,coord.getZ(),
 				coord.getX()+1,coord.getY()+2,coord.getZ()+1));
@@ -111,34 +107,35 @@ public class ItemMetalCrackHammer extends ItemTool implements IMetalObject {
 								Block b = ((ItemBlock)targetItem.getItem()).getBlock();
 								if(!this.canHarvestBlock(b.getStateFromMeta(targetItem.getMetadata()))){
 									// cannot harvest the block, no crush for you!
-									return EnumActionResult.PASS;
+									return EnumActionResult.FAIL;
 								}
 							}
 						}
-						// crush the item
-						ItemStack output = recipe.getOutput().copy();
-						int count = output.stackSize;
-						output.stackSize = 1;
-						double x = target.posX;
-						double y = target.posY;
-						double z = target.posZ;
-						
-						targetItem.stackSize--;
-						if(targetItem.stackSize <= 0){
-							w.removeEntity(target);
-						}
-						for(int i = 0; i < count; i++){
-							w.spawnEntityInWorld(new EntityItem(w,x,y,z,output.copy()));
-						}
-						item.damageItem(1, player);
+						// crush the item (server side only)
+                        if(!w.isRemote) {
+                            ItemStack output = recipe.getOutput().copy();
+                            int count = output.stackSize;
+                            output.stackSize = 1;
+                            double x = target.posX;
+                            double y = target.posY;
+                            double z = target.posZ;
+
+                            targetItem.stackSize--;
+                            if (targetItem.stackSize <= 0) {
+                                w.removeEntity(target);
+                            }
+                            for (int i = 0; i < count; i++) {
+                                w.spawnEntityInWorld(new EntityItem(w, x, y, z, output.copy()));
+                            }
+                            item.damageItem(1, player);
+                        }
 						success = true;
 						break;
 					}
 				}
 		}
-		if(success && !w.isRemote){
-			w.playSound(player, coord, SoundEvents.block_gravel_break, SoundCategory.BLOCKS, 0.5F, 0.5F + (itemRand.nextFloat() * 0.3F));
-
+		if(success){
+            w.playSound(player, coord, SoundEvents.block_gravel_break, SoundCategory.BLOCKS, 0.5F, 0.5F + (itemRand.nextFloat() * 0.3F));
 		}
 		return success ? EnumActionResult.SUCCESS : EnumActionResult.PASS;
 	}

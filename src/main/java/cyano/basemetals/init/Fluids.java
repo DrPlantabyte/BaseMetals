@@ -48,7 +48,7 @@ public abstract class Fluids{
 		// fluid blocks
 		fluidBlockMercury = registerFluidBlock(fluidMercury, new InteractiveFluidBlock(
 				fluidMercury, false, (World w, EntityLivingBase e)->{
-					if(w.rand.nextInt(32) == 0)e.addPotionEffect(new PotionEffect(Potion.potionRegistry.getObject(dizzyPotionKey),1200,2));
+					if(w.rand.nextInt(32) == 0)e.addPotionEffect(new PotionEffect(Potion.potionRegistry.getObject(dizzyPotionKey),30*20,2));
 				}),"liquid_mercury");
 		
 		initDone = true;
