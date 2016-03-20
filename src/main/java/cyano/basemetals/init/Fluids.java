@@ -1,16 +1,13 @@
 package cyano.basemetals.init;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import cyano.basemetals.BaseMetals;
 import cyano.basemetals.blocks.InteractiveFluidBlock;
 import cyano.basemetals.fluids.CustomFluid;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.ItemMeshDefinition;
+import net.minecraft.client.renderer.block.model.ModelBakery;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
-import net.minecraft.client.resources.model.ModelBakery;
-import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
@@ -27,6 +24,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public abstract class Fluids{
 	
 	public static Fluid fluidMercury = null;
@@ -34,6 +34,8 @@ public abstract class Fluids{
 
 	private static final Map<Fluid,BlockFluidBase> fluidBlocks = new HashMap<>();
 	private static final Map<BlockFluidBase,String> fluidBlockNames = new HashMap<>();
+
+    private static final ResourceLocation dizzyPotionKey = new ResourceLocation("nausea");
 
 	private static boolean initDone = false;
 	public static void init(){
@@ -46,7 +48,7 @@ public abstract class Fluids{
 		// fluid blocks
 		fluidBlockMercury = registerFluidBlock(fluidMercury, new InteractiveFluidBlock(
 				fluidMercury, false, (World w, EntityLivingBase e)->{
-					if(w.rand.nextInt(32) == 0)e.addPotionEffect(new PotionEffect(Potion.confusion.id,1200,2));
+					if(w.rand.nextInt(32) == 0)e.addPotionEffect(new PotionEffect(Potion.potionRegistry.getObject(dizzyPotionKey),1200,2));
 				}),"liquid_mercury");
 		
 		initDone = true;
@@ -60,7 +62,7 @@ public abstract class Fluids{
 			Item item = Item.getItemFromBlock(block);
 			final ModelResourceLocation fluidModelLocation = new ModelResourceLocation(
 					modID.toLowerCase() + ":" + fluidBlockNames.get(block), "fluid");
-			ModelBakery.addVariantName(item);
+            ModelBakery.registerItemVariants(item);
 			ModelLoader.setCustomMeshDefinition(item, new ItemMeshDefinition()
 			{
 				public ModelResourceLocation getModelLocation(ItemStack stack)

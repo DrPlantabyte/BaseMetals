@@ -1,20 +1,6 @@
 package cyano.basemetals.worldgen;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.Set;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
 import com.google.common.base.Predicate;
-
 import cyano.basemetals.BaseMetals;
 import cyano.basemetals.events.BaseMetalsOreGenEvent;
 import net.minecraft.block.Block;
@@ -22,14 +8,19 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
-import net.minecraft.util.Vec3i;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.fml.common.IWorldGenerator;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.oredict.OreDictionary;
+
+import java.util.*;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class OreSpawner implements IWorldGenerator {
 
@@ -68,15 +59,15 @@ public class OreSpawner implements IWorldGenerator {
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world,
-			IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
+                         IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
 		// restriction checks
 		if(dimension == null){
 			// check if misc dimension (do not generate if there is any data specific for this dimension) 
-			if(registeredDimensions.contains(Integer.valueOf(world.provider.getDimensionId()))) {
+			if(registeredDimensions.contains(Integer.valueOf(world.provider.getDimension()))) {
 				// do not generate misc dimension ores in non-misc dimension
 				return;
 			}
-		} else if(world.provider.getDimensionId() != this.dimension.intValue()){
+		} else if(world.provider.getDimension() != this.dimension.intValue()){
 			// wrong dimension
 			return;
 		}
@@ -85,19 +76,21 @@ public class OreSpawner implements IWorldGenerator {
 		
 		if(spawnData.restrictBiomes){
 			BiomeGenBase biome = world.getBiomeGenForCoords(coord);
-			if(!(spawnData.biomesByName.contains(biome.biomeName)
-					|| spawnData.biomesByName.contains(String.valueOf(biome.biomeID)))
-					){
+			if(!(
+                    spawnData.biomesByName.contains(biome.getBiomeName())
+					|| spawnData.biomesByName.contains(String.valueOf(BiomeGenBase.getIdForBiome(biome)))
+                )
+             ){
 				// wrong biome
 				return;
 			}
 		}
 		// First, load cached blocks for neighboring chunk ore spawns
-		Integer3D chunkCoord = new Integer3D(chunkX, chunkZ, world.provider.getDimensionId());
+		Integer3D chunkCoord = new Integer3D(chunkX, chunkZ, world.provider.getDimension());
 		Map<BlockPos,IBlockState> cache = retrieveCache(chunkCoord);
 		for(BlockPos p : cache.keySet()){
 			//	FMLLog.info("Placed block "+cache.get(p)+" from cache at "+p);
-			spawn(cache.get(p),world,p,world.provider.getDimensionId(),false);
+			spawn(cache.get(p),world,p,world.provider.getDimension(),false);
 		}
 		// now to ore spawn
 
@@ -172,7 +165,7 @@ public class OreSpawner implements IWorldGenerator {
 			System.arraycopy(offsetIndexRef_small, 0, scrambledLUT, 0, scrambledLUT.length);
 			scramble(scrambledLUT,prng);
 			while(count > 0){
-				spawn(oreBlock,metaData,world,blockPos.add(offsets_small[scrambledLUT[--count]]),world.provider.getDimensionId(),true);
+				spawn(oreBlock,metaData,world,blockPos.add(offsets_small[scrambledLUT[--count]]),world.provider.getDimension(),true);
 			}
 			net.minecraftforge.common.MinecraftForge.ORE_GEN_BUS.post(new net.minecraftforge.event.terraingen.OreGenEvent.Post(world, prng, blockPos));
 			return;
@@ -182,7 +175,7 @@ public class OreSpawner implements IWorldGenerator {
 			System.arraycopy(offsetIndexRef, 0, scrambledLUT, 0, scrambledLUT.length);
 			scramble(scrambledLUT,prng);
 			while(count > 0){
-				spawn(oreBlock,metaData,world,blockPos.add(offsets[scrambledLUT[--count]]),world.provider.getDimensionId(),true);
+				spawn(oreBlock,metaData,world,blockPos.add(offsets[scrambledLUT[--count]]),world.provider.getDimension(),true);
 			}
 			return;
 		}
@@ -195,7 +188,7 @@ public class OreSpawner implements IWorldGenerator {
 					for(int dz = (int)(-1 * radius); dz < radius; dz++){
 						for(int dx = (int)(-1 * radius); dx < radius; dx++){
 							if((dx*dx + dy*dy + dz*dz) <= rSqr){
-								spawn(oreBlock,metaData,world,blockPos.add(dx,dy,dz),world.provider.getDimensionId(),true);
+								spawn(oreBlock,metaData,world,blockPos.add(dx,dy,dz),world.provider.getDimension(),true);
 								count--;
 							}
 							if(count <= 0) {
@@ -210,7 +203,7 @@ public class OreSpawner implements IWorldGenerator {
 					for(int dx = (int)(radius); dx >= (int)(-1 * radius); dx--){
 						for(int dz = (int)(radius); dz >= (int)(-1 * radius); dz--){
 							if((dx*dx + dy*dy + dz*dz) <= rSqr){
-								spawn(oreBlock,metaData,world,blockPos.add(dx,dy,dz),world.provider.getDimensionId(),true);
+								spawn(oreBlock,metaData,world,blockPos.add(dx,dy,dz),world.provider.getDimension(),true);
 								count--;
 							}
 							if(count <= 0) {
@@ -277,17 +270,17 @@ public class OreSpawner implements IWorldGenerator {
 			//	FMLLog.info("Spawning ore block "+b.getUnlocalizedName()+" at "+coord);
 			switch(dimension){
 			case -1: // nether
-				if(bs.getBlock() == Blocks.netherrack || bs.getBlock().isReplaceableOreGen(w, coord, stonep)){
+				if(bs.getBlock() == Blocks.netherrack || bs.getBlock().isReplaceableOreGen(bs, w, coord, stonep)){
 					w.setBlockState(coord, b, 2);
 				}
 				break;
 			case 1: // end
-				if(bs.getBlock() == Blocks.end_stone || bs.getBlock().isReplaceableOreGen(w, coord, stonep)){
+				if(bs.getBlock() == Blocks.end_stone || bs.getBlock().isReplaceableOreGen(bs, w, coord, stonep)){
 					w.setBlockState(coord, b, 2);
 				}
 				break;
 			default:
-				if(bs.getBlock() == Blocks.stone || bs.getBlock().isReplaceableOreGen(w, coord, stonep)){
+				if(bs.getBlock() == Blocks.stone || bs.getBlock().isReplaceableOreGen(bs, w, coord, stonep)){
 					w.setBlockState(coord, b, 2);
 				}
 				break;

@@ -1,19 +1,18 @@
 package cyano.basemetals.init;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-
-import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
-import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.fml.common.FMLLog;
-import cyano.basemetals.BaseMetals;
 import cyano.basemetals.material.AdamantineMaterial;
 import cyano.basemetals.material.LeadMaterial;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.material.StarSteelMaterial;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.common.FMLLog;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class initializes all of the metal materials in Base Metals. It also 
@@ -101,7 +100,7 @@ public abstract class Materials {
 		String texName = m.getName();
 		int[] protection = m.getDamageReductionArray();
 		int durability = m.getArmorMaxDamageFactor();
-		ArmorMaterial am = EnumHelper.addArmorMaterial(enumName, texName, durability, protection, m.getEnchantability());
+		ArmorMaterial am = EnumHelper.addArmorMaterial(enumName, texName, durability, protection, m.getEnchantability(), SoundEvents.item_armor_equip_iron);
 		if(am == null){
 			// uh-oh
 			FMLLog.severe("Failed to create armor material enum for "+m);

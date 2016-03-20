@@ -27,7 +27,7 @@ public class ItemMetalSword extends ItemSword  implements IMetalObject {
 		this.metal = metal;
 		this.setMaxDamage(metal.getToolDurability());
 		// this.damageVsEntity = attackDamage + metal.getBaseAttackDamage(); // damageVsEntity  is private, sadly
-		this.attackDamage = 4 + metal.getBaseAttackDamage();
+		this.attackDamage = 3F + metal.getBaseAttackDamage();
 		repairOreDictName = "ingot"+metal.getCapitalizedName();
 		if(metal.equals(Materials.starsteel)){
 			regenerates = true;

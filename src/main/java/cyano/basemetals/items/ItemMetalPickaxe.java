@@ -1,27 +1,20 @@
 package cyano.basemetals.items;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemPickaxe;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.DamageSource;
-import net.minecraft.world.World;
-import net.minecraftforge.oredict.OreDictionary;
 import cyano.basemetals.init.Materials;
 import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemPickaxe;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+import net.minecraftforge.oredict.OreDictionary;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class ItemMetalPickaxe extends ItemPickaxe  implements IMetalObject {
 
@@ -93,9 +86,9 @@ public class ItemMetalPickaxe extends ItemPickaxe  implements IMetalObject {
     }
     
     @Override
-    public boolean canHarvestBlock(final Block target) {
-		if(this.toolTypes.contains(target.getHarvestTool(target.getDefaultState()))){
-			return metal.getToolHarvestLevel() >= target.getHarvestLevel(target.getDefaultState());
+    public boolean canHarvestBlock(final IBlockState target) {
+		if(this.toolTypes.contains(target.getBlock().getHarvestTool(target))){
+			return metal.getToolHarvestLevel() >= target.getBlock().getHarvestLevel(target);
 		}
 		return super.canHarvestBlock(target);
     }
