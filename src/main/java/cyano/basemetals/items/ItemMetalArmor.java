@@ -51,7 +51,7 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor implements IMet
 	}
 	
 	private static final int UPDATE_INTERVAL = 11;
-    private static final int EFFECT_DURATION = 39;
+    private static final int EFFECT_DURATION = 45;
 	private static final Map<EntityPlayer,AtomicLong> playerUpdateTimestampMap = new HashMap<>();
 	private static final Map<EntityPlayer,AtomicInteger> playerUpdateCountMap = new HashMap<>();
 	@Override

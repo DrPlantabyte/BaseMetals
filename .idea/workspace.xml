@@ -2,33 +2,309 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eaf69be6-c30d-4484-900f-53f632b01cfe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/make-it.PS1" afterPath="$PROJECT_DIR$/make-it.PS1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cyano/basemetals/blocks/BlockMetalPlate.java" afterPath="$PROJECT_DIR$/src/main/java/cyano/basemetals/blocks/BlockMetalPlate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cyano/basemetals/blocks/InteractiveFluidBlock.java" afterPath="$PROJECT_DIR$/src/main/java/cyano/basemetals/blocks/InteractiveFluidBlock.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cyano/basemetals/init/Fluids.java" afterPath="$PROJECT_DIR$/src/main/java/cyano/basemetals/init/Fluids.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cyano/basemetals/init/Recipes.java" afterPath="$PROJECT_DIR$/src/main/java/cyano/basemetals/init/Recipes.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cyano/basemetals/items/ItemMetalArmor.java" afterPath="$PROJECT_DIR$/src/main/java/cyano/basemetals/items/ItemMetalArmor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cyano/basemetals/items/ItemMetalCrackHammer.java" afterPath="$PROJECT_DIR$/src/main/java/cyano/basemetals/items/ItemMetalCrackHammer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/block/plate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/block/plate.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_axe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_axe.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_bars.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_bars.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_block.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_block.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_boots.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_boots.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_chestplate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_chestplate.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_crackhammer.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_crackhammer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_helmet.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_helmet.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_hoe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_hoe.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_ingot.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_ingot.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_leggings.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_leggings.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_nugget.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_nugget.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_pickaxe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_pickaxe.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_plate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_plate.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_powder.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_powder.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_shovel.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_shovel.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_sword.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_sword.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_trapdoor.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_trapdoor.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/door_item.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/door_item.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_ore.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_ore.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_axe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_axe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_bars.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_bars.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_blend.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_blend.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_block.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_block.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_boots.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_boots.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_chestplate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_chestplate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_crackhammer.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_crackhammer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_door.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_door.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_door_item.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_door_item.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_helmet.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_helmet.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_hoe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_hoe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_ingot.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_ingot.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_leggings.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_leggings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_nugget.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_nugget.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_pickaxe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_pickaxe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_plate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_plate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_powder.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_powder.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_shovel.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_shovel.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_sword.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_sword.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_trapdoor.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_trapdoor.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_axe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_axe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_bars.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_bars.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_blend.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_blend.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_block.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_block.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_boots.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_boots.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_chestplate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_chestplate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_crackhammer.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_crackhammer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_door.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_door.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_door_item.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_door_item.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_helmet.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_helmet.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_hoe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_hoe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_ingot.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_ingot.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_leggings.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_leggings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_nugget.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_nugget.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_pickaxe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_pickaxe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_plate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_plate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_powder.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_powder.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_shovel.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_shovel.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_sword.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_sword.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_trapdoor.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_trapdoor.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_axe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_axe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_bars.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_bars.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_blend.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_blend.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_block.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_block.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_boots.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_boots.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_chestplate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_chestplate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_crackhammer.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_crackhammer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_door.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_door.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_door_item.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_door_item.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_helmet.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_helmet.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_hoe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_hoe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_ingot.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_ingot.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_leggings.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_leggings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_nugget.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_nugget.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_pickaxe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_pickaxe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_plate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_plate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_powder.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_powder.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_shovel.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_shovel.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_sword.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_sword.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_trapdoor.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_trapdoor.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bucket_mercury.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bucket_mercury.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/carbon_powder.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/carbon_powder.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_axe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_axe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_bars.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_bars.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_block.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_block.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_boots.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_boots.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_chestplate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_chestplate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_crackhammer.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_crackhammer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_door.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_door.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_door_item.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_door_item.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_helmet.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_helmet.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_hoe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_hoe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_ingot.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_ingot.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_leggings.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_leggings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_nugget.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_nugget.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_ore.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_ore.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_pickaxe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_pickaxe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_plate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_plate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_powder.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_powder.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_shovel.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_shovel.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_sword.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_sword.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_trapdoor.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_trapdoor.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_axe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_axe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_bars.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_bars.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_block.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_block.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_boots.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_boots.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_chestplate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_chestplate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_crackhammer.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_crackhammer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_door.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_door.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_door_item.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_door_item.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_helmet.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_helmet.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_hoe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_hoe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_ingot.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_ingot.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_leggings.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_leggings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_nugget.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_nugget.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_ore.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_ore.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_pickaxe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_pickaxe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_plate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_plate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_powder.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_powder.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_shovel.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_shovel.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_sword.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_sword.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_trapdoor.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/copper_trapdoor.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/diamond_crackhammer.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/diamond_crackhammer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_axe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_axe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_bars.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_bars.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_blend.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_blend.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_block.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_block.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_boots.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_boots.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_chestplate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_chestplate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_crackhammer.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_crackhammer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_door.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_door.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_door_item.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_door_item.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_helmet.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_helmet.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_hoe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_hoe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_ingot.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_ingot.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_leggings.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_leggings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_nugget.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_nugget.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_pickaxe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_pickaxe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_plate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_plate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_powder.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_powder.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_shovel.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_shovel.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_sword.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_sword.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_trapdoor.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_trapdoor.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/gold_plate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/gold_plate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/gold_powder.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/gold_powder.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_axe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_axe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_bars.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_bars.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_blend.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_blend.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_block.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_block.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_boots.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_boots.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_chestplate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_chestplate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_crackhammer.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_crackhammer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_door.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_door.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_door_item.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_door_item.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_helmet.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_helmet.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_hoe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_hoe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_ingot.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_ingot.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_leggings.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_leggings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_nugget.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_nugget.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_pickaxe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_pickaxe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_plate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_plate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_powder.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_powder.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_shovel.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_shovel.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_sword.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_sword.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_trapdoor.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_trapdoor.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/iron_crackhammer.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/iron_crackhammer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/iron_nugget.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/iron_nugget.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/iron_plate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/iron_plate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/iron_powder.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/iron_powder.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_axe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_axe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_bars.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_bars.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_block.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_block.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_boots.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_boots.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_chestplate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_chestplate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_crackhammer.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_crackhammer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_door.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_door.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_door_item.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_door_item.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_helmet.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_helmet.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_hoe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_hoe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_ingot.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_ingot.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_leggings.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_leggings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_nugget.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_nugget.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_ore.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_ore.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_pickaxe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_pickaxe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_plate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_plate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_powder.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_powder.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_shovel.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_shovel.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_sword.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_sword.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_trapdoor.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/lead_trapdoor.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mercury_ingot.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mercury_ingot.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mercury_ore.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mercury_ore.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mercury_powder.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mercury_powder.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_axe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_axe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_bars.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_bars.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_blend.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_blend.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_block.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_block.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_boots.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_boots.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_chestplate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_chestplate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_crackhammer.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_crackhammer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_door.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_door.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_door_item.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_door_item.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_helmet.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_helmet.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_hoe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_hoe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_ingot.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_ingot.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_leggings.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_leggings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_nugget.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_nugget.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_pickaxe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_pickaxe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_plate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_plate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_powder.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_powder.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_shovel.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_shovel.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_sword.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_sword.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_trapdoor.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_trapdoor.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_axe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_axe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_bars.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_bars.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_block.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_block.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_boots.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_boots.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_chestplate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_chestplate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_crackhammer.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_crackhammer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_door.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_door.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_door_item.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_door_item.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_helmet.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_helmet.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_hoe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_hoe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_ingot.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_ingot.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_leggings.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_leggings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_nugget.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_nugget.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_ore.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_ore.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_pickaxe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_pickaxe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_plate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_plate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_powder.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_powder.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_shovel.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_shovel.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_sword.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_sword.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_trapdoor.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/nickel_trapdoor.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/potion_zombie_cure.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/potion_zombie_cure.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_axe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_axe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_bars.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_bars.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_block.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_block.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_boots.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_boots.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_chestplate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_chestplate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_crackhammer.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_crackhammer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_door.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_door.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_door_item.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_door_item.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_helmet.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_helmet.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_hoe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_hoe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_ingot.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_ingot.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_leggings.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_leggings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_nugget.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_nugget.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_ore.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_ore.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_pickaxe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_pickaxe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_plate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_plate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_powder.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_powder.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_shovel.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_shovel.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_sword.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_sword.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_trapdoor.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/silver_trapdoor.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_axe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_axe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_bars.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_bars.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_block.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_block.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_boots.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_boots.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_chestplate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_chestplate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_crackhammer.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_crackhammer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_door.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_door.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_door_item.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_door_item.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_helmet.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_helmet.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_hoe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_hoe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_ingot.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_ingot.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_leggings.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_leggings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_nugget.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_nugget.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_ore.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_ore.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_pickaxe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_pickaxe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_plate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_plate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_powder.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_powder.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_shovel.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_shovel.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_sword.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_sword.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_trapdoor.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/starsteel_trapdoor.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_axe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_axe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_bars.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_bars.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_blend.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_blend.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_block.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_block.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_boots.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_boots.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_chestplate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_chestplate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_crackhammer.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_crackhammer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_door.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_door.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_door_item.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_door_item.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_helmet.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_helmet.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_hoe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_hoe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_ingot.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_ingot.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_leggings.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_leggings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_nugget.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_nugget.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_pickaxe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_pickaxe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_plate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_plate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_powder.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_powder.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_shovel.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_shovel.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_sword.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_sword.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_trapdoor.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_trapdoor.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/stone_crackhammer.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/stone_crackhammer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_axe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_axe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_bars.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_bars.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_block.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_block.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_boots.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_boots.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_chestplate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_chestplate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_crackhammer.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_crackhammer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_door.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_door.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_door_item.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_door_item.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_helmet.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_helmet.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_hoe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_hoe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_ingot.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_ingot.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_leggings.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_leggings.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_nugget.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_nugget.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_ore.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_ore.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_pickaxe.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_pickaxe.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_plate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_plate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_powder.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_powder.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_shovel.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_shovel.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_sword.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_sword.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_trapdoor.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/tin_trapdoor.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/wood_crackhammer.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/wood_crackhammer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_block.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_block.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_ingot.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_ingot.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_nugget.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_nugget.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_ore.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_ore.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_plate.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_plate.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_powder.json" afterPath="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_powder.json" />
     </list>
     <ignored path="BaseMetals.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,97 +332,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ItemMetalCrackHammer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cyano/basemetals/items/ItemMetalCrackHammer.java">
+      <file leaf-file-name="adamantine_ore.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_ore.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1428">
-              <caret line="127" column="46" selection-start-line="127" selection-start-column="46" selection-end-line="127" selection-end-column="46" />
+            <state relative-caret-position="51">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ItemMetalArmor.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ItemMetalArmor.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/cyano/basemetals/items/ItemMetalArmor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="201" column="156" selection-start-line="201" selection-start-column="156" selection-end-line="201" selection-end-column="156" />
+            <state relative-caret-position="330">
+              <caret line="53" column="49" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InteractiveFluidBlock.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cyano/basemetals/blocks/InteractiveFluidBlock.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-79">
-              <caret line="55" column="9" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Fluids.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cyano/basemetals/init/Fluids.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="50" column="132" selection-start-line="50" selection-start-column="132" selection-end-line="50" selection-end-column="132" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ItemBucketMilk.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.9-12.16.0.1770-1.9/snapshot/20160312/forgeSrc-1.9-12.16.0.1770-1.9.jar!/net/minecraft/item/ItemBucketMilk.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EntityLivingBase.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.9-12.16.0.1770-1.9/snapshot/20160312/forgeSrc-1.9-12.16.0.1770-1.9.jar!/net/minecraft/entity/EntityLivingBase.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="712">
-              <caret line="522" column="9" selection-start-line="522" selection-start-column="9" selection-end-line="522" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PotionEffect.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.9-12.16.0.1770-1.9/snapshot/20160312/forgeSrc-1.9-12.16.0.1770-1.9.jar!/net/minecraft/potion/PotionEffect.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="126" column="18" selection-start-line="126" selection-start-column="18" selection-end-line="126" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Potion.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.9-12.16.0.1770-1.9/snapshot/20160312/forgeSrc-1.9-12.16.0.1770-1.9.jar!/net/minecraft/potion/Potion.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="255" column="68" selection-start-line="255" selection-start-column="58" selection-end-line="255" selection-end-column="68" />
-              <folding>
-                <element signature="e#6351#6352#0" expanded="true" />
-                <element signature="e#6390#6391#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ItemSpade.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.9-12.16.0.1770-1.9/snapshot/20160312/forgeSrc-1.9-12.16.0.1770-1.9.jar!/net/minecraft/item/ItemSpade.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="116" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -699,36 +902,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/nei/CrusherRecipeHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/blocks/BlockMetalOre.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/events/BucketHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/init/Blocks.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/blocks/BlockMetalBlock.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/events/BaseMetalsOreGenEvent.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/entities/EntityBetterVillager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/worldgen/NonSpawner.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/jei/JEICrusherRecipeCategory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/blocks/BlockMetalTrapDoor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/BaseMetals.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/fluids/BlockFluidMercury.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/items/MetalToolEffects.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/blocks/BlockMetalBars.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/blocks/BlockMetalDoor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/items/ItemMetalHoe.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/items/ItemMetalPickaxe.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/items/ItemMetalSword.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/items/ItemMetalAxe.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/worldgen/OreSpawner.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/init/FunctionalCreativeTab.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/init/Materials.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/init/DungeonLoot.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/data/DataConstants.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/init/Items.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/blocks/BlockMetalPlate.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_crackhammer.json" />
-        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_axe.json" />
-        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_plate.json" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/init/Recipes.java" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/block/plate.json" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_block.json" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_hoe.json" />
@@ -736,7 +909,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_shovel.json" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_sword.json" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_trapdoor.json" />
-        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_axe.json" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/door_item.json" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_bars.json" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_boots.json" />
@@ -747,9 +919,40 @@
         <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_nugget.json" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_powder.json" />
         <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/items/ItemMetalCrackHammer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/items/ItemMetalArmor.java" />
         <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/init/Fluids.java" />
         <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/blocks/InteractiveFluidBlock.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_axe.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_blend.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/wood_crackhammer.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/stone_crackhammer.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/iron_crackhammer.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/diamond_crackhammer.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_blend.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/potion_zombie_cure.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_blend.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mercury_powder.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mercury_ingot.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mercury_ore.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/iron_powder.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_blend.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/carbon_powder.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_blend.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_blend.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/gold_powder.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/gold_plate.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_blend.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/iron_nugget.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/iron_plate.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_block.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_ingot.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_nugget.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_ore.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_plate.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_powder.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bucket_mercury.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_ore.json" />
+        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_ore.json" />
+        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/items/ItemMetalArmor.java" />
       </list>
     </option>
   </component>
@@ -1041,44 +1244,6 @@
               <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="item" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BaseMetals" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BaseMetals" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="basemetals" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -1132,67 +1297,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="init" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BaseMetals" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BaseMetals" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="basemetals" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fluids" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BaseMetals" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BaseMetals" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="basemetals" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blocks" />
+              <option name="myItemId" value="items" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1516,125 +1621,15 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cyano/basemetals/init/VillagerTrades.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/diamond_crackhammer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cyano/basemetals/init/WorldGen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cyano/basemetals/items/ItemMetalSword.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cyano/basemetals/init/Materials.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="128" column="7" selection-start-line="128" selection-start-column="7" selection-end-line="128" selection-end-column="7" />
-          <folding>
-            <element signature="e#5011#5012#0" expanded="false" />
-            <element signature="e#5047#5048#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cyano/basemetals/items/ItemMetalAxe.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_74/src.zip!/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="926" column="27" selection-start-line="926" selection-start-column="27" selection-end-line="926" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.9-12.16.0.1770-1.9/snapshot/20160312/forgeSrc-1.9-12.16.0.1770-1.9.jar!/net/minecraft/item/ItemPickaxe.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.9-12.16.0.1770-1.9/snapshot/20160312/forgeSrc-1.9-12.16.0.1770-1.9.jar!/net/minecraft/item/ItemSword.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.9-12.16.0.1770-1.9/snapshot/20160312/forgeSrc-1.9-12.16.0.1770-1.9.jar!/net/minecraft/item/ItemAxe.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cyano/basemetals/init/DungeonLoot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cyano/basemetals/data/DataConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4794">
-          <caret line="282" column="14" selection-start-line="282" selection-start-column="14" selection-end-line="282" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_74/src.zip!/java/lang/reflect/Field.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2380">
-          <caret line="181" column="23" selection-start-line="181" selection-start-column="23" selection-end-line="181" selection-end-column="23" />
-          <folding>
-            <element signature="e#5730#5731#0" expanded="false" />
-            <element signature="e#5762#5763#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cyano/basemetals/init/Items.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4947">
-          <caret line="326" column="8" selection-start-line="326" selection-start-column="8" selection-end-line="326" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.9-12.16.0.1770-1.9/snapshot/20160312/forgeSrc-1.9-12.16.0.1770-1.9.jar!/net/minecraftforge/oredict/OreDictionary.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="53" column="34" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/block/adamantine_plate.json">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_hoe.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1642,34 +1637,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cyano/basemetals/blocks/BlockMetalPlate.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_blend.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="84" column="28" selection-start-line="84" selection-start-column="28" selection-end-line="84" selection-end-column="28" />
+        <state relative-caret-position="68">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_plate.json">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/potion_zombie_cure.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_blend.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mercury_ore.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
+          <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cyano/basemetals/init/Recipes.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mercury_powder.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9">
-          <caret line="199" column="166" selection-start-line="199" selection-start-column="166" selection-end-line="199" selection-end-column="166" />
+        <state relative-caret-position="68">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/block/plate.json">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mercury_ingot.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        <state relative-caret-position="68">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/iron_powder.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_ingot.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="1" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1682,7 +1709,135 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/block/adamantine_block.json">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/carbon_powder.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bronze_blend.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/brass_blend.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_blend.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/gold_plate.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="43" selection-start-line="1" selection-start-column="43" selection-end-line="1" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/gold_powder.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/invar_blend.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/iron_nugget.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/iron_plate.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="43" selection-start-line="1" selection-start-column="43" selection-end-line="1" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_block.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="43" selection-start-line="1" selection-start-column="43" selection-end-line="1" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_ingot.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_nugget.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_ore.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="41" selection-start-line="1" selection-start-column="41" selection-end-line="1" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_plate.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="43" selection-start-line="1" selection-start-column="43" selection-end-line="1" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/zinc_powder.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/bucket_mercury.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_trapdoor.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1690,15 +1845,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/aquarium_axe.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/block/adamantine_door_bottom.json">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_sword.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1706,63 +1853,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/door_item.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_sword.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_bars.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_block.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_boots.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_chestplate.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_crackhammer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_door.json">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_shovel.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1770,7 +1861,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_door_item.json">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_powder.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1778,79 +1869,151 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_helmet.json">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_plate.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_hoe.json">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_pickaxe.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_ingot.json">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_ore.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+          <caret line="1" column="45" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_leggings.json">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_nugget.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_nugget.json">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_leggings.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_ingot.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_hoe.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_helmet.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_door_item.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_door.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_crackhammer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_chestplate.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_boots.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_block.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_bars.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/coldiron_axe.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/electrum_ore.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/mithril_sword.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_ore.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_pickaxe.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="1" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_powder.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_shovel.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_trapdoor.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
@@ -1858,80 +2021,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.9-12.16.0.1770-1.9/snapshot/20160312/forgeSrc-1.9-12.16.0.1770-1.9.jar!/net/minecraft/item/ItemSpade.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="116" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.9-12.16.0.1770-1.9/snapshot/20160312/forgeSrc-1.9-12.16.0.1770-1.9.jar!/net/minecraft/potion/PotionEffect.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="126" column="18" selection-start-line="126" selection-start-column="18" selection-end-line="126" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.9-12.16.0.1770-1.9/snapshot/20160312/forgeSrc-1.9-12.16.0.1770-1.9.jar!/net/minecraft/entity/EntityLivingBase.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="712">
-          <caret line="522" column="9" selection-start-line="522" selection-start-column="9" selection-end-line="522" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.9-12.16.0.1770-1.9/snapshot/20160312/forgeSrc-1.9-12.16.0.1770-1.9.jar!/net/minecraft/item/ItemBucketMilk.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cyano/basemetals/items/ItemMetalCrackHammer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="127" column="46" selection-start-line="127" selection-start-column="46" selection-end-line="127" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.9-12.16.0.1770-1.9/snapshot/20160312/forgeSrc-1.9-12.16.0.1770-1.9.jar!/net/minecraft/potion/Potion.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="255" column="68" selection-start-line="255" selection-start-column="58" selection-end-line="255" selection-end-column="68" />
-          <folding>
-            <element signature="e#6351#6352#0" expanded="true" />
-            <element signature="e#6390#6391#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cyano/basemetals/items/ItemMetalArmor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="201" column="156" selection-start-line="201" selection-start-column="156" selection-end-line="201" selection-end-column="156" />
+        <state relative-caret-position="330">
+          <caret line="53" column="49" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cyano/basemetals/init/Fluids.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="50" column="132" selection-start-line="50" selection-start-column="132" selection-end-line="50" selection-end-column="132" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cyano/basemetals/blocks/InteractiveFluidBlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-79">
-          <caret line="55" column="9" selection-start-line="55" selection-start-column="9" selection-end-line="55" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
