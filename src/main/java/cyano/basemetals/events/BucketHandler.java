@@ -1,10 +1,5 @@
 package cyano.basemetals.events;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -15,6 +10,11 @@ import net.minecraftforge.event.entity.player.FillBucketEvent;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class BucketHandler {
 
@@ -53,6 +53,7 @@ public class BucketHandler {
         }
 
         private ItemStack fillCustomBucket(World world, RayTraceResult location) {
+            if(location == null) return null;
         		BlockPos pos = location.getBlockPos();
                 Block block = world.getBlockState(pos).getBlock();
 

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eaf69be6-c30d-4484-900f-53f632b01cfe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/make-it.PS1" afterPath="$PROJECT_DIR$/make-it.PS1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cyano/basemetals/init/FunctionalCreativeTab.java" afterPath="$PROJECT_DIR$/src/main/java/cyano/basemetals/init/FunctionalCreativeTab.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cyano/basemetals/events/BucketHandler.java" afterPath="$PROJECT_DIR$/src/main/java/cyano/basemetals/events/BucketHandler.java" />
     </list>
     <ignored path="BaseMetals.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,11 +40,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FunctionalCreativeTab.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FunctionalCreativeTab.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/cyano/basemetals/init/FunctionalCreativeTab.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="296">
               <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BucketHandler.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cyano/basemetals/events/BucketHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="59" column="49" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -599,7 +608,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_block.json" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_hoe.json" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_pickaxe.json" />
         <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_shovel.json" />
@@ -650,6 +658,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/adamantine_ore.json" />
         <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/items/ItemMetalArmor.java" />
         <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/init/FunctionalCreativeTab.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cyano/basemetals/events/BucketHandler.java" />
       </list>
     </option>
   </component>
@@ -998,6 +1007,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BaseMetals" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BaseMetals" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basemetals" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="events" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -1268,7 +1307,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1318,14 +1357,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/steel_blend.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/assets/basemetals/models/item/potion_zombie_cure.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1724,6 +1755,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
           <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cyano/basemetals/events/BucketHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="59" column="49" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
           <folding />
         </state>
       </provider>
