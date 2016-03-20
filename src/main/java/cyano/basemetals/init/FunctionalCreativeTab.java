@@ -50,7 +50,7 @@ public class FunctionalCreativeTab  extends CreativeTabs {
 
 	/**
 	 * only shows items which have tabToDisplayOn == this
-	 * @param itemList 
+	 * @param itemList items to sort
 	 */
 	@Override
 	@SideOnly(Side.CLIENT)
