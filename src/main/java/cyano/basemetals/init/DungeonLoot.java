@@ -1,5 +1,7 @@
 package cyano.basemetals.init;
 
+import net.minecraft.world.storage.loot.LootTableManager;
+
 public abstract class DungeonLoot {
 
     // See the following link for a nice tutorial on how loot works in MC1.9:
@@ -10,6 +12,7 @@ public abstract class DungeonLoot {
 		if(initDone)return;
 		cyano.basemetals.init.Materials.init();
 		cyano.basemetals.init.Items.init();
+        LootTableManager k;
 		/*
 		for(MetalMaterial metal : Materials.getAllMetals()){
 			WeightedRandomChestContent loot = makeChestLootEntry(metal);
