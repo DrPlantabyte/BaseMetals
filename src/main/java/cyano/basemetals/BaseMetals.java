@@ -22,10 +22,12 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.compress.archivers.zip.ZipArchiveEntry;
+import org.apache.commons.compress.archivers.zip.ZipFile;
+import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.Level;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -181,6 +183,16 @@ public class BaseMetals
 		
 
 		config.save();
+
+		Path ALTPath = Paths.get(event.getSuggestedConfigurationFile().getParent(),"additional-loot-tables");
+		Path myLootFolder = ALTPath.resolve(MODID);
+		if(Files.notExists(myLootFolder)){
+			try{
+				extractZipToDir("cyano/"+MODID+"/data/loot_tables.zip",ALTPath);
+			} catch(IOException ex){
+				FMLLog.log(Level.ERROR,ex,"%s: Failed to extract additional loot tables",MODID);
+			}
+		}
 
 		if(event.getSide() == Side.CLIENT){
 			clientPreInit(event);
@@ -391,4 +403,53 @@ public class BaseMetals
 			return null;
 		}
 	}
+
+	private void extractZipToDir(String zipSrcPath, Path dir) throws IOException{
+		Path tmp = dir.resolve("tmp.zip");
+		try(InputStream resourceAsStream = BaseMetals.class.getProtectionDomain().getClassLoader().getResourceAsStream(zipSrcPath);){
+			Files.createDirectories(dir);
+
+			FileOutputStream fout = new FileOutputStream(tmp.toFile());
+			byte[] buffer = new byte[4096];
+			int numRead = 0;
+			do{
+				numRead = resourceAsStream.read(buffer);
+				if(numRead < 1) break;
+				fout.write(buffer,0,numRead);
+			} while(numRead >= 0);
+			fout.close();
+		}
+
+		unzipArchive(tmp.toFile(),dir.toFile());
+		Files.delete(tmp);
+	}
+
+
+	// copied from example at https://piotrga.wordpress.com/2008/05/07/how-to-unzip-archive-in-java/
+	public void unzipArchive(File archive, File outputDir) throws IOException {
+			ZipFile zipfile = new ZipFile(archive);
+			for (Enumeration e = zipfile.getEntries(); e.hasMoreElements(); ) {
+				ZipArchiveEntry entry = (ZipArchiveEntry) e.nextElement();
+				unzipEntry(zipfile, entry, outputDir);
+			}
+	}
+	private void unzipEntry(ZipFile zipfile, ZipArchiveEntry entry, File outputDir) throws IOException {
+		if (entry.isDirectory()) {
+			Files.createDirectories(new File(outputDir, entry.getName()).toPath());
+			return;
+		}
+		File outputFile = new File(outputDir, entry.getName());
+		if (!outputFile.getParentFile().exists()){
+			Files.createDirectories(outputFile.getParentFile().toPath());
+		}
+				BufferedInputStream inputStream = new BufferedInputStream(zipfile.getInputStream(entry));
+		BufferedOutputStream outputStream = new BufferedOutputStream(new FileOutputStream(outputFile));
+		try {
+			IOUtils.copy(inputStream, outputStream);
+		} finally {
+			outputStream.close();
+			inputStream.close();
+		}
+	}
+
 }
