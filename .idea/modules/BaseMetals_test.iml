@@ -13,15 +13,6 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../lib/NEI/CodeChickenCore-1.8-1.0.5.34-dev.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
           <root url="jar://$MODULE_DIR$/../../lib/NEI/NotEnoughItems-1.8-1.0.5.84-dev.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -32,6 +23,15 @@
       <library>
         <CLASSES>
           <root url="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.9-12.16.0.1770-1.9/snapshot/20160312/forgeSrc-1.9-12.16.0.1770-1.9.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../lib/NEI/CodeChickenCore-1.8-1.0.5.34-dev.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

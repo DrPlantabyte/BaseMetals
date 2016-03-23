@@ -30,6 +30,36 @@ public class BlockMetalPlate extends net.minecraft.block.Block implements IOreDi
 	final MetalMaterial metal;
 	
 	private static final float thickness = 1.0f / 16.0f;
+
+	private static final AxisAlignedBB[] BOXES = new AxisAlignedBB[EnumFacing.values().length];
+	static{
+		for(int i = 0; i < EnumFacing.values().length; i++){
+			EnumFacing orientation = EnumFacing.values()[i];
+			float x1 = 0, x2 = 1, y1 = 0,y2 = 1, z1 = 0, z2 = 1;
+			switch(orientation){
+				case DOWN:
+					y1 = 1f - thickness;
+					break;
+				case SOUTH:
+					z2 = thickness;
+					break;
+				case NORTH:
+					z1 = 1f - thickness;
+					break;
+				case EAST:
+					x2 = thickness;
+					break;
+				case WEST:
+					x1 = 1f - thickness;
+					break;
+				case UP:
+				default:
+					y2 = thickness;
+					break;
+			}
+			BOXES[orientation.ordinal()] = new AxisAlignedBB(x1, y1, z1, x2, y2, z2);
+		}
+	}
 	
 	public BlockMetalPlate(MetalMaterial metal) {
 		super(Material.iron);
@@ -81,30 +111,7 @@ public class BlockMetalPlate extends net.minecraft.block.Block implements IOreDi
     @Override
     public AxisAlignedBB getBoundingBox(final IBlockState bs, final IBlockAccess world, final BlockPos coord) {
         final EnumFacing orientation = (EnumFacing) bs.getValue(FACING);
-        float x1 = 0, x2 = 1, y1 = 0,y2 = 1, z1 = 0, z2 = 1;
-        switch(orientation){
-        case DOWN:
-        	y1 = 1f - thickness;
-        	break;
-        case SOUTH:
-        	z2 = thickness;
-        	break;
-        case NORTH:
-        	z1 = 1f - thickness;
-        	break;
-        case EAST:
-        	x2 = thickness;
-        	break;
-        case WEST:
-        	x1 = 1f - thickness;
-        	break;
-        case UP:
-        default:
-        	y2 = thickness;
-        	break;
-        }
-        // TODO: cache bounding box combos
-        return new AxisAlignedBB(x1, y1, z1, x2, y2, z2);
+        return BOXES[orientation.ordinal()];
     }
 	@Override
     public void addCollisionBoxToList(final IBlockState bs, final World world, final BlockPos coord,
@@ -112,31 +119,7 @@ public class BlockMetalPlate extends net.minecraft.block.Block implements IOreDi
                                         final Entity entity) {
 
         final EnumFacing orientation = (EnumFacing) world.getBlockState(coord).getValue(FACING);
-        float x1 = 0, x2 = 1, y1 = 0,y2 = 1, z1 = 0, z2 = 1;
-        switch(orientation){
-        case DOWN:
-        	y1 = 1f - thickness;
-        	break;
-        case SOUTH:
-        	z2 = thickness;
-        	break;
-        case NORTH:
-        	z1 = 1f - thickness;
-        	break;
-        case EAST:
-        	x2 = thickness;
-        	break;
-        case WEST:
-        	x1 = 1f - thickness;
-        	break;
-        case UP:
-        default:
-        	y2 = thickness;
-        	break;
-        }
-        // TODO: replace with call to getBoundingBox() or with pre-calc cache
-        AxisAlignedBB newbox = new AxisAlignedBB(x1, y1, z1, x2, y2, z2);
-        super.addCollisionBoxToList(coord, box, collisionBoxList, newbox);
+        super.addCollisionBoxToList(coord, box, collisionBoxList, BOXES[orientation.ordinal()]);
 	}
 	@Override
 	public String getOreDictionaryName() {

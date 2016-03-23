@@ -1,6 +1,7 @@
 {
     "pools": [
         {
+			"__comment":"10% chance per roll of uncommon metal ingots",
             "rolls": {
                 "min": 1,
                 "max": 2
@@ -8,9 +9,8 @@
             "bonus_rolls":1,
             "entries": [
                 {
-					"__comment":"25% chance",
                     "type": "empty",
-                    "weight": 54,
+                    "weight": 162,
                 },
                 {
                     "type": "item",

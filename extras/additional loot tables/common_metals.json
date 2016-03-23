@@ -1,6 +1,7 @@
 {
     "pools": [
         {
+			"__comment":"10% chance per roll of common metal ingots",
             "rolls": {
                 "min": 1,
                 "max": 4
@@ -8,9 +9,8 @@
             "bonus_rolls":1,
             "entries": [
                 {
-					"__comment":"25% chance",
                     "type": "empty",
-                    "weight": 63,
+                    "weight": 189,
                 },
                 {
                     "type": "item",

@@ -1,10 +1,10 @@
 {
     "pools": [
         {
+			"__comment":"25% chance of an uncommon metal tool",
             "rolls": 1,
             "entries": [
                 {
-					"__comment":"25% chance",
                     "type": "empty",
                     "weight": 900,
                 },

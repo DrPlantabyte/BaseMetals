@@ -283,8 +283,6 @@ public abstract class DataConstants {
 + "\n		}"
 + "\n	]"
 + "\n}";
-
-    // TODO: loot_table JSON file structure
 }
 
 
