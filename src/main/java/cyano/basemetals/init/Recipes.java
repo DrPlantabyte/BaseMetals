@@ -198,8 +198,9 @@ public abstract class Recipes {
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.electrum_blend,2), "dustSilver","dustGold"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.mithril_blend,3), "dustSilver","dustSilver","dustColdiron","ingotMercury"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.aquarium_blend,3), "dustCopper","dustCopper","dustZinc", Items.prismarine_crystals, Items.prismarine_crystals, Items.prismarine_crystals));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.bucket_mercury,1), Items.bucket,"ingotMercury","ingotMercury","ingotMercury","ingotMercury","ingotMercury","ingotMercury","ingotMercury","ingotMercury"));
-		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.mercury_ingot,8),cyano.basemetals.init.Items.bucket_mercury));
+	//	GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.bucket_mercury,1), Items.bucket,"ingotMercury","ingotMercury","ingotMercury","ingotMercury","ingotMercury","ingotMercury","ingotMercury","ingotMercury"));
+	//	GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.mercury_ingot,8),cyano.basemetals.init.Items.bucket_mercury));
+		// TODO: universal bucket in mercury recipe
 		
 		// potions
 		// TODO: potion recipes

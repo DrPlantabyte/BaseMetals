@@ -4,21 +4,24 @@ import cyano.basemetals.client.ProxyFunctions;
 import cyano.basemetals.data.AdditionalLootTables;
 import cyano.basemetals.data.DataConstants;
 import cyano.basemetals.entities.EntityBetterVillager;
-import cyano.basemetals.events.BucketHandler;
 import cyano.basemetals.events.VanillaOreGenDisabler;
 import cyano.basemetals.events.VillagerReplacer;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.ConfigCategory;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
+import net.minecraftforge.fluids.UniversalBucket;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameData;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -57,7 +60,7 @@ public class BaseMetals
 	public static final String NAME ="Base Metals";
 	/** Version number, in Major.Minor.Build format. The minor number is increased whenever a change 
 	 * is made that has the potential to break compatibility with other mods that depend on this one. */
-	public static final String VERSION = "2.0.1";
+	public static final String VERSION = "2.0.2";
 	
 	/** All ore-spawn files discovered in the ore-spawn folder */
 	public static final List<Path> oreSpawnConfigFiles = new LinkedList<>();
@@ -237,6 +240,14 @@ public class BaseMetals
 	@EventHandler
 	public void init(FMLInitializationEvent event)
 	{
+		FMLLog.info("%s: %s instanceof %s",MODID,Items.bucket.getUnlocalizedName(),Items.bucket.getClass().getName()); // TODO: remove
+		Iterator<net.minecraft.item.Item> iter = GameData.getItemRegistry().iterator();
+		while(iter.hasNext()){
+			Item i = iter.next();
+			if(i instanceof UniversalBucket){
+				FMLLog.info("%s: %s instanceof %s",MODID,i.getUnlocalizedName(),UniversalBucket.class.getName()); // TODO: remove
+			}
+		}
 
 		File[] files = oreSpawnFolder.toFile().listFiles(); // sigh, java 8 does this so much better
 		for(File f : files){
@@ -253,8 +264,7 @@ public class BaseMetals
 		
 		cyano.basemetals.init.Achievements.init();
 		
-		
-		MinecraftForge.EVENT_BUS.register(BucketHandler.getInstance());
+
 		if(enableBetterVillagers) MinecraftForge.EVENT_BUS.register(VillagerReplacer.getInstance());
 		
 		if(disableVanillaOreGen){

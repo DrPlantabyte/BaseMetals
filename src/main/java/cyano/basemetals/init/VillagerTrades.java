@@ -1,20 +1,17 @@
 package cyano.basemetals.init;
 
-import java.util.*;
-
+import cyano.basemetals.entities.EntityBetterVillager;
+import cyano.basemetals.items.ItemMetalCrackHammer;
+import cyano.basemetals.items.ItemMetalIngot;
 import cyano.basemetals.material.MetalMaterial;
-import net.minecraft.entity.passive.EntityVillager;
-import net.minecraft.entity.passive.EntityVillager.EmeraldForItems;
 import net.minecraft.entity.passive.EntityVillager.ITradeList;
 import net.minecraft.entity.passive.EntityVillager.ListEnchantedItemForEmeralds;
 import net.minecraft.entity.passive.EntityVillager.PriceInfo;
 import net.minecraft.item.*;
 import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
-import net.minecraftforge.fml.common.registry.VillagerRegistry;
-import net.minecraftforge.fml.common.registry.VillagerRegistry.VillagerProfession;
-import cyano.basemetals.entities.EntityBetterVillager;
-import cyano.basemetals.items.*;
+
+import java.util.*;
 
 public abstract class VillagerTrades{
 	
@@ -127,12 +124,6 @@ public abstract class VillagerTrades{
 				makePurchasePalette(1,10,Items.carbon_powder));
 		EntityBetterVillager.addVillagerTrades(3, 3, 1, 
 				makePurchasePalette(1,10,Items.carbon_powder));
-		EntityBetterVillager.addVillagerTrades(3, 1, 2, 
-				makeTradePalette(makePurchasePalette(2,1,Items.bucket_mercury), makeSalePalette(1,1,Items.bucket_mercury)));
-		EntityBetterVillager.addVillagerTrades(3, 2, 2, 
-				makeTradePalette(makePurchasePalette(2,1,Items.bucket_mercury), makeSalePalette(1,1,Items.bucket_mercury)));
-		EntityBetterVillager.addVillagerTrades(3, 3, 2, 
-				makeTradePalette(makePurchasePalette(2,1,Items.bucket_mercury), makeSalePalette(1,1,Items.bucket_mercury)));
 		
 		
 		

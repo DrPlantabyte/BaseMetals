@@ -2,7 +2,6 @@ package cyano.basemetals.init;
 
 import cyano.basemetals.BaseMetals;
 import cyano.basemetals.blocks.*;
-import cyano.basemetals.events.BucketHandler;
 import cyano.basemetals.items.*;
 import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
@@ -13,16 +12,14 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemBucket;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidContainerRegistry;
+import net.minecraftforge.fluids.UniversalBucket;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
-import scala.annotation.meta.field;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
@@ -75,7 +72,8 @@ public abstract class Items {
 		return Collections.unmodifiableMap(itemsByMetal);
 	}
 
-	public static ItemBucket bucket_mercury;
+	public static UniversalBucket universal_bucket;
+
 	
 	public static Item adamantine_axe;
 	public static Item adamantine_boots;
@@ -488,10 +486,6 @@ public abstract class Items {
 		GameRegistry.registerItem(mercury_powder,"mercury_powder");
 		itemRegistry.put(mercury_powder, "mercury_powder");
 		OreDictionary.registerOre("dustMercury", mercury_powder);
-		bucket_mercury = (ItemBucket)init(new ItemBucket(Fluids.fluidBlockMercury),"bucket_mercury",ItemGroups.tab_items);
-		OreDictionary.registerOre("bucketMercury", bucket_mercury);
-		FluidContainerRegistry.registerFluidContainer(Fluids.fluidMercury, new ItemStack(bucket_mercury), new ItemStack(net.minecraft.init.Items.bucket));
-		BucketHandler.getInstance().buckets.put(Fluids.fluidBlockMercury, bucket_mercury);
 		
 		mithril_axe = create_axe(Materials.mithril);
 		mithril_blend = create_blend(Materials.mithril);
@@ -610,8 +604,10 @@ public abstract class Items {
 		classSortingValues.put(ItemMetalSword.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalArmor.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalDoor.class, classSortingValues.get(BlockMetalDoor.class));
-		
-		
+
+
+		universal_bucket = (UniversalBucket)registerItem(new UniversalBucket(),"bucket", null);
+
 		List<MetalMaterial> metlist = new ArrayList<>(Materials.getAllMetals().size());
 		metlist.addAll(Materials.getAllMetals());
 		metlist.sort((MetalMaterial a, MetalMaterial b)-> a.getName().compareToIgnoreCase(b.getName()));
@@ -624,7 +620,7 @@ public abstract class Items {
 
 
 
-    private static Item registerItem(Item i, String regName, MetalMaterial m){
+	private static Item registerItem(Item i, String regName, MetalMaterial m){
 		GameRegistry.registerItem(i, regName);
 		itemRegistry.put(i, regName);
 		if(m != null){
