@@ -847,8 +847,8 @@ public abstract class Items {
 			@Override
 			public int getColorFromItemstack(ItemStack stack, int tintIndex) {
 				FluidStack fs = ((UniversalBucket) stack.getItem()).getFluid(stack);
-				if(fs == null) return -1;
-				return tintIndex > 0?-1:fs.getFluid().getColor(fs);
+				if(fs == null) return 0x00FFFFFF;
+				return tintIndex > 0?fs.getFluid().getColor(fs):0xFFFFFFFF;
 			}
 		},universal_bucket);
 	}
