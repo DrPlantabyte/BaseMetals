@@ -9,10 +9,13 @@ import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.color.IItemColor;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.UniversalBucket;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -72,7 +75,7 @@ public abstract class Items {
 		return Collections.unmodifiableMap(itemsByMetal);
 	}
 
-	public static UniversalBucket universal_bucket;
+	public static UniversalBucket universal_bucket; // TODO: remove?
 
 	
 	public static Item adamantine_axe;
@@ -577,7 +580,10 @@ public abstract class Items {
 		zinc_nugget = create_nugget(Materials.zinc);
 		zinc_powder = create_powder(Materials.zinc);
 
-		
+		universal_bucket = (UniversalBucket)registerItem(new UniversalBucket(),"bucket", null);
+		universal_bucket.setUnlocalizedName("bucket");
+		MinecraftForge.EVENT_BUS.register(universal_bucket);
+
 		for(Item i : itemRegistry.keySet()){
 			allItems.put(itemRegistry.get(i), i);
 			if(i instanceof IOreDictionaryEntry){OreDictionary.registerOre(((IOreDictionaryEntry)i).getOreDictionaryName(), i);}
@@ -604,9 +610,6 @@ public abstract class Items {
 		classSortingValues.put(ItemMetalSword.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalArmor.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalDoor.class, classSortingValues.get(BlockMetalDoor.class));
-
-
-		universal_bucket = (UniversalBucket)registerItem(new UniversalBucket(),"bucket", null);
 
 		List<MetalMaterial> metlist = new ArrayList<>(Materials.getAllMetals().size());
 		metlist.addAll(Materials.getAllMetals());
@@ -838,5 +841,15 @@ public abstract class Items {
 			.register(i, 0, 
 				new ModelResourceLocation(BaseMetals.MODID+":"+itemRegistry.get(i), "inventory"));
 		}
+
+		// colorize universal bucket
+		Minecraft.getMinecraft().getItemColors().registerItemColorHandler(new IItemColor() {
+			@Override
+			public int getColorFromItemstack(ItemStack stack, int tintIndex) {
+				FluidStack fs = ((UniversalBucket) stack.getItem()).getFluid(stack);
+				if(fs == null) return -1;
+				return tintIndex > 0?-1:fs.getFluid().getColor(fs);
+			}
+		},universal_bucket);
 	}
 }

@@ -433,4 +433,4 @@ item.basemetals.diamond_crackhammer.name=Diamantbruchhammer
 item.basemetals.wood_crackhammer.name=Holzbruchhammer
 item.basemetals.stone_crackhammer.name=Steinbruchhammer
 
-item.basemetals.bucket_mercury.name=Quecksilbereimer
+item.bucket.mercury=Quecksilbereimer

@@ -1,8 +1,8 @@
 package cyano.basemetals.material;
 
-import java.util.Locale;
-
 import cyano.basemetals.BaseMetals;
+
+import java.util.Locale;
 
 public class MetalMaterial {
 
@@ -171,7 +171,7 @@ public class MetalMaterial {
 	 * take.
 	 */
 	public int getArmorMaxDamageFactor(){
-		return (int)(2.5f * strength);
+		return (int)(2.0f * strength);
 	}
 	
 	private int[] cache =  null;
@@ -185,10 +185,10 @@ public class MetalMaterial {
 		if(cache == null){
 			float base = 0.75f * hardness;
 			cache = new int[4];
-			cache[0] = (int)(base / 2.5f);// head
-			cache[1] = (int)(base);// torso
-			cache[2] = (int)(0.75f * base);// legs
-			cache[3] = (int)(base / 2.6f);// feet
+			cache[3] = Math.round(0.4f * base);// head
+			cache[2] = Math.round(1.0f * base);// torso
+			cache[1] = Math.round(0.75f * base);// legs
+			cache[0] = Math.round(0.3f * base);// feet
 		}
 		return cache;
 	}

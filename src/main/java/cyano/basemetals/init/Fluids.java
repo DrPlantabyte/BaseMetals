@@ -28,7 +28,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class Fluids{
-	
+
+	static{
+		FluidRegistry.enableUniversalBucket();
+	}
+
 	public static Fluid fluidMercury = null;
 	public static BlockFluidBase fluidBlockMercury = null;
 
@@ -96,6 +100,7 @@ public abstract class Fluids{
 		block.setUnlocalizedName(BaseMetals.MODID+"."+name);
 		GameRegistry.registerBlock(block, name);
 		block.setCreativeTab(CreativeTabs.tabMisc);
+		FluidRegistry.addBucketForFluid(f);
 		fluidBlocks.put(f, block);
 		fluidBlockNames.put(block, name);
 		return block;
