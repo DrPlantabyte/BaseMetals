@@ -1,15 +1,13 @@
 package cyano.basemetals.events;
 
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
 import cyano.basemetals.entities.EntityBetterVillager;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
-import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Replaces villagers with better villagers
@@ -45,14 +43,14 @@ public class VillagerReplacer {
 	@SubscribeEvent(priority=EventPriority.LOW)
 	public void onEntitySpawn(net.minecraftforge.event.entity.EntityJoinWorldEvent event) {
 		if(event.isCanceled())return;
-		if(event.entity.getClass().equals(EntityVillager.class)) {
+		if(event.getEntity().getClass().equals(EntityVillager.class)) {
 			NBTTagCompound data = new NBTTagCompound();
-			event.entity.writeToNBT(data);
-			int prof = ((EntityVillager)event.entity).getProfession();
-			EntityBetterVillager better = new EntityBetterVillager(event.entity.getEntityWorld());
+			event.getEntity().writeToNBT(data);
+			int prof = ((EntityVillager)event.getEntity()).getProfession();
+			EntityBetterVillager better = new EntityBetterVillager(event.getEntity().getEntityWorld());
 			better.readFromNBT(data);
-			event.entity.getEntityWorld().spawnEntityInWorld(better);
-			event.entity.setDead();
+			event.getEntity().getEntityWorld().spawnEntityInWorld(better);
+			event.getEntity().setDead();
 			event.setCanceled(true);
 		}
 	}

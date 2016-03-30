@@ -201,7 +201,7 @@ public abstract class Recipes {
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.aquarium_blend,3), "dustCopper","dustCopper","dustZinc", Items.prismarine_crystals, Items.prismarine_crystals, Items.prismarine_crystals));
 
 		ItemStack bucketMercury = new ItemStack(cyano.basemetals.init.Items.universal_bucket,1,0);
-		cyano.basemetals.init.Items.universal_bucket.fill(bucketMercury, new FluidStack(Fluids.fluidMercury,cyano.basemetals.init.Items.universal_bucket.capacity),true );
+		cyano.basemetals.init.Items.universal_bucket.fill(bucketMercury, new FluidStack(Fluids.fluidMercury,cyano.basemetals.init.Items.universal_bucket.getCapacity()),true );
 		GameRegistry.addRecipe(new ShapelessOreRecipe(bucketMercury, Items.bucket,"ingotMercury","ingotMercury","ingotMercury","ingotMercury","ingotMercury","ingotMercury","ingotMercury","ingotMercury"));
 		
 		// potions
