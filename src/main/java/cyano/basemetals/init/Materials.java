@@ -1,19 +1,17 @@
 package cyano.basemetals.init;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-
-import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.item.ItemArmor.ArmorMaterial;
-import net.minecraftforge.common.util.EnumHelper;
-import net.minecraftforge.fml.common.FMLLog;
-import cyano.basemetals.BaseMetals;
 import cyano.basemetals.material.AdamantineMaterial;
 import cyano.basemetals.material.LeadMaterial;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.material.StarSteelMaterial;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.common.FMLLog;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class initializes all of the metal materials in Base Metals. It also 
@@ -71,7 +69,7 @@ public abstract class Materials {
 		nickel = addMaterial("nickel", 4, 4, 7,0.1);
 		zinc = addMaterial("zinc", 1, 1, 1,0.3);
 		bronze = addMaterial("bronze", 8, 4, 4.5,0.3);
-		brass = addMaterial("brass", 3.5, 3, 5,0.3);
+		brass = addMaterial("brass", 3.5, 3, 9,0.3);
 		steel = addMaterial("steel", 8, 15, 2,0.3);
 		invar = addMaterial("invar", 9, 10, 3,0.1);
 		electrum = addMaterial("electrum", 5, 4, 10,0.1);
@@ -81,7 +79,7 @@ public abstract class Materials {
 		registerMaterial(adamantine.getName(), adamantine);
 		starsteel = new StarSteelMaterial("starsteel", 10, 25, 12,0.01f);
 		registerMaterial(starsteel.getName(), starsteel);
-		aquarium = addMaterial("aquarium", 4, 10, 10,0.05);
+		aquarium = addMaterial("aquarium", 4, 10, 15,0.05);
 		
 		
 		initDone = true;

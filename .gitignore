@@ -1,8 +1,6 @@
 /README.txt
 /.classpath
 /forge-*-changelog.txt
-/gradlew
-/gradlew.bat
 /bin/*
 /.gradle/*
 /eclipse/.metadata/.plugins/org.eclipse.core.resources/.history/*
@@ -13,6 +11,10 @@
 *~
 /temp/*
 /build/*
+/classes/*
+/.idea/*
 temp/*
 /run/*
 
+/bin/
+/extra/MinecraftModUtils/nbproject/private/

@@ -26,9 +26,9 @@ allprojects {
     targetCompatibility = 1.8
 }
 
-version = "1.7.3"
+version = "1.8.0"
 group= "cyano.basemetals"
-archivesBaseName = "BaseMetals"
+archivesBaseName = "BaseMetals_1.8.9"
 
 minecraft {
     version = "1.8.9-11.15.0.1705"
