@@ -60,7 +60,8 @@ public abstract class Materials {
 		vanilla_iron = addMaterial("iron",8,8,4.5,0.3);
 		vanilla_gold = addMaterial("gold",1,1,10,0.1);
 		vanilla_diamond = addMaterial("diamond",10,15,4,0);
-		
+
+		// TODO: rebalance metals (make it so none of them are completely worthless)
 		// mod metals
 		copper = addMaterial("copper",4,4,5,0.5);
 		silver = addMaterial("silver", 5, 4, 6,0.1);

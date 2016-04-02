@@ -75,7 +75,7 @@ public abstract class Items {
 		return Collections.unmodifiableMap(itemsByMetal);
 	}
 
-	public static UniversalBucket universal_bucket; // TODO: remove?
+	public static UniversalBucket universal_bucket;
 
 	
 	public static Item adamantine_axe;

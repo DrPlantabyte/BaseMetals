@@ -1,34 +1,26 @@
 package cyano.basemetals;
 
-import cyano.basemetals.client.ProxyFunctions;
 import cyano.basemetals.data.AdditionalLootTables;
 import cyano.basemetals.data.DataConstants;
-import cyano.basemetals.entities.EntityBetterVillager;
 import cyano.basemetals.events.VanillaOreGenDisabler;
-import cyano.basemetals.events.VillagerReplacer;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.ConfigCategory;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
-import net.minecraftforge.fluids.UniversalBucket;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.GameData;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
 import org.apache.logging.log4j.Level;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
@@ -60,7 +52,7 @@ public class BaseMetals
 	public static final String NAME ="Base Metals";
 	/** Version number, in Major.Minor.Build format. The minor number is increased whenever a change 
 	 * is made that has the potential to break compatibility with other mods that depend on this one. */
-	public static final String VERSION = "2.0.3";
+	public static final String VERSION = "2.1.0";
 	
 	/** All ore-spawn files discovered in the ore-spawn folder */
 	public static final List<Path> oreSpawnConfigFiles = new LinkedList<>();
@@ -86,8 +78,6 @@ public class BaseMetals
 	public static Path oreSpawnFolder = null;
 	/** if true, then this mod will scan the Ore Dictionary for obvious hammer recipes from other mods */
 	public static boolean autoDetectRecipes = true;
-	/** Activates better villagers and adds villager recipes */
-	public static boolean enableBetterVillagers = false; // TODO: replace better villagers with black magic
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -126,9 +116,6 @@ public class BaseMetals
 				"If true, then Base Metals will scan the Ore Dictionary to automatically add a \n"
 			+	"Crack Hammer recipe for every material that has an ore, dust, and ingot.");
 
-		enableBetterVillagers = config.getBoolean("enable_custom_villagers", "options", enableBetterVillagers, 
-				"If true, then villagers will be replaced with clones that have a better trading API.\n"
-				+ "If false, then no villager trades will be added");
 		
 		ConfigCategory userRecipeCat = config.getCategory("hammer recipes");
 		userRecipeCat.setComment(
@@ -176,15 +163,17 @@ public class BaseMetals
 			}
 		}
 
+		config.save();
+
 		cyano.basemetals.init.Fluids.init();
 		cyano.basemetals.init.Materials.init();
 		cyano.basemetals.init.ItemGroups.init();
 		cyano.basemetals.init.Blocks.init();
 		cyano.basemetals.init.Items.init();
+		cyano.basemetals.init.VillagerTrades.init();
 		
 		
 
-		config.save();
 
 		Path ALTPath = Paths.get(event.getSuggestedConfigurationFile().getParent(),"additional-loot-tables");
 		Path myLootFolder = ALTPath.resolve(MODID);
@@ -228,9 +217,7 @@ public class BaseMetals
 	private void clientPreInit(FMLPreInitializationEvent event){
 		// client-only code
 		cyano.basemetals.init.Fluids.bakeModels(MODID);
-		
-		net.minecraftforge.fml.client.registry.RenderingRegistry.registerEntityRenderingHandler(
-				EntityBetterVillager.class, ProxyFunctions.entityVillagerRenderer());
+
 	}
 	@SideOnly(Side.SERVER)
 	private void serverPreInit(FMLPreInitializationEvent event){
@@ -240,32 +227,24 @@ public class BaseMetals
 	@EventHandler
 	public void init(FMLInitializationEvent event)
 	{
-		FMLLog.info("%s: %s instanceof %s",MODID,Items.bucket.getUnlocalizedName(),Items.bucket.getClass().getName()); // TODO: remove
-		Iterator<net.minecraft.item.Item> iter = GameData.getItemRegistry().iterator();
-		while(iter.hasNext()){
-			Item i = iter.next();
-			if(i instanceof UniversalBucket){
-				FMLLog.info("%s: %s instanceof %s",MODID,i.getUnlocalizedName(),UniversalBucket.class.getName()); // TODO: remove
-			}
+
+
+		try {
+			Files.walk(oreSpawnFolder) // doing it the Java8 way
+					.filter((Path p)->Files.isRegularFile(p))
+					.filter((Path p)->p.getFileName().toString().toLowerCase(Locale.US).endsWith(".json"))
+					.forEach(oreSpawnConfigFiles::add);
+		} catch (IOException ioe) {
+			FMLLog.log(Level.ERROR,ioe,"Error while searching for orespawn files");
 		}
 
-		File[] files = oreSpawnFolder.toFile().listFiles(); // sigh, java 8 does this so much better
-		for(File f : files){
-			if(f.getName().toLowerCase().endsWith(".json")){
-				oreSpawnConfigFiles.add(f.toPath());
-			}
-		}
-		
-		cyano.basemetals.init.Fluids.init();
 		cyano.basemetals.init.Recipes.init();
 		cyano.basemetals.init.DungeonLoot.init();
 		cyano.basemetals.init.Entities.init();
-		if(enableBetterVillagers) cyano.basemetals.init.VillagerTrades.init();
 		
 		cyano.basemetals.init.Achievements.init();
 		
 
-		if(enableBetterVillagers) MinecraftForge.EVENT_BUS.register(VillagerReplacer.getInstance());
 		
 		if(disableVanillaOreGen){
 			MinecraftForge.ORE_GEN_BUS.register(VanillaOreGenDisabler.getInstance());
@@ -285,9 +264,6 @@ public class BaseMetals
 		// client-only code
 		cyano.basemetals.init.Items.registerItemRenders(event);
 		cyano.basemetals.init.Blocks.registerItemRenders(event);
-		net.minecraftforge.fml.client.registry.RenderingRegistry.registerEntityRenderingHandler(
-				EntityBetterVillager.class, new net.minecraft.client.renderer.entity.RenderVillager(
-						net.minecraft.client.Minecraft.getMinecraft().getRenderManager()));
 	}
 	@SideOnly(Side.SERVER)
 	private void serverInit(FMLInitializationEvent event){
@@ -432,6 +408,7 @@ public class BaseMetals
 			return null;
 		}
 	}
+
 
 
 

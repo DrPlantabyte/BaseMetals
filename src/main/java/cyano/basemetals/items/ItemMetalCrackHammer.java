@@ -107,7 +107,7 @@ public class ItemMetalCrackHammer extends ItemTool implements IMetalObject {
 								Block b = ((ItemBlock)targetItem.getItem()).getBlock();
 								if(!this.canHarvestBlock(b.getStateFromMeta(targetItem.getMetadata()))){
 									// cannot harvest the block, no crush for you!
-									return EnumActionResult.FAIL;
+									return EnumActionResult.PASS;
 								}
 							}
 						}
