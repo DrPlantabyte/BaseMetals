@@ -183,7 +183,7 @@ public class MetalMaterial {
 	 */
 	public int[] getDamageReductionArray(){
 		if(cache == null){
-			float base = 0.75f * hardness;
+			float base = 0.5f * hardness + 2.5f;
 			cache = new int[4];
 			cache[3] = Math.round(0.4f * base);// head
 			cache[2] = Math.round(1.0f * base);// torso

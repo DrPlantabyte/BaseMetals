@@ -76,7 +76,7 @@ public abstract class Items {
 	}
 
 	public static UniversalBucket universal_bucket;
-
+	// TODO: metal arrows or crossbow & bolts
 	
 	public static Item adamantine_axe;
 	public static Item adamantine_boots;

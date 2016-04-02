@@ -71,7 +71,7 @@ public abstract class Materials {
 		nickel = addMaterial("nickel", 4, 4, 7,0.1);
 		zinc = addMaterial("zinc", 1, 1, 1,0.3);
 		bronze = addMaterial("bronze", 8, 4, 4.5,0.3);
-		brass = addMaterial("brass", 3.5, 3, 5,0.3);
+		brass = addMaterial("brass", 3.5, 3, 9,0.3);
 		steel = addMaterial("steel", 8, 15, 2,0.3);
 		invar = addMaterial("invar", 9, 10, 3,0.1);
 		electrum = addMaterial("electrum", 5, 4, 10,0.1);
@@ -81,7 +81,7 @@ public abstract class Materials {
 		registerMaterial(adamantine.getName(), adamantine);
 		starsteel = new StarSteelMaterial("starsteel", 10, 25, 12,0.01f);
 		registerMaterial(starsteel.getName(), starsteel);
-		aquarium = addMaterial("aquarium", 4, 10, 10,0.05);
+		aquarium = addMaterial("aquarium", 4, 10, 15,0.05);
 		
 		
 		initDone = true;
