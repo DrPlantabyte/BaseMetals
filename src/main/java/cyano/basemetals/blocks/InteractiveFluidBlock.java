@@ -1,9 +1,11 @@
 package cyano.basemetals.blocks;
 
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -84,5 +86,42 @@ public class InteractiveFluidBlock extends BlockFluidClassic{
 	{
 		if(isFlammable) return 30;
 		return 0;
+	}
+
+	// TODO: remove the block overrides and see if fluids are working correctly yet
+	@Override // Block override
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+		return FULL_BLOCK_AABB;
+	}
+
+	@Override // Block override
+	public AxisAlignedBB getSelectedBoundingBox(IBlockState blockState, World worldIn, BlockPos pos) {
+		return NULL_AABB;
+	}
+
+	@Override // Block override
+	public boolean isPassable(IBlockAccess worldIn, BlockPos pos) {
+		return this.blockMaterial != Material.lava;
+	}
+
+	@Override // Block override
+	public boolean isFullCube(IBlockState state) {
+		return false;
+	}
+
+	@Override // Block override
+	public boolean isOpaqueCube(IBlockState state) {
+		return false;
+	}
+
+	@Override // Block override
+	public boolean canCollideCheck(IBlockState state, boolean hitIfLiquid) {
+		return hitIfLiquid && ((Integer)state.getValue(LEVEL)).intValue() == 0;
+	}
+
+	@Override // Block override
+	public boolean isBlockSolid(IBlockAccess worldIn, BlockPos pos, EnumFacing side) {
+		Material material = worldIn.getBlockState(pos).getMaterial();
+		return material == this.blockMaterial?false:(side == EnumFacing.UP?true:(material == Material.ice?false:super.isBlockSolid(worldIn, pos, side)));
 	}
 }

@@ -47,7 +47,7 @@ public abstract class Fluids{
 
 		
 		// fluids
-		fluidMercury = newFluid(BaseMetals.MODID, "mercury",13594,2000,300,0, 0xFFC0C0C0);
+		fluidMercury = newFluid(BaseMetals.MODID, "mercury",13594,2000,300,0, 0xFFD8D8D8);
 		
 		// fluid blocks
 		fluidBlockMercury = registerFluidBlock(fluidMercury, new InteractiveFluidBlock(

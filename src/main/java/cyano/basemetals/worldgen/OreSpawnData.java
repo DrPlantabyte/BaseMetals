@@ -1,19 +1,13 @@
 package cyano.basemetals.worldgen;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
-
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-
 import net.minecraft.block.Block;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.registry.GameData;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+
+import java.util.*;
 
 public class OreSpawnData {
 	public final float frequency;
@@ -55,8 +49,9 @@ public class OreSpawnData {
 			name = blockName;
 		}
 		//this.ore = GameRegistry.findBlock(modId, name); // sadly, this doesn't work because the GameData now store the block key as a ResourceLocation instead of a String
-		this.ore = GameData.getBlockRegistry().getObject(new ResourceLocation(blockName));
-		if(ore == null){
+		//this.ore = GameData.getBlockRegistry().getObject(new ResourceLocation(blockName));
+		ResourceLocation blockKey = new ResourceLocation(blockName);
+		if(!Block.blockRegistry.containsKey(blockKey)){
 			FMLLog.severe("Failed to find ore block "+modId+":"+name);
 			if(doOnce){
 				StringBuilder sb = new StringBuilder("Valid block IDs:\n");
@@ -68,6 +63,7 @@ public class OreSpawnData {
 				doOnce = false;
 			}
 		}
+		this.ore = (Block)Block.blockRegistry.getObject(blockKey);
 		this.metaData = get("blockMeta",0,jsonEntry);
 		this.spawnQuantity = (int)get("size",8.0f,jsonEntry);
 		this.frequency = get("frequency",20.0f,jsonEntry);

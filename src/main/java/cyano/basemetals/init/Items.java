@@ -584,6 +584,7 @@ public abstract class Items {
 		universal_bucket.setUnlocalizedName("bucket");
 		MinecraftForge.EVENT_BUS.register(universal_bucket);
 
+
 		for(Item i : itemRegistry.keySet()){
 			allItems.put(itemRegistry.get(i), i);
 			if(i instanceof IOreDictionaryEntry){OreDictionary.registerOre(((IOreDictionaryEntry)i).getOreDictionaryName(), i);}
