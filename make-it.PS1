@@ -33,7 +33,7 @@ rm -Recurse $PROJECT_FOLDER/build/dev/extract/assets/*
 rmdir "$PROJECT_FOLDER/build/dev/extract/assets"
 rm "$PROJECT_FOLDER/build/dev/$myfile"
 $myAPIfile=$myFile -replace "-","-API-"
-& $env:JAVA_HOME\bin\jar.exe cf "$PROJECT_FOLDER/build/dev/$myAPIfile"  -C "$PROJECT_FOLDER/build/dev/extract" .
+& $env:JAVA_HOME\bin\jar.exe c0f "$PROJECT_FOLDER/build/dev/$myAPIfile"  -C "$PROJECT_FOLDER/build/dev/extract" .
 rm -Recurse $PROJECT_FOLDER/build/dev/extract
 
 # copy final files to dist folder
