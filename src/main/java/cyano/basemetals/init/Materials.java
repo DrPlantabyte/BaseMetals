@@ -43,6 +43,9 @@ public abstract class Materials {
 	public static MetalMaterial starsteel;
 	public static MetalMaterial zinc;
 	public static MetalMaterial aquarium;
+	public static MetalMaterial cupronickel;
+	public static MetalMaterial platinum;
+
 	// vanilla imports
 	public static MetalMaterial vanilla_wood;
 	public static MetalMaterial vanilla_stone;
@@ -83,6 +86,8 @@ public abstract class Materials {
 		registerMaterial(starsteel.getName(), starsteel);
 		aquarium = addMaterial("aquarium", 4, 10, 15,0.05);
 		
+		cupronickel = addMaterial("cupronickel", 8, 8, 4.5,0.3);
+		platinum = addMaterial("platinum", 8, 8, 4.5,0.3);
 		
 		initDone = true;
 	}

@@ -521,6 +521,20 @@ public abstract class Items {
 		lead_powder = create_powder(Materials.lead);
 		lead_shovel = create_shovel(Materials.lead);
 		lead_sword = create_sword(Materials.lead);
+		platinum_axe = create_axe(Materials.platinum);
+		platinum_boots = create_boots(Materials.platinum);
+		platinum_chestplate = create_chestplate(Materials.platinum);
+		platinum_crackhammer = create_crackhammer(Materials.platinum);
+		platinum_door = create_door(Materials.platinum, Blocks.platinum_door);
+		platinum_helmet = create_helmet(Materials.platinum);
+		platinum_hoe = create_hoe(Materials.platinum);
+		platinum_ingot = create_ingot(Materials.platinum);
+		platinum_leggings = create_leggings(Materials.platinum);
+		platinum_nugget = create_nugget(Materials.platinum);
+		platinum_pickaxe = create_pickaxe(Materials.platinum);
+		platinum_powder = create_powder(Materials.platinum);
+		platinum_shovel = create_shovel(Materials.platinum);
+		platinum_sword = create_sword(Materials.platinum);
 		stone_crackhammer = create_crackhammer(Materials.vanilla_stone);
 		wood_crackhammer = create_crackhammer(Materials.vanilla_wood);
 		
