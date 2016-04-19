@@ -86,8 +86,8 @@ public abstract class Materials {
 		registerMaterial(starsteel.getName(), starsteel);
 		aquarium = addMaterial("aquarium", 4, 10, 15,0.05);
 		
-		cupronickel = addMaterial("cupronickel", 8, 8, 4.5,0.3);
-		platinum = addMaterial("platinum", 8, 8, 4.5,0.3);
+		cupronickel = addMaterial("cupronickel", 6, 6, 6,0.2);
+		platinum = addMaterial("platinum", 3, 5, 12,0.01);
 		
 		initDone = true;
 	}

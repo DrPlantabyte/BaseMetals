@@ -1,29 +1,22 @@
 package cyano.basemetals.init;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import cyano.basemetals.BaseMetals;
+import cyano.basemetals.blocks.*;
+import cyano.basemetals.material.MetalMaterial;
+import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.BlockOre;
-import net.minecraft.block.SoundType;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
-import cyano.basemetals.BaseMetals;
-import cyano.basemetals.blocks.BlockMetalBars;
-import cyano.basemetals.blocks.BlockMetalBlock;
-import cyano.basemetals.blocks.BlockMetalDoor;
-import cyano.basemetals.blocks.BlockMetalOre;
-import cyano.basemetals.blocks.BlockMetalPlate;
-import cyano.basemetals.blocks.BlockMetalTrapDoor;
-import cyano.basemetals.material.MetalMaterial;
-import cyano.basemetals.registry.IOreDictionaryEntry;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This classes initializes all blocks in Base Metals and provides some utility 
@@ -166,6 +159,10 @@ public abstract class Blocks {
 
 	public static Block iron_plate;
 	public static Block gold_plate;
+
+
+
+	public static Block human_detector;
 	
 	
 	private static boolean initDone = false;
@@ -304,6 +301,8 @@ public abstract class Blocks {
 		
 		iron_plate = createPlate(Materials.vanilla_iron);
 		gold_plate = createPlate(Materials.vanilla_gold);
+
+		human_detector = addBlock(new BlockHumanDetector(),"human_detector");
 		
 		// final block settings
 		for(Block b : allBlocks.values()){
@@ -313,7 +312,14 @@ public abstract class Blocks {
 		
 		initDone = true;
 	}
-	
+
+	private static Block addBlock(Block block, String name){
+		block.setUnlocalizedName(BaseMetals.MODID+"."+ name);
+		GameRegistry.registerBlock(block, name);
+		allBlocks.put(name, block);
+		return block;
+	}
+
 	private static Block createPlate(MetalMaterial metal) {
 		Block block = new BlockMetalPlate(metal);
 		block.setUnlocalizedName(BaseMetals.MODID+"."+metal.getName()+"_plate");

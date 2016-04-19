@@ -122,6 +122,8 @@ public abstract class Recipes {
 			Item powder = cyano.basemetals.init.Items.getItemByName(baseName+"powder");
 			Item shovel = cyano.basemetals.init.Items.getItemByName(baseName+"shovel");
 			Item sword = cyano.basemetals.init.Items.getItemByName(baseName+"sword");
+			Item rod = cyano.basemetals.init.Items.getItemByName(baseName+"rod");
+			Item gear = cyano.basemetals.init.Items.getItemByName(baseName+"gear");
 			Block bars = cyano.basemetals.init.Blocks.getBlockByName(baseName+"bars");
 			Block block = cyano.basemetals.init.Blocks.getBlockByName(baseName+"block");
 			Block plate = cyano.basemetals.init.Blocks.getBlockByName(baseName+"plate");
@@ -163,6 +165,15 @@ public abstract class Recipes {
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bars,16), "xxx","xxx",'x',"ingot"+oreDictName));
 				OreDictionary.registerOre("bars", bars);
 			}
+			if(ingot != null && rod != null){
+				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(rod,4), "x","x",'x',"ingot"+oreDictName));
+			}
+			if(rod != null && bars != null){
+				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bars,4), "xxx",'x',"rod"+oreDictName));
+			}
+			if(rod != null && ingot != null && gear != null){
+				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(gear,4), " x ","x/x"," x ",'x',"ingot"+oreDictName,'/',"rod"+oreDictName));
+			}
 			if(ingot != null && door != null){
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(door,3), "xx","xx","xx",'x',"ingot"+oreDictName));
 				OreDictionary.registerOre("door", door);
@@ -196,6 +207,7 @@ public abstract class Recipes {
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.steel_blend,8), "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustCarbon"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.steel_blend,8), "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustIron", "dustCoal"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.invar_blend,3), "dustIron","dustIron","dustNickel"));
+		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.cupronickel_blend,3), "dustCopper","dustCopper","dustNickel"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.electrum_blend,2), "dustSilver","dustGold"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.mithril_blend,3), "dustSilver","dustSilver","dustColdiron","ingotMercury"));
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(cyano.basemetals.init.Items.aquarium_blend,3), "dustCopper","dustCopper","dustZinc", Items.prismarine_crystals, Items.prismarine_crystals, Items.prismarine_crystals));
@@ -224,6 +236,10 @@ public abstract class Recipes {
 		CrusherRecipeRegistry.addNewCrusherRecipe("oreMercury",new ItemStack(cyano.basemetals.init.Items.mercury_powder,2));
 		GameRegistry.addSmelting(cyano.basemetals.init.Items.mercury_powder, new ItemStack(cyano.basemetals.init.Items.mercury_ingot,1), 0);
 		GameRegistry.addSmelting(cyano.basemetals.init.Blocks.mercury_ore, new ItemStack(cyano.basemetals.init.Items.mercury_ingot,1), 1);
+
+		// new recipes using rods and gears
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Blocks.lever,1), "x","y",'x',"rod",'y', "cobblestone"));
+		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(cyano.basemetals.init.Blocks.human_detector,1), "xx","yy",'x',"ingotBrick",'y', "gear"));
 		
 	}
 

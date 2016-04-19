@@ -740,6 +740,34 @@ public abstract class Items {
 		i.setCreativeTab(ItemGroups.tab_items);
 		return i;
 	}
+
+
+	private static Item create_rod(MetalMaterial m){
+		String n = "rod";
+		Item i = new Item();
+		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
+		String regName = m.getName()+"_"+n;
+		registerItem(i, regName, m);
+		i.setCreativeTab(ItemGroups.tab_items);
+		OreDictionary.registerOre("stick"+m.getCapitalizedName(),i);
+		OreDictionary.registerOre("rod"+m.getCapitalizedName(),i);
+		OreDictionary.registerOre("rod",i);
+		return i;
+	}
+
+
+	private static Item create_gear(MetalMaterial m){
+		String n = "gear";
+		Item i = new Item();
+		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
+		String regName = m.getName()+"_"+n;
+		registerItem(i, regName, m);
+		i.setCreativeTab(ItemGroups.tab_items);
+		OreDictionary.registerOre("gear"+m.getCapitalizedName(),i);
+		OreDictionary.registerOre("gear",i);
+		if(m.hardness >= 7.0F)OreDictionary.registerOre("sprocket",i);
+		return i;
+	}
 	
 	private static Item create_axe(MetalMaterial m){
 		String n = "axe";
