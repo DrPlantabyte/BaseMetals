@@ -168,6 +168,9 @@ public abstract class Recipes {
 			if(ingot != null && rod != null){
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(rod,4), "x","x",'x',"ingot"+oreDictName));
 			}
+			if(nugget != null && rod != null){
+				GameRegistry.addSmelting(rod, new ItemStack(nugget,4), 0);
+			}
 			if(rod != null && bars != null){
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(bars,4), "xxx",'x',"rod"+oreDictName));
 			}
