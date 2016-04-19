@@ -84,6 +84,12 @@ public abstract class Blocks {
 	public static Block copper_ore;
 	public static Block copper_trapdoor;
 	
+	public static Block cupronickel_bars;
+	public static Block cupronickel_block;
+	public static Block cupronickel_plate;
+	public static BlockDoor cupronickel_door;
+	public static Block cupronickel_trapdoor;
+	
 	public static Block electrum_bars;
 	public static Block electrum_block;
 	public static Block electrum_plate;
@@ -117,6 +123,13 @@ public abstract class Blocks {
 	public static BlockDoor nickel_door;
 	public static Block nickel_ore;
 	public static Block nickel_trapdoor;
+	
+	public static Block platinum_bars;
+	public static Block platinum_block;
+	public static Block platinum_plate;
+	public static BlockDoor platinum_door;
+	public static Block platinum_ore;
+	public static Block platinum_trapdoor;
 	
 	public static Block silver_bars;
 	public static Block silver_block;
@@ -202,6 +215,12 @@ public abstract class Blocks {
 		copper_door = createDoor(Materials.copper);
 		copper_trapdoor = createTrapDoor(Materials.copper);
 
+		cupronickel_block = createBlock(Materials.cupronickel);
+		cupronickel_plate = createPlate(Materials.cupronickel);
+		cupronickel_bars = createBars(Materials.cupronickel);
+		cupronickel_door = createDoor(Materials.cupronickel);
+		cupronickel_trapdoor = createTrapDoor(Materials.cupronickel);
+
 		electrum_block = createBlock(Materials.electrum);
 		electrum_plate = createPlate(Materials.electrum);
 		electrum_bars = createBars(Materials.electrum);
@@ -238,6 +257,13 @@ public abstract class Blocks {
 		nickel_bars = createBars(Materials.nickel);
 		nickel_door = createDoor(Materials.nickel);
 		nickel_trapdoor = createTrapDoor(Materials.nickel);
+
+		platinum_block = createBlock(Materials.platinum);
+		platinum_plate = createPlate(Materials.platinum);
+		platinum_ore = createOre(Materials.platinum);
+		platinum_bars = createBars(Materials.platinum);
+		platinum_door = createDoor(Materials.platinum);
+		platinum_trapdoor = createTrapDoor(Materials.platinum);
 
 		silver_block = createBlock(Materials.silver);
 		silver_plate = createPlate(Materials.silver);
