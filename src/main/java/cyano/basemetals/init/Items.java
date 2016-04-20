@@ -210,6 +210,7 @@ public abstract class Items {
 	public static Item electrum_sword;
 	public static Item electrum_rod;
 	public static Item gold_powder;
+	public static Item gold_rod;
 	public static Item invar_axe;
 	public static Item invar_blend;
 	public static Item invar_boots;
@@ -230,6 +231,8 @@ public abstract class Items {
 	public static Item iron_crackhammer;
 	public static Item iron_nugget;
 	public static Item iron_powder;
+	public static Item iron_rod;
+	public static Item iron_gear;
 	public static Item lead_axe;
 	public static Item lead_boots;
 	public static Item lead_chestplate;
@@ -403,6 +406,8 @@ public abstract class Items {
 		adamantine_powder = create_powder(Materials.adamantine);
 		adamantine_shovel = create_shovel(Materials.adamantine);
 		adamantine_sword = create_sword(Materials.adamantine);
+		adamantine_rod = create_rod(Materials.adamantine);
+		adamantine_gear = create_gear(Materials.adamantine);
 		aquarium_axe = create_axe(Materials.aquarium);
 		aquarium_blend = create_blend(Materials.aquarium);
 		aquarium_boots = create_boots(Materials.aquarium);
@@ -418,6 +423,7 @@ public abstract class Items {
 		aquarium_powder = create_powder(Materials.aquarium);
 		aquarium_shovel = create_shovel(Materials.aquarium);
 		aquarium_sword = create_sword(Materials.aquarium);
+		aquarium_rod = create_rod(Materials.aquarium);
 		brass_axe = create_axe(Materials.brass);
 		brass_blend = create_blend(Materials.brass);
 		brass_boots = create_boots(Materials.brass);
@@ -433,6 +439,7 @@ public abstract class Items {
 		brass_powder = create_powder(Materials.brass);
 		brass_shovel = create_shovel(Materials.brass);
 		brass_sword = create_sword(Materials.brass);
+		brass_rod = create_rod(Materials.brass);
 		bronze_axe = create_axe(Materials.bronze);
 		bronze_blend = create_blend(Materials.bronze);
 		bronze_boots = create_boots(Materials.bronze);
@@ -448,6 +455,8 @@ public abstract class Items {
 		bronze_powder = create_powder(Materials.bronze);
 		bronze_shovel = create_shovel(Materials.bronze);
 		bronze_sword = create_sword(Materials.bronze);
+		bronze_rod = create_rod(Materials.bronze);
+		bronze_gear = create_gear(Materials.bronze);
 		
 		carbon_powder = new Item().setUnlocalizedName(BaseMetals.MODID+"."+"carbon_powder").setCreativeTab(ItemGroups.tab_items);
 		GameRegistry.registerItem(carbon_powder,"carbon_powder");
@@ -469,6 +478,8 @@ public abstract class Items {
 		coldiron_powder = create_powder(Materials.coldiron);
 		coldiron_shovel = create_shovel(Materials.coldiron);
 		coldiron_sword = create_sword(Materials.coldiron);
+		coldiron_rod = create_rod(Materials.coldiron);
+		coldiron_gear = create_gear(Materials.coldiron);
 		copper_axe = create_axe(Materials.copper);
 		copper_boots = create_boots(Materials.copper);
 		copper_chestplate = create_chestplate(Materials.copper);
@@ -483,6 +494,7 @@ public abstract class Items {
 		copper_powder = create_powder(Materials.copper);
 		copper_shovel = create_shovel(Materials.copper);
 		copper_sword = create_sword(Materials.copper);
+		copper_rod = create_rod(Materials.copper);
 		cupronickel_axe = create_axe(Materials.cupronickel);
 		cupronickel_blend = create_blend(Materials.cupronickel);
 		cupronickel_boots = create_boots(Materials.cupronickel);
@@ -498,6 +510,8 @@ public abstract class Items {
 		cupronickel_powder = create_powder(Materials.cupronickel);
 		cupronickel_shovel = create_shovel(Materials.cupronickel);
 		cupronickel_sword = create_sword(Materials.cupronickel);
+		cupronickel_rod = create_rod(Materials.cupronickel);
+		cupronickel_gear = create_gear(Materials.cupronickel);
 		diamond_crackhammer = create_crackhammer(Materials.vanilla_diamond);
 		electrum_axe = create_axe(Materials.electrum);
 		electrum_blend = create_blend(Materials.electrum);
@@ -514,7 +528,9 @@ public abstract class Items {
 		electrum_powder = create_powder(Materials.electrum);
 		electrum_shovel = create_shovel(Materials.electrum);
 		electrum_sword = create_sword(Materials.electrum);
+		electrum_rod = create_rod(Materials.electrum);
 		gold_powder = create_powder(Materials.vanilla_gold);
+		gold_rod = create_rod(Materials.vanilla_gold);
 		invar_axe = create_axe(Materials.invar);
 		invar_blend = create_blend(Materials.invar);
 		invar_boots = create_boots(Materials.invar);
@@ -530,9 +546,13 @@ public abstract class Items {
 		invar_powder = create_powder(Materials.invar);
 		invar_shovel = create_shovel(Materials.invar);
 		invar_sword = create_sword(Materials.invar);
+		invar_rod = create_rod(Materials.invar);
+		invar_gear = create_gear(Materials.invar);
 		iron_crackhammer = create_crackhammer(Materials.vanilla_iron);
 		iron_nugget = create_nugget(Materials.vanilla_iron);
 		iron_powder = create_powder(Materials.vanilla_iron);
+		iron_rod = create_rod(Materials.vanilla_iron);
+		iron_gear = create_gear(Materials.vanilla_iron);
 		lead_axe = create_axe(Materials.lead);
 		lead_boots = create_boots(Materials.lead);
 		lead_chestplate = create_chestplate(Materials.lead);
@@ -547,6 +567,7 @@ public abstract class Items {
 		lead_powder = create_powder(Materials.lead);
 		lead_shovel = create_shovel(Materials.lead);
 		lead_sword = create_sword(Materials.lead);
+		lead_rod = create_rod(Materials.lead);
 		platinum_axe = create_axe(Materials.platinum);
 		platinum_boots = create_boots(Materials.platinum);
 		platinum_chestplate = create_chestplate(Materials.platinum);
@@ -561,6 +582,7 @@ public abstract class Items {
 		platinum_powder = create_powder(Materials.platinum);
 		platinum_shovel = create_shovel(Materials.platinum);
 		platinum_sword = create_sword(Materials.platinum);
+		platinum_rod = create_rod(Materials.platinum);
 		stone_crackhammer = create_crackhammer(Materials.vanilla_stone);
 		wood_crackhammer = create_crackhammer(Materials.vanilla_wood);
 		
@@ -589,6 +611,8 @@ public abstract class Items {
 		mithril_powder = create_powder(Materials.mithril);
 		mithril_shovel = create_shovel(Materials.mithril);
 		mithril_sword = create_sword(Materials.mithril);
+		mithril_rod = create_rod(Materials.mithril);
+		mithril_gear = create_gear(Materials.mithril);
 		nickel_axe = create_axe(Materials.nickel);
 		nickel_boots = create_boots(Materials.nickel);
 		nickel_chestplate = create_chestplate(Materials.nickel);
@@ -603,6 +627,7 @@ public abstract class Items {
 		nickel_powder = create_powder(Materials.nickel);
 		nickel_shovel = create_shovel(Materials.nickel);
 		nickel_sword = create_sword(Materials.nickel);
+		nickel_rod = create_rod(Materials.nickel);
 		silver_axe = create_axe(Materials.silver);
 		silver_boots = create_boots(Materials.silver);
 		silver_chestplate = create_chestplate(Materials.silver);
@@ -617,6 +642,7 @@ public abstract class Items {
 		silver_powder = create_powder(Materials.silver);
 		silver_shovel = create_shovel(Materials.silver);
 		silver_sword = create_sword(Materials.silver);
+		silver_rod = create_rod(Materials.silver);
 		starsteel_axe = create_axe(Materials.starsteel);
 		starsteel_boots = create_boots(Materials.starsteel);
 		starsteel_chestplate = create_chestplate(Materials.starsteel);
@@ -631,6 +657,8 @@ public abstract class Items {
 		starsteel_powder = create_powder(Materials.starsteel);
 		starsteel_shovel = create_shovel(Materials.starsteel);
 		starsteel_sword = create_sword(Materials.starsteel);
+		starsteel_rod = create_rod(Materials.starsteel);
+		starsteel_gear = create_gear(Materials.starsteel);
 		steel_axe = create_axe(Materials.steel);
 		steel_blend = create_blend(Materials.steel);
 		steel_boots = create_boots(Materials.steel);
@@ -646,6 +674,8 @@ public abstract class Items {
 		steel_powder = create_powder(Materials.steel);
 		steel_shovel = create_shovel(Materials.steel);
 		steel_sword = create_sword(Materials.steel);
+		steel_rod = create_rod(Materials.steel);
+		steel_gear = create_gear(Materials.steel);
 		tin_axe = create_axe(Materials.tin);
 		tin_boots = create_boots(Materials.tin);
 		tin_chestplate = create_chestplate(Materials.tin);
@@ -660,9 +690,11 @@ public abstract class Items {
 		tin_powder = create_powder(Materials.tin);
 		tin_shovel = create_shovel(Materials.tin);
 		tin_sword = create_sword(Materials.tin);
+		tin_rod = create_rod(Materials.tin);
 		zinc_ingot = create_ingot(Materials.zinc);
 		zinc_nugget = create_nugget(Materials.zinc);
 		zinc_powder = create_powder(Materials.zinc);
+		zinc_rod = create_rod(Materials.zinc);
 
 		universal_bucket = (UniversalBucket)registerItem(new UniversalBucket(),"bucket", null);
 		universal_bucket.setUnlocalizedName("bucket");
