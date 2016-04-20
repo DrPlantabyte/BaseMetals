@@ -25,8 +25,8 @@ public class BlockMetalBlock extends Block implements IOreDictionaryEntry, IMeta
 		this(metal,false);
 	}
 	public BlockMetalBlock(MetalMaterial metal, boolean glows) {
-		super(Material.iron);
-		this.stepSound = SoundType.METAL;
+		super(Material.IRON);
+		this.setSoundType(SoundType.METAL);
 		this.fullBlock = true;
 		this.lightOpacity = 255;
 		this.translucent = false;
@@ -34,14 +34,14 @@ public class BlockMetalBlock extends Block implements IOreDictionaryEntry, IMeta
 		this.blockHardness = metal.getMetalBlockHardness();
 		this.blockResistance = metal.getBlastResistance();
 		this.setHarvestLevel("pickaxe", metal.getRequiredHarvestLevel());
-		this.setCreativeTab(CreativeTabs.tabBlock);
+		this.setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 		if(glows) this.setLightLevel(0.5f);
 	}
 
 	///// OVERRIDE OF ALL METHODS THAT DEPEND ON BLOCK MATERIAL: /////
 	@Override
 	public MapColor getMapColor(final IBlockState p_getMapColor_1_) {
-        return MapColor.ironColor;
+        return MapColor.IRON;
     }
 	
 	@Override

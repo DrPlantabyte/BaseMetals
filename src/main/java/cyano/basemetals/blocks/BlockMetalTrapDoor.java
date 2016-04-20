@@ -18,11 +18,11 @@ public class BlockMetalTrapDoor extends net.minecraft.block.BlockTrapDoor implem
 
 	final MetalMaterial metal;
 	public BlockMetalTrapDoor(MetalMaterial metal) {
-		super(Material.iron);
+		super(Material.IRON);
 		this.metal = metal;
 		this.blockHardness = metal.getMetalBlockHardness();
 		this.blockResistance = metal.getBlastResistance();
-		this.stepSound = SoundType.METAL;
+		this.blockSoundType = SoundType.METAL;
 		this.setHarvestLevel("pickaxe", metal.getRequiredHarvestLevel());
 		this.disableStats();
 	}

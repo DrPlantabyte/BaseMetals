@@ -52,7 +52,7 @@ public abstract class Fluids{
 		// fluid blocks
 		fluidBlockMercury = registerFluidBlock(fluidMercury, new InteractiveFluidBlock(
 				fluidMercury, false, (World w, EntityLivingBase e)->{
-					if(w.rand.nextInt(32) == 0)e.addPotionEffect(new PotionEffect(Potion.potionRegistry.getObject(dizzyPotionKey),30*20,2));
+					if(w.rand.nextInt(32) == 0)e.addPotionEffect(new PotionEffect(Potion.REGISTRY.getObject(dizzyPotionKey),30*20,2));
 				}),"liquid_mercury");
 		
 		initDone = true;
@@ -99,7 +99,7 @@ public abstract class Fluids{
 	private static BlockFluidBase registerFluidBlock(Fluid f, BlockFluidBase block, String name) {
 		block.setUnlocalizedName(BaseMetals.MODID+"."+name);
 		GameRegistry.registerBlock(block, name);
-		block.setCreativeTab(CreativeTabs.tabMisc);
+		block.setCreativeTab(CreativeTabs.MISC);
 		FluidRegistry.addBucketForFluid(f);
 		fluidBlocks.put(f, block);
 		fluidBlockNames.put(block, name);

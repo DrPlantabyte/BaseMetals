@@ -51,7 +51,7 @@ public class OreSpawnData {
 		//this.ore = GameRegistry.findBlock(modId, name); // sadly, this doesn't work because the GameData now store the block key as a ResourceLocation instead of a String
 		//this.ore = GameData.getBlockRegistry().getObject(new ResourceLocation(blockName));
 		ResourceLocation blockKey = new ResourceLocation(blockName);
-		if(!Block.blockRegistry.containsKey(blockKey)){
+		if(!Block.REGISTRY.containsKey(blockKey)){
 			FMLLog.severe("Failed to find ore block "+modId+":"+name);
 			if(doOnce){
 				StringBuilder sb = new StringBuilder("Valid block IDs:\n");
@@ -63,7 +63,7 @@ public class OreSpawnData {
 				doOnce = false;
 			}
 		}
-		this.ore = (Block)Block.blockRegistry.getObject(blockKey);
+		this.ore = (Block)Block.REGISTRY.getObject(blockKey);
 		this.metaData = get("blockMeta",0,jsonEntry);
 		this.spawnQuantity = (int)get("size",8.0f,jsonEntry);
 		this.frequency = get("frequency",20.0f,jsonEntry);

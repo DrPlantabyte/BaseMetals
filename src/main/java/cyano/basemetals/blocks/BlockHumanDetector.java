@@ -15,7 +15,7 @@ import java.util.List;
 public class BlockHumanDetector extends net.minecraft.block.BlockPressurePlate{
 
 	public BlockHumanDetector() {
-		super(Material.iron, Sensitivity.MOBS);
+		super(Material.IRON, Sensitivity.MOBS);
 	}
 
 	@Override

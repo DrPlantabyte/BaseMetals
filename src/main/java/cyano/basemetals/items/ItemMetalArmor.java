@@ -123,10 +123,10 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor implements IMet
 				if(starsteelUpdateCache.containsKey(player) == false) break starsteel;
 				int num = starsteelUpdateCache.get(player).getAndSet(0);
 				if(num == 0) break starsteel;
-				final PotionEffect jumpBoost = new PotionEffect(Potion.potionRegistry.getObject(jumpPotionKey),EFFECT_DURATION,num-1,false,false);
+				final PotionEffect jumpBoost = new PotionEffect(Potion.REGISTRY.getObject(jumpPotionKey),EFFECT_DURATION,num-1,false,false);
 				player.addPotionEffect(jumpBoost);
 				if(num > 1){
-					final PotionEffect speedBoost = new PotionEffect(Potion.potionRegistry.getObject(speedPotionKey),EFFECT_DURATION,num-2,false,false);
+					final PotionEffect speedBoost = new PotionEffect(Potion.REGISTRY.getObject(speedPotionKey),EFFECT_DURATION,num-2,false,false);
 					player.addPotionEffect(speedBoost);
 				}
 				break starsteel;
@@ -136,7 +136,7 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor implements IMet
 				int level = leadUpdateCache.get(player).getAndSet(0) / 2;
 				if(level == 0) break lead;
 				if(level > 0){
-					final PotionEffect speedLoss = new PotionEffect(Potion.potionRegistry.getObject(slowPotionKey),EFFECT_DURATION,level-1,false,false);
+					final PotionEffect speedLoss = new PotionEffect(Potion.REGISTRY.getObject(slowPotionKey),EFFECT_DURATION,level-1,false,false);
 					player.addPotionEffect(speedLoss);
 				}
 				break lead;
@@ -147,7 +147,7 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor implements IMet
 				int level = num / 2;
 				if(level == 0) break adamantine;
 				if(level > 0){
-					final PotionEffect protection = new PotionEffect(Potion.potionRegistry.getObject(protectionPotionKey),EFFECT_DURATION,level-1,false,false);
+					final PotionEffect protection = new PotionEffect(Potion.REGISTRY.getObject(protectionPotionKey),EFFECT_DURATION,level-1,false,false);
 					player.addPotionEffect(protection);
 				}
 				if(num == 4){
@@ -160,7 +160,7 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor implements IMet
 				if(player.inventory.armorInventory[2] != null && player.inventory.armorInventory[2].getItem() == cyano.basemetals.init.Items.coldiron_chestplate
 						&& player.inventory.armorInventory[1] != null && player.inventory.armorInventory[1].getItem() == cyano.basemetals.init.Items.coldiron_leggings
 						&& player.inventory.armorInventory[0] != null && player.inventory.armorInventory[0].getItem() == cyano.basemetals.init.Items.coldiron_boots){
-					final PotionEffect fireProtection = new PotionEffect(Potion.potionRegistry.getObject(fireproofPotionKey),EFFECT_DURATION,0,false,false);
+					final PotionEffect fireProtection = new PotionEffect(Potion.REGISTRY.getObject(fireproofPotionKey),EFFECT_DURATION,0,false,false);
 					player.addPotionEffect(fireProtection);
 					if(player.getHeldItemMainhand() != null && player.getHeldItemMainhand().getItem() == cyano.basemetals.init.Items.coldiron_sword){
 						player.addStat(Achievements.demon_slayer, 1);
@@ -196,12 +196,12 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor implements IMet
 						&& player.inventory.armorInventory[0] != null && player.inventory.armorInventory[0].getItem() == cyano.basemetals.init.Items.aquarium_boots){
 					Block b1 = w.getBlockState(new BlockPos(player.posX,player.posY, player.posZ)).getBlock();
 					Block b2 = w.getBlockState(new BlockPos(player.posX,player.posY+1, player.posZ)).getBlock();
-					if(b1 == Blocks.water && b2 == Blocks.water){
-						final PotionEffect waterBreathing = new PotionEffect(Potion.potionRegistry.getObject(waterBreathingPotionKey),EFFECT_DURATION,0,false,false);
+					if(b1 == Blocks.WATER && b2 == Blocks.WATER){
+						final PotionEffect waterBreathing = new PotionEffect(Potion.REGISTRY.getObject(waterBreathingPotionKey),EFFECT_DURATION,0,false,false);
 						player.addPotionEffect(waterBreathing);
-						final PotionEffect protection = new PotionEffect(Potion.potionRegistry.getObject(waterBuffPotionKey),EFFECT_DURATION,0,false,false);
+						final PotionEffect protection = new PotionEffect(Potion.REGISTRY.getObject(waterBuffPotionKey),EFFECT_DURATION,0,false,false);
 						player.addPotionEffect(protection);
-                        player.removePotionEffect(Potion.potionRegistry.getObject(fatiguePotionKey));
+                        player.removePotionEffect(Potion.REGISTRY.getObject(fatiguePotionKey));
 						player.addStat(Achievements.scuba_diver, 1);
 					}
 				}

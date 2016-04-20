@@ -3,7 +3,6 @@ package cyano.basemetals.blocks;
 import cyano.basemetals.material.IMetalObject;
 import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
@@ -17,7 +16,7 @@ public class BlockMetalOre extends BlockOre implements IOreDictionaryEntry, IMet
 	
 	public BlockMetalOre(MetalMaterial metal) {
 		super();
-		this.setStepSound(SoundType.STONE);
+		this.setSoundType(SoundType.STONE);
 		this.metal = metal;
 		this.blockHardness = Math.max(5f,metal.getOreBlockHardness());
 		this.blockResistance = Math.max(1.5f,metal.getBlastResistance()*0.75f);

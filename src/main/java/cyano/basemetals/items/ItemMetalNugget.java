@@ -11,7 +11,7 @@ public class ItemMetalNugget extends net.minecraft.item.Item implements IOreDict
 	private final String oreDict;
 	public ItemMetalNugget(MetalMaterial metal){
 		this.metal = metal;
-		this.setCreativeTab(CreativeTabs.tabMaterials);
+		this.setCreativeTab(CreativeTabs.MATERIALS);
 		this.oreDict = "nugget"+metal.getCapitalizedName();
 	}
 	

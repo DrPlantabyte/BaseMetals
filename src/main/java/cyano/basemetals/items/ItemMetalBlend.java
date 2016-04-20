@@ -16,7 +16,7 @@ public class ItemMetalBlend extends net.minecraft.item.Item implements IOreDicti
 	private final String oreDict;
 	public ItemMetalBlend(MetalMaterial metal){
 		this.metal = metal;
-		this.setCreativeTab(CreativeTabs.tabMaterials);
+		this.setCreativeTab(CreativeTabs.MATERIALS);
 		this.oreDict = "dust"+metal.getCapitalizedName(); // same oreDict entry as powder
 	}
 	

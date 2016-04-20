@@ -22,8 +22,8 @@ public class BlockMetalDoor extends net.minecraft.block.BlockDoor implements IMe
 
 	final MetalMaterial metal;
 	public BlockMetalDoor(MetalMaterial metal) {
-		super((metal.getToolHarvestLevel() > 0) ? Material.iron : Material.rock);
-		this.stepSound = SoundType.METAL;
+		super((metal.getToolHarvestLevel() > 0) ? Material.IRON : Material.ROCK);
+		this.setSoundType(SoundType.METAL);
 		this.metal = metal;
 		this.blockHardness = metal.getMetalBlockHardness();
 		this.blockResistance = metal.getBlastResistance();

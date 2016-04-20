@@ -186,7 +186,7 @@ public abstract class VillagerTrades{
 		for(int i = 0; i < items.length; i++){
 			Item item = items[i];
 			trades[i] = new SimpleTrade(
-					new ItemStack(net.minecraft.init.Items.emerald,emeraldPrice,0), fluctuation(emeraldPrice),
+					new ItemStack(net.minecraft.init.Items.EMERALD,emeraldPrice,0), fluctuation(emeraldPrice),
 					(ItemStack)null, 0,
 					new ItemStack(item,stackSize,0), 0);
 		}
@@ -200,7 +200,7 @@ public abstract class VillagerTrades{
 			trades[i] = new SimpleTrade(
 					new ItemStack(item,stackSize,0), fluctuation(stackSize),
 					(ItemStack)null, 0,
-					new ItemStack(net.minecraft.init.Items.emerald,emeraldValue,0), 0);
+					new ItemStack(net.minecraft.init.Items.EMERALD,emeraldValue,0), 0);
 		}
 		return trades;
 	}

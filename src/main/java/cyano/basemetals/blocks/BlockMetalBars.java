@@ -10,8 +10,8 @@ public class BlockMetalBars extends net.minecraft.block.BlockPane implements IOr
 
 	final MetalMaterial metal;
 	public BlockMetalBars(MetalMaterial metal) {
-		super(Material.iron, true);
-		this.stepSound = SoundType.METAL;
+		super(Material.IRON, true);
+		this.setSoundType(SoundType.METAL);
 		this.metal = metal;
 		this.blockHardness = metal.getMetalBlockHardness();
 		this.blockResistance = metal.getBlastResistance();

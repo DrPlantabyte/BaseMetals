@@ -29,8 +29,8 @@ public abstract class MetalToolEffects {
     		if(target.getCreatureAttribute() == EnumCreatureAttribute.UNDEAD){
                 final ResourceLocation witherKey = new ResourceLocation("wither");
                 final ResourceLocation blindKey = new ResourceLocation("wither");
-    			final PotionEffect wither = new PotionEffect(Potion.potionRegistry.getObject(witherKey),60,3);
-    			final PotionEffect blind = new PotionEffect(Potion.potionRegistry.getObject(blindKey),60,1);
+    			final PotionEffect wither = new PotionEffect(Potion.REGISTRY.getObject(witherKey),60,3);
+    			final PotionEffect blind = new PotionEffect(Potion.REGISTRY.getObject(blindKey),60,1);
     			target.addPotionEffect(wither);
     			target.addPotionEffect(blind);
     		}

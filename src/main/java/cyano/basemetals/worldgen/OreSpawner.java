@@ -233,7 +233,7 @@ public class OreSpawner implements IWorldGenerator {
 		@Override
 		public boolean apply(IBlockState input) {
 			Block b = input.getBlock();
-			if(b == Blocks.air) return false;
+			if(b == Blocks.AIR) return false;
 			if(cacheEmpty){
 				initLock.lock();
 				try{
@@ -270,17 +270,17 @@ public class OreSpawner implements IWorldGenerator {
 			//	FMLLog.info("Spawning ore block "+b.getUnlocalizedName()+" at "+coord);
 			switch(dimension){
 			case -1: // nether
-				if(bs.getBlock() == Blocks.netherrack || bs.getBlock().isReplaceableOreGen(bs, w, coord, stonep)){
+				if(bs.getBlock() == Blocks.NETHERRACK || bs.getBlock().isReplaceableOreGen(bs, w, coord, stonep)){
 					w.setBlockState(coord, b, 2);
 				}
 				break;
 			case 1: // end
-				if(bs.getBlock() == Blocks.end_stone || bs.getBlock().isReplaceableOreGen(bs, w, coord, stonep)){
+				if(bs.getBlock() == Blocks.END_STONE || bs.getBlock().isReplaceableOreGen(bs, w, coord, stonep)){
 					w.setBlockState(coord, b, 2);
 				}
 				break;
 			default:
-				if(bs.getBlock() == Blocks.stone || bs.getBlock().isReplaceableOreGen(bs, w, coord, stonep)){
+				if(bs.getBlock() == Blocks.STONE || bs.getBlock().isReplaceableOreGen(bs, w, coord, stonep)){
 					w.setBlockState(coord, b, 2);
 				}
 				break;
