@@ -10,7 +10,7 @@ import net.minecraft.item.Item;
 public class GenericMetalItem extends Item  implements IMetalObject {
 
 	private final MetalMaterial metal;
-	
+
 	public GenericMetalItem(MetalMaterial m){
 		this.metal = m;
 	}
