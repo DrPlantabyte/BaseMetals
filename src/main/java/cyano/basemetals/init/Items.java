@@ -92,6 +92,8 @@ public abstract class Items {
 	public static Item adamantine_powder;
 	public static Item adamantine_shovel;
 	public static Item adamantine_sword;
+	public static Item adamantine_rod;
+	public static Item adamantine_gear;
 	public static Item aquarium_axe;
 	public static Item aquarium_blend;
 	public static Item aquarium_boots;
@@ -107,6 +109,7 @@ public abstract class Items {
 	public static Item aquarium_powder;
 	public static Item aquarium_shovel;
 	public static Item aquarium_sword;
+	public static Item aquarium_rod;
 	public static Item brass_axe;
 	public static Item brass_blend;
 	public static Item brass_boots;
@@ -122,6 +125,7 @@ public abstract class Items {
 	public static Item brass_powder;
 	public static Item brass_shovel;
 	public static Item brass_sword;
+	public static Item brass_rod;
 	public static Item bronze_axe;
 	public static Item bronze_blend;
 	public static Item bronze_boots;
@@ -137,6 +141,8 @@ public abstract class Items {
 	public static Item bronze_powder;
 	public static Item bronze_shovel;
 	public static Item bronze_sword;
+	public static Item bronze_rod;
+	public static Item bronze_gear;
 	public static Item carbon_powder;
 	public static Item coldiron_axe;
 	public static Item coldiron_boots;
@@ -152,6 +158,8 @@ public abstract class Items {
 	public static Item coldiron_powder;
 	public static Item coldiron_shovel;
 	public static Item coldiron_sword;
+	public static Item coldiron_rod;
+	public static Item coldiron_gear;
 	public static Item copper_axe;
 	public static Item copper_boots;
 	public static Item copper_chestplate;
@@ -166,6 +174,7 @@ public abstract class Items {
 	public static Item copper_powder;
 	public static Item copper_shovel;
 	public static Item copper_sword;
+	public static Item copper_rod;
 	public static Item cupronickel_axe;
 	public static Item cupronickel_boots;
 	public static Item cupronickel_blend;
@@ -181,6 +190,8 @@ public abstract class Items {
 	public static Item cupronickel_powder;
 	public static Item cupronickel_shovel;
 	public static Item cupronickel_sword;
+	public static Item cupronickel_rod;
+	public static Item cupronickel_gear;
 	public static Item diamond_crackhammer;
 	public static Item electrum_axe;
 	public static Item electrum_blend;
@@ -197,6 +208,7 @@ public abstract class Items {
 	public static Item electrum_powder;
 	public static Item electrum_shovel;
 	public static Item electrum_sword;
+	public static Item electrum_rod;
 	public static Item gold_powder;
 	public static Item invar_axe;
 	public static Item invar_blend;
@@ -213,6 +225,8 @@ public abstract class Items {
 	public static Item invar_powder;
 	public static Item invar_shovel;
 	public static Item invar_sword;
+	public static Item invar_rod;
+	public static Item invar_gear;
 	public static Item iron_crackhammer;
 	public static Item iron_nugget;
 	public static Item iron_powder;
@@ -230,6 +244,7 @@ public abstract class Items {
 	public static Item lead_powder;
 	public static Item lead_shovel;
 	public static Item lead_sword;
+	public static Item lead_rod;
 	public static Item mercury_ingot;
 	public static Item mercury_powder;
 	public static Item mithril_axe;
@@ -247,6 +262,8 @@ public abstract class Items {
 	public static Item mithril_powder;
 	public static Item mithril_shovel;
 	public static Item mithril_sword;
+	public static Item mithril_rod;
+	public static Item mithril_gear;
 	public static Item nickel_axe;
 	public static Item nickel_boots;
 	public static Item nickel_chestplate;
@@ -261,6 +278,7 @@ public abstract class Items {
 	public static Item nickel_powder;
 	public static Item nickel_shovel;
 	public static Item nickel_sword;
+	public static Item nickel_rod;
 	public static Item platinum_axe;
 	public static Item platinum_boots;
 	public static Item platinum_chestplate;
@@ -275,6 +293,7 @@ public abstract class Items {
 	public static Item platinum_powder;
 	public static Item platinum_shovel;
 	public static Item platinum_sword;
+	public static Item platinum_rod;
 	public static Item silver_axe;
 	public static Item silver_boots;
 	public static Item silver_chestplate;
@@ -289,6 +308,7 @@ public abstract class Items {
 	public static Item silver_powder;
 	public static Item silver_shovel;
 	public static Item silver_sword;
+	public static Item silver_rod;
 	public static Item starsteel_axe;
 	public static Item starsteel_boots;
 	public static Item starsteel_chestplate;
@@ -303,6 +323,8 @@ public abstract class Items {
 	public static Item starsteel_powder;
 	public static Item starsteel_shovel;
 	public static Item starsteel_sword;
+	public static Item starsteel_rod;
+	public static Item starsteel_gear;
 	public static Item steel_axe;
 	public static Item steel_blend;
 	public static Item steel_boots;
@@ -318,6 +340,8 @@ public abstract class Items {
 	public static Item steel_powder;
 	public static Item steel_shovel;
 	public static Item steel_sword;
+	public static Item steel_rod;
+	public static Item steel_gear;
 	public static Item stone_crackhammer;
 	public static Item tin_axe;
 	public static Item tin_boots;
@@ -333,10 +357,12 @@ public abstract class Items {
 	public static Item tin_powder;
 	public static Item tin_shovel;
 	public static Item tin_sword;
+	public static Item tin_rod;
 	public static Item wood_crackhammer;
 	public static Item zinc_ingot;
 	public static Item zinc_nugget;
 	public static Item zinc_powder;
+	public static Item zinc_rod;
 
 	/**
 	 * Gets the inventory item corresponding to a given door block
@@ -738,6 +764,34 @@ public abstract class Items {
 		String regName = m.getName()+"_"+n;
 		registerItem(i, regName, m);
 		i.setCreativeTab(ItemGroups.tab_items);
+		return i;
+	}
+
+
+	private static Item create_rod(MetalMaterial m){
+		String n = "rod";
+		GenericMetalItem i = new GenericMetalItem(m);
+		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
+		String regName = m.getName()+"_"+n;
+		registerItem(i, regName, m);
+		i.setCreativeTab(ItemGroups.tab_items);
+		OreDictionary.registerOre("stick"+m.getCapitalizedName(),i);
+		OreDictionary.registerOre("rod"+m.getCapitalizedName(),i);
+		OreDictionary.registerOre("rod",i);
+		return i;
+	}
+
+
+	private static Item create_gear(MetalMaterial m){
+		String n = "gear";
+		GenericMetalItem i = new GenericMetalItem(m);
+		i.setUnlocalizedName(BaseMetals.MODID+"."+m.getName()+"_"+n);
+		String regName = m.getName()+"_"+n;
+		registerItem(i, regName, m);
+		i.setCreativeTab(ItemGroups.tab_items);
+		OreDictionary.registerOre("gear"+m.getCapitalizedName(),i);
+		OreDictionary.registerOre("gear",i);
+		if(m == Materials.steel)OreDictionary.registerOre("sprocket",i);
 		return i;
 	}
 	
