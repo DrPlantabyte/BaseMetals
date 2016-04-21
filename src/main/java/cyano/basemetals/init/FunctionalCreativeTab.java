@@ -16,13 +16,15 @@ public class FunctionalCreativeTab  extends CreativeTabs {
 	
 	private final java.util.function.Supplier<Item> itemSupplier;
 	private final java.util.Comparator<ItemStack> itemSortingAlgorithm;
+	private final boolean searchable;
 	/**
 	 * Constructor
 	 * @param unlocalizedName Name for translation
+	 * @param searchable True for search bar, false otherwise
 	 * @param itemSupplier Function that provides the item used for the icon
 	 * @param itemSortingAlgorithm Algorithm for sorting the items (Comparable interface implementation)
 	 */
-	public FunctionalCreativeTab( String unlocalizedName,
+	public FunctionalCreativeTab( String unlocalizedName, boolean searchable,
 			final java.util.function.Supplier<Item> itemSupplier,
 			final java.util.function.BiFunction<ItemStack,ItemStack,Integer> itemSortingAlgorithm) {
 		super(unlocalizedName);
@@ -33,7 +35,8 @@ public class FunctionalCreativeTab  extends CreativeTabs {
 				return itemSortingAlgorithm.apply(o1, o2);
 			}
 		};
-		setBackgroundImageName("item_search.png");
+		this.searchable = searchable;
+		if(searchable)setBackgroundImageName("item_search.png");
 	}
 
 
@@ -44,7 +47,7 @@ public class FunctionalCreativeTab  extends CreativeTabs {
 	 */
 	@Override
 	public boolean hasSearchBar() {
-		return false;
+		return searchable;
 	}
 	
 

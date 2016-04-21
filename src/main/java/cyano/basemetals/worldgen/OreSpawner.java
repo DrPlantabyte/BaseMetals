@@ -167,7 +167,6 @@ public class OreSpawner implements IWorldGenerator {
 			while(count > 0){
 				spawn(oreBlock,metaData,world,blockPos.add(offsets_small[scrambledLUT[--count]]),world.provider.getDimension(),true);
 			}
-			net.minecraftforge.common.MinecraftForge.ORE_GEN_BUS.post(new net.minecraftforge.event.terraingen.OreGenEvent.Post(world, prng, blockPos));
 			return;
 		}
 		if(quantity < 27){
@@ -214,7 +213,6 @@ public class OreSpawner implements IWorldGenerator {
 				}
 			}
 		}
-		net.minecraftforge.common.MinecraftForge.ORE_GEN_BUS.post(new net.minecraftforge.event.terraingen.OreGenEvent.Post(world, prng, blockPos));
 		return;
 	}
 

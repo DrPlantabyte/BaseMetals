@@ -25,8 +25,8 @@ public class ItemMetalAxe extends ItemAxe implements IMetalObject {
 		super(Materials.getToolMaterialFor(metal));
 		this.metal = metal;
 		this.setMaxDamage(metal.getToolDurability());
-		this.damageVsEntity = 6F + 0.5F*metal.getBaseAttackDamage();
-		this.attackSpeed = -3.1F;
+		this.damageVsEntity = 4F + 2F * metal.getBaseAttackDamage();
+		this.attackSpeed = -3.5F + Math.min(0.5F,0.05F * metal.strength);
 		this.efficiencyOnProperMaterial = metal.getToolEfficiency();
 		repairOreDictName = "ingot"+metal.getCapitalizedName();
 		if(metal.equals(Materials.starsteel)){

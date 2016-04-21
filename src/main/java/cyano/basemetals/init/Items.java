@@ -726,6 +726,7 @@ public abstract class Items {
 		classSortingValues.put(ItemMetalHoe.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalSword.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalArmor.class, ++ss * 10000);
+		classSortingValues.put(GenericMetalItem.class, ++ss * 10000);
 		classSortingValues.put(ItemMetalDoor.class, classSortingValues.get(BlockMetalDoor.class));
 
 		List<MetalMaterial> metlist = new ArrayList<>(Materials.getAllMetals().size());
