@@ -24,7 +24,7 @@ public class ItemGroups {
 //		itemItem = net.minecraft.init.Items.IRON_INGOT;
 //		toolItem = net.minecraft.init.Items.IRON_INGOT;
 
-		tab_blocks = new FunctionalCreativeTab( BaseMetals.MODID.concat(".blocks"),
+		tab_blocks = new FunctionalCreativeTab( BaseMetals.MODID.concat(".blocks"), false,
 				()->Items.copper_crackhammer, 
 				(ItemStack a,ItemStack b)->{
 					int delta = Items.getSortingValue(a)-Items.getSortingValue(b);
