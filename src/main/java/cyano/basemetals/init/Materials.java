@@ -58,42 +58,41 @@ public abstract class Materials {
 		if(initDone)return;
 		
 		// vanilla metals
-		vanilla_wood = addMaterial("wood",2,2,6,0);
-		vanilla_stone = addMaterial("stone",5,4,2,0);
-		vanilla_iron = addMaterial("iron",8,8,4.5,0.3);
-		vanilla_gold = addMaterial("gold",1,1,10,0.1);
-		vanilla_diamond = addMaterial("diamond",10,15,4,0);
+		vanilla_wood = addMaterial("wood",2,2,6);
+		vanilla_stone = addMaterial("stone",5,4,2);
+		vanilla_iron = addMaterial("iron",8,8,4.5);
+		vanilla_gold = addMaterial("gold",1,1,10);
+		vanilla_diamond = addMaterial("diamond",10,15,4);
 
-		// TODO: rebalance metals (make it so none of them are completely worthless)
 		// mod metals
-		copper = addMaterial("copper",4,4,5,0.5);
-		silver = addMaterial("silver", 5, 4, 6,0.1);
-		tin = addMaterial("tin", 3, 1, 2,0.5);
-		lead = new LeadMaterial("lead", 1, 1, 1,0.5f);
+		copper = addMaterial("copper",4,4,5);
+		silver = addMaterial("silver", 5, 4, 6);
+		tin = addMaterial("tin", 3, 1, 2);
+		lead = new LeadMaterial("lead", 1, 1, 1);
 		registerMaterial(lead.getName(), lead);
-		nickel = addMaterial("nickel", 4, 4, 7,0.1);
-		zinc = addMaterial("zinc", 1, 1, 1,0.3);
-		bronze = addMaterial("bronze", 8, 4, 4.5,0.3);
-		brass = addMaterial("brass", 3.5, 3, 9,0.3);
-		steel = addMaterial("steel", 8, 15, 2,0.3);
-		invar = addMaterial("invar", 9, 10, 3,0.1);
-		electrum = addMaterial("electrum", 5, 4, 10,0.1);
-		coldiron = addMaterial("coldiron", 7, 7, 7,0.05);
-		mithril = addMaterial("mithril", 9, 9, 9,0.05);
-		adamantine = new AdamantineMaterial("adamantine", 12, 100, 0,0.01f);
+		nickel = addMaterial("nickel", 4, 4, 7);
+		zinc = addMaterial("zinc", 1, 1, 1);
+		bronze = addMaterial("bronze", 8, 4, 4.5);
+		brass = addMaterial("brass", 3.5, 3, 9);
+		steel = addMaterial("steel", 8, 15, 2);
+		invar = addMaterial("invar", 9, 10, 3);
+		electrum = addMaterial("electrum", 5, 4, 10);
+		coldiron = addMaterial("coldiron", 7, 7, 7);
+		mithril = addMaterial("mithril", 9, 9, 9);
+		adamantine = new AdamantineMaterial("adamantine", 12, 100, 0);
 		registerMaterial(adamantine.getName(), adamantine);
-		starsteel = new StarSteelMaterial("starsteel", 10, 25, 12,0.01f);
+		starsteel = new StarSteelMaterial("starsteel", 10, 25, 12);
 		registerMaterial(starsteel.getName(), starsteel);
-		aquarium = addMaterial("aquarium", 4, 10, 15,0.05);
+		aquarium = addMaterial("aquarium", 4, 10, 15);
 		
-		cupronickel = addMaterial("cupronickel", 6, 6, 6,0.2);
-		platinum = addMaterial("platinum", 3, 5, 12,0.01);
+		cupronickel = addMaterial("cupronickel", 6, 6, 6);
+		platinum = addMaterial("platinum", 3, 5, 12);
 		
 		initDone = true;
 	}
 	
-	private static MetalMaterial addMaterial(String name, double hardness, double strength, double magic, double rarity){
-		MetalMaterial m = new MetalMaterial(name,(float)hardness,(float)strength,(float)magic,(int)(Math.max(50*rarity,1)));
+	private static MetalMaterial addMaterial(String name, double hardness, double strength, double magic){
+		MetalMaterial m = new MetalMaterial(name,(float)hardness,(float)strength,(float)magic);
 		registerMaterial(name, m);
 		return m;
 	}
