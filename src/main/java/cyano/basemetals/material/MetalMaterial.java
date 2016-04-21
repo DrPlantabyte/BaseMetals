@@ -211,7 +211,7 @@ public class MetalMaterial {
 	 * @return the base damage from attacks with tools made from this material
 	 */
 	public float getBaseAttackDamage(){
-		return round(Math.max(0f,(hardness / 3f) - 0.5f),1);
+		return round(0.25f * hardness,1);
 	}
 	
 	private float round(float number, int numDecimalPlaces){
