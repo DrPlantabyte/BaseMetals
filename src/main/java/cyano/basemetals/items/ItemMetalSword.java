@@ -34,7 +34,7 @@ public class ItemMetalSword extends ItemSword  implements IMetalObject {
 		} else {
 			regenerates = false;
 		}
-		this.setCreativeTab(CreativeTabs.tabCombat);		
+		this.setCreativeTab(CreativeTabs.COMBAT);		
 		
 	}
 

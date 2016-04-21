@@ -16,7 +16,7 @@ public class ItemMetalIngot extends net.minecraft.item.Item implements IOreDicti
 	private final String oreDict;
 	public ItemMetalIngot(MetalMaterial metal){
 		this.metal = metal;
-		this.setCreativeTab(CreativeTabs.tabMaterials);
+		this.setCreativeTab(CreativeTabs.MATERIALS);
 		this.oreDict = "ingot"+metal.getCapitalizedName();
 	}
 	

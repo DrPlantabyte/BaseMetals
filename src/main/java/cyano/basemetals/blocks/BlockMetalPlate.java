@@ -72,8 +72,8 @@ public class BlockMetalPlate extends net.minecraft.block.Block implements IOreDi
 	}
 	
 	public BlockMetalPlate(MetalMaterial metal) {
-		super(Material.iron);
-        this.stepSound = SoundType.METAL;
+		super(Material.IRON);
+        this.blockSoundType = SoundType.METAL;
 		this.metal = metal;
 		this.blockHardness = metal.getMetalBlockHardness();
 		this.blockResistance = metal.getBlastResistance();

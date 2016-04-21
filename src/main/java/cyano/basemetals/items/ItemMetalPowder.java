@@ -11,7 +11,7 @@ public class ItemMetalPowder extends net.minecraft.item.Item implements IOreDict
 	private final String oreDict;
 	public ItemMetalPowder(MetalMaterial metal){
 		this.metal = metal;
-		this.setCreativeTab(CreativeTabs.tabMaterials);
+		this.setCreativeTab(CreativeTabs.MATERIALS);
 		this.oreDict = "dust"+metal.getCapitalizedName();
 	}
 	

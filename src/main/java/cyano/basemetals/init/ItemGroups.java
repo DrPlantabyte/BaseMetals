@@ -2,7 +2,6 @@ package cyano.basemetals.init;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import cyano.basemetals.BaseMetals;
 
@@ -20,10 +19,10 @@ public class ItemGroups {
 	public static void init(){
 		if(initDone) return;
 		
-		// placeholders
-		blockItem = net.minecraft.init.Items.iron_ingot;
-//		itemItem = net.minecraft.init.Items.iron_ingot;
-//		toolItem = net.minecraft.init.Items.iron_ingot;
+		// place holders
+		blockItem = net.minecraft.init.Items.IRON_INGOT;
+//		itemItem = net.minecraft.init.Items.IRON_INGOT;
+//		toolItem = net.minecraft.init.Items.IRON_INGOT;
 
 		tab_blocks = new FunctionalCreativeTab( BaseMetals.MODID.concat(".blocks"),
 				()->Items.copper_crackhammer, 

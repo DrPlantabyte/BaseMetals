@@ -139,10 +139,10 @@ public class CrusherRecipeHandler extends TemplateRecipeHandler{
 			if(ingred == null || result == null){
 				FMLLog.warning("Added null item to NEI GUI: "+ingred+" -> "+result);
 				if(ingred == null){
-					ingred = new ItemStack(Blocks.air);
+					ingred = new ItemStack(Blocks.AIR);
 				}
 				if(result == null){
-					result = new ItemStack(Blocks.air);
+					result = new ItemStack(Blocks.AIR);
 				}
 			}
 			ingred.stackSize = 1;

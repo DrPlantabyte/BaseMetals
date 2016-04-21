@@ -135,7 +135,7 @@ public class ItemMetalCrackHammer extends ItemTool implements IMetalObject {
 				}
 		}
 		if(success){
-            w.playSound(player, coord, SoundEvents.block_gravel_break, SoundCategory.BLOCKS, 0.5F, 0.5F + (itemRand.nextFloat() * 0.3F));
+            w.playSound(player, coord, SoundEvents.BLOCK_GRAVEL_BREAK, SoundCategory.BLOCKS, 0.5F, 0.5F + (itemRand.nextFloat() * 0.3F));
 		}
 		return success ? EnumActionResult.SUCCESS : EnumActionResult.PASS;
 	}
@@ -227,8 +227,8 @@ public class ItemMetalCrackHammer extends ItemTool implements IMetalObject {
         Block target = targetBS.getBlock();
 		// go to net.minecraftforge.common.ForgeHooks.initTools(); to see all tool type strings
 		String toolType = target.getHarvestTool(target.getDefaultState());
-		if(this.toolTypes.contains(toolType) || target.getMaterial(targetBS) == Material.rock){
-			// can mine like a pickaxe
+		if(this.toolTypes.contains(toolType) || target.getMaterial(targetBS) == Material.ROCK){
+			// can mine like a Pickaxe
 			return this.getHarvestLevel(null, "pickaxe") >= target.getHarvestLevel(target.getDefaultState());
 		} else if("shovel".equals(toolType) && target.getHarvestLevel(target.getDefaultState()) <= 0){
 			// can be dug with wooden shovel
