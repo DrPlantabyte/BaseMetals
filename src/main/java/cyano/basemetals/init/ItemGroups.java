@@ -5,6 +5,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import cyano.basemetals.BaseMetals;
 
+/**
+ * This class initializes all item groups in Base Metals.
+ * @author DrCyano
+ *
+ */
 public class ItemGroups {
 
 	public static CreativeTabs tab_blocks;
@@ -20,9 +25,9 @@ public class ItemGroups {
 		if(initDone) return;
 		
 		// place holders
-		blockItem = net.minecraft.init.Items.IRON_INGOT;
-//		itemItem = net.minecraft.init.Items.IRON_INGOT;
-//		toolItem = net.minecraft.init.Items.IRON_INGOT;
+		blockItem = Items.copper_crackhammer;
+//		itemItem = Items.copper_crackhammer;
+//		toolItem = Items.copper_crackhammer;
 
 		tab_blocks = new FunctionalCreativeTab( BaseMetals.MODID.concat(".blocks"), false,
 				()->Items.copper_crackhammer, 

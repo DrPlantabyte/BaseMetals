@@ -167,6 +167,9 @@ public abstract class Recipes {
 			}
 			if(ingot != null && rod != null){
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(rod,4), "x","x",'x',"ingot"+oreDictName));
+				OreDictionary.registerOre("stick"+oreDictName,rod);
+				OreDictionary.registerOre("rod"+oreDictName,rod);
+				OreDictionary.registerOre("rod",rod);
 			}
 			if(nugget != null && rod != null){
 				GameRegistry.addSmelting(rod, new ItemStack(nugget,4), 0);
@@ -176,6 +179,9 @@ public abstract class Recipes {
 			}
 			if(rod != null && ingot != null && gear != null){
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(gear,4), " x ","x/x"," x ",'x',"ingot"+oreDictName,'/',"rod"+oreDictName));
+				OreDictionary.registerOre("gear"+oreDictName,gear);
+				OreDictionary.registerOre("gear",gear);
+				if(metal == Materials.steel)OreDictionary.registerOre("sprocket",gear);
 			}
 			if(ingot != null && door != null){
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(door,3), "xx","xx","xx",'x',"ingot"+oreDictName));
