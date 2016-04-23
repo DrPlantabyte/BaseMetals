@@ -9,6 +9,7 @@ import net.minecraft.block.BlockDoor;
 import net.minecraft.block.BlockOre;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -19,7 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * This classes initializes all blocks in Base Metals and provides some utility 
+ * This class initializes all blocks in Base Metals and provides some utility 
  * methods for looking up blocks. 
  * @author DrCyano
  *
@@ -237,8 +238,11 @@ public abstract class Blocks {
 		lead_door = createDoor(Materials.lead);
 		lead_trapdoor = createTrapDoor(Materials.lead);
 
-		mercury_ore = new BlockOre().setHardness(3.0f).setResistance(5.0f).setUnlocalizedName(BaseMetals.MODID+".mercury_ore");
-		GameRegistry.registerBlock(mercury_ore, "mercury_ore");
+		mercury_ore = new BlockOre().setHardness(3.0f).setResistance(5.0f).setRegistryName(BaseMetals.MODID, "mercury_ore").setUnlocalizedName(BaseMetals.MODID+".mercury_ore");
+		GameRegistry.register(mercury_ore);
+		ItemBlock mercury_ore_item = new ItemBlock(mercury_ore);
+		mercury_ore_item.setRegistryName(BaseMetals.MODID, "mercury_ore");
+		GameRegistry.register(mercury_ore_item);
 		allBlocks.put("mercury_ore", mercury_ore);
 		OreDictionary.registerOre("oreMercury", mercury_ore);
 		
@@ -314,58 +318,55 @@ public abstract class Blocks {
 	}
 
 	private static Block addBlock(Block block, String name){
-		block.setUnlocalizedName(BaseMetals.MODID+"."+ name);
-		GameRegistry.registerBlock(block, name);
+		block.setRegistryName(BaseMetals.MODID, name);
+		block.setUnlocalizedName(BaseMetals.MODID+"."+name);
+		GameRegistry.register(block);
+		
+		ItemBlock itemBlock = new ItemBlock(block);
+		itemBlock.setRegistryName(BaseMetals.MODID, name);
+		GameRegistry.register(itemBlock);
+		
 		allBlocks.put(name, block);
 		return block;
 	}
 
 	private static Block createPlate(MetalMaterial metal) {
-		Block block = new BlockMetalPlate(metal);
-		block.setUnlocalizedName(BaseMetals.MODID+"."+metal.getName()+"_plate");
-		GameRegistry.registerBlock(block, metal.getName()+"_plate");
-		allBlocks.put(metal.getName()+"_plate", block);
-		return block;
+		return addBlock(new BlockMetalPlate(metal),metal.getName()+"_plate");
 	}
 
 	private static Block createBars(MetalMaterial metal){
-		Block block = new BlockMetalBars(metal);
-		block.setUnlocalizedName(BaseMetals.MODID+"."+metal.getName()+"_bars");
-		GameRegistry.registerBlock(block, metal.getName()+"_bars");
-		allBlocks.put(metal.getName()+"_bars", block);
-		return block;
+		return addBlock(new BlockMetalBars(metal),metal.getName()+"_bars");
 	}
+
 	private static Block createBlock(MetalMaterial metal){
 		return createBlock(metal,false);
 	}
+
 	private static Block createBlock(MetalMaterial metal, boolean glow){
-		Block block = new BlockMetalBlock(metal,glow);
-		block.setUnlocalizedName(BaseMetals.MODID+"."+metal.getName()+"_block");
-		GameRegistry.registerBlock(block, metal.getName()+"_block");
-		allBlocks.put(metal.getName()+"_block", block);
-		return block;
+		return addBlock(new BlockMetalBlock(metal,glow),metal.getName()+"_block");
 	}
+
 	private static Block createOre(MetalMaterial metal){
-		Block block = new BlockMetalOre(metal);
-		block.setUnlocalizedName(BaseMetals.MODID+"."+metal.getName()+"_ore");
-		GameRegistry.registerBlock(block, metal.getName()+"_ore");
-		allBlocks.put(metal.getName()+"_ore", block);
-		return block;
+		return addBlock(new BlockMetalOre(metal),metal.getName()+"_ore");
 	}
+
 	private static BlockDoor createDoor(MetalMaterial metal){
+		String name = metal.getName()+"_door";
 		BlockDoor block = new BlockMetalDoor(metal);
-		block.setUnlocalizedName(BaseMetals.MODID+"."+metal.getName()+"_door");
-		GameRegistry.registerBlock(block, metal.getName()+"_door");
+		block.setRegistryName(BaseMetals.MODID, name);
+		block.setUnlocalizedName(BaseMetals.MODID+"."+name);
+		GameRegistry.register(block);
+		
+		ItemBlock itemBlock = new ItemBlock(block);
+		itemBlock.setRegistryName(BaseMetals.MODID, name);
+		GameRegistry.register(itemBlock);
+		
 		allBlocks.put(metal.getName()+"_door", block);
 		return block;
 	}
 
 	private static Block createTrapDoor(MetalMaterial metal){
-		Block block = new BlockMetalTrapDoor(metal);
-		block.setUnlocalizedName(BaseMetals.MODID+"."+metal.getName()+"_trapdoor");
-		GameRegistry.registerBlock(block, metal.getName()+"_trapdoor");
-		allBlocks.put(metal.getName()+"_trapdoor", block);
-		return block;
+		return addBlock(new BlockMetalTrapDoor(metal),metal.getName()+"_trapdoor");
 	}
 	
 
