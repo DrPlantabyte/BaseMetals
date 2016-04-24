@@ -437,10 +437,11 @@ item.basemetals.wood_crackhammer.name=Wooden Crack Hammer
 item.basemetals.stone_crackhammer.name=Stone Crack Hammer
 
 item.bucket.mercury=Bucket of Mercury
-
+tile.basemetals.liquid_mercury.name=Liquid Mercury
 
 
 item.basemetals.human_detector.name=Security Pressure Plate
+tile.basemetals.human_detector.name=Security Pressure Plate
 
 achievement.cupronickel_maker.desc=Combine powdered copper and nickel to make cupronickel
 
