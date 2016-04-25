@@ -4,6 +4,8 @@ import cyano.basemetals.data.AdditionalLootTables;
 import cyano.basemetals.data.DataConstants;
 import cyano.basemetals.events.VanillaOreGenDisabler;
 import cyano.basemetals.registry.CrusherRecipeRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.ConfigCategory;
@@ -15,7 +17,6 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
@@ -52,7 +53,7 @@ public class BaseMetals
 	public static final String NAME ="Base Metals";
 	/** Version number, in Major.Minor.Build format. The minor number is increased whenever a change 
 	 * is made that has the potential to break compatibility with other mods that depend on this one. */
-	public static final String VERSION = "2.2.0";
+	public static final String VERSION = "2.2.1";
 	
 	/** All ore-spawn files discovered in the ore-spawn folder */
 	public static final List<Path> oreSpawnConfigFiles = new LinkedList<>();
@@ -394,14 +395,12 @@ public class BaseMetals
 			nameEnd = str.indexOf("#");
 		}
 		String id = str.substring(nameStart,nameEnd).trim();
-		String mod = id.substring(0,id.indexOf(":")).trim();
-		String name = id.substring(id.indexOf(":")+1,id.length()).trim();
-		if(GameRegistry.findBlock(mod, name) != null){
+		if(Block.getBlockFromName(id) != null){
 			// is a block
-			return new ItemStack(GameRegistry.findBlock(mod, name),count,meta);
-		} else if(GameRegistry.findItem(mod, name) != null){
+			return new ItemStack(Block.getBlockFromName(id),count,meta);
+		} else if(Item.getByNameOrId(id) != null){
 			// is an item
-			return new ItemStack(GameRegistry.findItem(mod, name),count,meta);
+			return new ItemStack(Item.getByNameOrId(id),count,meta);
 		} else {
 			// item not found
 			FMLLog.severe("Failed to find item or block for ID '"+id+"'");
