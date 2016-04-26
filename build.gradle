@@ -31,7 +31,7 @@ group= "cyano.basemetals"
 archivesBaseName = "BaseMetals_1.8.9"
 
 minecraft {
-    version = "1.8.9-11.15.0.1705"
+    version = "1.8.9-11.15.1.1722"
     runDir = "run"
     
     // the mappings can be changed at any time, and must be in the following format.
@@ -39,15 +39,15 @@ minecraft {
     // stable_#            stables are built at the discretion of the MCP team.
     // Use non-default mappings at your own risk. they may not allways work.
     // simply re-run your setup task after changing the mappings to update your workspace.
-    mappings = "stable_20"
+    mappings = "stable_22"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 
 dependencies {
     compile files(
-        'lib/NEI/CodeChickenCore-1.8-1.0.5.34-dev.jar',
-        'lib/NEI/NotEnoughItems-1.8-1.0.5.84-dev.jar',
-        'lib/JEI/jei_1.8.9-2.28.0.160.jar'
+        'lib/NEI/CodeChickenCore-1.8-1.0.5.36-dev.jar',
+        'lib/NEI/NotEnoughItems-1.8-1.0.5.104-dev.jar',
+        'lib/JEI/jei_1.8.9-2.28.17.185.jar'
     )
 
 }
