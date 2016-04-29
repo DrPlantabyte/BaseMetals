@@ -38,14 +38,14 @@ archivesBaseName = "BaseMetals_1.9"
 minecraft {
     version = "1.9-12.16.0.1865-1.9"
     runDir = "run"
-    mappings = "snapshot_20160419"
+    mappings = "snapshot_20160425"
 }
 
 dependencies {
     compile files(
-        'lib/NEI/CodeChickenCore-1.8-1.0.5.34-dev.jar',
-        'lib/NEI/NotEnoughItems-1.8-1.0.5.84-dev.jar',
-        'lib/JEI/jei_1.8.9-2.28.0.160.jar'
+        'lib/NEI/CodeChickenCore-1.8-1.0.5.36-dev.jar',
+        'lib/NEI/NotEnoughItems-1.8-1.0.5.104-dev.jar',
+        'lib/JEI/jei_1.9-3.2.14.190.jar'
     )
 
 }
