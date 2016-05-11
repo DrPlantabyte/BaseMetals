@@ -1,5 +1,3 @@
-language_support_goals=english (en_US,en_EN,en_CA,en_GB, en_AU, en_PT), italian(IT_it), spanish (es_MX,es_ES), simplified chinese (zh_CN), japanese (ja_JA), portugese (pt_BR), german (de_DE)
-
 itemGroup.basemetals.items=Base Metals
 itemGroup.basemetals.tools=Base Metals
 itemGroup.basemetals.blocks=Base Metals
@@ -20,9 +18,71 @@ item.basemetals.adamantine_nugget.name=Adamantio Sassolino
 item.basemetals.adamantine_ore.name=Adamantio Minerale
 item.basemetals.adamantine_pickaxe.name=Adamantio Piccone
 item.basemetals.adamantine_powder.name=Polvere Adamantio
+
 item.basemetals.adamantine_shovel.name=Adamantio Pala
+
 item.basemetals.adamantine_sword.name=Adamantio Spada
 item.basemetals.adamantine_trapdoor.name=Adamantio Fuori Porta
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+item.basemetals.aquarium_axe.name=Ascia Pesce-Acciaio
+item.basemetals.aquarium_bars.name=Barra Pesce-Acciaio
+item.basemetals.aquarium_blend.name=Miscela Pesce-Acciaio
+item.basemetals.aquarium_block.name=Cubo Pesce-Acciaio
+item.basemetals.aquarium_boots.name=Stivali Pesce-Acciaio
+item.basemetals.aquarium_chestplate.name=Corazza Pesce-Acciaio
+item.basemetals.aquarium_crackhammer.name=Mazza Pesce-Acciaio
+item.basemetals.aquarium_door.name=Porta Pesce-Acciaio
+item.basemetals.aquarium_helmet.name=Casco Pesce-Acciaio
+item.basemetals.aquarium_hoe.name=Zappare Pesce-Acciaio
+item.basemetals.aquarium_ingot.name=Lingotto Pesce-Acciaio
+item.basemetals.aquarium_leggings.name=Pantaloni Pesce-Acciaio
+item.basemetals.aquarium_nugget.name=Sassolino Pesce-Acciaio
+item.basemetals.aquarium_pickaxe.name=Piccone Pesce-Acciaio
+item.basemetals.aquarium_powder.name=Pesce-Acciaio Polverizzato
+
+item.basemetals.aquarium_shovel.name=Pala Pesce-Acciaio
+
+item.basemetals.aquarium_sword.name=Spada Pesce-Acciaio
+item.basemetals.aquarium_trapdoor.name=Fuori Porta Pesce-Acciaio
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 item.basemetals.brass_axe.name=Ottone Ascia
 item.basemetals.brass_bars.name=Ottone Barra
 item.basemetals.brass_blend.name=Ottone Miscela
@@ -38,7 +98,9 @@ item.basemetals.brass_leggings.name=Ottone Pantaloni
 item.basemetals.brass_nugget.name=Ottone Sassolino
 item.basemetals.brass_pickaxe.name=Ottone Piccone
 item.basemetals.brass_powder.name=Polvere Ottone
+
 item.basemetals.brass_shovel.name=Ottone Pala
+
 item.basemetals.brass_sword.name=Ottone Spada
 item.basemetals.brass_trapdoor.name=Ottone Fuori Porta
 item.basemetals.bronze_axe.name=Bronzo Ascia
@@ -56,10 +118,12 @@ item.basemetals.bronze_leggings.name=Bronzo Pantaloni
 item.basemetals.bronze_nugget.name=Bronzo Sassolino
 item.basemetals.bronze_pickaxe.name=Bronzo Piccone
 item.basemetals.bronze_powder.name=Polvere Bronzo
+
 item.basemetals.bronze_shovel.name=Bronzo Pala
+
 item.basemetals.bronze_sword.name=Bronzo Spada
 item.basemetals.bronze_trapdoor.name=Bronzo Fuori Porta
-item.basemetals.carbon_powder.name=Carbon Dust
+item.basemetals.carbon_powder.name=Polvere Carbon
 item.basemetals.coldiron_axe.name=Ferro-Freddo Ascia
 item.basemetals.coldiron_bars.name=Ferro-Freddo Barra
 item.basemetals.coldiron_block.name=Ferro-Freddo Cubo
@@ -75,7 +139,9 @@ item.basemetals.coldiron_nugget.name=Ferro-Freddo Sassolino
 item.basemetals.coldiron_ore.name=Ferro-Freddo Minerale
 item.basemetals.coldiron_pickaxe.name=Ferro-Freddo Piccone
 item.basemetals.coldiron_powder.name=Polvere Ferro-Freddo
+
 item.basemetals.coldiron_shovel.name=Ferro-Freddo Pala
+
 item.basemetals.coldiron_sword.name=Ferro-Freddo Spada
 item.basemetals.coldiron_trapdoor.name=Ferro-Freddo Fuori Porta
 item.basemetals.copper_axe.name=Rame Ascia
@@ -93,7 +159,9 @@ item.basemetals.copper_nugget.name=Rame Sassolino
 item.basemetals.copper_ore.name=Rame Minerale
 item.basemetals.copper_pickaxe.name=Rame Piccone
 item.basemetals.copper_powder.name=Polvere Rame
+
 item.basemetals.copper_shovel.name=Rame Pala
+
 item.basemetals.copper_sword.name=Rame Spada
 item.basemetals.copper_trapdoor.name=Rame Fuori Porta
 item.basemetals.electrum_axe.name=Lega di Rame Ascia
@@ -111,7 +179,9 @@ item.basemetals.electrum_leggings.name=Lega di Rame Pantaloni
 item.basemetals.electrum_nugget.name=Lega di Rame Sassolino
 item.basemetals.electrum_pickaxe.name=Lega di Rame Piccone
 item.basemetals.electrum_powder.name=Polvere Lega di Rame
+
 item.basemetals.electrum_shovel.name=Lega di Rame Pala
+
 item.basemetals.electrum_sword.name=Lega di Rame Spada
 item.basemetals.electrum_trapdoor.name=Lega di Rame Fuori Porta
 item.basemetals.invar_axe.name=Invar Ascia
@@ -129,13 +199,18 @@ item.basemetals.invar_leggings.name=Invar Pantaloni
 item.basemetals.invar_nugget.name=Invar Sassolino
 item.basemetals.invar_pickaxe.name=Invar Piccone
 item.basemetals.invar_powder.name=Polvere Invar
+
 item.basemetals.invar_shovel.name=Invar Pala
+
 item.basemetals.invar_sword.name=Invar Spada
 item.basemetals.invar_trapdoor.name=Invar Fuori Porta
 item.basemetals.iron_crackhammer.name=Ferro Mazza
-item.basemetals.iron_nugget.name=Ferro Sassolino
 item.basemetals.iron_powder.name=Polvere Ferro
+item.basemetals.iron_nugget.name=Ferro Sassolino
+
 item.basemetals.gold_powder.name=Polvere Oro
+
+
 item.basemetals.lead_axe.name=Piombo Ascia
 item.basemetals.lead_bars.name=Piombo Barra
 item.basemetals.lead_block.name=Piombo Cubo
@@ -151,12 +226,16 @@ item.basemetals.lead_nugget.name=Piombo Sassolino
 item.basemetals.lead_ore.name=Piombo Minerale
 item.basemetals.lead_pickaxe.name=Piombo Piccone
 item.basemetals.lead_powder.name=Polvere Piombo
+
 item.basemetals.lead_shovel.name=Piombo Pala
+
 item.basemetals.lead_sword.name=Piombo Spada
 item.basemetals.lead_trapdoor.name=Piombo Fuori Porta
 item.basemetals.mercury_ingot.name=Liquid Mercurio
+
 item.basemetals.mercury_ore.name=Mercurio Minerale
 item.basemetals.mercury_powder.name=Polvere Mercurio Minerale
+
 item.basemetals.mithril_axe.name=Mithril Ascia
 item.basemetals.mithril_bars.name=Mithril Barra
 item.basemetals.mithril_blend.name=Mithril Miscela
@@ -172,7 +251,9 @@ item.basemetals.mithril_leggings.name=Mithril Pantaloni
 item.basemetals.mithril_nugget.name=Mithril Sassolino
 item.basemetals.mithril_pickaxe.name=Mithril Piccone
 item.basemetals.mithril_powder.name=Polvere Mithril
+
 item.basemetals.mithril_shovel.name=Mithril Pala
+
 item.basemetals.mithril_sword.name=Mithril Spada
 item.basemetals.mithril_trapdoor.name=Mithril Fuori Porta
 item.basemetals.nickel_axe.name=Nichel Ascia
@@ -190,9 +271,32 @@ item.basemetals.nickel_nugget.name=Nichel Sassolino
 item.basemetals.nickel_ore.name=Nichel Minerale
 item.basemetals.nickel_pickaxe.name=Nichel Piccone
 item.basemetals.nickel_powder.name=Polvere Nichel
+
 item.basemetals.nickel_shovel.name=Nichel Pala
+
 item.basemetals.nickel_sword.name=Nichel Spada
 item.basemetals.nickel_trapdoor.name=Nichel Fuori Porta
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 item.basemetals.silver_axe.name=Argento Ascia
 item.basemetals.silver_bars.name=Argento Barra
 item.basemetals.silver_block.name=Argento Cubo
@@ -208,7 +312,9 @@ item.basemetals.silver_nugget.name=Argento Sassolino
 item.basemetals.silver_ore.name=Argento Minerale
 item.basemetals.silver_pickaxe.name=Argento Piccone
 item.basemetals.silver_powder.name=Polvere Argento
+
 item.basemetals.silver_shovel.name=Argento Pala
+
 item.basemetals.silver_sword.name=Argento Spada
 item.basemetals.silver_trapdoor.name=Argento Fuori Porta
 item.basemetals.starsteel_axe.name=Ferro-Stelle Ascia
@@ -226,7 +332,9 @@ item.basemetals.starsteel_nugget.name=Ferro-Stelle Sassolino
 item.basemetals.starsteel_ore.name=Ferro-Stelle Minerale
 item.basemetals.starsteel_pickaxe.name=Ferro-Stelle Piccone
 item.basemetals.starsteel_powder.name=Polvere Ferro-Stelle
+
 item.basemetals.starsteel_shovel.name=Ferro-Stelle Pala
+
 item.basemetals.starsteel_sword.name=Ferro-Stelle Spada
 item.basemetals.starsteel_trapdoor.name=Ferro-Stelle Fuori Porta
 item.basemetals.steel_axe.name=Acciaio Ascia
@@ -244,7 +352,9 @@ item.basemetals.steel_leggings.name=Acciaio Pantaloni
 item.basemetals.steel_nugget.name=Acciaio Sassolino
 item.basemetals.steel_pickaxe.name=Acciaio Piccone
 item.basemetals.steel_powder.name=Polvere Acciaio
+
 item.basemetals.steel_shovel.name=Acciaio Pala
+
 item.basemetals.steel_sword.name=Acciaio Spada
 item.basemetals.steel_trapdoor.name=Acciaio Fuori Porta
 item.basemetals.stone_crackhammer.name=Acciaio Mazza
@@ -263,7 +373,9 @@ item.basemetals.tin_nugget.name=Latta Sassolino
 item.basemetals.tin_ore.name=Latta Minerale
 item.basemetals.tin_pickaxe.name=Latta Piccone
 item.basemetals.tin_powder.name=Polvere Latta
+
 item.basemetals.tin_shovel.name=Latta Pala
+
 item.basemetals.tin_sword.name=Latta Spada
 item.basemetals.tin_trapdoor.name=Latta Fuori Porta
 item.basemetals.zinc_block.name=Zinco Cubo
@@ -272,11 +384,27 @@ item.basemetals.zinc_nugget.name=Zinco Sassolino
 item.basemetals.zinc_ore.name=Zinco Minerale
 item.basemetals.zinc_powder.name=Polvere Zinco
 
+
+
 tile.basemetals.adamantine_bars.name=Adamantio Barra
 tile.basemetals.adamantine_block.name=Adamantio Cubo
 tile.basemetals.adamantine_door.name=Adamantio Porta
 tile.basemetals.adamantine_ore.name=Adamantio Minerale
 tile.basemetals.adamantine_trapdoor.name=Adamantio Fuori Porta
+
+
+
+
+
+tile.basemetals.aquarium_bars.name=Barra Pesce-Acciaio
+tile.basemetals.aquarium_block.name=Cubo Pesce-Acciaio
+tile.basemetals.aquarium_door.name=Porta Pesce-Acciaio
+tile.basemetals.aquarium_trapdoor.name=Fuori Porta Pesce-Acciaio
+
+
+
+
+
 tile.basemetals.brass_bars.name=Ottone Barra
 tile.basemetals.brass_block.name=Ottone Cubo
 tile.basemetals.brass_door.name=Ottone Porta
@@ -318,6 +446,10 @@ tile.basemetals.nickel_block.name=Nichel Cubo
 tile.basemetals.nickel_door.name=Nichel Porta
 tile.basemetals.nickel_ore.name=Nichel Minerale
 tile.basemetals.nickel_trapdoor.name=Nichel Fuori Porta
+
+
+
+
 tile.basemetals.silver_bars.name=Argento Barra
 tile.basemetals.silver_block.name=Argento Cubo
 tile.basemetals.silver_door.name=Argento Porta
@@ -341,43 +473,22 @@ tile.basemetals.zinc_block.name=Zinco Cubo
 tile.basemetals.zinc_ore.name=Zinco Minerale
 
 
-item.basemetals.aquarium_axe.name=Ascia Pesce-Acciaio
-item.basemetals.aquarium_bars.name=Barra Pesce-Acciaio
-item.basemetals.aquarium_blend.name=Miscela Pesce-Acciaio
-item.basemetals.aquarium_block.name=Cubo Pesce-Acciaio
-item.basemetals.aquarium_boots.name=Stivali Pesce-Acciaio
-item.basemetals.aquarium_chestplate.name=Corazza Pesce-Acciaio
-item.basemetals.aquarium_crackhammer.name=Mazza Pesce-Acciaio
-item.basemetals.aquarium_door.name=Porta Pesce-Acciaio
-item.basemetals.aquarium_helmet.name=Casco Pesce-Acciaio
-item.basemetals.aquarium_hoe.name=Zappare Pesce-Acciaio
-item.basemetals.aquarium_ingot.name=Lingotto Pesce-Acciaio
-item.basemetals.aquarium_leggings.name=Pantaloni Pesce-Acciaio
-item.basemetals.aquarium_nugget.name=Sassolino Pesce-Acciaio
-item.basemetals.aquarium_ore.name=Mineral Pesce-Acciaio
-item.basemetals.aquarium_pickaxe.name=Piccone Pesce-Acciaio
-item.basemetals.aquarium_powder.name=Pesce-Acciaio Polverizzato
-item.basemetals.aquarium_shovel.name=Pala Pesce-Acciaio
-item.basemetals.aquarium_sword.name=Spada Pesce-Acciaio
-item.basemetals.aquarium_trapdoor.name=Fuori Porta Pesce-Acciaio
-tile.basemetals.aquarium_bars.name=Barra Pesce-Acciaio
-tile.basemetals.aquarium_block.name=Cubo Pesce-Acciaio
-tile.basemetals.aquarium_door.name=Porta Pesce-Acciaio
-tile.basemetals.aquarium_trapdoor.name=Fuori Porta Pesce-Acciaio
-
-
-
 tile.basemetals.adamantine_plate.name=Lastra di Adamantio
+
 tile.basemetals.aquarium_plate.name=Lastra di Pesce-Acciaio
+
 tile.basemetals.brass_plate.name=Lastra d'Ottone
 tile.basemetals.bronze_plate.name=Lastra di Bronzo
 tile.basemetals.coldiron_plate.name=Lastra di Ferro-Freddo
 tile.basemetals.copper_plate.name=Lastra di Rame
+
 tile.basemetals.electrum_plate.name=Lastra di Lega di Rame
 tile.basemetals.invar_plate.name=Lastra di Invar
 tile.basemetals.lead_plate.name=Lastra di Piombo
 tile.basemetals.mithril_plate.name=Lastra di Mithril
 tile.basemetals.nickel_plate.name=Lastra di Nichel
+
+
 tile.basemetals.silver_plate.name=Lastra di Argento
 tile.basemetals.starsteel_plate.name=Lastra di Ferro-Stelle
 tile.basemetals.steel_plate.name=Lastra di Acciaio
@@ -385,7 +496,6 @@ tile.basemetals.tin_plate.name=Lastra di Latta
 tile.basemetals.zinc_plate.name=Lastra di Zinco
 tile.basemetals.iron_plate.name=Lastra di Ferro
 tile.basemetals.gold_plate.name=Lastra d'Oro
-
 
 
 tooltip.adamantine.tool=+%x danni ai nemici potenti
@@ -406,6 +516,7 @@ achievement.blocktastic=Cubo!
 achievement.geologist=Geologo
 achievement.brass_maker=Brass
 achievement.bronze_maker=Bronzo
+achievement.cupronickel_maker=Nichel-Rame
 achievement.electrum_maker=Electrum
 achievement.steel_maker=Acciaio
 achievement.invar_maker=Invar
@@ -439,9 +550,12 @@ item.basemetals.diamond_crackhammer.name=Mazza Diamante
 item.basemetals.wood_crackhammer.name=Mazza di Legno
 item.basemetals.stone_crackhammer.name=Mazza Stone
 
+
 item.bucket.mercury=Secchio di Mercurio
+tile.basemetals.liquid_mercury.name=Mercurio
 
 item.basemetals.human_detector.name=Security Pressure Plate
+tile.basemetals.human_detector.name=Security Pressure Plate
 
 achievement.cupronickel_maker.desc=Combine powdered copper and nickel to make cupronickel
 
@@ -463,6 +577,10 @@ item.basemetals.cubronickel_powder.name=Polvere Nichel-Rame
 item.basemetals.cubronickel_shovel.name=Nichel-Rame Pala
 item.basemetals.cubronickel_sword.name=Nichel-Rame Spada
 item.basemetals.cubronickel_trapdoor.name=Nichel-Rame Fuori Porta
+tile.basemetals.cubronickel_bars.name=Nichel-Rame Barra
+tile.basemetals.cubronickel_block.name=Nichel-Rame Cubo
+tile.basemetals.cubronickel_door.name=Nichel-Rame Porta
+tile.basemetals.cubronickel_trapdoor.name=Nichel-Rame Fuori Porta
 
 item.basemetals.platinum_axe.name=Platino Ascia
 item.basemetals.platinum_bars.name=Platino Barra
@@ -482,9 +600,16 @@ item.basemetals.platinum_powder.name=Polvere Platino
 item.basemetals.platinum_shovel.name=Platino Pala
 item.basemetals.platinum_sword.name=Platino Spada
 item.basemetals.platinum_trapdoor.name=Platino Fuori Porta
+item.basemetals.platinum_bars.name=Platino Barra
+item.basemetals.platinum_block.name=Platino Cubo
+item.basemetals.platinum_door.name=Platino Porta
+item.basemetals.platinum_ore.name=Platino Minerale
+tile.basemetals.cubronickel_trapdoor.name=Nichel-Rame Fuori Porta
 
 item.basemetals.adamantine_rod.name=Adamantio Asta
+
 item.basemetals.aquarium_rod.name=Pesce-Acciaio Asta
+
 item.basemetals.brass_rod.name=Ottone Asta
 item.basemetals.bronze_rod.name=Bronzo Asta
 item.basemetals.coldiron_rod.name=Ferro-Freddo Asta
@@ -497,6 +622,7 @@ item.basemetals.iron_rod.name=Ferro Asta
 item.basemetals.lead_rod.name=Piombo Asta
 item.basemetals.mithril_rod.name=Mithril Asta
 item.basemetals.nickel_rod.name=Nichel Asta
+
 item.basemetals.platinum_rod.name=Platino Asta
 item.basemetals.silver_rod.name=Argento Asta
 item.basemetals.starsteel_rod.name=Ferro-Stelle Asta
@@ -505,12 +631,15 @@ item.basemetals.tin_rod.name=Latta Asta
 item.basemetals.zinc_rod.name=Zinco Asta
 
 item.basemetals.adamantine_gear.name=Adamantio Ingranaggio
+
 item.basemetals.aquarium_gear.name=Pesce-Acciaio Ingranaggio
+
 item.basemetals.brass_gear.name=Ottone Ingranaggio
 item.basemetals.bronze_gear.name=Bronzo Ingranaggio
 item.basemetals.coldiron_gear.name=Ferro-Freddo Ingranaggio
 item.basemetals.copper_gear.name=Rame Ingranaggio
 item.basemetals.cupronickel_gear.name=Nichel-Rame Ingranaggio
+
 item.basemetals.electrum_gear.name=Lega di Rame Ingranaggio
 item.basemetals.gold_gear.name=Oro Ingranaggio
 item.basemetals.invar_gear.name=Invar Ingranaggio
@@ -518,9 +647,12 @@ item.basemetals.iron_gear.name=Ferro Ingranaggio
 item.basemetals.lead_gear.name=Piombo Ingranaggio
 item.basemetals.mithril_gear.name=Mithril Ingranaggio
 item.basemetals.nickel_gear.name=Nichel Ingranaggio
+
 item.basemetals.platinum_gear.name=Platino Ingranaggio
 item.basemetals.silver_gear.name=Argento Ingranaggio
 item.basemetals.starsteel_gear.name=Ferro-Stelle Ingranaggio
 item.basemetals.steel_gear.name=Acciaio Ingranaggio
+
 item.basemetals.tin_gear.name=Latta Ingranaggio
+
 item.basemetals.zinc_gear.name=Zinco Ingranaggio
