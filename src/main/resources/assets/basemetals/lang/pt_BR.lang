@@ -1,5 +1,3 @@
-language_support_goals=english (en_US,en_EN,en_CA,en_GB, en_AU, en_PT), spanish (es_MX,es_ES), simplified chinese (zh_CN), portugese(pt_BR), italian(IT_it), japanese (ja_JA), portugese (pt_BR), german (de_DE)
-
 itemGroup.basemetals.items=Base Metals
 itemGroup.basemetals.tools=Base Metals
 itemGroup.basemetals.blocks=Base Metals
@@ -20,9 +18,71 @@ item.basemetals.adamantine_nugget.name=Pepita de Magnetita
 item.basemetals.adamantine_ore.name=Minério de Magnetita
 item.basemetals.adamantine_pickaxe.name=Picareta de Magnetita
 item.basemetals.adamantine_powder.name=Magnetita Pulverizado
+
 item.basemetals.adamantine_shovel.name=Pá de Magnetita
+
 item.basemetals.adamantine_sword.name=Espada de Magnetita
 item.basemetals.adamantine_trapdoor.name=Alçapão de Magnetita
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+item.basemetals.aquarium_axe.name=Machado de Aço-Peixe
+item.basemetals.aquarium_bars.name=Barras de Aço-Peixe
+item.basemetals.aquarium_blend.name=Liga de Aço-Peixe
+item.basemetals.aquarium_block.name=Bloco de Aço-Peixe
+item.basemetals.aquarium_boots.name=Botas de Aço-Peixe
+item.basemetals.aquarium_chestplate.name=Peitoral de Aço-Peixe
+item.basemetals.aquarium_crackhammer.name=Marreta de Aço-Peixe
+item.basemetals.aquarium_door.name=Porta de Aço-Peixe
+item.basemetals.aquarium_helmet.name=Elmo de Aço-Peixe
+item.basemetals.aquarium_hoe.name=Enxada de Aço-Peixe
+item.basemetals.aquarium_ingot.name=Barra de Aço-Peixe
+item.basemetals.aquarium_leggings.name=Calças de Aço-Peixe
+item.basemetals.aquarium_nugget.name=Pepita de Aço-Peixe
+item.basemetals.aquarium_pickaxe.name=Picareta de Aço-Peixe
+item.basemetals.aquarium_powder.name=Aço-Peixe Pulverizado
+
+item.basemetals.aquarium_shovel.name=Pá de Aço-Peixe
+
+item.basemetals.aquarium_sword.name=Espada de Aço-Peixe
+item.basemetals.aquarium_trapdoor.name=Alçapão de Aço-Peixe
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 item.basemetals.brass_axe.name=Machado de Latão
 item.basemetals.brass_bars.name=Barras de Latão
 item.basemetals.brass_blend.name=Liga de Latão
@@ -38,7 +98,9 @@ item.basemetals.brass_leggings.name=Calças de Latão
 item.basemetals.brass_nugget.name=Pepita de Latão
 item.basemetals.brass_pickaxe.name=Picareta de Latão
 item.basemetals.brass_powder.name=Latão Pulverizado
+
 item.basemetals.brass_shovel.name=Pá de Latão
+
 item.basemetals.brass_sword.name=Espada de Latão
 item.basemetals.brass_trapdoor.name=Alçapão de Latão
 item.basemetals.bronze_axe.name=Machado de Bronze
@@ -56,7 +118,9 @@ item.basemetals.bronze_leggings.name=Calças de Bronze
 item.basemetals.bronze_nugget.name=Pepita de Bronze
 item.basemetals.bronze_pickaxe.name=Picareta de Bronze
 item.basemetals.bronze_powder.name=Bronze Pulverizado
+
 item.basemetals.bronze_shovel.name=Pá de Bronze
+
 item.basemetals.bronze_sword.name=Espada de Bronze
 item.basemetals.bronze_trapdoor.name=Alçapão de Bronze
 item.basemetals.carbon_powder.name=Carbono Pulverizado
@@ -75,7 +139,9 @@ item.basemetals.coldiron_nugget.name=Pepita de Ferro-Frio
 item.basemetals.coldiron_ore.name=Minério de Ferro-Frio
 item.basemetals.coldiron_pickaxe.name=Picareta de Ferro-Frio
 item.basemetals.coldiron_powder.name=Ferro-Frio Pulverizado
+
 item.basemetals.coldiron_shovel.name=Pá de Ferro-Frio
+
 item.basemetals.coldiron_sword.name=Espada de Ferro-Frio
 item.basemetals.coldiron_trapdoor.name=Alçapão de Ferro-Frio
 item.basemetals.copper_axe.name=Machado de Cobre
@@ -93,7 +159,9 @@ item.basemetals.copper_nugget.name=Pepita de Cobre
 item.basemetals.copper_ore.name=Minério de Cobre
 item.basemetals.copper_pickaxe.name=Picareta de Cobre
 item.basemetals.copper_powder.name=Cobre Pulverizado
+
 item.basemetals.copper_shovel.name=Pá de Cobre
+
 item.basemetals.copper_sword.name=Espada de Cobre
 item.basemetals.copper_trapdoor.name=Alçapão de Cobre
 item.basemetals.electrum_axe.name=Machado de Electrum
@@ -111,7 +179,9 @@ item.basemetals.electrum_leggings.name=Calças de Electrum
 item.basemetals.electrum_nugget.name=Pepita de Electrum
 item.basemetals.electrum_pickaxe.name=Picareta de Electrum
 item.basemetals.electrum_powder.name=Electrum Pulverizado
+
 item.basemetals.electrum_shovel.name=Pá de Electrum
+
 item.basemetals.electrum_sword.name=Espada de Electrum
 item.basemetals.electrum_trapdoor.name=Alçapão de Electrum
 item.basemetals.invar_axe.name=Machado de Invar
@@ -129,13 +199,18 @@ item.basemetals.invar_leggings.name=Calças de Invar
 item.basemetals.invar_nugget.name=Pepita de Invar
 item.basemetals.invar_pickaxe.name=Picareta de Invar
 item.basemetals.invar_powder.name=Pulverizado
+
 item.basemetals.invar_shovel.name=Pá de Invar
+
 item.basemetals.invar_sword.name=Espada de Invar
 item.basemetals.invar_trapdoor.name=Alçapão de Invar
 item.basemetals.iron_crackhammer.name=Marreta de Ferro
 item.basemetals.iron_nugget.name=Pepita de Ferro
 item.basemetals.iron_powder.name=Ferro Pulverizado
+
 item.basemetals.gold_powder.name=Ouro Pulverizado
+
+
 item.basemetals.lead_axe.name=Machado de Chumbo
 item.basemetals.lead_bars.name=Barras de Chumbo
 item.basemetals.lead_block.name=Cubo de Chumbo
@@ -151,12 +226,16 @@ item.basemetals.lead_nugget.name=Pepita de Chumbo
 item.basemetals.lead_ore.name=Minério de Chumbo
 item.basemetals.lead_pickaxe.name=Picareta de Chumbo
 item.basemetals.lead_powder.name=Chumbo Pulverizado
+
 item.basemetals.lead_shovel.name=Pá de Chumbo
+
 item.basemetals.lead_sword.name=Espada de Chumbo
 item.basemetals.lead_trapdoor.name=Alçapão de Chumbo
 item.basemetals.mercury_ingot.name=Mercúrio 
+
 item.basemetals.mercury_ore.name=Minério de Mercúrio
 item.basemetals.mercury_powder.name=Minério de Mercúrio Pulverizado
+
 item.basemetals.mithril_axe.name=Machado de Mithril
 item.basemetals.mithril_bars.name=Barras de Mithril
 item.basemetals.mithril_blend.name=Liga de Mithril
@@ -172,7 +251,9 @@ item.basemetals.mithril_leggings.name=Calças de Mithril
 item.basemetals.mithril_nugget.name=Pepita de Mithril
 item.basemetals.mithril_pickaxe.name=Picareta de Mithril
 item.basemetals.mithril_powder.name=Mithril Pulverizado
+
 item.basemetals.mithril_shovel.name=Pá de Mithril
+
 item.basemetals.mithril_sword.name=Espada de Mithril
 item.basemetals.mithril_trapdoor.name=Alçapão de Mithril
 item.basemetals.nickel_axe.name=Machado de Níquel
@@ -190,9 +271,32 @@ item.basemetals.nickel_nugget.name=Pepita de Níquel
 item.basemetals.nickel_ore.name=Minério de Níquel
 item.basemetals.nickel_pickaxe.name=Picareta de Níquel
 item.basemetals.nickel_powder.name=Níquel Pulverizado
+
 item.basemetals.nickel_shovel.name=Pá de Níquel
+
 item.basemetals.nickel_sword.name=Espada de Níquel
 item.basemetals.nickel_trapdoor.name=Alçapão de Níquel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 item.basemetals.silver_axe.name=Machado de Prata
 item.basemetals.silver_bars.name=Barras de Prata
 item.basemetals.silver_block.name=Cubo de Prata
@@ -208,7 +312,9 @@ item.basemetals.silver_nugget.name=Pepita de Prata
 item.basemetals.silver_ore.name=Minério de Prata
 item.basemetals.silver_pickaxe.name=Picareta de Prata
 item.basemetals.silver_powder.name=Prata Pulverizado
+
 item.basemetals.silver_shovel.name=Pá de Prata
+
 item.basemetals.silver_sword.name=Espada de Prata
 item.basemetals.silver_trapdoor.name=Alçapão de Prata
 item.basemetals.starsteel_axe.name=Machado de Ferro-Estrela
@@ -226,7 +332,9 @@ item.basemetals.starsteel_nugget.name=Pepita de Ferro-Estrela
 item.basemetals.starsteel_ore.name=Minério de Ferro-Estrela
 item.basemetals.starsteel_pickaxe.name=Picareta de Ferro-Estrela
 item.basemetals.starsteel_powder.name=Ferro-Estrela Pulverizado
+
 item.basemetals.starsteel_shovel.name=Pá de Ferro-Estrela
+
 item.basemetals.starsteel_sword.name=Espada de Ferro-Estrela
 item.basemetals.starsteel_trapdoor.name=Alçapão de Ferro-Estrela
 item.basemetals.steel_axe.name=Machado de Aço
@@ -244,7 +352,9 @@ item.basemetals.steel_leggings.name=Calças de Aço
 item.basemetals.steel_nugget.name=Pepita de Aço
 item.basemetals.steel_pickaxe.name=Picareta de Aço
 item.basemetals.steel_powder.name=Aço Pulverizado
+
 item.basemetals.steel_shovel.name=Pá de Aço
+
 item.basemetals.steel_sword.name=Espada de Aço
 item.basemetals.steel_trapdoor.name=Alçapão de Aço
 item.basemetals.stone_crackhammer.name=Marreta de Aço
@@ -263,7 +373,9 @@ item.basemetals.tin_nugget.name=Pepita de Estanho
 item.basemetals.tin_ore.name=Minério de Estanho
 item.basemetals.tin_pickaxe.name=Picareta de Estanho
 item.basemetals.tin_powder.name=Estanho Pulverizado
+
 item.basemetals.tin_shovel.name=Pá de Estanho
+
 item.basemetals.tin_sword.name=Espada de Estanho
 item.basemetals.tin_trapdoor.name=Estanho Alçapão de Estanho
 item.basemetals.zinc_block.name=Cubo de Zinco
@@ -272,11 +384,27 @@ item.basemetals.zinc_nugget.name=Pepita de Zinco
 item.basemetals.zinc_ore.name=Minério de Zinco
 item.basemetals.zinc_powder.name=Zinco Pulverizado
 
+
+
 tile.basemetals.adamantine_bars.name=Barras de Magnetita
 tile.basemetals.adamantine_block.name=Cubo de Magnetita
 tile.basemetals.adamantine_door.name=Porta de Magnetita
 tile.basemetals.adamantine_ore.name=Minério de Magnetita
 tile.basemetals.adamantine_trapdoor.name=Alçapão de Magnetita
+
+
+
+
+
+tile.basemetals.aquarium_bars.name=Barras de Aço-Peixe
+tile.basemetals.aquarium_block.name=Cubo de Aço-Peixe
+tile.basemetals.aquarium_door.name=Porta de Aço-Peixe
+tile.basemetals.aquarium_trapdoor.name=Alçapão de Aço-Peixe
+
+
+
+
+
 tile.basemetals.brass_bars.name=Barras de Latão
 tile.basemetals.brass_block.name=Cubo de Latão
 tile.basemetals.brass_door.name=Porta de Latão
@@ -318,6 +446,10 @@ tile.basemetals.nickel_block.name=Cubo de Níquel
 tile.basemetals.nickel_door.name=Porta de Níquel
 tile.basemetals.nickel_ore.name=Minério de Níquel
 tile.basemetals.nickel_trapdoor.name=Alçapão de Níquel
+
+
+
+
 tile.basemetals.silver_bars.name=Barras de Prata
 tile.basemetals.silver_block.name=Cubo de Prata
 tile.basemetals.silver_door.name=Porta de Prata
@@ -341,40 +473,22 @@ tile.basemetals.zinc_block.name=Zinco Cubo de Zinco
 tile.basemetals.zinc_ore.name=Minério de Zinco
 
 
-item.basemetals.aquarium_axe.name=Machado de Aço-Peixe
-item.basemetals.aquarium_bars.name=Barras de Aço-Peixe
-item.basemetals.aquarium_blend.name=Liga de Aço-Peixe
-item.basemetals.aquarium_block.name=Bloco de Aço-Peixe
-item.basemetals.aquarium_boots.name=Botas de Aço-Peixe
-item.basemetals.aquarium_chestplate.name=Peitoral de Aço-Peixe
-item.basemetals.aquarium_crackhammer.name=Marreta de Aço-Peixe
-item.basemetals.aquarium_door.name=Porta de Aço-Peixe
-item.basemetals.aquarium_helmet.name=Elmo de Aço-Peixe
-item.basemetals.aquarium_hoe.name=Enxada de Aço-Peixe
-item.basemetals.aquarium_ingot.name=Barra de Aço-Peixe
-item.basemetals.aquarium_leggings.name=Calças de Aço-Peixe
-item.basemetals.aquarium_nugget.name=Pepita de Aço-Peixe
-item.basemetals.aquarium_pickaxe.name=Picareta de Aço-Peixe
-item.basemetals.aquarium_powder.name=Aço-Peixe Pulverizado
-item.basemetals.aquarium_shovel.name=Pá de Aço-Peixe
-item.basemetals.aquarium_sword.name=Espada de Aço-Peixe
-item.basemetals.aquarium_trapdoor.name=Alçapão de Aço-Peixe
-tile.basemetals.aquarium_bars.name=Barras de Aço-Peixe
-tile.basemetals.aquarium_block.name=Cubo de Aço-Peixe
-tile.basemetals.aquarium_door.name=Porta de Aço-Peixe
-tile.basemetals.aquarium_trapdoor.name=Alçapão de Aço-Peixe
-
 tile.basemetals.adamantine_plate.name=Chapa de Magnetita
+
 tile.basemetals.aquarium_plate.name=Chapa de Aço-Peixe
+
 tile.basemetals.brass_plate.name=Chapa de Latão
 tile.basemetals.bronze_plate.name=Chapa de Bronze
 tile.basemetals.coldiron_plate.name=Chapa de Ferro-Frio
 tile.basemetals.copper_plate.name=Chapa de Cobre
+
 tile.basemetals.electrum_plate.name=Chapa de Electrum
 tile.basemetals.invar_plate.name=Chapa de Invar
 tile.basemetals.lead_plate.name=Chapa de Chumbo
 tile.basemetals.mithril_plate.name=Chapa de Mithril
 tile.basemetals.nickel_plate.name=Chapa de Níquel
+
+
 tile.basemetals.silver_plate.name=Chapa de Prata
 tile.basemetals.starsteel_plate.name=Chapa de Ferro-Estrela
 tile.basemetals.steel_plate.name=Chapa de Aço
@@ -382,6 +496,7 @@ tile.basemetals.tin_plate.name=Chapa de Estanho
 tile.basemetals.zinc_plate.name=Chapa de Zinco
 tile.basemetals.iron_plate.name=Chapa de Ferro
 tile.basemetals.gold_plate.name=Chapa de Ouro
+
 
 tooltip.adamantine.tool=+%x dano aos inimigos poderosos
 tooltip.aquarium.tool=+%x dano aos inimigos de água
@@ -395,11 +510,13 @@ tooltip.coldiron.armor=Imunidade fogo
 tooltip.mithril.armor=Proteção contra veneno e murchar
 tooltip.starsteel.armor=Menos gravidade
 
+
 achievement.this_is_new=Isso é novo ...
 achievement.blocktastic=Bloco!
 achievement.geologist=Geólogo
 achievement.brass_maker=Latão
 achievement.bronze_maker=Bronze
+achievement.cupronickel_maker=Cobreníquel
 achievement.electrum_maker=Electrum
 achievement.steel_maker=Aço
 achievement.invar_maker=Invar
@@ -434,8 +551,10 @@ item.basemetals.wood_crackhammer.name=Marreta de Madeira
 item.basemetals.stone_crackhammer.name=Marreta de Pedra
 
 item.bucket.mercury=Balde de Mercúrio
+tile.basemetals.liquid_mercury.name=Mercúrio
 
 item.basemetals.human_detector.name=Placa de Pressão de Segurança
+tile.basemetals.human_detector.name=Placa de Pressão de Segurança
 
 achievement.cupronickel_maker.desc=Misture cobre em pó e níquel para fazer cobreníquel
 
@@ -487,7 +606,9 @@ tile.basemetals.platinum_ore.name=Minério de Platina
 tile.basemetals.platinum_trapdoor.name=Alçapão de Platina
 
 item.basemetals.adamantine_rod.name=Haste de Magnetita
+
 item.basemetals.aquarium_rod.name=Haste de Aço-Peixe
+
 item.basemetals.brass_rod.name=Haste de Latão
 item.basemetals.bronze_rod.name=Haste de Bronze
 item.basemetals.coldiron_rod.name=Haste de Ferro-Frio
@@ -500,6 +621,7 @@ item.basemetals.iron_rod.name=Haste de Ferro
 item.basemetals.lead_rod.name=Haste de Chumbo
 item.basemetals.mithril_rod.name=Haste de Mithril
 item.basemetals.nickel_rod.name=Haste de Níquel
+
 item.basemetals.platinum_rod.name=Haste de Platina
 item.basemetals.silver_rod.name=Haste de Prata
 item.basemetals.starsteel_rod.name=Haste de Ferro-Estrela
@@ -508,12 +630,15 @@ item.basemetals.tin_rod.name=Haste de Estanho
 item.basemetals.zinc_rod.name=Haste de Zinco
 
 item.basemetals.adamantine_gear.name=Roda Dentada de Magnetita
+
 item.basemetals.aquarium_gear.name=Roda Dentada de Aço-Peixe
+
 item.basemetals.brass_gear.name=Roda Dentada de Latão
 item.basemetals.bronze_gear.name=Roda Dentada de Bronze
 item.basemetals.coldiron_gear.name=Roda Dentada de Ferro-Frio
 item.basemetals.copper_gear.name=Roda Dentada de Cobre
 item.basemetals.cupronickel_gear.name=Roda Dentada de Cobreníquel
+
 item.basemetals.electrum_gear.name=Roda Dentada de Electrum
 item.basemetals.gold_gear.name=Roda Dentada de Ouro
 item.basemetals.invar_gear.name=Roda Dentada de Invar
@@ -521,9 +646,12 @@ item.basemetals.iron_gear.name=Roda Dentada de Ferro
 item.basemetals.lead_gear.name=Roda Dentada de Chumbo
 item.basemetals.mithril_gear.name=Roda Dentada de Mithril
 item.basemetals.nickel_gear.name=Roda Dentada de Níquel
+
 item.basemetals.platinum_gear.name=Roda Dentada de Platina
 item.basemetals.silver_gear.name=Roda Dentada de Prata
 item.basemetals.starsteel_gear.name=Roda Dentada de Ferro-Estrela
 item.basemetals.steel_gear.name=Roda Dentada de Aço
+
 item.basemetals.tin_gear.name=Roda Dentada de Estanho
+
 item.basemetals.zinc_gear.name=Roda Dentada de Zinco
