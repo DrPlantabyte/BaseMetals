@@ -18,9 +18,31 @@ item.basemetals.adamantine_nugget.name=Adamanten Klompje
 item.basemetals.adamantine_ore.name=Adamanten Erts
 item.basemetals.adamantine_pickaxe.name=Adamanten Pikhouweel
 item.basemetals.adamantine_powder.name=Verpulverd Adamanten
+
 item.basemetals.adamantine_shovel.name=Adamanten Schep
+
 item.basemetals.adamantine_sword.name=Adamanten Zwaard
 item.basemetals.adamantine_trapdoor.name=Adamanten Valluik
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 item.basemetals.aquarium_axe.name=Aquarium Bijl
 item.basemetals.aquarium_bars.name=Aquarium Tralies
 item.basemetals.aquarium_blend.name=Aquarium Mix
@@ -34,12 +56,33 @@ item.basemetals.aquarium_hoe.name=Aquarium Schoffel
 item.basemetals.aquarium_ingot.name=Aquarium Staaf
 item.basemetals.aquarium_leggings.name=Aquarium Broek
 item.basemetals.aquarium_nugget.name=Aquarium Klompje
-item.basemetals.aquarium_ore.name=Aquarium Erts
 item.basemetals.aquarium_pickaxe.name=Aquarium Pikhouweel
 item.basemetals.aquarium_powder.name=Verpulverd Aquarium
+
 item.basemetals.aquarium_shovel.name=Aquarium Schep
+
 item.basemetals.aquarium_sword.name=Aquarium Zwaard
 item.basemetals.aquarium_trapdoor.name=Aquarium Valluik
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 item.basemetals.brass_axe.name=Messing Bijl
 item.basemetals.brass_bars.name=Messing Tralies
 item.basemetals.brass_blend.name=Messing Mix
@@ -55,7 +98,9 @@ item.basemetals.brass_leggings.name=Messing Broek
 item.basemetals.brass_nugget.name=Messing Klompje
 item.basemetals.brass_pickaxe.name=Messing Pikhouweel
 item.basemetals.brass_powder.name=Verpulverd Messing
+
 item.basemetals.brass_shovel.name=Messing Schep
+
 item.basemetals.brass_sword.name=Messing Zwaard
 item.basemetals.brass_trapdoor.name=Messing Valluik
 item.basemetals.bronze_axe.name=Bronzen Bijl
@@ -73,7 +118,9 @@ item.basemetals.bronze_leggings.name=Bronzen Broek
 item.basemetals.bronze_nugget.name=Bronzen Klompje
 item.basemetals.bronze_pickaxe.name=Bronzen Pikhouweel
 item.basemetals.bronze_powder.name=Verpulverd Bronzen
+
 item.basemetals.bronze_shovel.name=Bronzen Schep
+
 item.basemetals.bronze_sword.name=Bronzen Zwaard
 item.basemetals.bronze_trapdoor.name=Bronzen Valluik
 item.basemetals.carbon_powder.name=Koolstof
@@ -92,7 +139,9 @@ item.basemetals.coldiron_nugget.name=Cold-Iron Klompje
 item.basemetals.coldiron_ore.name=Cold-Iron Erts
 item.basemetals.coldiron_pickaxe.name=Cold-Iron Pikhouweel
 item.basemetals.coldiron_powder.name=Verpulverd Cold-Iron
+
 item.basemetals.coldiron_shovel.name=Cold-Iron Schep
+
 item.basemetals.coldiron_sword.name=Cold-Iron Zwaard
 item.basemetals.coldiron_trapdoor.name=Cold-Iron Valluik
 item.basemetals.copper_axe.name=Koperen Bijl
@@ -110,7 +159,9 @@ item.basemetals.copper_nugget.name=Koperen Klompje
 item.basemetals.copper_ore.name=Koper Erts
 item.basemetals.copper_pickaxe.name=Koperen Pikhouweel
 item.basemetals.copper_powder.name=Verpulverd Koperen
+
 item.basemetals.copper_shovel.name=Koperen Schep
+
 item.basemetals.copper_sword.name=Koperen Zwaard
 item.basemetals.copper_trapdoor.name=Koperen Valluik
 item.basemetals.electrum_axe.name=Electrum Bijl
@@ -128,7 +179,9 @@ item.basemetals.electrum_leggings.name=Electrum Broek
 item.basemetals.electrum_nugget.name=Electrum Klompje
 item.basemetals.electrum_pickaxe.name=Electrum Pikhouweel
 item.basemetals.electrum_powder.name=Verpulverd Electrum
+
 item.basemetals.electrum_shovel.name=Electrum Schep
+
 item.basemetals.electrum_sword.name=Electrum Zwaard
 item.basemetals.electrum_trapdoor.name=Electrum Valluik
 item.basemetals.invar_axe.name=Invar Bijl
@@ -146,13 +199,18 @@ item.basemetals.invar_leggings.name=Invar Broek
 item.basemetals.invar_nugget.name=Invar Klompje
 item.basemetals.invar_pickaxe.name=Invar Pikhouweel
 item.basemetals.invar_powder.name=Verpulverd Invar
+
 item.basemetals.invar_shovel.name=Invar Schep
+
 item.basemetals.invar_sword.name=Invar Zwaard
 item.basemetals.invar_trapdoor.name=Invar Valluik
 item.basemetals.iron_crackhammer.name=IJzeren Breek Hamer
 item.basemetals.iron_powder.name=Verpulverd IJzer
 item.basemetals.iron_nugget.name=IJzer Klompje
+
 item.basemetals.gold_powder.name=Verpulverd Goud
+
+
 item.basemetals.lead_axe.name=Loden Bijl
 item.basemetals.lead_bars.name=Loden Tralies
 item.basemetals.lead_block.name=Loden Blok
@@ -168,12 +226,16 @@ item.basemetals.lead_nugget.name=Loden Klompje
 item.basemetals.lead_ore.name=Loden Erts
 item.basemetals.lead_pickaxe.name=Loden Pikhouweel
 item.basemetals.lead_powder.name=Verpulverd Lood
+
 item.basemetals.lead_shovel.name=Loden Schep
+
 item.basemetals.lead_sword.name=Loden Zwaard
 item.basemetals.lead_trapdoor.name=Loden Valluik
 item.basemetals.mercury_ingot.name=Vloeibaar Kwik
+
 item.basemetals.mercury_ore.name=Kwik Erts
 item.basemetals.mercury_powder.name=Verpulverd Kwik
+
 item.basemetals.mithril_axe.name=Mithril Bijl
 item.basemetals.mithril_bars.name=Mithril Tralies
 item.basemetals.mithril_blend.name=Mithril Mix
@@ -189,7 +251,9 @@ item.basemetals.mithril_leggings.name=Mithril Broek
 item.basemetals.mithril_nugget.name=Mithril Klompje
 item.basemetals.mithril_pickaxe.name=Mithril Pikhouweel
 item.basemetals.mithril_powder.name=Verpulverd Mithril
+
 item.basemetals.mithril_shovel.name=Mithril Schep
+
 item.basemetals.mithril_sword.name=Mithril Zwaard
 item.basemetals.mithril_trapdoor.name=Mithril Valluik
 item.basemetals.nickel_axe.name=Nikkel Bijl
@@ -207,9 +271,32 @@ item.basemetals.nickel_nugget.name=Nikkel Klompje
 item.basemetals.nickel_ore.name=Nikkel Erts
 item.basemetals.nickel_pickaxe.name=Nikkel Pikhouweel
 item.basemetals.nickel_powder.name=Verpulverd Nikkel
+
 item.basemetals.nickel_shovel.name=Nikkel Schep
+
 item.basemetals.nickel_sword.name=Nikkel Zwaard
 item.basemetals.nickel_trapdoor.name=Nikkel Valluik
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 item.basemetals.silver_axe.name=Zilveren Bijl
 item.basemetals.silver_bars.name=Zilveren Tralies
 item.basemetals.silver_block.name=Zilveren Blok
@@ -225,7 +312,9 @@ item.basemetals.silver_nugget.name=Zilveren Klompje
 item.basemetals.silver_ore.name=Zilver Erts
 item.basemetals.silver_pickaxe.name=Zilveren Pikhouweel
 item.basemetals.silver_powder.name=Verpulverd Zilveren
+
 item.basemetals.silver_shovel.name=Zilveren Schep
+
 item.basemetals.silver_sword.name=Zilveren Zwaard
 item.basemetals.silver_trapdoor.name=Zilveren Valluik
 item.basemetals.starsteel_axe.name=Sterren-Staal Bijl
@@ -243,7 +332,9 @@ item.basemetals.starsteel_nugget.name=Sterren-Staal Klompje
 item.basemetals.starsteel_ore.name=Sterren-Staal Erts
 item.basemetals.starsteel_pickaxe.name=Sterren-Staal Pikhouweel
 item.basemetals.starsteel_powder.name=Verpulverd Sterren-Staal
+
 item.basemetals.starsteel_shovel.name=Sterren-Staal Schep
+
 item.basemetals.starsteel_sword.name=Sterren-Staal Zwaard
 item.basemetals.starsteel_trapdoor.name=Sterren-Staal Valluik
 item.basemetals.steel_axe.name=Stalen Bijl
@@ -261,7 +352,9 @@ item.basemetals.steel_leggings.name=Stalen Broek
 item.basemetals.steel_nugget.name=Stalen Klompje
 item.basemetals.steel_pickaxe.name=Stalen Pikhouweel
 item.basemetals.steel_powder.name=Verpulverd Staal
+
 item.basemetals.steel_shovel.name=Stalen Schep
+
 item.basemetals.steel_sword.name=Stalen Zwaard
 item.basemetals.steel_trapdoor.name=Stalen Valluik
 item.basemetals.stone_crackhammer.name=Stalen Breek Hamer
@@ -280,7 +373,9 @@ item.basemetals.tin_nugget.name=Tinnen Klompje
 item.basemetals.tin_ore.name=Tinnen Erts
 item.basemetals.tin_pickaxe.name=Tinnen Pikhouweel
 item.basemetals.tin_powder.name=Verpulverd Tinnen
+
 item.basemetals.tin_shovel.name=Tinnen Schep
+
 item.basemetals.tin_sword.name=Tinnen Zwaard
 item.basemetals.tin_trapdoor.name=Tinnen Valluik
 item.basemetals.zinc_block.name=Zinc Blok
@@ -289,15 +384,27 @@ item.basemetals.zinc_nugget.name=Zinc Klompje
 item.basemetals.zinc_ore.name=Zinc Erts
 item.basemetals.zinc_powder.name=Verpulverd Zinc
 
+
+
 tile.basemetals.adamantine_bars.name=Adamanten Tralies
 tile.basemetals.adamantine_block.name=Adamanten Blok
 tile.basemetals.adamantine_door.name=Adamanten Deur
 tile.basemetals.adamantine_ore.name=Adamanten Erts
 tile.basemetals.adamantine_trapdoor.name=Adamanten Valluik
+
+
+
+
+
 tile.basemetals.aquarium_bars.name=Aquarium Tralies
 tile.basemetals.aquarium_block.name=Aquarium Blok
 tile.basemetals.aquarium_door.name=Aquarium Deur
 tile.basemetals.aquarium_trapdoor.name=Aquarium Valluik
+
+
+
+
+
 tile.basemetals.brass_bars.name=Messing Tralies
 tile.basemetals.brass_block.name=Messing Blok
 tile.basemetals.brass_door.name=Messing Deur
@@ -339,6 +446,10 @@ tile.basemetals.nickel_block.name=Nikkel Blok
 tile.basemetals.nickel_door.name=Nikkel Deur
 tile.basemetals.nickel_ore.name=Nikkel Erts
 tile.basemetals.nickel_trapdoor.name=Nikkel Valluik
+
+
+
+
 tile.basemetals.silver_bars.name=Zilveren Tralies
 tile.basemetals.silver_block.name=Zilveren Blok
 tile.basemetals.silver_door.name=Zilveren Deur
@@ -363,16 +474,21 @@ tile.basemetals.zinc_ore.name=Zinc Erts
 
 
 tile.basemetals.adamantine_plate.name=Adamanten Plaat
+
 tile.basemetals.aquarium_plate.name=Aquarium Plaat
+
 tile.basemetals.brass_plate.name=Messing Plaat
 tile.basemetals.bronze_plate.name=Bronzen Plaat
 tile.basemetals.coldiron_plate.name=Cold-Iron Plaat
 tile.basemetals.copper_plate.name=Koperen Plaat
+
 tile.basemetals.electrum_plate.name=Electrum Plaat
 tile.basemetals.invar_plate.name=Invar Plaat
 tile.basemetals.lead_plate.name=Loden Plaat
 tile.basemetals.mithril_plate.name=Mithril Plaat
 tile.basemetals.nickel_plate.name=Nikkel Plaat
+
+
 tile.basemetals.silver_plate.name=Zilveren Plaat
 tile.basemetals.starsteel_plate.name=Sterren-Staal Plaat
 tile.basemetals.steel_plate.name=Stalen Plaat
@@ -400,6 +516,7 @@ achievement.blocktastic=Bloktastisch!
 achievement.geologist=Geologist
 achievement.brass_maker=Messing
 achievement.bronze_maker=Brons
+achievement.cupronickel_maker=Cupronickel
 achievement.electrum_maker=Electrum
 achievement.steel_maker=Staal
 achievement.invar_maker=Invar
@@ -434,8 +551,10 @@ item.basemetals.wood_crackhammer.name=Houten Breek Hamer
 item.basemetals.stone_crackhammer.name=Stenen Breek Hamer
 
 item.bucket.mercury=Emmer met Kwik
+tile.basemetals.liquid_mercury.name=Kwik
 
 item.basemetals.human_detector.name=Security Pressure Plate
+tile.basemetals.human_detector.name=Security Pressure Plate
 
 achievement.cupronickel_maker.desc=Combine powdered copper and nickel to make cupronickel
 
@@ -487,7 +606,9 @@ tile.basemetals.platinum_ore.name=Platinum Ore
 tile.basemetals.platinum_trapdoor.name=Platinum Trapdoor
 
 item.basemetals.adamantine_rod.name=Adamantine Rod
+
 item.basemetals.aquarium_rod.name=Aquarium Rod
+
 item.basemetals.brass_rod.name=Brass Rod
 item.basemetals.bronze_rod.name=Bronze Rod
 item.basemetals.coldiron_rod.name=Cold-Iron Rod
@@ -500,6 +621,7 @@ item.basemetals.iron_rod.name=Iron Rod
 item.basemetals.lead_rod.name=Lead Rod
 item.basemetals.mithril_rod.name=Mithril Rod
 item.basemetals.nickel_rod.name=Nickel Rod
+
 item.basemetals.platinum_rod.name=Platinum Rod
 item.basemetals.silver_rod.name=Silver Rod
 item.basemetals.starsteel_rod.name=Star-Steel Rod
@@ -508,12 +630,15 @@ item.basemetals.tin_rod.name=Tin Rod
 item.basemetals.zinc_rod.name=Zinc Rod
 
 item.basemetals.adamantine_gear.name=Adamantine Gear
+
 item.basemetals.aquarium_gear.name=Aquarium Gear
+
 item.basemetals.brass_gear.name=Brass Gear
 item.basemetals.bronze_gear.name=Bronze Gear
 item.basemetals.coldiron_gear.name=Cold-Iron Gear
 item.basemetals.copper_gear.name=Copper Gear
 item.basemetals.cupronickel_gear.name=Cupronickel Gear
+
 item.basemetals.electrum_gear.name=Electrum Gear
 item.basemetals.gold_gear.name=Gold Gear
 item.basemetals.invar_gear.name=Invar Gear
@@ -521,9 +646,12 @@ item.basemetals.iron_gear.name=Iron Gear
 item.basemetals.lead_gear.name=Lead Gear
 item.basemetals.mithril_gear.name=Mithril Gear
 item.basemetals.nickel_gear.name=Nickel Gear
+
 item.basemetals.platinum_gear.name=Platinum Gear
 item.basemetals.silver_gear.name=Silver Gear
 item.basemetals.starsteel_gear.name=Star-Steel Gear
 item.basemetals.steel_gear.name=Steel Gear
+
 item.basemetals.tin_gear.name=Tin Gear
+
 item.basemetals.zinc_gear.name=Zinc Gear

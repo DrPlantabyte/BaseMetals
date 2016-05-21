@@ -277,7 +277,8 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor implements IMet
 
 
     
-    @Override
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	@Override
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b){
     	super.addInformation(stack,player,list,b);
     	MetalToolEffects.addArmorSpecialPropertiesToolTip(metal,list);
