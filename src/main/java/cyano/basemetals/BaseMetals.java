@@ -47,6 +47,7 @@ import java.util.*;
 		name=BaseMetals.NAME,
 		version = BaseMetals.VERSION,
 		dependencies = "required-after:Forge",
+		acceptedMinecraftVersions = "1.9)")
 //		updateJSON = "https://raw.githubusercontent.com/cyanobacterium/BaseMetals/master/update.json")
 
 public class BaseMetals
