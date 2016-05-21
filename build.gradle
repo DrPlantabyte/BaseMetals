@@ -31,14 +31,14 @@ plugins {
 */
 
 
-version = "2.2.2"
+version = "2.2.2.1"
 group= "cyano.basemetals"
 archivesBaseName = "BaseMetals_1.9"
 
 minecraft {
-    version = "1.9-12.16.0.1865-1.9"
+    version = "1.9-12.16.1.1907"
     runDir = "run"
-    mappings = "snapshot_20160425"
+    mappings = "stable_24"
 }
 
 dependencies {
