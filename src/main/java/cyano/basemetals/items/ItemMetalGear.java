@@ -14,7 +14,7 @@ public class ItemMetalGear extends Item implements IOreDictionaryEntry, IMetalOb
 	public ItemMetalGear(MetalMaterial m){
 		this.metal = m;
 		this.setCreativeTab(CreativeTabs.MISC);
-		this.oreDict = "dust"+metal.getCapitalizedName(); // same oreDict entry as powder
+		this.oreDict = "gear"+metal.getCapitalizedName(); // same oreDict entry as powder
 	}
 
 	public String getOreDictionaryName(){

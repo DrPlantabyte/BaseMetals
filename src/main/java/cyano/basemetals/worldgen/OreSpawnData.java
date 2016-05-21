@@ -37,6 +37,7 @@ public class OreSpawnData {
 	
 	private static boolean doOnce = true; 
 	
+	@SuppressWarnings("unchecked")
 	public OreSpawnData(JsonObject jsonEntry){
 		String blockName = jsonEntry.get("blockID").getAsString();
 		String modId;
