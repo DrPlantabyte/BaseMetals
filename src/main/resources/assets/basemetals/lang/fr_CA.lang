@@ -1,8 +1,8 @@
+nei.basemetals.recipehandler.crusher.name=Blocs/éléments broyés
+
 itemGroup.basemetals.items=Base Metals
 itemGroup.basemetals.tools=Base Metals
 itemGroup.basemetals.blocks=Base Metals
-nei.basemetals.recipehandler.crusher.name=Blocs/éléments broyés
-
 item.basemetals.adamantine_axe.name=Hache en adamantin
 item.basemetals.adamantine_bars.name=Barres en adamantin
 item.basemetals.adamantine_block.name=Bloc d'adamantin
@@ -18,31 +18,9 @@ item.basemetals.adamantine_nugget.name=Pépite d'adamantin
 item.basemetals.adamantine_ore.name=Minerai d'adamantin
 item.basemetals.adamantine_pickaxe.name=Pioche en adamantin
 item.basemetals.adamantine_powder.name=Adamantin en poudre
-
 item.basemetals.adamantine_shovel.name=Pelle en adamantin
-
 item.basemetals.adamantine_sword.name=Épée en adamantin
 item.basemetals.adamantine_trapdoor.name=Trappe en adamantin
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 item.basemetals.aquarium_axe.name=Hache en aquarium
 item.basemetals.aquarium_bars.name=Barres d'aquarium
 item.basemetals.aquarium_blend.name=Mélange d'aquarium
@@ -56,33 +34,12 @@ item.basemetals.aquarium_hoe.name=Houe en aquarium
 item.basemetals.aquarium_ingot.name=Lingot d'aquarium
 item.basemetals.aquarium_leggings.name=Jambières en aquarium
 item.basemetals.aquarium_nugget.name=Pépite d'aquarium
+item.basemetals.aquarium_ore.name=Minerai d'aquarium
 item.basemetals.aquarium_pickaxe.name=Pioche en aquarium
 item.basemetals.aquarium_powder.name=Aquarium en poudre
-
 item.basemetals.aquarium_shovel.name=Pelle en aquarium
-
 item.basemetals.aquarium_sword.name=Épée en aquarium
 item.basemetals.aquarium_trapdoor.name=Trappe  en aquarium
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 item.basemetals.brass_axe.name=Hache en laiton
 item.basemetals.brass_bars.name=Barres de laiton
 item.basemetals.brass_blend.name=Mélange de laiton
@@ -98,9 +55,7 @@ item.basemetals.brass_leggings.name=Jambières en laiton
 item.basemetals.brass_nugget.name=Pépite de laiton
 item.basemetals.brass_pickaxe.name=Pioche en laiton
 item.basemetals.brass_powder.name=Laiton en poudre
-
 item.basemetals.brass_shovel.name=Pelle en laiton
-
 item.basemetals.brass_sword.name=Épée en laiton
 item.basemetals.brass_trapdoor.name=Trappe en laiton
 item.basemetals.bronze_axe.name=Hache en bronze
@@ -118,9 +73,7 @@ item.basemetals.bronze_leggings.name=Jambières en bronze
 item.basemetals.bronze_nugget.name=Pépite de bronze
 item.basemetals.bronze_pickaxe.name=Pioche en bronze
 item.basemetals.bronze_powder.name=Bronze en poudre
-
 item.basemetals.bronze_shovel.name=Pelle en bronze
-
 item.basemetals.bronze_sword.name=Épée en bronze
 item.basemetals.bronze_trapdoor.name=Trappe en bronze
 item.basemetals.carbon_powder.name=Poudre de charbon
@@ -139,9 +92,7 @@ item.basemetals.coldiron_nugget.name=Pépite de fer-froid
 item.basemetals.coldiron_ore.name=Minerai de fer-froid
 item.basemetals.coldiron_pickaxe.name=Pioche en fer-froid
 item.basemetals.coldiron_powder.name=Fer-froid en poudre
-
 item.basemetals.coldiron_shovel.name=Pelle en fer-froid
-
 item.basemetals.coldiron_sword.name=Épée en fer-froid
 item.basemetals.coldiron_trapdoor.name=Trappe en fer-froid
 item.basemetals.copper_axe.name=Hache en cuivre
@@ -159,9 +110,7 @@ item.basemetals.copper_nugget.name=Pépite de cuivre
 item.basemetals.copper_ore.name=Minerai de cuivre
 item.basemetals.copper_pickaxe.name=Pioche en cuivre
 item.basemetals.copper_powder.name=Cuivre en poudre
-
 item.basemetals.copper_shovel.name=Pelle en cuivre
-
 item.basemetals.copper_sword.name=Épée en cuivre
 item.basemetals.copper_trapdoor.name=Trappe en cuivre
 item.basemetals.electrum_axe.name=Hache en électrum
@@ -177,11 +126,9 @@ item.basemetals.electrum_hoe.name=Houe en électrum
 item.basemetals.electrum_ingot.name=Lingot d'électrum
 item.basemetals.electrum_leggings.name=jambières en électrum
 item.basemetals.electrum_nugget.name=Pépite d'électrum
-item.basemetals.electrum_pickaxe.name=Pioche en Electrum
+item.basemetals.electrum_pickaxe.name=Electrum Pickaxe
 item.basemetals.electrum_powder.name=Électrum en poudre
-
 item.basemetals.electrum_shovel.name=Pelle en électrum
-
 item.basemetals.electrum_sword.name=Épée en électrum
 item.basemetals.electrum_trapdoor.name=Trappe en électrum
 item.basemetals.invar_axe.name=Hache en invar
@@ -199,18 +146,13 @@ item.basemetals.invar_leggings.name=Jambières en invar
 item.basemetals.invar_nugget.name=Pépite d'invar
 item.basemetals.invar_pickaxe.name=Pioche en invar
 item.basemetals.invar_powder.name=Invar en poudre
-
 item.basemetals.invar_shovel.name=Pelle en invar
-
 item.basemetals.invar_sword.name=Épée en invar
 item.basemetals.invar_trapdoor.name=Trappe en invar
 item.basemetals.iron_crackhammer.name=Massette en fer
 item.basemetals.iron_powder.name=Fer en poudre
 item.basemetals.iron_nugget.name=Pépite de fer
-
 item.basemetals.gold_powder.name=Or en poudre
-
-
 item.basemetals.lead_axe.name=Hache en plomb
 item.basemetals.lead_bars.name=Barres de plomb
 item.basemetals.lead_block.name=Bloc de plomb
@@ -226,16 +168,12 @@ item.basemetals.lead_nugget.name=Pépite de plomb
 item.basemetals.lead_ore.name=Minerai de plomb
 item.basemetals.lead_pickaxe.name=Pioche en plomb
 item.basemetals.lead_powder.name=Plomb en poudre
-
 item.basemetals.lead_shovel.name=Pelle en plomb
-
 item.basemetals.lead_sword.name=Épée en plomb
 item.basemetals.lead_trapdoor.name=Trappe en plomb
 item.basemetals.mercury_ingot.name=Mercure liquide
-
 item.basemetals.mercury_ore.name=Minerai de mercure
 item.basemetals.mercury_powder.name=Minerai de mercure en poudre
-
 item.basemetals.mithril_axe.name=Hache en mithril
 item.basemetals.mithril_bars.name=Barres de mithril
 item.basemetals.mithril_blend.name=Mélange de mithril
@@ -251,9 +189,7 @@ item.basemetals.mithril_leggings.name=Jambière en mithril
 item.basemetals.mithril_nugget.name=Pépite de mithril
 item.basemetals.mithril_pickaxe.name=Pioche en mithril
 item.basemetals.mithril_powder.name=Mithril en poudre
-
 item.basemetals.mithril_shovel.name=Pelle en mithril
-
 item.basemetals.mithril_sword.name=Épée en mithril
 item.basemetals.mithril_trapdoor.name=Trappe en mithril
 item.basemetals.nickel_axe.name=Hache en nickel
@@ -271,32 +207,9 @@ item.basemetals.nickel_nugget.name=Pépite de nickel
 item.basemetals.nickel_ore.name=Minerai de nickel
 item.basemetals.nickel_pickaxe.name=Pioche en nickel
 item.basemetals.nickel_powder.name=Nickel en poudre
-
 item.basemetals.nickel_shovel.name=Pelle en nickel
-
 item.basemetals.nickel_sword.name=Épée en nickel
 item.basemetals.nickel_trapdoor.name=Trappe en nickel
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 item.basemetals.silver_axe.name=Hache en argent
 item.basemetals.silver_bars.name=Barres d'argent
 item.basemetals.silver_block.name=Bloc d'argent
@@ -312,9 +225,7 @@ item.basemetals.silver_nugget.name=Pépite d'argent
 item.basemetals.silver_ore.name=Minerai d'argent
 item.basemetals.silver_pickaxe.name=Pioche en argent
 item.basemetals.silver_powder.name=Argent en poudre
-
 item.basemetals.silver_shovel.name=Pelle en argent
-
 item.basemetals.silver_sword.name=Épée en argent
 item.basemetals.silver_trapdoor.name=Trappe en argent
 item.basemetals.starsteel_axe.name=Hache en acier-étoile
@@ -332,9 +243,7 @@ item.basemetals.starsteel_nugget.name=Pépite d'acier-étoile
 item.basemetals.starsteel_ore.name=Minerai d'acier-étoile
 item.basemetals.starsteel_pickaxe.name=Pioche en acier-étoile
 item.basemetals.starsteel_powder.name=Acier-étoile en poudre
-
 item.basemetals.starsteel_shovel.name=Pelle en acier-étoile
-
 item.basemetals.starsteel_sword.name=Épée en acier-étoile
 item.basemetals.starsteel_trapdoor.name=Trappe en acier-étoile
 item.basemetals.steel_axe.name=Hache en acier
@@ -352,9 +261,7 @@ item.basemetals.steel_leggings.name=Jambières en acier
 item.basemetals.steel_nugget.name=Pépite d'acier
 item.basemetals.steel_pickaxe.name=Pioche en acier
 item.basemetals.steel_powder.name=Acier en poudre
-
 item.basemetals.steel_shovel.name=Pelle en acier
-
 item.basemetals.steel_sword.name=Épée en acier
 item.basemetals.steel_trapdoor.name=Trappe en acier
 item.basemetals.stone_crackhammer.name=Massette en pierre
@@ -373,9 +280,7 @@ item.basemetals.tin_nugget.name=Pépite d'étain
 item.basemetals.tin_ore.name=Minerai d'étain
 item.basemetals.tin_pickaxe.name=Pioche en étain
 item.basemetals.tin_powder.name=Étain en poudre
-
 item.basemetals.tin_shovel.name=Pelle en étain
-
 item.basemetals.tin_sword.name=Épée en étain
 item.basemetals.tin_trapdoor.name=Trappe en étain
 item.basemetals.zinc_block.name=Bloc de zinc
@@ -384,27 +289,15 @@ item.basemetals.zinc_nugget.name=Pépite de zinc
 item.basemetals.zinc_ore.name=Minerai de zinc
 item.basemetals.zinc_powder.name=Zinc en poudre
 
-
-
 tile.basemetals.adamantine_bars.name=Barres d'adamantin
 tile.basemetals.adamantine_block.name=Bloc d'adamantin
 tile.basemetals.adamantine_door.name=Porte en adamantin
 tile.basemetals.adamantine_ore.name=Minerai d'adamantin
 tile.basemetals.adamantine_trapdoor.name=Trappe en adamantin
-
-
-
-
-
 tile.basemetals.aquarium_bars.name=Barres d'aquarium
 tile.basemetals.aquarium_block.name=Bloc d'aquarium
 tile.basemetals.aquarium_door.name=Porte en aquarium
 tile.basemetals.aquarium_trapdoor.name=Trappe en aquarium
-
-
-
-
-
 tile.basemetals.brass_bars.name=Barres de laiton
 tile.basemetals.brass_block.name=Bloc de laiton
 tile.basemetals.brass_door.name=Porte en laiton
@@ -446,10 +339,6 @@ tile.basemetals.nickel_block.name=Bloc nickel
 tile.basemetals.nickel_door.name=Porte en nickel
 tile.basemetals.nickel_ore.name=Minerai de nickel
 tile.basemetals.nickel_trapdoor.name=Trappe en nickel
-
-
-
-
 tile.basemetals.silver_bars.name=Barres d'argent
 tile.basemetals.silver_block.name=Bloc d'argent
 tile.basemetals.silver_door.name=Porte en argent
@@ -474,21 +363,16 @@ tile.basemetals.zinc_ore.name=Minerai de zinc
 
 
 tile.basemetals.adamantine_plate.name=Plaque d'adamantin
-
 tile.basemetals.aquarium_plate.name=Plaque d'aquarium
-
 tile.basemetals.brass_plate.name=Plaque de laiton
 tile.basemetals.bronze_plate.name=Plaque de bronze
 tile.basemetals.coldiron_plate.name=Plaque de fer-froid
 tile.basemetals.copper_plate.name=Plaque de cuivre
-tile.basemetals.cupronickel_plate.name=Plaque de cuivre-nickel
 tile.basemetals.electrum_plate.name=Plaque d'électrum
 tile.basemetals.invar_plate.name=Plaque d'invar
 tile.basemetals.lead_plate.name=Plaque de plomb
 tile.basemetals.mithril_plate.name=Plaque de mithril
 tile.basemetals.nickel_plate.name=Plaque de nickel
-
-tile.basemetals.platinum_plate.name=Plaque d'platine
 tile.basemetals.silver_plate.name=Plaque d'argent
 tile.basemetals.starsteel_plate.name=Plaque d'acier-étoile
 tile.basemetals.steel_plate.name=Plaque d'acier
@@ -496,6 +380,7 @@ tile.basemetals.tin_plate.name=Plaque d'étain
 tile.basemetals.zinc_plate.name=Plaque de zinc
 tile.basemetals.iron_plate.name=Plaque de fer
 tile.basemetals.gold_plate.name=Plaque d'or
+
 
 
 tooltip.adamantine.tool=+%x dégâts contre les ennemis solides
@@ -510,13 +395,11 @@ tooltip.coldiron.armor=Armure complète : immunité au feu
 tooltip.mithril.armor=Armure complète : protection contre poison & dépérir
 tooltip.starsteel.armor=Réduit votre poids
 
-
 achievement.this_is_new=Ceci est nouveau...
 achievement.blocktastic=Bloctastique !
 achievement.geologist=Géologue
 achievement.brass_maker=Laiton
 achievement.bronze_maker=Bronze
-achievement.cupronickel_maker=cuivre-nickel
 achievement.electrum_maker=Électrum
 achievement.steel_maker=Acier
 achievement.invar_maker=Invar
@@ -550,10 +433,10 @@ item.basemetals.diamond_crackhammer.name=Massette en diamant
 item.basemetals.wood_crackhammer.name=Massette en bois
 item.basemetals.stone_crackhammer.name=Massette ene pierre
 
-item.bucket.mercury=Godet de Mercure
-tile.basemetals.liquid_mercury=Mercure
 
-tile.basemetals.human_detector.name=Sécurité plaque de pression
+item.bucket.mercury=Godet de Mercure
+
+
 item.basemetals.human_detector.name=Sécurité plaque de pression
 
 achievement.cupronickel_maker.desc=Combinez poudre de cuivre et de nickel pour faire cuivre-nickel
@@ -606,9 +489,7 @@ tile.basemetals.platinum_ore.name=Minerai en platine
 tile.basemetals.platinum_trapdoor.name=Trappe en platine
 
 item.basemetals.adamantine_rod.name=Barre en adamantin
-
 item.basemetals.aquarium_rod.name=Barre en aquarium
-
 item.basemetals.brass_rod.name=Barre en laiton
 item.basemetals.bronze_rod.name=Barre de bronze
 item.basemetals.coldiron_rod.name=Barre de fer-froid
@@ -621,7 +502,6 @@ item.basemetals.iron_rod.name=Barre de fer
 item.basemetals.lead_rod.name=Barre de plomb
 item.basemetals.mithril_rod.name=Barre de mithril
 item.basemetals.nickel_rod.name=Barre en nickel
-
 item.basemetals.platinum_rod.name=Barre en platine
 item.basemetals.silver_rod.name=Barre en argent
 item.basemetals.starsteel_rod.name=Barre en acier-étoile
@@ -630,15 +510,12 @@ item.basemetals.tin_rod.name=Barre en étain
 item.basemetals.zinc_rod.name=Barre de zinc
 
 item.basemetals.adamantine_gear.name=Pignon en adamantin
-
 item.basemetals.aquarium_gear.name=Pignon en aquarium
-
 item.basemetals.brass_gear.name=Pignon en laiton
 item.basemetals.bronze_gear.name=Pignon de bronze
 item.basemetals.coldiron_gear.name=Pignon de fer-froid
 item.basemetals.copper_gear.name=Pignon en cuivre
 item.basemetals.cupronickel_gear.name=Pignon de cuivre-nickel
-
 item.basemetals.electrum_gear.name=Pignon en électrum
 item.basemetals.gold_gear.name=Pignon de or
 item.basemetals.invar_gear.name=Pignon de invar
@@ -646,12 +523,9 @@ item.basemetals.iron_gear.name=Pignon de fer
 item.basemetals.lead_gear.name=Pignon de plomb
 item.basemetals.mithril_gear.name=Pignon de mithril
 item.basemetals.nickel_gear.name=Pignon en nickel
-
 item.basemetals.platinum_gear.name=Pignon en platine
 item.basemetals.silver_gear.name=Pignon en argent
 item.basemetals.starsteel_gear.name=Pignon en acier-étoile
 item.basemetals.steel_gear.name=Pignon en acier
-
 item.basemetals.tin_gear.name=Pignon en étain
-
 item.basemetals.zinc_gear.name=Pignon de zinc

@@ -46,26 +46,12 @@ public abstract class Blocks {
 	public static Block adamantine_ore;
 	public static Block adamantine_trapdoor;
 
-	public static Block antimony_bars;
-	public static Block antimony_block;
-	public static Block antimony_plate;
-	public static BlockDoor antimony_door;
-	public static Block antimony_ore;
-	public static Block antimony_trapdoor;
-
 	public static Block aquarium_bars;
 	public static Block aquarium_block;
 	public static Block aquarium_plate;
 	public static BlockDoor aquarium_door;
 	public static Block aquarium_trapdoor;
 	
-	public static Block bismuth_bars;
-	public static Block bismuth_block;
-	public static Block bismuth_plate;
-	public static BlockDoor bismuth_door;
-	public static Block bismuth_ore;
-	public static Block bismuth_trapdoor;
-
 	public static Block brass_bars;
 	public static Block brass_block;
 	public static Block brass_plate;
@@ -132,12 +118,6 @@ public abstract class Blocks {
 	public static Block nickel_ore;
 	public static Block nickel_trapdoor;
 	
-	public static Block pewter_bars;
-	public static Block pewter_block;
-	public static Block pewter_plate;
-	public static BlockDoor pewter_door;
-	public static Block pewter_trapdoor;
-
 	public static Block platinum_bars;
 	public static Block platinum_block;
 	public static Block platinum_plate;
@@ -172,24 +152,27 @@ public abstract class Blocks {
 	public static Block tin_ore;
 	public static Block tin_trapdoor;
 	
-	public static Block zinc_bars;
 	public static Block zinc_block;
 	public static Block zinc_plate;
-	public static BlockDoor zinc_door;
 	public static Block zinc_ore;
-	public static Block zinc_trapdoor;
+	
+	
 
 	public static Block iron_plate;
 	public static Block gold_plate;
 
-	public static Block human_detector;
 
+
+	public static Block human_detector;
+	
+	
 	private static boolean initDone = false;
 	public static void init(){
 		if(initDone)return;
 		
 		cyano.basemetals.init.Materials.init();
 		cyano.basemetals.init.ItemGroups.init();
+
 
 		adamantine_block = createBlock(Materials.adamantine);
 		adamantine_plate = createPlate(Materials.adamantine);
@@ -198,25 +181,11 @@ public abstract class Blocks {
 		adamantine_door = createDoor(Materials.adamantine);
 		adamantine_trapdoor = createTrapDoor(Materials.adamantine);
 
-		antimony_block = createBlock(Materials.antimony);
-		antimony_plate = createPlate(Materials.antimony);
-		antimony_ore = createOre(Materials.antimony);
-		antimony_bars = createBars(Materials.antimony);
-		antimony_door = createDoor(Materials.antimony);
-		antimony_trapdoor = createTrapDoor(Materials.antimony);
-
 		aquarium_block = createBlock(Materials.aquarium);
 		aquarium_plate = createPlate(Materials.aquarium);
 		aquarium_bars = createBars(Materials.aquarium);
 		aquarium_door = createDoor(Materials.aquarium);
 		aquarium_trapdoor = createTrapDoor(Materials.aquarium);
-
-		bismuth_block = createBlock(Materials.bismuth);
-		bismuth_plate = createPlate(Materials.bismuth);
-		bismuth_ore = createOre(Materials.bismuth);
-		bismuth_bars = createBars(Materials.bismuth);
-		bismuth_door = createDoor(Materials.bismuth);
-		bismuth_trapdoor = createTrapDoor(Materials.bismuth);
 
 		brass_block = createBlock(Materials.brass);
 		brass_plate = createPlate(Materials.brass);
@@ -290,12 +259,6 @@ public abstract class Blocks {
 		nickel_door = createDoor(Materials.nickel);
 		nickel_trapdoor = createTrapDoor(Materials.nickel);
 
-		pewter_block = createBlock(Materials.pewter);
-		pewter_plate = createPlate(Materials.pewter);
-		pewter_bars = createBars(Materials.pewter);
-		pewter_door = createDoor(Materials.pewter);
-		pewter_trapdoor = createTrapDoor(Materials.pewter);
-
 		platinum_block = createBlock(Materials.platinum);
 		platinum_plate = createPlate(Materials.platinum);
 		platinum_ore = createOre(Materials.platinum);
@@ -339,9 +302,6 @@ public abstract class Blocks {
 		zinc_block = createBlock(Materials.zinc);
 		zinc_plate = createPlate(Materials.zinc);
 		zinc_ore = createOre(Materials.zinc);
-		zinc_bars = createBars(Materials.zinc);
-		zinc_door = createDoor(Materials.zinc);
-		zinc_trapdoor = createTrapDoor(Materials.zinc);
 		
 		iron_plate = createPlate(Materials.vanilla_iron);
 		gold_plate = createPlate(Materials.vanilla_gold);

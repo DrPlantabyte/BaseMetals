@@ -1,8 +1,8 @@
+nei.basemetals.recipehandler.crusher.name=破碎的方塊/物件
+
 itemGroup.basemetals.items=Base Metals
 itemGroup.basemetals.tools=Base Metals
 itemGroup.basemetals.blocks=Base Metals
-nei.basemetals.recipehandler.crusher.name=破碎的方塊/物件
-
 item.basemetals.adamantine_axe.name=精金斧
 item.basemetals.adamantine_bars.name=精金欄杆
 item.basemetals.adamantine_block.name=精金磚
@@ -18,31 +18,9 @@ item.basemetals.adamantine_nugget.name=精金粒
 item.basemetals.adamantine_ore.name=精金礦石
 item.basemetals.adamantine_pickaxe.name=精金稿
 item.basemetals.adamantine_powder.name=精金粉
-
 item.basemetals.adamantine_shovel.name=精金鏟
-
 item.basemetals.adamantine_sword.name=精金劍
 item.basemetals.adamantine_trapdoor.name=精金地板門
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 item.basemetals.aquarium_axe.name=海洋合金斧
 item.basemetals.aquarium_bars.name=海洋合金欄杆
 item.basemetals.aquarium_blend.name=海洋合金粉
@@ -56,33 +34,12 @@ item.basemetals.aquarium_hoe.name=海洋合金鋤
 item.basemetals.aquarium_ingot.name=海洋合金錠
 item.basemetals.aquarium_leggings.name=海洋合金護腿
 item.basemetals.aquarium_nugget.name=海洋合金粒
+item.basemetals.aquarium_ore.name=海洋合金礦石
 item.basemetals.aquarium_pickaxe.name=海洋合金稿
 item.basemetals.aquarium_powder.name=海洋合金粉
-
 item.basemetals.aquarium_shovel.name=海洋合金鏟
-
 item.basemetals.aquarium_sword.name=海洋合金劍
 item.basemetals.aquarium_trapdoor.name=海洋合金地板門
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 item.basemetals.brass_axe.name=黃銅斧
 item.basemetals.brass_bars.name=黃銅欄杆
 item.basemetals.brass_blend.name=黃銅粉
@@ -98,9 +55,7 @@ item.basemetals.brass_leggings.name=黃銅護腿
 item.basemetals.brass_nugget.name=黃銅粒
 item.basemetals.brass_pickaxe.name=黃銅稿
 item.basemetals.brass_powder.name=黃銅粉
-
 item.basemetals.brass_shovel.name=黃銅鏟
-
 item.basemetals.brass_sword.name=黃銅劍
 item.basemetals.brass_trapdoor.name=黃銅地板門
 item.basemetals.bronze_axe.name=青銅斧
@@ -118,9 +73,7 @@ item.basemetals.bronze_leggings.name=青銅護腿
 item.basemetals.bronze_nugget.name=青銅粒
 item.basemetals.bronze_pickaxe.name=青銅稿
 item.basemetals.bronze_powder.name=青銅粉
-
 item.basemetals.bronze_shovel.name=青銅鏟
-
 item.basemetals.bronze_sword.name=青銅劍
 item.basemetals.bronze_trapdoor.name=青銅地板門
 item.basemetals.carbon_powder.name=碳粉
@@ -139,9 +92,7 @@ item.basemetals.coldiron_nugget.name=寒鐵粒
 item.basemetals.coldiron_ore.name=寒鐵礦石
 item.basemetals.coldiron_pickaxe.name=寒鐵稿
 item.basemetals.coldiron_powder.name=寒鐵粉
-
 item.basemetals.coldiron_shovel.name=寒鐵鏟
-
 item.basemetals.coldiron_sword.name=寒鐵劍
 item.basemetals.coldiron_trapdoor.name=寒鐵地板門
 item.basemetals.copper_axe.name=銅斧
@@ -159,9 +110,7 @@ item.basemetals.copper_nugget.name=銅粒
 item.basemetals.copper_ore.name=銅礦石
 item.basemetals.copper_pickaxe.name=銅稿
 item.basemetals.copper_powder.name=銅粉
-
 item.basemetals.copper_shovel.name=銅鏟
-
 item.basemetals.copper_sword.name=銅劍
 item.basemetals.copper_trapdoor.name=銅地板門
 item.basemetals.electrum_axe.name=琥珀金斧
@@ -179,9 +128,7 @@ item.basemetals.electrum_leggings.name=琥珀金護腿
 item.basemetals.electrum_nugget.name=琥珀金粒
 item.basemetals.electrum_pickaxe.name=琥珀金稿
 item.basemetals.electrum_powder.name=琥珀金粉
-
 item.basemetals.electrum_shovel.name=琥珀金鏟
-
 item.basemetals.electrum_sword.name=琥珀金劍
 item.basemetals.electrum_trapdoor.name=琥珀金地板門
 item.basemetals.invar_axe.name=殷鋼斧
@@ -199,18 +146,13 @@ item.basemetals.invar_leggings.name=殷鋼護腿
 item.basemetals.invar_nugget.name=殷鋼粒
 item.basemetals.invar_pickaxe.name=殷鋼稿
 item.basemetals.invar_powder.name=殷鋼粉
-
 item.basemetals.invar_shovel.name=殷鋼鏟
-
 item.basemetals.invar_sword.name=殷鋼劍
 item.basemetals.invar_trapdoor.name=殷鋼地板門
 item.basemetals.iron_crackhammer.name=鐵破裂錘
 item.basemetals.iron_powder.name=鐵粉
 item.basemetals.iron_nugget.name=鐵粒
-
 item.basemetals.gold_powder.name=金粉
-
-
 item.basemetals.lead_axe.name=鉛斧
 item.basemetals.lead_bars.name=鉛欄杆
 item.basemetals.lead_block.name=鉛磚
@@ -226,16 +168,12 @@ item.basemetals.lead_nugget.name=鉛粒
 item.basemetals.lead_ore.name=鉛礦石
 item.basemetals.lead_pickaxe.name=鉛稿
 item.basemetals.lead_powder.name=鉛粉
-
 item.basemetals.lead_shovel.name=鉛鏟
-
 item.basemetals.lead_sword.name=鉛劍
 item.basemetals.lead_trapdoor.name=鉛地板門
 item.basemetals.mercury_ingot.name=液態汞
-
 item.basemetals.mercury_ore.name=汞礦石
 item.basemetals.mercury_powder.name=汞粉
-
 item.basemetals.mithril_axe.name=秘銀斧
 item.basemetals.mithril_bars.name=秘銀欄杆
 item.basemetals.mithril_blend.name=秘銀粉
@@ -251,9 +189,7 @@ item.basemetals.mithril_leggings.name=秘銀護腿
 item.basemetals.mithril_nugget.name=秘銀粒
 item.basemetals.mithril_pickaxe.name=秘銀稿
 item.basemetals.mithril_powder.name=秘銀粉
-
 item.basemetals.mithril_shovel.name=秘銀鏟
-
 item.basemetals.mithril_sword.name=秘銀劍
 item.basemetals.mithril_trapdoor.name=秘銀地板門
 item.basemetals.nickel_axe.name=鎳斧
@@ -271,32 +207,9 @@ item.basemetals.nickel_nugget.name=鎳粒
 item.basemetals.nickel_ore.name=鎳礦石
 item.basemetals.nickel_pickaxe.name=鎳稿
 item.basemetals.nickel_powder.name=鎳粉
-
 item.basemetals.nickel_shovel.name=鎳鏟
-
 item.basemetals.nickel_sword.name=鎳劍
 item.basemetals.nickel_trapdoor.name=鎳地板門
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 item.basemetals.silver_axe.name=銀斧
 item.basemetals.silver_bars.name=銀欄杆
 item.basemetals.silver_block.name=銀磚
@@ -312,9 +225,7 @@ item.basemetals.silver_nugget.name=銀粒
 item.basemetals.silver_ore.name=銀礦石
 item.basemetals.silver_pickaxe.name=銀稿
 item.basemetals.silver_powder.name=銀粉
-
 item.basemetals.silver_shovel.name=銀鏟
-
 item.basemetals.silver_sword.name=銀劍
 item.basemetals.silver_trapdoor.name=銀地板門
 item.basemetals.starsteel_axe.name=星鋼斧
@@ -332,9 +243,7 @@ item.basemetals.starsteel_nugget.name=星鋼粒
 item.basemetals.starsteel_ore.name=星鋼礦石
 item.basemetals.starsteel_pickaxe.name=星鋼稿
 item.basemetals.starsteel_powder.name=星鋼粉
-
 item.basemetals.starsteel_shovel.name=星鋼鏟
-
 item.basemetals.starsteel_sword.name=星鋼劍
 item.basemetals.starsteel_trapdoor.name=星鋼地板門
 item.basemetals.steel_axe.name=鋼斧
@@ -352,9 +261,7 @@ item.basemetals.steel_leggings.name=鋼護腿
 item.basemetals.steel_nugget.name=鋼粒
 item.basemetals.steel_pickaxe.name=鋼稿
 item.basemetals.steel_powder.name=鋼粉
-
 item.basemetals.steel_shovel.name=鋼鏟
-
 item.basemetals.steel_sword.name=鋼劍
 item.basemetals.steel_trapdoor.name=鋼地板門
 item.basemetals.stone_crackhammer.name=鋼破裂錘
@@ -373,9 +280,7 @@ item.basemetals.tin_nugget.name=錫粒
 item.basemetals.tin_ore.name=錫礦石
 item.basemetals.tin_pickaxe.name=錫稿
 item.basemetals.tin_powder.name=錫粉
-
 item.basemetals.tin_shovel.name=錫鏟
-
 item.basemetals.tin_sword.name=錫劍
 item.basemetals.tin_trapdoor.name=錫地板門
 item.basemetals.zinc_block.name=鋅磚
@@ -384,27 +289,15 @@ item.basemetals.zinc_nugget.name=鋅粒
 item.basemetals.zinc_ore.name=鋅礦石
 item.basemetals.zinc_powder.name=鋅粉
 
-
-
 tile.basemetals.adamantine_bars.name=精金欄杆
 tile.basemetals.adamantine_block.name=精金磚
 tile.basemetals.adamantine_door.name=精金門
 tile.basemetals.adamantine_ore.name=精金礦石
 tile.basemetals.adamantine_trapdoor.name=精金地板門
-
-
-
-
-
 tile.basemetals.aquarium_bars.name=海洋合金欄杆
 tile.basemetals.aquarium_block.name=海洋合金磚
 tile.basemetals.aquarium_door.name=海洋合金門
 tile.basemetals.aquarium_trapdoor.name=海洋合金地板門
-
-
-
-
-
 tile.basemetals.brass_bars.name=黃銅欄杆
 tile.basemetals.brass_block.name=黃銅磚
 tile.basemetals.brass_door.name=黃銅門
@@ -446,10 +339,6 @@ tile.basemetals.nickel_block.name=鎳磚
 tile.basemetals.nickel_door.name=鎳門
 tile.basemetals.nickel_ore.name=鎳礦石
 tile.basemetals.nickel_trapdoor.name=鎳地板門
-
-
-
-
 tile.basemetals.silver_bars.name=銀欄杆
 tile.basemetals.silver_block.name=銀磚
 tile.basemetals.silver_door.name=銀門
@@ -474,21 +363,16 @@ tile.basemetals.zinc_ore.name=鋅礦石
 
 
 tile.basemetals.adamantine_plate.name=精金板
-
 tile.basemetals.aquarium_plate.name=海洋合金板
-
 tile.basemetals.brass_plate.name=黃銅板
 tile.basemetals.bronze_plate.name=青銅板
 tile.basemetals.coldiron_plate.name=寒鐵板
 tile.basemetals.copper_plate.name=銅板
-
 tile.basemetals.electrum_plate.name=琥珀金板
 tile.basemetals.invar_plate.name=殷鋼板
 tile.basemetals.lead_plate.name=鉛板
 tile.basemetals.mithril_plate.name=秘銀板
 tile.basemetals.nickel_plate.name=鎳板
-
-
 tile.basemetals.silver_plate.name=銀板
 tile.basemetals.starsteel_plate.name=星鋼板
 tile.basemetals.steel_plate.name=鋼板
@@ -496,6 +380,7 @@ tile.basemetals.tin_plate.name=錫板
 tile.basemetals.zinc_plate.name=鋅板
 tile.basemetals.iron_plate.name=鐵板
 tile.basemetals.gold_plate.name=金板
+
 
 
 tooltip.adamantine.tool=+%x 對堅硬敵人傷害
@@ -510,13 +395,11 @@ tooltip.coldiron.armor=套裝效果：防火
 tooltip.mithril.armor=套裝效果：減少受到劇毒和凋零的傷害
 tooltip.starsteel.armor=根據裝備數量，增加跳躍提升、速度
 
-
 achievement.this_is_new=這是新的...
 achievement.blocktastic=金屬磚！
 achievement.geologist=地質學家
 achievement.brass_maker=黃銅
 achievement.bronze_maker=青銅
-achievement.cupronickel_maker=Cupronickel
 achievement.electrum_maker=琥珀金
 achievement.steel_maker=鋼
 achievement.invar_maker=殷鋼
@@ -551,10 +434,9 @@ item.basemetals.wood_crackhammer.name=木質破裂錘
 item.basemetals.stone_crackhammer.name=石質破裂錘
 
 item.bucket.mercury=汞桶
-tile.basemetals.liquid_mercury.name=Liquid Mercury
+
 
 item.basemetals.human_detector.name=安全壓盤
-tile.basemetals.human_detector.name=安全壓盤
 
 achievement.cupronickel_maker.desc=混合粉末的銅和鎳，使銅鎳合金
 
@@ -606,9 +488,7 @@ tile.basemetals.platinum_ore.name=鉑礦石
 tile.basemetals.platinum_trapdoor.name=鉑地板門
 
 item.basemetals.adamantine_rod.name=精金棒
-
 item.basemetals.aquarium_rod.name=精金棒
-
 item.basemetals.brass_rod.name=黃銅棒
 item.basemetals.bronze_rod.name=青銅棒
 item.basemetals.coldiron_rod.name=寒鐵棒
@@ -621,7 +501,6 @@ item.basemetals.iron_rod.name=鐵棒
 item.basemetals.lead_rod.name=鉛棒
 item.basemetals.mithril_rod.name=秘銀棒
 item.basemetals.nickel_rod.name=鎳棒
-
 item.basemetals.platinum_rod.name=鉑棒
 item.basemetals.silver_rod.name=銀棒
 item.basemetals.starsteel_rod.name=星鋼棒
@@ -630,15 +509,12 @@ item.basemetals.tin_rod.name=錫棒
 item.basemetals.zinc_rod.name=鋅棒
 
 item.basemetals.adamantine_gear.name=精金齒輪
-
 item.basemetals.aquarium_gear.name=精金齒輪
-
 item.basemetals.brass_gear.name=黃銅齒輪
 item.basemetals.bronze_gear.name=青銅齒輪
 item.basemetals.coldiron_gear.name=寒鐵齒輪
 item.basemetals.copper_gear.name=銅齒輪
 item.basemetals.cupronickel_gear.name=白銅齒輪
-
 item.basemetals.electrum_gear.name=琥珀金齒輪
 item.basemetals.gold_gear.name=金齒輪
 item.basemetals.invar_gear.name=殷鋼齒輪
@@ -646,12 +522,9 @@ item.basemetals.iron_gear.name=鐵齒輪
 item.basemetals.lead_gear.name=鉛齒輪
 item.basemetals.mithril_gear.name=秘銀齒輪
 item.basemetals.nickel_gear.name=鎳齒輪
-
 item.basemetals.platinum_gear.name=鉑齒輪
 item.basemetals.silver_gear.name=銀齒輪
 item.basemetals.starsteel_gear.name=星鋼齒輪
 item.basemetals.steel_gear.name=鋼齒輪
-
 item.basemetals.tin_gear.name=錫齒輪
-
 item.basemetals.zinc_gear.name=鋅齒輪

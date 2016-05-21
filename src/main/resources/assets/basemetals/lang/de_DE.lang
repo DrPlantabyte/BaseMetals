@@ -18,31 +18,9 @@ item.basemetals.adamantine_nugget.name=Adamantklumpen
 item.basemetals.adamantine_ore.name=Adamanterz
 item.basemetals.adamantine_pickaxe.name=Adamantspitzhacke
 item.basemetals.adamantine_powder.name=Pulverisiertes Adamant
-
 item.basemetals.adamantine_shovel.name=Adamantschaufel
-
 item.basemetals.adamantine_sword.name=Adamantschwert
 item.basemetals.adamantine_trapdoor.name=Adamantfalltür
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 item.basemetals.aquarium_axe.name=Aquariumaxt
 item.basemetals.aquarium_bars.name=Aquariumgitter
 item.basemetals.aquarium_blend.name=Aquariummischung
@@ -56,33 +34,12 @@ item.basemetals.aquarium_hoe.name=Aquariumhacke
 item.basemetals.aquarium_ingot.name=Aquariumbarren
 item.basemetals.aquarium_leggings.name=Aquariumbeinschutz
 item.basemetals.aquarium_nugget.name=Aquariumklumpen
+item.basemetals.aquarium_ore.name=Aquariumerz
 item.basemetals.aquarium_pickaxe.name=Aquariumspitzhacke
 item.basemetals.aquarium_powder.name=Pulverisiertes Aquarium
-
 item.basemetals.aquarium_shovel.name=Aquariumschaufel
-
 item.basemetals.aquarium_sword.name=Aquariumschwert
 item.basemetals.aquarium_trapdoor.name=Aquariumfalltür
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 item.basemetals.brass_axe.name=Messingaxt
 item.basemetals.brass_bars.name=Messinggitter
 item.basemetals.brass_blend.name=Messingmischung
@@ -98,9 +55,7 @@ item.basemetals.brass_leggings.name=Messingbeinschutz
 item.basemetals.brass_nugget.name=Messingklumpen
 item.basemetals.brass_pickaxe.name=Messingspitzhacke
 item.basemetals.brass_powder.name=Pulverisiertes Messing
-
 item.basemetals.brass_shovel.name=Messingschaufel
-
 item.basemetals.brass_sword.name=Messingschwert
 item.basemetals.brass_trapdoor.name=Messingfalltür
 item.basemetals.bronze_axe.name=Bronzeaxt
@@ -118,9 +73,7 @@ item.basemetals.bronze_leggings.name=Bronzebeinschutz
 item.basemetals.bronze_nugget.name=Bronzeklumpen
 item.basemetals.bronze_pickaxe.name=Bronzespitzhacke
 item.basemetals.bronze_powder.name=Pulverisiertes Bronze
-
 item.basemetals.bronze_shovel.name=Bronzeschaufel
-
 item.basemetals.bronze_sword.name=Bronzeschwert
 item.basemetals.bronze_trapdoor.name=Bronzefalltür
 item.basemetals.carbon_powder.name=Carbonstaub
@@ -139,9 +92,7 @@ item.basemetals.coldiron_nugget.name=Kalteisenklumpen
 item.basemetals.coldiron_ore.name=Kalteisenerz
 item.basemetals.coldiron_pickaxe.name=Kalteisenspitzhacke
 item.basemetals.coldiron_powder.name=Pulverisiertes Kalteisen
-
 item.basemetals.coldiron_shovel.name=Kalteisenschaufel
-
 item.basemetals.coldiron_sword.name=Kalteisenschwert
 item.basemetals.coldiron_trapdoor.name=Kalteisenfalltür
 item.basemetals.copper_axe.name=Kupferaxt
@@ -159,9 +110,7 @@ item.basemetals.copper_nugget.name=Kupferklumpen
 item.basemetals.copper_ore.name=Kupfererz
 item.basemetals.copper_pickaxe.name=Kupferspitzhacke
 item.basemetals.copper_powder.name=Pulverisiertes Kupfer
-
 item.basemetals.copper_shovel.name=Kupferschaufel
-
 item.basemetals.copper_sword.name=Kupferschwert
 item.basemetals.copper_trapdoor.name=Kupferfalltür
 item.basemetals.electrum_axe.name=Elektrumaxt
@@ -179,9 +128,7 @@ item.basemetals.electrum_leggings.name=Elektrumbeinschutz
 item.basemetals.electrum_nugget.name=Elektrumklumpen
 item.basemetals.electrum_pickaxe.name=Elektrumspitzhacke
 item.basemetals.electrum_powder.name=Pulverisiertes Elektrum
-
 item.basemetals.electrum_shovel.name=Elektrumschaufel
-
 item.basemetals.electrum_sword.name=Elektrumschwert
 item.basemetals.electrum_trapdoor.name=Elektrumfalltür
 item.basemetals.invar_axe.name=Invaraxt
@@ -199,18 +146,13 @@ item.basemetals.invar_leggings.name=Invarbeinschutz
 item.basemetals.invar_nugget.name=Invarklumpen
 item.basemetals.invar_pickaxe.name=Invarspitzhacke
 item.basemetals.invar_powder.name=Pulverisiertes Invar
-
 item.basemetals.invar_shovel.name=Invarschaufel
-
 item.basemetals.invar_sword.name=Invarschwert
 item.basemetals.invar_trapdoor.name=Invarfalltür
 item.basemetals.iron_crackhammer.name=Eisenbruchhammer
 item.basemetals.iron_powder.name=Pulverisiertes Eisen
 item.basemetals.iron_nugget.name=Eisenklumpen
-
 item.basemetals.gold_powder.name=Pulverisiertes Gold
-
-
 item.basemetals.lead_axe.name=Bleiaxt
 item.basemetals.lead_bars.name=Bleigitter
 item.basemetals.lead_block.name=Bleiblock
@@ -226,16 +168,12 @@ item.basemetals.lead_nugget.name=Bleiklumpen
 item.basemetals.lead_ore.name=Bleierz
 item.basemetals.lead_pickaxe.name=Bleispitzhacke
 item.basemetals.lead_powder.name=Pulverisiertes Blei
-
 item.basemetals.lead_shovel.name=Bleischaufel
-
 item.basemetals.lead_sword.name=Bleischwert
 item.basemetals.lead_trapdoor.name=Bleifalltür
 item.basemetals.mercury_ingot.name=Flüssiges Quecksilber
-
 item.basemetals.mercury_ore.name=Quecksilbererz
 item.basemetals.mercury_powder.name=Pulverisiertes Quecksilbererz
-
 item.basemetals.mithril_axe.name=Mithrilaxt
 item.basemetals.mithril_bars.name=Mithrilgitter
 item.basemetals.mithril_blend.name=Mithrilmischung
@@ -251,9 +189,7 @@ item.basemetals.mithril_leggings.name=Mithrilbeinschutz
 item.basemetals.mithril_nugget.name=Mithrilklumpen
 item.basemetals.mithril_pickaxe.name=Mithrilspitzhacke
 item.basemetals.mithril_powder.name=Pulverisiertes Mithril
-
 item.basemetals.mithril_shovel.name=Mithrilschaufel
-
 item.basemetals.mithril_sword.name=Mithrilschwert
 item.basemetals.mithril_trapdoor.name=Mithrilfalltür
 item.basemetals.nickel_axe.name=Nickelaxt
@@ -271,32 +207,9 @@ item.basemetals.nickel_nugget.name=Nickelklumpen
 item.basemetals.nickel_ore.name=Nickelerz
 item.basemetals.nickel_pickaxe.name=Nickelspitzhacke
 item.basemetals.nickel_powder.name=Pulverisiertes Nickel
-
 item.basemetals.nickel_shovel.name=Nickelschaufel
-
 item.basemetals.nickel_sword.name=Nickelschwert
 item.basemetals.nickel_trapdoor.name=Nickelfalltür
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 item.basemetals.silver_axe.name=Silberaxt
 item.basemetals.silver_bars.name=Silbergitter
 item.basemetals.silver_block.name=Silberblock
@@ -312,9 +225,7 @@ item.basemetals.silver_nugget.name=Silberklumpen
 item.basemetals.silver_ore.name=Silbererz
 item.basemetals.silver_pickaxe.name=Silberspitzhacke
 item.basemetals.silver_powder.name=Pulverisiertes Silber
-
 item.basemetals.silver_shovel.name=Silberschaufel
-
 item.basemetals.silver_sword.name=Silberschwert
 item.basemetals.silver_trapdoor.name=Silberfalltür
 item.basemetals.starsteel_axe.name=Sternstahlaxt
@@ -332,9 +243,7 @@ item.basemetals.starsteel_nugget.name=Sternstahlklumpen
 item.basemetals.starsteel_ore.name=Sternstahlerz
 item.basemetals.starsteel_pickaxe.name=Sternstahlspitzhacke
 item.basemetals.starsteel_powder.name=Pulverisierter Sternstahl
-
 item.basemetals.starsteel_shovel.name=Sternstahlschaufel
-
 item.basemetals.starsteel_sword.name=Sternstahlschwert
 item.basemetals.starsteel_trapdoor.name=Sternstahlfalltür
 item.basemetals.steel_axe.name=Stahlaxt
@@ -352,9 +261,7 @@ item.basemetals.steel_leggings.name=Stahlbeinschutz
 item.basemetals.steel_nugget.name=Stahlklumpen
 item.basemetals.steel_pickaxe.name=Stahlspitzhacke
 item.basemetals.steel_powder.name=Pulverisierter Stahl
-
 item.basemetals.steel_shovel.name=Stahlschaufel
-
 item.basemetals.steel_sword.name=Stahlschwert
 item.basemetals.steel_trapdoor.name=Stahlfalltür
 item.basemetals.stone_crackhammer.name=Stahlbruchhammer
@@ -373,9 +280,7 @@ item.basemetals.tin_nugget.name=Zinnklumpen
 item.basemetals.tin_ore.name=Zinnerz
 item.basemetals.tin_pickaxe.name=Zinnspitzhacke
 item.basemetals.tin_powder.name=Pulverisiertes Zinn
-
 item.basemetals.tin_shovel.name=Zinnschaufel
-
 item.basemetals.tin_sword.name=Zinnschwert
 item.basemetals.tin_trapdoor.name=Zinnfalltür
 item.basemetals.zinc_block.name=Zinkblock
@@ -384,27 +289,15 @@ item.basemetals.zinc_nugget.name=Zinkklumpen
 item.basemetals.zinc_ore.name=Zinkerz
 item.basemetals.zinc_powder.name=Pulverisiertes Zink
 
-
-
 tile.basemetals.adamantine_bars.name=Adamantgitter
 tile.basemetals.adamantine_block.name=Adamantblock
 tile.basemetals.adamantine_door.name=Adamanttür
 tile.basemetals.adamantine_ore.name=Adamanterz
 tile.basemetals.adamantine_trapdoor.name=Adamantfalltür
-
-
-
-
-
 tile.basemetals.aquarium_bars.name=Aquariumgitter
 tile.basemetals.aquarium_block.name=Aquariumblock
 tile.basemetals.aquarium_door.name=Aquariumtür
 tile.basemetals.aquarium_trapdoor.name=Aquariumfalltür
-
-
-
-
-
 tile.basemetals.brass_bars.name=Messinggitter
 tile.basemetals.brass_block.name=Messingblock
 tile.basemetals.brass_door.name=Messingtür
@@ -446,10 +339,6 @@ tile.basemetals.nickel_block.name=Nickelblock
 tile.basemetals.nickel_door.name=Nickeltür
 tile.basemetals.nickel_ore.name=Nickelerz
 tile.basemetals.nickel_trapdoor.name=Nickelfalltür
-
-
-
-
 tile.basemetals.silver_bars.name=Silbergitter
 tile.basemetals.silver_block.name=Silberblock
 tile.basemetals.silver_door.name=Silbertür
@@ -474,9 +363,7 @@ tile.basemetals.zinc_ore.name=Zinkerz
 
 
 tile.basemetals.adamantine_plate.name=Adamantplatte
-
 tile.basemetals.aquarium_plate.name=Aquariumplatte
-
 tile.basemetals.brass_plate.name=Messingplatte
 tile.basemetals.bronze_plate.name=Bronzeplatte
 tile.basemetals.coldiron_plate.name=Kalteisenplatte
@@ -487,7 +374,6 @@ tile.basemetals.invar_plate.name=Invarplatte
 tile.basemetals.lead_plate.name=Bleiplatte
 tile.basemetals.mithril_plate.name=Mithrilplatte
 tile.basemetals.nickel_plate.name=Nickelplatte
-
 tile.basemetals.platinum_plate.name=Platinplatte
 tile.basemetals.silver_plate.name=Silberplatte
 tile.basemetals.starsteel_plate.name=Sternstahlplatte
@@ -496,6 +382,7 @@ tile.basemetals.tin_plate.name=Zinnplatte
 tile.basemetals.zinc_plate.name=Zinkplatte
 tile.basemetals.iron_plate.name=Eisenplatte
 tile.basemetals.gold_plate.name=Goldplatte
+
 
 
 tooltip.adamantine.tool=+%x Schaden gegen zähe Gegner
@@ -509,7 +396,6 @@ tooltip.aquarium.armor=Vollständige Rüstung: Unterwasseratmung
 tooltip.coldiron.armor=Vollständige Rüstung: Feuerresistenz
 tooltip.mithril.armor=Vollständige Rüstung: Schutz vor Vergiftung & Verdorren
 tooltip.starsteel.armor=Verringert dein Gewicht
-
 
 achievement.this_is_new=Das ist neu...
 achievement.blocktastic=Blocktastisch!
@@ -606,9 +492,7 @@ tile.basemetals.platinum_ore.name=Platinerz
 tile.basemetals.platinum_trapdoor.name=Platinfalltür
 
 item.basemetals.adamantine_rod.name=Adamantrute
-
 item.basemetals.aquarium_rod.name=Aquariumrute
-
 item.basemetals.brass_rod.name=Messingrute
 item.basemetals.bronze_rod.name=Bronzerute
 item.basemetals.coldiron_rod.name=Kalteisenrute
@@ -621,7 +505,6 @@ item.basemetals.iron_rod.name=Eisenrute
 item.basemetals.lead_rod.name=Bleirute
 item.basemetals.mithril_rod.name=Mithrilrute
 item.basemetals.nickel_rod.name=Nickelrute
-
 item.basemetals.platinum_rod.name=Platinrute
 item.basemetals.silver_rod.name=Silberrute
 item.basemetals.starsteel_rod.name=Sternstahlrute
@@ -630,15 +513,12 @@ item.basemetals.tin_rod.name=Zinnrute
 item.basemetals.zinc_rod.name=Zinkrute
 
 item.basemetals.adamantine_gear.name=Adamantzahnrad
-
 item.basemetals.aquarium_gear.name=Aquariumzahnrad
-
 item.basemetals.brass_gear.name=Messingzahnrad
 item.basemetals.bronze_gear.name=Bronzezahnrad
 item.basemetals.coldiron_gear.name=Kalteisenzahnrad
 item.basemetals.copper_gear.name=Kupferzahnrad
 item.basemetals.cupronickel_gear.name=Kupfernickelzahnrad
-
 item.basemetals.electrum_gear.name=Elektrumzahnrad
 item.basemetals.gold_gear.name=Goldzahnrad
 item.basemetals.invar_gear.name=Invarzahnrad
@@ -646,12 +526,9 @@ item.basemetals.iron_gear.name=Eisenzahnrad
 item.basemetals.lead_gear.name=Bleizahnrad
 item.basemetals.mithril_gear.name=Mithrilzahnrad
 item.basemetals.nickel_gear.name=Nickelzahnrad
-
 item.basemetals.platinum_gear.name=Platinzahnrad
 item.basemetals.silver_gear.name=Silberzahnrad
 item.basemetals.starsteel_gear.name=Sternstahlzahnrad
 item.basemetals.steel_gear.name=Stahlzahnrad
-
 item.basemetals.tin_gear.name=Zinnzahnrad
-
 item.basemetals.zinc_gear.name=Zinkzahnrad
