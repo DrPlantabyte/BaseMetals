@@ -46,6 +46,7 @@ public abstract class MetalToolEffects {
 		// do nothing for now. This would be where achievements or automatic enchantments could appear
 	}
 	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void addToolSpecialPropertiesToolTip(MetalMaterial metal, java.util.List tooltipList){
 		if(metal == Materials.adamantine){
 			tooltipList.add(I18n.translateToLocal("tooltip.adamantine.tool").replace("%x", String.valueOf(4)));
@@ -60,6 +61,7 @@ public abstract class MetalToolEffects {
 		}
 	}
 	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void addArmorSpecialPropertiesToolTip(MetalMaterial metal, java.util.List tooltipList){
 		if(metal == Materials.adamantine){
 			tooltipList.add(I18n.translateToLocal("tooltip.adamantine.armor").replace("%x", String.valueOf(4)));

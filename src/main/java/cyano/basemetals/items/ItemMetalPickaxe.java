@@ -98,6 +98,7 @@ public class ItemMetalPickaxe extends ItemPickaxe  implements IMetalObject {
     }
 
     
+    @SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
     public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b){
     	super.addInformation(stack,player,list,b);

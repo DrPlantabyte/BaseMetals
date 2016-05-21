@@ -35,6 +35,7 @@ public class VillagerTradeHelper {
 		appendToMultidimensionalArray(Arrays.asList(append).toArray(),array,indices);
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void appendToMultidimensionalArray(Object[] append, Object array, int... indices){
 		// get the lowest level array
 		Object prevArray = null;
@@ -89,6 +90,7 @@ public class VillagerTradeHelper {
 		modField.setInt(v, v.getModifiers() & ~Modifier.FINAL);
 	}
 
+	@SuppressWarnings("rawtypes")
 	public static Field getTradeArrayFromClass(Class c){
 		// search for 4D array of ITradeList objects
 		for(Field f : c.getDeclaredFields()){

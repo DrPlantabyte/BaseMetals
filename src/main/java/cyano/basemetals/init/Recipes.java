@@ -209,6 +209,7 @@ public abstract class Recipes {
 				GameRegistry.addSmelting(smallblend, new ItemStack(nugget, 1), metal.getOreSmeltXP());
 			}
 			if(powder != null && smallpowder != null){
+				// TODO - small powder to powder recipe doesn't use oredict
 				GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(smallpowder, 9), new ItemStack(powder)));
 				GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(powder), "xxx", "xxx", "xxx", 'x' ,new ItemStack(smallpowder)));
 				GameRegistry.addSmelting(smallpowder, new ItemStack(nugget, 1), metal.getOreSmeltXP());
