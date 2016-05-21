@@ -224,7 +224,6 @@ public class OreSpawner implements IWorldGenerator {
 			target[n] = temp;
 		}
 	}
-	@SuppressWarnings("rawtypes")
 	private static final Predicate stonep = new Predicate<IBlockState>(){
 		Set<Block> cache = null;
 		boolean cacheEmpty = true;
@@ -261,7 +260,6 @@ public class OreSpawner implements IWorldGenerator {
 		}
 	}
 
-	@SuppressWarnings("unchecked")
 	private static void spawn(IBlockState b, World w, BlockPos coord, int dimension, boolean cacheOverflow){
 		if(coord.getY() < 0 || coord.getY() >= w.getHeight()) return;
 		if(w.isAreaLoaded(coord, 0)){
@@ -308,7 +306,6 @@ public class OreSpawner implements IWorldGenerator {
 		cache.put(coord, bs);
 	}
 
-	@SuppressWarnings("unchecked")
 	protected static Map<BlockPos,IBlockState> retrieveCache(Integer3D chunkCoord ){
 		if(overflowCache.containsKey(chunkCoord)){
 			Map<BlockPos,IBlockState> cache =overflowCache.get(chunkCoord);

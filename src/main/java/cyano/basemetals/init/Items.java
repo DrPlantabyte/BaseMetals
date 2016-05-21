@@ -47,7 +47,6 @@ public abstract class Items {
 	
 	
 
-	@SuppressWarnings("rawtypes")
 	private static Map<Class,Integer> classSortingValues = new HashMap<>();
 	private static Map<MetalMaterial,Integer> materialSortingValues = new HashMap<>();
 	/**
@@ -1042,11 +1041,8 @@ public abstract class Items {
 		zinc_rod = create_rod(Materials.zinc);
 		zinc_gear = create_gear(Materials.zinc);
 
-		FMLLog.info("new universal bucket");
 		universal_bucket = (UniversalBucket)registerItem(new UniversalBucket(),"bucket", null, null);
-		FMLLog.info("setting unlocalized name");
 		universal_bucket.setUnlocalizedName("bucket");
-		FMLLog.info("registering bucket to event bus");
 		MinecraftForge.EVENT_BUS.register(universal_bucket);
 
 
@@ -1206,8 +1202,7 @@ public abstract class Items {
      * index-out-of-bounds errors
      * @param itemClass The class to modify
      */
-    @SuppressWarnings("rawtypes")
-	private static void expandCombatArrays(Class itemClass) throws IllegalAccessException, NoSuchFieldException {
+    private static void expandCombatArrays(Class itemClass) throws IllegalAccessException, NoSuchFieldException {
         // WARNING: this method contains black magic
         final int expandedSize = 256;
         Field[] fields = itemClass.getDeclaredFields();
@@ -1228,7 +1223,6 @@ public abstract class Items {
         }
     }
 
-	@SuppressWarnings("rawtypes")
 	public static int getSortingValue(ItemStack a){
 		int classVal = 990000;
 		int metalVal = 9900;
