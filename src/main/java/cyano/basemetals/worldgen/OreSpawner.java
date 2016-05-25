@@ -11,7 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraftforge.fml.common.IWorldGenerator;
@@ -75,10 +75,10 @@ public class OreSpawner implements IWorldGenerator {
 		
 		
 		if(spawnData.restrictBiomes){
-			BiomeGenBase biome = world.getBiomeGenForCoords(coord);
+			Biome biome = world.getBiomeForCoordsBody(coord);
 			if(!(
                     spawnData.biomesByName.contains(biome.getBiomeName())
-					|| spawnData.biomesByName.contains(String.valueOf(BiomeGenBase.getIdForBiome(biome)))
+					|| spawnData.biomesByName.contains(String.valueOf(Biome.getIdForBiome(biome)))
                 )
              ){
 				// wrong biome
@@ -224,7 +224,7 @@ public class OreSpawner implements IWorldGenerator {
 			target[n] = temp;
 		}
 	}
-	private static final Predicate stonep = new Predicate<IBlockState>(){
+	private static final Predicate<?> stonep = new Predicate<IBlockState>(){
 		Set<Block> cache = null;
 		boolean cacheEmpty = true;
 		private final Lock initLock = new ReentrantLock();
@@ -268,17 +268,17 @@ public class OreSpawner implements IWorldGenerator {
 			//	FMLLog.info("Spawning ore block "+b.getUnlocalizedName()+" at "+coord);
 			switch(dimension){
 			case -1: // nether
-				if(bs.getBlock() == Blocks.NETHERRACK || bs.getBlock().isReplaceableOreGen(bs, w, coord, stonep)){
+				if(bs.getBlock() == Blocks.NETHERRACK || bs.getBlock().isReplaceableOreGen(bs, w, coord, (Predicate<IBlockState>) stonep)){
 					w.setBlockState(coord, b, 2);
 				}
 				break;
 			case 1: // end
-				if(bs.getBlock() == Blocks.END_STONE || bs.getBlock().isReplaceableOreGen(bs, w, coord, stonep)){
+				if(bs.getBlock() == Blocks.END_STONE || bs.getBlock().isReplaceableOreGen(bs, w, coord, (Predicate<IBlockState>) stonep)){
 					w.setBlockState(coord, b, 2);
 				}
 				break;
 			default:
-				if(bs.getBlock() == Blocks.STONE || bs.getBlock().isReplaceableOreGen(bs, w, coord, stonep)){
+				if(bs.getBlock() == Blocks.STONE || bs.getBlock().isReplaceableOreGen(bs, w, coord, (Predicate<IBlockState>) stonep)){
 					w.setBlockState(coord, b, 2);
 				}
 				break;
@@ -313,7 +313,7 @@ public class OreSpawner implements IWorldGenerator {
 			overflowCache.remove(chunkCoord);
 			return cache;
 		} else {
-			return Collections.EMPTY_MAP;
+			return Collections.emptyMap();
 		}
 	}
 

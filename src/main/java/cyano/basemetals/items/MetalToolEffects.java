@@ -14,6 +14,7 @@ import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 
 public abstract class MetalToolEffects {
+	   
 	public static void extraEffectsOnAttack(final MetalMaterial metal, final ItemStack item, final EntityLivingBase target, final EntityLivingBase attacker){
     	if(metal.equals(Materials.coldiron)){
     		if(target.isImmuneToFire()){
@@ -46,7 +47,7 @@ public abstract class MetalToolEffects {
 		// do nothing for now. This would be where achievements or automatic enchantments could appear
 	}
 	
-	public static void addToolSpecialPropertiesToolTip(MetalMaterial metal, java.util.List tooltipList){
+	public static void addToolSpecialPropertiesToolTip(MetalMaterial metal, java.util.List<String> tooltipList){
 		if(metal == Materials.adamantine){
 			tooltipList.add(I18n.translateToLocal("tooltip.adamantine.tool").replace("%x", String.valueOf(4)));
 		} else if(metal == Materials.aquarium){
@@ -60,7 +61,7 @@ public abstract class MetalToolEffects {
 		}
 	}
 	
-	public static void addArmorSpecialPropertiesToolTip(MetalMaterial metal, java.util.List tooltipList){
+	public static void addArmorSpecialPropertiesToolTip(MetalMaterial metal, java.util.List<String> tooltipList){
 		if(metal == Materials.adamantine){
 			tooltipList.add(I18n.translateToLocal("tooltip.adamantine.armor").replace("%x", String.valueOf(4)));
 		} else if(metal == Materials.aquarium){

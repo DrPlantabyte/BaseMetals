@@ -47,7 +47,7 @@ import java.util.*;
 		name=BaseMetals.NAME,
 		version = BaseMetals.VERSION,
 		dependencies = "required-after:Forge",
-		acceptedMinecraftVersions = "1.9)")
+		acceptedMinecraftVersions = "1.9.4")
 //		updateJSON = "https://raw.githubusercontent.com/cyanobacterium/BaseMetals/master/update.json")
 
 public class BaseMetals
@@ -150,7 +150,7 @@ public class BaseMetals
 				userCrusherRecipes.add(recipe);
 			}
 		}
-		
+
 		oreSpawnFolder = Paths.get(event.getSuggestedConfigurationFile().toPath().getParent().toString(),"orespawn");
 		Path oreSpawnFile = Paths.get(oreSpawnFolder.toString(),MODID+".json");
 		if(Files.exists(oreSpawnFile) == false){

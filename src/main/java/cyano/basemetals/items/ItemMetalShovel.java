@@ -1,22 +1,12 @@
 package cyano.basemetals.items;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.EnumCreatureAttribute;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 import cyano.basemetals.init.Materials;
@@ -97,7 +87,7 @@ public class ItemMetalShovel extends ItemSpade  implements IMetalObject {
 
     
     @Override
-    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b){
+    public void addInformation(ItemStack stack, EntityPlayer player, List<String> list, boolean b){
     	super.addInformation(stack,player,list,b);
     	MetalToolEffects.addToolSpecialPropertiesToolTip(metal,list);
     }

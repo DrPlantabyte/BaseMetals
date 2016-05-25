@@ -99,7 +99,7 @@ public class ItemMetalPickaxe extends ItemPickaxe  implements IMetalObject {
 
     
     @Override
-    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b){
+    public void addInformation(ItemStack stack, EntityPlayer player, List<String> list, boolean b){
     	super.addInformation(stack,player,list,b);
     	MetalToolEffects.addToolSpecialPropertiesToolTip(metal,list);
     }
