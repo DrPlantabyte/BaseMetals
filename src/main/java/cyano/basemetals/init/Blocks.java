@@ -25,7 +25,7 @@ import cyano.basemetals.material.MetalMaterial;
 import cyano.basemetals.registry.IOreDictionaryEntry;
 
 /**
- * This classes initializes all blocks in Base Metals and provides some utility 
+ * This class initializes all blocks in Base Metals and provides some utility 
  * methods for looking up blocks. 
  * @author DrCyano
  *

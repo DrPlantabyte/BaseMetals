@@ -21,9 +21,9 @@ public class ItemGroups {
 		if(initDone) return;
 		
 		// placeholders
-		blockItem = net.minecraft.init.Items.iron_ingot;
-//		itemItem = net.minecraft.init.Items.iron_ingot;
-//		toolItem = net.minecraft.init.Items.iron_ingot;
+		blockItem = Items.copper_crackhammer;
+//		itemItem = Items.copper_crackhammer;
+//		toolItem = Items.copper_crackhammer;
 
 		tab_blocks = new FunctionalCreativeTab( BaseMetals.MODID.concat(".blocks"),
 				()->Items.copper_crackhammer, 
