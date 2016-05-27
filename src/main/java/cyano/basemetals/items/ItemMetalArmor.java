@@ -278,7 +278,7 @@ public class ItemMetalArmor extends net.minecraft.item.ItemArmor implements IMet
 
     
     @Override
-    public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean b){
+    public void addInformation(ItemStack stack, EntityPlayer player, List<String> list, boolean b){
     	super.addInformation(stack,player,list,b);
     	MetalToolEffects.addArmorSpecialPropertiesToolTip(metal,list);
     }

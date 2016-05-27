@@ -9,13 +9,11 @@ import cyano.basemetals.registry.IOreDictionaryEntry;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.renderer.color.IItemColor;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.UniversalBucket;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -45,7 +43,7 @@ public abstract class Items {
 	
 	
 
-	private static Map<Class,Integer> classSortingValues = new HashMap<>();
+	private static Map<Class<?>,Integer> classSortingValues = new HashMap<>();
 	private static Map<MetalMaterial,Integer> materialSortingValues = new HashMap<>();
 	/**
 	 * Gets an item by its name. The name is the name as it is registered in 
@@ -842,7 +840,7 @@ public abstract class Items {
      * index-out-of-bounds errors
      * @param itemClass The class to modify
      */
-    private static void expandCombatArrays(Class itemClass) throws IllegalAccessException, NoSuchFieldException {
+    private static void expandCombatArrays(Class<?> itemClass) throws IllegalAccessException, NoSuchFieldException {
         // WARNING: this method contains black magic
         final int expandedSize = 256;
         Field[] fields = itemClass.getDeclaredFields();
@@ -869,12 +867,12 @@ public abstract class Items {
 		int metalVal = 9900;
 		if(a.getItem() instanceof ItemBlock && ((ItemBlock)a.getItem()).getBlock() instanceof IMetalObject){
 			classVal = classSortingValues.computeIfAbsent(((ItemBlock)a.getItem()).getBlock().getClass(),
-					(Class c)->990000);
+					(Class<?> c)->990000);
 			metalVal = materialSortingValues.computeIfAbsent(((IMetalObject)((ItemBlock)a.getItem()).getBlock()).getMetalMaterial(),
 					(MetalMaterial m)->9900);
 		} else if(a.getItem() instanceof IMetalObject){
 			classVal = classSortingValues.computeIfAbsent(a.getItem().getClass(),
-					(Class c)->990000);
+					(Class<?> c)->990000);
 			metalVal = materialSortingValues.computeIfAbsent(((IMetalObject)a.getItem()).getMetalMaterial(),
 					(MetalMaterial m)->9900);
 		}

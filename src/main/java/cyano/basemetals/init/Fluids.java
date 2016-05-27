@@ -66,14 +66,14 @@ public abstract class Fluids{
 			Item item = Item.getItemFromBlock(block);
 			final ModelResourceLocation fluidModelLocation = new ModelResourceLocation(
 					modID.toLowerCase() + ":" + fluidBlockNames.get(block), "fluid");
-            ModelBakery.registerItemVariants(item);
-			ModelLoader.setCustomMeshDefinition(item, new ItemMeshDefinition()
-			{
-				public ModelResourceLocation getModelLocation(ItemStack stack)
-				{
-					return fluidModelLocation;
-				}
-			});
+//            ModelBakery.registerItemVariants(item);
+//			ModelLoader.setCustomMeshDefinition(item, new ItemMeshDefinition()
+//			{
+//				public ModelResourceLocation getModelLocation(ItemStack stack)
+//				{
+//					return fluidModelLocation;
+//				}
+//			});
 			ModelLoader.setCustomStateMapper(block, new StateMapperBase()
 			{
 				protected ModelResourceLocation getModelResourceLocation(IBlockState state)
@@ -97,8 +97,10 @@ public abstract class Fluids{
 	}
 
 	private static BlockFluidBase registerFluidBlock(Fluid f, BlockFluidBase block, String name) {
+		block.setRegistryName(BaseMetals.MODID+":"+name);
 		block.setUnlocalizedName(BaseMetals.MODID+"."+name);
-		GameRegistry.registerBlock(block, name);
+		GameRegistry.register(block);
+//		GameRegistry.registerBlock(block, name);
 		block.setCreativeTab(CreativeTabs.MISC);
 		FluidRegistry.addBucketForFluid(f);
 		fluidBlocks.put(f, block);

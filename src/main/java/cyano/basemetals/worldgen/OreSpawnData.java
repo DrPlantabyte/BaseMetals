@@ -80,7 +80,7 @@ public class OreSpawnData {
 			biomesByName = Collections.unmodifiableSet(list);
 		} else {
 			this.restrictBiomes = false;
-			biomesByName = Collections.EMPTY_SET;
+			biomesByName = Collections.emptySet();
 		}
 	}
 
