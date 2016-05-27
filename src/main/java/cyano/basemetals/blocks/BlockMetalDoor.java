@@ -59,7 +59,7 @@ public class BlockMetalDoor extends net.minecraft.block.BlockDoor implements IMe
         blockstate = bs.cycleProperty(BlockDoor.OPEN);
         world.setBlockState(pos, blockstate, 2);
         world.markBlockRangeForRenderUpdate(pos, coord);
-        world.playAuxSFXAtEntity(player, ((Boolean)blockstate.getValue(BlockDoor.OPEN)) ? 1003 : 1006, coord, 0);
+        world.playEvent(player, ((Boolean)blockstate.getValue(BlockDoor.OPEN)) ? 1003 : 1006, coord, 0);
         return true;
     }
 
