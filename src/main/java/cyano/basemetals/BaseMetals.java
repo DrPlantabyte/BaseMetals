@@ -47,12 +47,12 @@ import java.util.*;
 		name=BaseMetals.NAME,
 		version = BaseMetals.VERSION,
 		dependencies = "required-after:Forge",
-		acceptedMinecraftVersions = "1.9)")
+		acceptedMinecraftVersions = "[1.9,)") // see VersionRange.createFromVersionSpec(String) for explanation of this convoluted feature
 //		updateJSON = "https://raw.githubusercontent.com/cyanobacterium/BaseMetals/master/update.json")
 
 public class BaseMetals
 {
-	
+
 	public static BaseMetals INSTANCE = null;
 	/** ID of this mod */
 	public static final String MODID = "basemetals";
@@ -60,13 +60,11 @@ public class BaseMetals
 	public static final String NAME ="Base Metals";
 	/** Version number, in Major.Minor.Build format. The minor number is increased whenever a change 
 	 * is made that has the potential to break compatibility with other mods that depend on this one. */
-	public static final String VERSION = "2.2.2.1";
+	public static final String VERSION = "2.2.3";
 	
 	/** All ore-spawn files discovered in the ore-spawn folder */
 	public static final List<Path> oreSpawnConfigFiles = new LinkedList<>();
-	
-	/** multiplier to increase or reduce the frequency of metal ingots appearing in treasure chests */
-	public static float chestLootFactor = 0.5f;
+
 	
 //	/** If true, some metals can be used to brew potions */
 //	public static boolean enablePotionRecipes = true;
@@ -98,11 +96,7 @@ public class BaseMetals
 //		enablePotionRecipes = config.getBoolean("enable_potions", "options", enablePotionRecipes, 
 //				"If true, then some metals can be used to brew potions.");
 		
-		
-		chestLootFactor = config.getFloat("treasure_chest_loot_factor", "options", 0.5f, 0.0f, 1000.0f, 
-				"Controls the rarity of metal ingots being found in treasure chests relative to \n"
-			 +  "the frequency of other chest loot items. Set to 0 to disable metal ingots from \n"
-			 +  "appearing in treasure chests.");
+
 		
 		enforceHardness = config.getBoolean("enforce_hardness", "options", enforceHardness, 
 				"If true, then the crack hammer cannot crush ingots into powders if that \n"
