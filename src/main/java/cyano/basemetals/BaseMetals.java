@@ -149,6 +149,8 @@ public class BaseMetals
 			}
 		}
 
+		config.save();
+
 		if(requireOreSpawn) {
 			if(!net.minecraftforge.fml.common.Loader.isModLoaded("orespawn")){
 				HashSet<ArtifactVersion> orespawnMod = new HashSet<>();
@@ -166,8 +168,6 @@ public class BaseMetals
 				}
 			}
 		}
-
-		config.save();
 
 		cyano.basemetals.init.Fluids.init();
 		cyano.basemetals.init.Materials.init();
